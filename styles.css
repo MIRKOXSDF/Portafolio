@@ -47,7 +47,11 @@ body {
     display: flex;
     gap: 15px;
 }
-
+#skills,
+#projects,
+#contact {
+    scroll-margin-top: 100px;
+}
 .header-right a {
     display: inline-block;
     text-decoration: none;
@@ -63,11 +67,7 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(159,211,199,.3);
 }
-#skills,
-#projects,
-#contact {
-    scroll-margin-top: 100px;
-}
+
 
 .resume {
     background: #9fd3c7;

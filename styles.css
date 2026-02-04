@@ -138,6 +138,12 @@ body {
     object-fit: cover;
     object-position: center 10%; 
 }
+.project-cards img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    object-position: center 10%; 
+}
 
 .project-info {
     padding: 30px;

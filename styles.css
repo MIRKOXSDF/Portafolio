@@ -138,6 +138,12 @@ body {
     object-fit: cover;
     object-position: center 10%; 
 }
+.project-cards:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(159,211,199,.2);
+    border: 2px solid #9fd3c7; /* 👈 borde verde */
+    
+}
 .project-cards img {
     width: 100%;
     height: 100px;

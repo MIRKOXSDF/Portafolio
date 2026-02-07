@@ -182,8 +182,8 @@ body {
     
 }
 .project-cards img {
-    width: 100%;
-    height: 400px;
+    width: 10%;
+    height: 260px;
     object-fit: cover;
     object-position: center 5%; 
 }

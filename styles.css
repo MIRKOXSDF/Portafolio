@@ -157,7 +157,12 @@ body {
     overflow: hidden;
     transition: transform .3s, box-shadow .3s;
 }
-
+.project-cards {
+    background: #181818;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
 .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 35px rgba(159,211,199,.2);

@@ -7,8 +7,8 @@ html {
     box-sizing: border-box;
 }
 @font-face {
-    font-family: 'pixel';
-    src: url('Font/Vermin\ Vibes\ 1989.ttf') format('truetype');
+    font-family: 'nokia';
+    src: url('Font/nokiafc22.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,7 +16,7 @@ body {
 
     background: #0e0e0e;
     color: #e6e6e6;
-    font-family: 'pixel', monospace;
+    font-family: 'nokia', monospace;
 
 
     
@@ -24,7 +24,7 @@ body {
 h1, h2, h3, h4
 .header-right a,
 .resume-btn {
-    font-family: 'pixel', monospace;
+    font-family: 'nokia', monospace;
 }
 
 /* ---------- HEADER ---------- */

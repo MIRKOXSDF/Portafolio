@@ -33,14 +33,13 @@ h1, h2, h3, h4
     position: sticky;
     top: 0;
     z-index: 999;
+
     background-color: #0e0e0e;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 20px;
 
-    
+    width: 100%;        /* 👈 ocupa todo el ancho */
+    padding: 30px 40px; /* 👈 padding lateral */
 }
 .lightning-bg {
     position: fixed;

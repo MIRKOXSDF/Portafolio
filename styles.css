@@ -14,9 +14,10 @@ html {
     font-style: normal;
 }
 body {
+    font-family: 'SmallPixel', monospace;
+
     background: #0e0e0e;
     color: #e6e6e6;
-    font-family: 'SmallPixel', monospace;
 }
 
 /* ---------- HEADER ---------- */

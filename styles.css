@@ -37,7 +37,7 @@ h1, h2, h3, h4
 
     justify-content: center;   /* 👈 CLAVE */
     align-items: center;
-    gap: 40px;                 /* espacio entre nombre y botones */
+    gap: 70px;                 /* espacio entre nombre y botones */
 
     padding: 30px 20px;
 }

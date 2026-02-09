@@ -29,17 +29,21 @@ h1, h2, h3, h4
 
 /* ---------- HEADER ---------- */
 .header {
-    display: flex;
     position: sticky;
     top: 0;
     z-index: 999;
     background-color: #0e0e0e;
-
-    justify-content: center;   /* 👈 CLAVE */
-    align-items: center;
-    gap: 120px;                 /* espacio entre nombre y botones */
-
     padding: 30px 20px;
+}
+
+/* 👇 ESTE es el bloque que se centra */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;       /* 👈 AQUÍ sí se nota */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .lightning-bg {
     position: fixed;
@@ -95,7 +99,7 @@ h1, h2, h3, h4
 
 .header-right {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 #skills,
 #projects,

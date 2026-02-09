@@ -24,7 +24,7 @@ body {
 h1, h2, h3, h4
 .header-right a,
 .resume-btn {
-    font-family: '', monospace;
+    font-family: 'pixel', monospace;
 }
 
 /* ---------- HEADER ---------- */

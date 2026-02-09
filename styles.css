@@ -8,7 +8,7 @@ html {
 }
 @font-face {
     font-family: 'Minecraftia';
-    src: url('Font/Minecraftia-Regular.ttf') format('truetype');
+    src: url('Font/pixel.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,7 +16,7 @@ body {
 
     background: #0e0e0e;
     color: #e6e6e6;
-    font-family: 'Minecraftia', monospace;
+    font-family: 'pixel', monospace;
 
 
     
@@ -24,7 +24,7 @@ body {
 h1, h2, h3, h4
 .header-right a,
 .resume-btn {
-    font-family: 'Minecraftia', monospace;
+    font-family: 'pixel', monospace;
 }
 
 /* ---------- HEADER ---------- */
@@ -139,8 +139,6 @@ h1, h2, h3, h4
 
 .description {
     max-width: 800px;
-    font-family: "Segoe UI", sans-serif;
-
     font-size: 2rem;
     line-height: 2;
     color: #9fd3c7;

@@ -13,10 +13,17 @@ html {
     font-style: normal;
 }
 body {
-    font-family: 'Minecraftia', monospace;
 
     background: #0e0e0e;
     color: #e6e6e6;
+    font-family: "Segoe UI", sans-serif;
+
+    
+}
+h1, h2, h3, h4,
+.header-right a,
+.resume-btn {
+    font-family: 'Minecraftia', monospace;
 }
 
 /* ---------- HEADER ---------- */

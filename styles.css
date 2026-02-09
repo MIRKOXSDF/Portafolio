@@ -34,12 +34,13 @@ h1, h2, h3, h4
     top: 0;
     z-index: 999;
     background-color: #0e0e0e;
-
-    justify-content: center;   /* 👈 CLAVE */
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;                 /* espacio entre nombre y botones */
-
+    max-width: 1200px;
+    margin: auto;
     padding: 30px 20px;
+
+    
 }
 .lightning-bg {
     position: fixed;
@@ -90,7 +91,7 @@ h1, h2, h3, h4
 
 .header-left span {
     font-size: 0.9rem;
-    color: ;
+    color: #9fd3c7;
 }
 
 .header-right {

@@ -47,36 +47,46 @@ h1, h2, h3, h4
     pointer-events: none;
 
     background:
-      linear-gradient(
+      repeating-linear-gradient(
         120deg,
-        transparent 45%,
-        rgba(159, 255, 224, 0.25) 50%,
-        transparent 55%
-      ),
-      linear-gradient(
-        300deg,
-        transparent 40%,
-        rgba(159, 211, 199, 0.15) 50%,
-        transparent 60%
+        transparent 0%,
+        transparent 46%,
+        rgba(159, 255, 224, 0.8) 48%,
+        rgba(159, 255, 224, 1) 50%,
+        rgba(159, 255, 224, 0.8) 52%,
+        transparent 54%,
+        transparent 100%
       );
 
-    background-size: 200% 200%;
-    animation: lightningMove 6s linear infinite;
-    filter: blur(12px);
+    background-size: 300% 300%;
+    animation: lightningFlash 3.5s infinite;
+    filter: blur(6px);
+    opacity: 0;
 }
 
-@keyframes lightningMove {
+@keyframes lightningFlash {
     0% {
-        background-position: 0% 50%;
-        opacity: 0.3;
+        background-position: 0% 0%;
+        opacity: 0;
     }
-    50% {
-        background-position: 100% 50%;
-        opacity: 0.6;
+    10% {
+        opacity: 0.9;
+    }
+    12% {
+        opacity: 0.2;
+    }
+    15% {
+        opacity: 1;
+    }
+    18% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+        background-position: 100% 100%;
     }
     100% {
-        background-position: 0% 50%;
-        opacity: 0.3;
+        opacity: 0;
     }
 }
 

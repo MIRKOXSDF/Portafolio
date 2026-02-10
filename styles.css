@@ -40,55 +40,35 @@ h1, h2, h3, h4
 
     padding: 30px 20px;
 }
-.lightning-bg {
+.lightning-container {
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
+    overflow: hidden;
+}
+.lightning {
+    position: absolute;
+    top: -20%;
+    left: 0;
 
-    background:
-      repeating-linear-gradient(
-        120deg,
-        transparent 0%,
-        transparent 46%,
-        rgba(159, 255, 224, 0.8) 48%,
-        rgba(159, 255, 224, 1) 50%,
-        rgba(159, 255, 224, 0.8) 52%,
-        transparent 54%,
-        transparent 100%
-      );
+    width: 3px;
+    height: 140%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(159,255,224,0.9),
+        white,
+        rgba(159,255,224,0.9),
+        transparent
+    );
 
-    background-size: 300% 300%;
-    animation: lightningFlash 3.5s infinite;
-    filter: blur(6px);
+    filter: blur(1px);
     opacity: 0;
+
+    animation: lightningStrike 4s infinite;
 }
 
-@keyframes lightningFlash {
-    0% {
-        background-position: 0% 0%;
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.9;
-    }
-    12% {
-        opacity: 0.2;
-    }
-    15% {
-        opacity: 1;
-    }
-    18% {
-        opacity: 0;
-    }
-    60% {
-        opacity: 0;
-        background-position: 100% 100%;
-    }
-    100% {
-        opacity: 0;
-    }
-}
 
 
 

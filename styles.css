@@ -190,6 +190,10 @@ h1, h2, h3, h4
     padding: 0 20px;
     text-align: center;
 }
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
 
 .projects h2 {
     font-size: 1.8rem;

@@ -11,7 +11,10 @@
 .project-hero h1 {
     margin-bottom: 30px; /* ajusta el valor a tu gusto */
 }
-
+.header a {
+    text-decoration: none;
+    color: #9fd3c7; /* o el color que estés usando */
+}
 .project-hero img {
     width: 100%;
     max-width: 900px;

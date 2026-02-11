@@ -36,8 +36,22 @@
 }
 
 .project-section {
-    margin-bottom: 60px;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(159, 211, 199, 0.2);
+    border-radius: 18px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 25px rgba(159, 255, 224, 0.08);
+    transition: all 0.3s ease;
 }
+
+/* Hover estilo Skills */
+.project-section:hover {
+    transform: translateY(-6px);
+    border: 1px solid #9fd3c7;
+    box-shadow: 0 0 35px rgba(159, 255, 224, 0.25);
+}
+
 
 .project-section h2 {
     font-size: 1.4rem;

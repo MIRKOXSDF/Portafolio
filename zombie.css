@@ -8,6 +8,9 @@
     color: #9fd3c7;
 
 }
+.project-hero h1 {
+    margin-bottom: 30px; /* ajusta el valor a tu gusto */
+}
 
 .project-hero img {
     width: 100%;
@@ -15,7 +18,7 @@
     border-radius: 16px;
     border: 2px solid #9fd3c7;
     box-shadow: 0 0 30px rgba(159,255,224,0.25);
-    margin-top: 30px;
+    
 
 }
 

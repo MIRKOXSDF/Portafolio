@@ -8,6 +8,77 @@
     color: #9fd3c7;
 
 }
+.lightning-container {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+.lightning {
+    position: absolute;
+    top: -20%;
+    left: 0;
+
+    width: 3px;
+    height: 140%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(159,255,224,0.9),
+        white,
+        rgba(159,255,224,0.9),
+        transparent
+    );
+
+    filter: blur(1px);
+    opacity: 0;
+
+    animation: lightningStrike 4s infinite;
+}
+.lightning:nth-child(1) {
+    left: 10%;
+    transform: rotate(8deg);
+    animation-delay: 0s;
+}
+
+.lightning:nth-child(2) {
+    left: 35%;
+    transform: rotate(-12deg);
+    animation-delay: 1.3s;
+}
+
+.lightning:nth-child(3) {
+    left: 60%;
+    transform: rotate(15deg);
+    animation-delay: 2.1s;
+}
+
+.lightning:nth-child(4) {
+    left: 85%;
+    transform: rotate(-6deg);
+    animation-delay: 3s;
+}
+@keyframes lightningStrike {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    8% {
+        opacity: 0.2;
+    }
+    11% {
+        opacity: 1;
+    }
+    15% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 .project-hero h1 {
     margin-bottom: 30px; /* ajusta el valor a tu gusto */
 }

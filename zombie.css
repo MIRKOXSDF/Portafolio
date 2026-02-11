@@ -11,9 +11,13 @@
 .project-hero h1 {
     margin-bottom: 30px; /* ajusta el valor a tu gusto */
 }
-.header a {
+.resume {
     text-decoration: none;
-    color: #9fd3c7; /* o el color que estés usando */
+    color: #9fd3c7;
+}
+
+.resume:hover {
+    color: white;
 }
 .project-hero img {
     width: 100%;

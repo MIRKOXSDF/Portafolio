@@ -147,3 +147,21 @@
 .project-section li {
     margin-bottom: 10px;
 }
+.tools-used ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tools-used li {
+    display: flex;
+    justify-content: space-between; /* 👈 separa texto e ícono */
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.tools-used i {
+    color: #9fd3c7;
+    font-size: 18px;
+}
+

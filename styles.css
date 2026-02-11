@@ -40,6 +40,24 @@ h1, h2, h3, h4
 
     padding: 30px 20px;
 }
+.project-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-info li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.project-info i {
+    color: #9fd3c7; /* tu verde pixel */
+    font-size: 18px;
+}
+
 .lightning-container {
     position: fixed;
     inset: 0;

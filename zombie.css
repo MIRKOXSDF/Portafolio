@@ -156,7 +156,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #9fd3c7;
+   
 
 }
 
@@ -165,6 +165,8 @@
     height: 26px;
     object-fit: contain;
     image-rendering: pixelated;
+    filter: brightness(0) saturate(100%) invert(78%) sepia(14%) saturate(540%) hue-rotate(115deg);
+
 
 }
 

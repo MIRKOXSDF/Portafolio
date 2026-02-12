@@ -154,22 +154,21 @@
 
 .tools-used li {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 10px;
     margin-bottom: 14px;
 }
+.project-section img{
 
+    color: #9fd3c7;
+
+}
 .tools-used img {
     width: 26px;
     height: 26px;
     object-fit: contain;
     image-rendering: pixelated;
-    color: #9fd3c7;
 
 }
 
-.tools-used i {
-    color: #9fd3c7;
-    font-size: 18px;
-}
 

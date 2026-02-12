@@ -151,21 +151,19 @@
     list-style: none;
     padding: 0;
 }
-.project-section img{
-    width: 28px;
-    height: 28px;
-    image-rendering: pixelated;
-
-}
-
-
 
 .tools-used li {
     display: flex;
-    justify-content: space-between; /* 👈 separa texto e ícono */
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
-    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.tools-used img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    image-rendering: pixelated;
 }
 
 .tools-used i {

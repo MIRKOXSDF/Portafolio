@@ -152,8 +152,10 @@
     padding: 0;
 }
 .project-section img{
-     width: 48px;
-    height: 48px;
+    width: 28px;
+    height: 28px;
+    image-rendering: pixelated;
+
 }
 
 

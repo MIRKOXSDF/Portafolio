@@ -169,51 +169,7 @@
 
 
 }
-.systems-section {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
 
-.systems-section h2 {
-    font-size: 2rem;
-    color: #9fd3c7;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.system-block {
-    margin-bottom: 70px;
-}
-
-.system-block h3 {
-    font-size: 1.5rem;
-    color: #9fd3c7;
-    margin-bottom: 20px;
-}
-
-.system-block img {
-    width: 100%;
-    max-width: 800px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #1f1f1f;
-    transition: 0.3s ease;
-}
-
-.system-block img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(159,211,199,0.25);
-}
-
-.system-block p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #cccccc;
-    max-width: 800px;
-}
 .project-links {
     margin: 120px auto;
     max-width: 1000px;

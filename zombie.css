@@ -269,7 +269,6 @@
 }
 
 
-
 /* Tamaños dinámicos */
 .gif-gallery.two .gif-card {
     width: 420px;
@@ -289,10 +288,5 @@
     display: block;
 }
 
-/* Hover profesional */
-.gif-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 30px rgba(159,255,224,0.3);
-}
 
 

@@ -225,38 +225,46 @@
     margin-bottom: 50px;
 }
 
-.links-container {
+/* ---------- GIF GALLERY ---------- */
+
+.gif-gallery {
     display: flex;
+    gap: 25px;
+    margin-top: 30px;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
     flex-wrap: wrap;
 }
 
-.link-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 240px;
-    height: 160px;
-    background: #111;
-    border: 1px solid #1f1f1f;
-    border-radius: 18px;
-    text-decoration: none;
-    color: #9fd3c7;
+.gif-card {
+    background: #141414;
+    border-radius: 16px;
+    overflow: hidden;
     transition: 0.3s ease;
 }
 
-.link-card i {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+/* Tamaños dinámicos */
+.gif-gallery.two .gif-card {
+    width: 420px;
 }
 
-.link-card:hover {
-    transform: translateY(-8px);
-    border-color: #9fd3c7;
-    box-shadow: 0 15px 40px rgba(159,211,199,0.25);
+.gif-gallery.three .gif-card {
+    width: 300px;
+}
+
+.gif-gallery.single .gif-card.wide {
+    width: 900px;
+}
+
+/* Imagen */
+.gif-card img {
+    width: 100%;
+    display: block;
+}
+
+/* Hover profesional */
+.gif-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(159,255,224,0.3);
 }
 
 

@@ -243,6 +243,17 @@
     width: 100%;
     display: block;
 }
+.project-sections {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.project-sections h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #9fd3c7;
+
+}
 
 
 

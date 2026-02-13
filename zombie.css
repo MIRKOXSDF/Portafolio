@@ -214,5 +214,48 @@
     color: #cccccc;
     max-width: 800px;
 }
+.project-links {
+    max-width: 1000px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.project-links h2 {
+    color: #9fd3c7;
+    margin-bottom: 40px;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 150px;
+    background: #111;
+    border-radius: 16px;
+    border: 1px solid #1f1f1f;
+    text-decoration: none;
+    color: #9fd3c7;
+    transition: 0.3s ease;
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #9fd3c7;
+    box-shadow: 0 15px 40px rgba(159,211,199,0.25);
+}
 
 

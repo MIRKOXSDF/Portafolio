@@ -268,12 +268,7 @@
     flex-wrap: wrap;
 }
 
-.gif-card {
-    background: #141414;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: 0.3s ease;
-}
+
 
 /* Tamaños dinámicos */
 .gif-gallery.two .gif-card {

@@ -271,7 +271,7 @@
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: right;
 
     gap: 40px;
 }

@@ -114,14 +114,31 @@
   <details class="code-block">
       <summary>Click para ver código</summary>
       <pre><code>
-void Shoot()
-{
-    if (Input.GetKeyDown(KeyCode.X) && ammo >= 1)
-    {
-        GameObject obj = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        ammo--;
-    }
-}
+ void Shoot()
+ {
+     //Ataque a distancia
+     if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
+     {
+         GameObject obj = Instantiate(bulletPrefab);
+         obj.transform.position = transform.position;
+         Vector2 d = obj.GetComponent<bala>().direction;
+         d.x = direction;
+         obj.GetComponent<bala>().direction = d;   
+         ammo--;
+         bulletManager.SetBullet(ammo);
+         audioSource.PlayOneShot(Ataque_distanciaClip);
+     }
+     //Ataque a Meele
+     if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+     {
+         GameObject obj = Instantiate(bulletPrefab2);
+         obj.transform.position = transform.position;
+         Vector2 d = obj.GetComponent<meele>().direction;
+         d.x = direction;
+         obj.GetComponent<meele>().direction = d;
+         audioSource.PlayOneShot(Ataque_MeleeClip);
+     }
+ }
       </code></pre>
      </details>
 </div>

@@ -112,8 +112,8 @@
       </div>
 
 </div>
-
-<div class="project-section-Codigo">
+<div class="project-section">
+  <h2>Código del Ataque del Jugador</h2>
   <details class="code-block">
     <summary>Click para ver código</summary>
     <pre><code>
@@ -128,6 +128,9 @@ void Shoot()
     </code></pre>
   </details>
 </div>
+
+
+
 
 
 
@@ -166,21 +169,7 @@ void Shoot()
          </p>
       </div>
 </div>
-<div class="project-section-Codigo">
-  <details class="code-block">
-    <summary>Click para ver código</summary>
-    <pre><code>
-void Shoot()
-{
-    if (Input.GetKeyDown(KeyCode.X) && ammo >= 1)
-    {
-        GameObject obj = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        ammo--;
-    }
-}
-    </code></pre>
-  </details>
-</div>
+
 
 
 <section class="project-links"> 

@@ -103,12 +103,26 @@
 
       <div class="project-section">
          <p>
-             Se desarrollaron dos tipos de ataque: cuerpo a cuerpo con un trinche y ataque a distancia. Ambos comparten la misma logica de codigo de  proyectiles. En el caso del ataque
-             melee, se utiliza un proyectil con tiempo de vida muy corto y alcance limitado para simular un impacto inmediato. El ataque a distancia dispara un proyectil estándar 
-             que se desplaza hacia el objetivo y aplica daño al detectar colisión.
+             El ataque melee fue implementado reutilizando la misma lógica del ataque a distancia, con el objetivo de mantener una estructura de código coherente y optimizada. Para adaptarlo al 
+             combate cuerpo a cuerpo, se modificaron parámetros como el alcance y el tiempo de vida del proyectil (trinche), haciendo que se destruya rápidamente y simule un impacto cercano. De 
+             esta manera, ambos ataques comparten la misma base técnica  de codigo.
          </p>
       </div>
 </div>
+<details class="code-container">
+  <summary>Click para ver código</summary>
+
+  <pre><code>
+void Shoot()
+{
+    if (Input.GetKeyDown(KeyCode.X) && ammo >= 1)
+    {
+        GameObject obj = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        ammo--;
+    }
+}
+  </code></pre>
+</details>
 
        
 

@@ -271,7 +271,7 @@
     border: 1px solid rgba(159, 211, 199, 0.2);
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     transition: transform 0.2s ease;
-    margin-top: 20px;
+    margin-top: 0; /* 🔥 espacio controlado */
 }
 
 .code-block summary {
@@ -285,10 +285,6 @@
     border-bottom: 1px solid rgba(159,211,199,0.2);
 }
 
-.code-block summary:hover {
-    background: #2a2a2a;
-}
-
 .code-block pre {
     margin: 0;
     padding: 20px;
@@ -296,13 +292,14 @@
     color: #e0e0e0;
     font-family: Consolas, "Courier New", monospace;
     font-size: 14px;
-    line-height: 1.35; /* mantiene el código compacto */
+    line-height: 1.35; /* reduce espacio entre líneas */
     overflow-x: auto;
 }
 
 .code-block[open] {
     transform: scale(1.02);
 }
+
 
 
 

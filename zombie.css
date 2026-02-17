@@ -271,9 +271,9 @@
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
+    justify-content: left;
 
-    gap: 40px;
+    gap: 10px;
 }
 .code-block {
     background: #141414;

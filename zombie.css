@@ -270,6 +270,8 @@
     margin: -120px auto 0; /* 🔥 sube el bloque y lo alinea */
     padding: 0 20px;
     color: #9fd3c7;
+    align-self: flex-start;   /* 🔥 esto lo manda a la izquierda */
+
 }
 
 .code-block summary {

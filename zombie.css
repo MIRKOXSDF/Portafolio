@@ -262,21 +262,16 @@
     color: #9fd3c7;
     letter-spacing: 1px;
 }
-.code-container summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: #66fcf1;
-    margin-bottom: 10px;
+.project-section-Codigo
+{
+    margin-bottom: 80px;
+}
+.code-container {
+    max-width: 900px;
+    margin: 0 auto 0 0;   /* izquierda */
+    display: block;
 }
 
-.code-container pre {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    padding: 20px;
-    border-radius: 10px;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-    font-size: 14px;
-}
+
 
 

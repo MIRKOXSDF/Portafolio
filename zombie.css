@@ -289,7 +289,6 @@
     font-weight: bold;
     font-size: 1rem;
     background: #14161b;
-    border-bottom: 1px solid rgba(159, 211, 199, 0.2);
     color: #9fd3c7;
     transition: 0.3s ease;
 }

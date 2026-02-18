@@ -274,7 +274,7 @@
     gap: 40px;
 }
 .code-block pre {
-    font-size: 16px;   /* 👈 prueba con 16 o 17 */
+    font-size: 30px;   /* 👈 prueba con 16 o 17 */
 }
 .code-block {
     max-width: 1100px;

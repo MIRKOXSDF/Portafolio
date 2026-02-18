@@ -275,6 +275,7 @@
 /* Contenedor general */
 .code-block {
     background: #0f1115;
+    margin: -120px 0 0;
     border: 1px solid rgba(159, 211, 199, 0.25);
     border-radius: 18px;
     overflow: hidden;

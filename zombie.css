@@ -267,6 +267,7 @@
 
 .project-content-codigo {
     max-width: 1100px;
+     margin: 0 auto 120px;
     gap: 40px;
     flex-wrap: 40px;
 }

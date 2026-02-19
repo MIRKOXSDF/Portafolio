@@ -82,13 +82,15 @@
 .project-hero h1 {
     margin-bottom: 30px; /* ajusta el valor a tu gusto */
 }
-.resume {
+.back-btn {
     text-decoration: none;
-    color: #9fd3c7;      /* color base */
-    font-weight: bold;
+    color: #9fd3c7;
+    font-weight: 600;
+    background: transparent;
+    transition: 0.3s ease;
 }
 
-.resume:hover {
+.back-btn:hover {
     color: white;
 }
 .project-hero img {

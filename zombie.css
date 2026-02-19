@@ -84,11 +84,10 @@
 }
 .resume {
     text-decoration: none;
-    color: #9fd3c7;
 }
 
 .resume:hover {
-    color: white;
+    color: #9fd3c7;
 }
 .project-hero img {
     width: 100%;

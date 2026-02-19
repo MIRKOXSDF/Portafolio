@@ -84,10 +84,12 @@
 }
 .resume {
     text-decoration: none;
+    color: #9fd3c7;      /* color base */
+    font-weight: bold;
 }
 
 .resume:hover {
-    color: #9fd3c7;
+    color: white;
 }
 .project-hero img {
     width: 100%;

@@ -151,13 +151,12 @@
 }
 
 
-.tools-used ul {
-    list-style: disc;
-    padding-left: 25px;
+.project-section ul {
+    padding-left: 20px;
 }
 
-.tools-used li {
-    display: list-item;  /* en vez de flex */
+.project-section li {
+    margin-bottom: 10px;
 }
 
 

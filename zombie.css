@@ -90,9 +90,7 @@
     transition: 0.3s ease;
 }
 
-.back-btn:hover {
-    color: white;
-}
+
 .project-hero img {
     width: 100%;
     max-width: 900px;

@@ -149,12 +149,7 @@
     line-height: 1.8;
     color: #9fd3c7;
 }
-.project-section-tools-used{
 
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    color: #9fd3c7;
-}
 
 .project-section ul {
     padding-left: 20px;
@@ -172,6 +167,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #9fd3c7;
+
    
 
 }

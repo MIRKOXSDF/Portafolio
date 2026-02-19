@@ -159,7 +159,7 @@
     margin-bottom: 10px;
 }
 .tools-used ul {
-    list-style: none;
+    list-style: disc;
     padding: 0;
 }
 

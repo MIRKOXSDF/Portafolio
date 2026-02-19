@@ -151,17 +151,15 @@
 }
 
 
-.project-section ul {
-    padding-left: 20px;
-}
-
-.project-section li {
-    margin-bottom: 10px;
-}
 .tools-used ul {
     list-style: disc;
-    padding: 0;
+    padding-left: 25px;
 }
+
+.tools-used li {
+    display: list-item;  /* en vez de flex */
+}
+
 
 .tools-used li {
     display: flex;

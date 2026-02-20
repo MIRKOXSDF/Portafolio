@@ -83,13 +83,15 @@
     margin-bottom: 30px; /* ajusta el valor a tu gusto */
 }
 .back-btn {
-    display: inline-block;
+    display: block;
     margin-bottom: 20px;
     color: #9fd3c7;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    text-align: left;
 }
+
 
 .back-btn:hover {
     transform: translateX(-5px);

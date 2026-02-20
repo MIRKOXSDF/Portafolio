@@ -88,6 +88,8 @@
     font-weight: 600;
     background: transparent;
     transition: 0.3s ease;
+    left: 40px;  /* 🔥 aquí lo mueves más a la izquierda */
+
 }
 
 

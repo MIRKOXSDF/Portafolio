@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Zombie in the Village</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Demond.css">
 </head>
 <body>
 
+<div class="lightning-container">
+    <span class="lightning"></span>
+    <span class="lightning"></span>
+    <span class="lightning"></span>
+    <span class="lightning"></span>
+
+
+</div>
 <header class="header">
-    <a href="index.html" class="resume">← Back</a>
+    
+    <div class="header-left">
+        <h1>Mirko Lima</h1>
+        <span>Gameplay Programmer / 3D Artist</span>
+    </div>
+
+  
+
 </header>
 
 <section class="project-hero">
-    <h1>Zombie in the Village</h1>
-    <p>
-        Action shooter game where I worked as Gameplay Programmer.
-        Focused on enemy AI, wave systems and gameplay mechanics.
-    </p>
+    <a href="index.html" class="back-btn">← Back</a>
+
+    <h1>Demond Destroyer</h1>
+   
 
     <img src="Imagenes/Demond.gif" alt="Demond Destroyer gameplay">
 </section>
@@ -26,34 +42,146 @@
 <section class="project-content">
 
     <div class="project-section">
-        <h2>About the Project</h2>
+        <h2>Acerca del Proyecto</h2>
         <p>
-            Zombie in the Village is a top-down shooter developed as a gameplay-focused project.
-            The goal was to create engaging enemy behaviors and scalable combat systems.
+            "Zombie in the Village" fue el primer proyecto que desarrollé durante el  ciclo de la Universidad, donde participé como programador. Se realizó en un 
+             entorno colaborativo, aplicando los fundamentos del desarrollo de videojuegos a partir de una idea base que fue evolucionando progresivamente hasta convertirse en un producto 
+             completamente funcional.
         </p>
     </div>
 
-    <div class="project-section">
-        <h2>My Role</h2>
+    <div class="project-section ">
+        <h2>Informacion del Proyecto</h2>
         <ul>
-            <li>Enemy AI behavior and states</li>
-            <li>Wave and spawn systems</li>
-            <li>Player combat mechanics</li>
-            <li>Score and progression systems</li>
+
+            <li><i class="fa-solid fa-user"></i> Rol: Programador</li>
+            <li><i class="fa-solid fa-users"></i> N° de Integrantes: 4</li>
+            <li><i class="fa-solid fa-clock"></i> Tiempo: 5 meses</li>
+            <li><i class="fa-solid fa-gear"></i> Motor: Unity</li>
+        
+            
         </ul>
+
+       
     </div>
 
-    <div class="project-section">
-        <h2>Tools & Technologies</h2>
+    <div class="project-section  tools-used">
+        <h2>Herramientas Usadas</h2>
         <ul>
-            <li>Unity</li>
-            <li>C#</li>
-            <li>Gameplay Programming</li>
+            <li>Unity <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"></li>
+            <li>C# <img src="Imagenes/Csharp.png"></li>
+            <li>Aseprite <img src="Imagenes/Aseprite.png"></li>
+            <li>GitHub <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"></li>
+            
+
         </ul>
     </div>
+     <div class="project-section ">
+        <h2>Lo que realize</h2>
+        <ul>
+
+            <li> Implementación de movimiento y ataque del jugador</li>
+            <li> Manejo de colliders para hit detection</li>
+            <li> Movimiento de enemigos</li>
+            <li> Sistema de UI y transiciones de escenas</li>
+            <li> Testing</li> 
+
+        
+            
+        </ul>
+
+       
+    </div>
+
+</section>
+<!-- PLAYER COMBAT -->
+<div class="project-sections">
+    <h2>Ataque del jugador</h2>
+
+    <div class="gif-gallery two">
+        <div class="gif-card">
+            <img src="Imagenes/Player_Meele.gif" alt="Combat system 1">
+            <span class="gif-label">Ataque meele</span>
+        </div>
+        <div class="gif-card">
+            <img src="Imagenes/Player_Shoot.gif" alt="Combat system 2">
+            <span class="gif-label">Ataque Disparo</span>
+
+        </div>   
+    </div>  
+</div>
+<div class="project-content-Meele">
+
+      <div class="project-section">
+         <p>
+              Se implementaron dos tipos de ataque: ataque meele utilizando un trinche, y ataque a distancia mediante disparo de balas. Ambos comparten una 
+              base lógica similar en el código, diferenciándose principalmente en el comportamiento del proyectil. 
+              En el caso del ataque melee, se instancia un proyectil con un tiempo de vida muy corto y un alcance limitado, lo que permite simular un impacto cuerpo a cuerpo. Por otro 
+              lado, el ataque a distancia genera un proyectil convencional que al detectar con el enemigo le genera daño.
+         </p>
+       
+      </div>
+</div>
+<div class="project-content-codigo">
+  <details class="code-block">
+      <summary>Click para ver código</summary>
+      <pre><code>
+ void Shoot()
+ {
+     //Ataque a distancia
+     if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
+     {
+         GameObject obj = Instantiate(bulletPrefab);
+         obj.transform.position = transform.position;
+         Vector2 d = obj.GetComponent<bala>().direction;
+         d.x = direction;
+         obj.GetComponent<bala>().direction = d;   
+         ammo--;
+         bulletManager.SetBullet(ammo);
+         audioSource.PlayOneShot(Ataque_distanciaClip);
+     }
+     //Ataque a Meele
+     if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+     {
+         GameObject obj = Instantiate(bulletPrefab2);
+         obj.transform.position = transform.position;
+         Vector2 d = obj.GetComponent<meele>().direction;
+         d.x = direction;
+         obj.GetComponent<meele>().direction = d;
+         audioSource.PlayOneShot(Ataque_MeleeClip);
+     }
+ }
+      </code></pre>
+     </details>
+</div>
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+<section class="project-links"> 
+    <h2>Ver Proyecto</h2> 
+    <div class="links-container"> 
+      <a href="https://github.com/MIRKOXSDF" target="_blank" class="link-card"> 
+        <i class="fa-brands fa-github"></i> <span>View on GitHub</span> </a> <a href="https://mirko06660ogmailcom.itch.io/zombie-village" target="_blank" class="link-card">
+        <i class="fa-brands fa-itch-io"></i> <span>Play on Itch.io</span> </a> 
+    </div>
+
+
+        
+
+
 
 </section>
 
 </body>
 </html>
-

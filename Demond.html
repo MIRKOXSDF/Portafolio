@@ -123,43 +123,66 @@
 
       <div class="project-section">
          <p>
-              Se implementaron dos tipos de ataque: ataque meele utilizando un trinche, y ataque a distancia mediante disparo de balas. Ambos comparten una 
-              base lógica similar en el código, diferenciándose principalmente en el comportamiento del proyectil. 
-              En el caso del ataque melee, se instancia un proyectil con un tiempo de vida muy corto y un alcance limitado, lo que permite simular un impacto cuerpo a cuerpo. Por otro 
-              lado, el ataque a distancia genera un proyectil convencional que al detectar con el enemigo le genera daño.
+             Se implementaron dos tipos de ítems del jugador:
+             El primero es una botella que otorga un objeto de protección (escudo). Este escudo tiene un uso limitado, ya que se consume cada vez que el 
+             jugador lo activa, por lo que debe utilizarse de manera estratégica.
+             El segundo ítem se obtiene al derrotar a un enemigo. Al recogerlo, el jugador adquiere la habilidad de paralizar a todos los enemigos durante
+             un tiempo determinado. La duración de este efecto se muestra en la interfaz, permitiendo al jugador saber cuánto tiempo le queda antes de que los 
+             enemigos vuelvan a moverse.
          </p>
        
       </div>
 </div>
 <div class="project-content-codigo">
   <details class="code-block">
-      <summary>Click para ver código</summary>
+      <summary>Click para ver código Escudo</summary>
       <pre><code>
- void Shoot()
- {
-     //Ataque a distancia
-     if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
-     {
-         GameObject obj = Instantiate(bulletPrefab);
-         obj.transform.position = transform.position;
-         Vector2 d = obj.GetComponent<bala>().direction;
-         d.x = direction;
-         obj.GetComponent<bala>().direction = d;   
-         ammo--;
-         bulletManager.SetBullet(ammo);
-         audioSource.PlayOneShot(Ataque_distanciaClip);
-     }
-     //Ataque a Meele
-     if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
-     {
-         GameObject obj = Instantiate(bulletPrefab2);
-         obj.transform.position = transform.position;
-         Vector2 d = obj.GetComponent<meele>().direction;
-         d.x = direction;
-         obj.GetComponent<meele>().direction = d;
-         audioSource.PlayOneShot(Ataque_MeleeClip);
-     }
+    if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
+    {
+      textMessageItem.SetActive(false);
+      timerStop.enabled = true;
+      InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+      
+
+    }
+    public void TimerBar()
+    {
+
+        timerPower -= Time.deltaTime*DelayTimer;
+        timerStop.fillAmount = timerPower / MaxtimerPower;
+        if (timerPower <= 0)
+        {
+            timerPower = 0;
+            timerStop.enabled = false;
+            CancelInvoke(nameof(TimerBar));
+        }
+
+    }
+
+private void OnTriggerEnter2D(Collider2D collision)
+  {
+      //Item Escudo
+      if (collision.CompareTag("item"))
+      {
+          if (!animUIShield)
+          {
+              animationShieldUI?.Play("animItemShield");
+              animUIShield = true;
+          }
+
+          bottle += 50;
+
+          audioSource.PlayOneShot(soundShieldItem);
+
+          shieldBar?.Actualizar(bottle);
+
+          Destroy(collision.gameObject);
+      }
  }
+
+        
+    
+        
       </code></pre>
      </details>
 </div>

@@ -139,9 +139,14 @@
       <pre><code>
       public class Ninja : MonoBehaviour
       {
+         void Update()
+         {
+            Shield();
+         }
+        
          void Shield()
          {
-           //Activas el escudo con espacio
+           //Activas el escudo con espacio apretando la tecla "ESPACIO"
            if (Input.GetKey(KeyCode.Space) && bottle > 0 )
            {         
               shieldActive.SetActive(true);                              
@@ -157,7 +162,7 @@
          }
          private void OnTriggerEnter2D(Collider2D collision)
          {
-           //Activa Item Escudo
+           //Recoges el item escudo
            if (collision.CompareTag("item"))
            {        
               bottle += 50;
@@ -170,6 +175,7 @@
            }
            if (collision.gameObject.CompareTag("Enemybullet"))
            {
+              //Cuando eres atacado por los disparos de enemigo 2 , tu escudo los detiene o no
               if (shield) return;
 
               lifePlayer -= 5;
@@ -183,12 +189,13 @@
               }
          }    
          void Dead()
-         {   
+         {  //El jugador desaparece "PERDISTES"
             SceneManager.LoadScene("Perdistes");
             Destroy(gameObject);
          }
          private void OnTriggerStay2D(Collider2D collision)
          {
+            //Cuando eres atacado por los enemigos 1,2,3 , tu escudo los detiene o no
             if (shield) return;
 
             float damagePerSecond = 0f;
@@ -230,94 +237,102 @@
       <pre><code> 
       public class Ninja : MonoBehaviour
       {
-          if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
-          {
-            textMessageItem.SetActive(false);
-            timerStop.enabled = true;
-            InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
-          }
-          private void OnTriggerEnter2D(Collider2D collision)
-          {
-            //Item paralizador
+        void Update()
+        {
+            //Activas para utilizar el item paralizador , apretando la tecla "H"
+            if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
+            {
+               textMessageItem.SetActive(false);
+               timerStop.enabled = true;
+               InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+            }         
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            //Recoges el item paralizador
             if (collision.gameObject.CompareTag("item2")&&!activeParalyzer)
             {
-              audioSource.PlayOneShot(soundShieldItem);
-
-              textMessageItem.SetActive(true);
-              activeParalyzer = true;
-              Destroy(collision.gameObject);
+               audioSource.PlayOneShot(soundShieldItem);
+               textMessageItem.SetActive(true);
+               activeParalyzer = true;
+               Destroy(collision.gameObject);
             }
-          }
+        }       
+        public class Enemy1 : MonoBehaviour
+        {
+            void Update()
+            {
+                //Detienes las acciones del enemigo1 cuando activas el item paralizador
+                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+                if (isStopped)
+                {
+                   animator?.SetFloat("runEnemyBas", 0);
+                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
+                }
+                else
+                {
+                   Move(); //Movimiento del enemigo
+                }
+            }     
+        }
+        public class Enemy2 : MonoBehaviour
+        {
+           void Update()
+           {
+                //Detienes las acciones del enemigo2 cuando activas el item paralizador
+                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+                if (isStopped)
+                {
+                   //Cuando se activa el item del paralizador
+                   StopShootEnemy();//Detiene el disparo del enemigo
+                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
+                   animator?.SetFloat("runEnemyBas", 0);
+                }
+                else
+                {
+                   //Cuando no esta activa el item del paralizador
+                   Move(); //Movimiento del enemigo
+                   StartShootEnemy(); //Disparo del enemigo
+                }
+           }
+           
+        }   
+        public class Enemy3 : MonoBehaviour
+        {
+           void Update()
+           {
+                //Detienes las acciones del enemigo3 cuando activas el item paralizador
+                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+                if (isStopped)
+                {
+                   animator?.SetFloat("runEnemy", 0);
+                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
+                }
+                else
+                {
+                   Move(); //Movimiento del enemigo          
+                }
+           }     
+        }
+        public class EnemySpawn : MonoBehaviour
+        {
+           void Update()
+           {
+                //Detienes las acciones del enemigo spawn cuando activas el item paralizador
+                if(player.gameObject.GetComponent<Ninja>().timerStop.enabled==true)
+                {  
+                   anim.SetBool("idle", true);
+                }
+                else
+                {
+                   Spawn();//Spawn enemigos
+                   anim.SetBool("idle", false);
+                }
+           }        
+        }
       }
-
-      
-      public class Enemy1 : MonoBehaviour
-      {
-          bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-
-          if (isStopped)
-          {
-              animator?.SetFloat("runEnemyBas", 0);
-              if (path != null) path.canMove = false;
-          }
-          else
-          {
-              Move();   
-          }
-
-      }
-      public class Enemy2 : MonoBehaviour
-      {
-           bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-
-           if (isStopped)
-           {
-              //Cuando se activa el item del paralizador
-              StopShootEnemy();
-              if (path != null) path.canMove = false;
-              animator?.SetFloat("runEnemyBas", 0);
-           }
-           else
-           {
-              //Cuando no esta activa el item del paralizador
-              Move();
-              StartShootEnemy();
-           }
-        
-      } 
-      
-      public class Enemy3 : MonoBehaviour
-      {
-           bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-
-           if (isStopped)
-           {
-               animator?.SetFloat("runEnemy", 0);
-               if (path != null) path.canMove = false;
-           }
-           else
-           {
-               Move();          
-           }
-      }
-      public class EnemySpawn : MonoBehaviour
-      {
-           if(player.gameObject.GetComponent<Ninja>().timerStop.enabled==true)
-           {  
-               anim.SetBool("idle", true);
-           }
-           else
-           {
-               Spawn();
-               anim.SetBool("idle", false);
-
-           }
-      }
-
-
-     
-
-
         
      </code></pre>
      </details>

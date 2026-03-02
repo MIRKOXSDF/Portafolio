@@ -135,55 +135,188 @@
 </div>
 <div class="project-content-codigo">
   <details class="code-block">
-      <summary>Click para ver código Escudo</summary>
+      <summary>Codigo Escudo</summary>
       <pre><code>
-    if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
-    {
-      textMessageItem.SetActive(false);
-      timerStop.enabled = true;
-      InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
-      
-
-    }
-    public void TimerBar()
-    {
-
-        timerPower -= Time.deltaTime*DelayTimer;
-        timerStop.fillAmount = timerPower / MaxtimerPower;
-        if (timerPower <= 0)
-        {
-            timerPower = 0;
-            timerStop.enabled = false;
-            CancelInvoke(nameof(TimerBar));
-        }
-
-    }
-
-private void OnTriggerEnter2D(Collider2D collision)
-  {
-      //Item Escudo
-      if (collision.CompareTag("item"))
+      public class Ninja : MonoBehaviour
       {
-          if (!animUIShield)
+         void Shield()
+         {
+           //Activas el escudo con espacio
+           if (Input.GetKey(KeyCode.Space) && bottle > 0 )
+           {         
+              shieldActive.SetActive(true);                              
+              shield = true;
+              bottle -= 50 * Time.deltaTime / 13f;
+              shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle);        
+           }
+           else if(Input.GetKeyUp(KeyCode.Space))
+           {
+              shieldActive.SetActive(false);
+              shield = false;
+           }
+         }
+         private void OnTriggerEnter2D(Collider2D collision)
+         {
+           //Activa Item Escudo
+           if (collision.CompareTag("item"))
+           {        
+              bottle += 50;
+
+              audioSource.PlayOneShot(soundShieldItem);
+
+              shieldBar?.UpdateSliderShield(bottle);
+
+              Destroy(collision.gameObject);
+           }
+           if (collision.gameObject.CompareTag("Enemybullet"))
+           {
+              if (shield) return;
+
+              lifePlayer -= 5;
+              sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
+              if (lifePlayer <= 0)
+              {
+                 isDeadPlayer = true;
+                 animator?.SetBool("muerteplayer", isDeadPlayer);
+                 velocityPlayer = 0;
+                 Invoke("Dead", 2);
+              }
+         }    
+         void Dead()
+         {   
+            SceneManager.LoadScene("Perdistes");
+            Destroy(gameObject);
+         }
+         private void OnTriggerStay2D(Collider2D collision)
+         {
+            if (shield) return;
+
+            float damagePerSecond = 0f;
+
+            switch (collision.tag)
+            {
+              case "enemy":
+                damagePerSecond = 4f;
+                break;
+
+              case "enemy2":
+                damagePerSecond = 5f;
+                break;
+
+              case "enemy3":
+                damagePerSecond = 7f; 
+                break;
+            }
+            if (damagePerSecond > 0)
+            {
+               lifePlayer -= Time.deltaTime * damagePerSecond;
+               sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
+
+               if (lifePlayer <= 0)
+               {
+                 animator?.SetBool("muerteplayer", isDeadPlayer);
+                 velocityPlayer = 0; 
+                 Invoke("Dead", 2); 
+               }
+            }
+         }
+      }
+   
+      </code></pre>
+      <summary>Codigo Paralizador</summary>
+      <pre><code> 
+      public class Ninja : MonoBehaviour
+      {
+          if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
           {
-              animationShieldUI?.Play("animItemShield");
-              animUIShield = true;
+            textMessageItem.SetActive(false);
+            timerStop.enabled = true;
+            InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+          }
+          private void OnTriggerEnter2D(Collider2D collision)
+          {
+            //Item paralizador
+            if (collision.gameObject.CompareTag("item2")&&!activeParalyzer)
+            {
+              audioSource.PlayOneShot(soundShieldItem);
+
+              textMessageItem.SetActive(true);
+              activeParalyzer = true;
+              Destroy(collision.gameObject);
+            }
+          }
+      }
+
+      
+      public class Enemy1 : MonoBehaviour
+      {
+          bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+          if (isStopped)
+          {
+              animator?.SetFloat("runEnemyBas", 0);
+              if (path != null) path.canMove = false;
+          }
+          else
+          {
+              Move();   
           }
 
-          bottle += 50;
-
-          audioSource.PlayOneShot(soundShieldItem);
-
-          shieldBar?.Actualizar(bottle);
-
-          Destroy(collision.gameObject);
       }
- }
+      public class Enemy2 : MonoBehaviour
+      {
+           bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+           if (isStopped)
+           {
+              //Cuando se activa el item del paralizador
+              StopShootEnemy();
+              if (path != null) path.canMove = false;
+              animator?.SetFloat("runEnemyBas", 0);
+           }
+           else
+           {
+              //Cuando no esta activa el item del paralizador
+              Move();
+              StartShootEnemy();
+           }
+        
+      } 
+      
+      public class Enemy3 : MonoBehaviour
+      {
+           bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+           if (isStopped)
+           {
+               animator?.SetFloat("runEnemy", 0);
+               if (path != null) path.canMove = false;
+           }
+           else
+           {
+               Move();          
+           }
+      }
+      public class EnemySpawn : MonoBehaviour
+      {
+           if(player.gameObject.GetComponent<Ninja>().timerStop.enabled==true)
+           {  
+               anim.SetBool("idle", true);
+           }
+           else
+           {
+               Spawn();
+               anim.SetBool("idle", false);
+
+           }
+      }
+
+
+     
+
 
         
-    
-        
-      </code></pre>
+     </code></pre>
      </details>
 </div>
 

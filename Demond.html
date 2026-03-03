@@ -138,6 +138,11 @@
   <details class="code-block">
       <summary>Codigo Escudo</summary>
       <pre><code class="language-csharp">
+      using System;
+      using UnityEngine;
+      using UnityEngine.SceneManagement;
+      using UnityEngine.UI;
+
       public class Ninja : MonoBehaviour
       {
          public float bottle;
@@ -247,8 +252,13 @@
       <details class="code-block">
       <summary>Codigo Paralizador</summary>
       <pre><code class="language-csharp"> 
-      public class Ninja : MonoBehaviour
-      {
+    using System;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.UI;
+
+    public class Ninja : MonoBehaviour
+    {
         private bool activeParalyzer;
         private GameObject textMessageItem;
         public Image timerStop;
@@ -277,26 +287,48 @@
                activeParalyzer = true;
                Destroy(collision.gameObject);
             }
-        }       
-        public class Enemy1 : MonoBehaviour
+        }   
+    } 
+       
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using Pathfinding;
+    using System.IO;
+    using Unity.VisualScripting;
+    using UnityEngine.UI;
+
+    public class Enemy1 : MonoBehaviour
+    {
+        void Update()
         {
-            void Update()
+            //Detienes las acciones del enemigo1 cuando activas el item paralizador
+            bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+            if (isStopped)
             {
-                //Detienes las acciones del enemigo1 cuando activas el item paralizador
-                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-                if (isStopped)
-                {
-                   animator?.SetFloat("runEnemyBas", 0);
-                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
-                }
-                else
-                {
-                   Move(); //Movimiento del enemigo
-                }
-            }     
-        }
-        public class Enemy2 : MonoBehaviour
-        {
+                animator?.SetFloat("runEnemyBas", 0);
+                if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
+            }
+            else
+            {
+                Move(); //Movimiento del enemigo
+            }
+        }     
+    }
+
+
+    using Pathfinding;
+    using System.Collections;
+    using System.Collections.Generic;
+    using Unity.VisualScripting;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.UI;
+
+    public class Enemy2 : MonoBehaviour
+    {
            void Update()
            {
                 //Detienes las acciones del enemigo2 cuando activas el item paralizador
@@ -317,9 +349,18 @@
                 }
            }
            
-        }   
-        public class Enemy3 : MonoBehaviour
-        {
+    }   
+
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using Pathfinding;
+    using UnityEngine.UI;
+
+    public class Enemy3 : MonoBehaviour
+    {
            void Update()
            {
                 //Detienes las acciones del enemigo3 cuando activas el item paralizador
@@ -335,9 +376,16 @@
                    Move(); //Movimiento del enemigo          
                 }
            }     
-        }
-        public class EnemySpawn : MonoBehaviour
-        {
+    }
+
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.UI;
+
+    public class EnemySpawn : MonoBehaviour
+    {
            void Update()
            {
                 //Detienes las acciones del enemigo spawn cuando activas el item paralizador
@@ -352,7 +400,7 @@
                 }
            }        
         }
-      }
+    }
         
      </code></pre>
      </details>

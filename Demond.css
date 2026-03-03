@@ -284,79 +284,15 @@
     letter-spacing: 1px;
 }
 
-/* ===============================
-   BLOQUE DE CODIGO ESTILO PRO
-================================ */
-
-.project-content-codigo {
-    max-width: 1100px;
-    margin: 60px auto;
-}
-
-/* Contenedor general */
-.code-block {
-    background: linear-gradient(145deg, #0c0f16, #0a0d14);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 255, 170, 0.08);
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.7),
-        0 0 25px rgba(0, 255, 170, 0.05);
-    margin-bottom: 50px;
-    transition: 0.3s ease;
-}
-
-.code-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 25px 70px rgba(0, 0, 0, 0.8),
-        0 0 35px rgba(0, 255, 170, 0.08);
-}
-
-/* Header desplegable */
-.code-block summary {
-    padding: 18px 25px;
-    cursor: pointer;
-    font-weight: 600;
-    letter-spacing: 1px;
-    background: #111622;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    color: #00ffaa;
-    font-size: 0.95rem;
-    transition: 0.3s;
-}
-
-.code-block summary:hover {
-    background: #151b2b;
-}
-
-/* Código */
-.code-block pre {
-    margin: 0;
-    padding: 35px;
-    overflow-x: auto;
-    position: relative;
-}
-
-/* Texto */
-.code-block code {
-    font-family: 'Consolas', monospace;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #d4d4d4; /* gris profesional */
-    white-space: pre;
-    display: block;
-}
-
-/* Scroll personalizado */
-.code-block pre::-webkit-scrollbar {
-    height: 8px;
-}
-
-.code-block pre::-webkit-scrollbar-thumb {
-    background: rgba(0,255,170,0.3);
-    border-radius: 4px;
-}
+/* ---------------- CODIGO ESTILO PORTFOLIO ---------------- */ 
+.project-content-codigo { max-width: 1100px; margin: 0 auto 10px; margin-top: -50px; gap: 40px; flex-wrap: 40px; } 
+/* Header clickable */ 
+.code-block summary { padding: 18px 25px; cursor: pointer; font-weight: bold; font-size: 1rem; color: #9fd3c7; transition: 0.3s ease; } 
+/* Contenedor general */ 
+.code-block { border-radius: 18px; overflow: hidden; } 
+/* Código */ 
+.code-block pre { margin: 0; padding: 30px; overflow-x: auto; background: #0f1115; }
+.code-block code { font-family: "Courier New", monospace; font-size: 15px; line-height: 1.7; color: #9fd3c7; white-space: pre; display: block; }
 
 
 

@@ -285,14 +285,41 @@
 }
 
 /* ---------------- CODIGO ESTILO PORTFOLIO ---------------- */ 
-.project-content-codigo { max-width: 1100px; margin: 0 auto 10px; margin-top: -50px; gap: 40px; flex-wrap: 40px; } 
+.project-content-codigo { 
+max-width: 1100px; 
+margin: 0 auto 10px; 
+margin-top: -50px; 
+gap: 40px; 
+flex-wrap: 40px; 
+} 
+
 /* Header clickable */ 
-.code-block summary { padding: 18px 25px; cursor: pointer; font-weight: bold; font-size: 1rem; color: #9fd3c7; transition: 0.3s ease; } 
+.code-block summary {
+padding: 18px 25px; 
+cursor: pointer; 
+font-weight: bold; 
+font-size: 1rem; color: #9fd3c7; 
+transition: 0.3s ease; 
+} 
 /* Contenedor general */ 
-.code-block { border-radius: 18px; overflow: hidden; } 
+.code-block { 
+border-radius: 18px; 
+overflow: hidden; 
+} 
 /* Código */ 
-.code-block pre { margin: 0; padding: 30px; overflow-x: auto; background: #0f1115; }
-.code-block code { font-family: "Courier New", monospace; font-size: 15px; line-height: 1.7; color: #9fd3c7; white-space: pre; display: block; }
+.code-block pre { 
+margin: 0; 
+padding: 30px; 
+overflow-x: auto; 
+background: #0f1115; 
+}
+.code-block code { 
+font-family: "Courier New", monospace; 
+font-size: 15px; 
+line-height: 1.7; 
+white-space: pre; 
+display: block; 
+}
 
 
 

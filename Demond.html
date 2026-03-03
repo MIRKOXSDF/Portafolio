@@ -140,6 +140,17 @@
       <pre><code class="language-csharp">
       public class Ninja : MonoBehaviour
       {
+         public float bottle;
+         public float velocityPlayer;
+         public GameObject shieldActive;
+         public bool shield;
+         public SliderShieldUI shieldBar;
+         public AudioSource audioSource;
+         public float lifePlayer;
+         public SliderPlayerLife sliderPlayerLife;
+         public bool isDeadPlayer;
+         public Animator animator;
+
          void Update()
          {
             Shield();
@@ -235,9 +246,17 @@
 
       <details class="code-block">
       <summary>Codigo Paralizador</summary>
-      <pre><code> 
+      <pre><code class="language-csharp"> 
       public class Ninja : MonoBehaviour
       {
+        private bool activeParalyzer;
+        private GameObject textMessageItem;
+        public Image timerStop;
+        public AudioSource audioSource;
+        public Animator animator;
+        public AIPath path;
+
+
         void Update()
         {
             //Activas para utilizar el item paralizador , apretando la tecla "H"
@@ -324,12 +343,12 @@
                 //Detienes las acciones del enemigo spawn cuando activas el item paralizador
                 if(player.gameObject.GetComponent<Ninja>().timerStop.enabled==true)
                 {  
-                   anim.SetBool("idle", true);
+                   animator.SetBool("idle", true);
                 }
                 else
                 {
                    Spawn();//Spawn enemigos
-                   anim.SetBool("idle", false);
+                   animator.SetBool("idle", false);
                 }
            }        
         }

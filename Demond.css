@@ -305,13 +305,14 @@ transition: 0.3s ease;
 .code-block { 
 border-radius: 18px; 
 overflow: hidden; 
+border: 1px solid #1dbf73;
 } 
 /* Código */ 
 .code-block pre { 
 margin: 0; 
 padding: 30px; 
 overflow-x: auto; 
-background: #0f1115; 
+background: #0e0e0e; 
 }
 .code-block code { 
 font-family: "Courier New", monospace; 

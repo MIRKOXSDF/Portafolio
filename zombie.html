@@ -134,31 +134,48 @@
   <details class="code-block">
       <summary>Click para ver código</summary>
       <pre><code class="language-csharp">
- void Shoot()
- {
-     //Ataque a distancia
-     if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
-     {
-         GameObject obj = Instantiate(bulletPrefab);
-         obj.transform.position = transform.position;
-         Vector2 d = obj.GetComponent<bala>().direction;
-         d.x = direction;
-         obj.GetComponent<bala>().direction = d;   
-         ammo--;
-         bulletManager.SetBullet(ammo);
-         audioSource.PlayOneShot(Ataque_distanciaClip);
-     }
-     //Ataque a Meele
-     if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
-     {
-         GameObject obj = Instantiate(bulletPrefab2);
-         obj.transform.position = transform.position;
-         Vector2 d = obj.GetComponent<meele>().direction;
-         d.x = direction;
-         obj.GetComponent<meele>().direction = d;
-         audioSource.PlayOneShot(Ataque_MeleeClip);
-     }
- }
+        public class Aldeano : MonoBehaviour
+        {
+            public int ammo;
+            public GameObject bulletPrefab;
+            public GameObject bulletPrefab2;
+            public BulletManager bulletManager;
+            public AudioSource audioSource;
+            public AudioClip soundShootPlayer;
+
+            void Update()
+            {
+                Shoot();
+            }
+            void Shoot()
+            {
+                //Ataque a distancia
+                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
+                {
+                    GameObject obj = Instantiate(bulletPrefab);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Bullet>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Bullet>().direction = d;   
+                    ammo--;
+                    bulletManager.SetBullet(ammo);
+                    audioSource.PlayOneShot(soundShootPlayer);
+                } 
+                //Ataque a Meele
+                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+                {
+                    GameObject obj = Instantiate(bulletPrefab2);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Meele>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Meele>().direction = d;
+                    audioSource.PlayOneShot(soundMeelePlayer);
+                }
+            }
+        }
+
+      
+
       </code></pre>
      </details>
 </div>

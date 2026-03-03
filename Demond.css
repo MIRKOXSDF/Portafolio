@@ -284,47 +284,57 @@
     letter-spacing: 1px;
 }
 
-/* ---------------- CODIGO ESTILO PORTFOLIO ---------------- */
+/* ---------------- BLOQUE DE CÓDIGO ESTILO PROFESIONAL ---------------- */
 
 .project-content-codigo {
     max-width: 1100px;
-    margin: 0 auto 10px;
-    margin-top: -50px;
-    gap: 40px;
-    flex-wrap: 40px;
+    margin: 0 auto 40px;
 }
+
+/* Contenedor general */
+.code-block {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    margin-bottom: 40px;
+    background: #0b0d12;
+}
+
 /* Header clickable */
 .code-block summary {
     padding: 18px 25px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 1rem;
-    color: #9fd3c7;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    background: #11151c;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #ffffffcc;
     transition: 0.3s ease;
 }
-/* Contenedor general */
-.code-block {
-    
-    border-radius: 18px;
-    overflow: hidden;
+
+.code-block summary:hover {
+    background: #151a22;
 }
+
 /* Código */
 .code-block pre {
     margin: 0;
     padding: 30px;
     overflow-x: auto;
-    background: #0f1115;
+    background: #0b0d12;
 }
 
+/* Texto del código */
 .code-block code {
-    font-family: "Courier New", monospace;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #9fd3c7;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #d4d4d4; /* gris claro profesional */
     white-space: pre;
     display: block;
 }
-
 
 
 

@@ -303,10 +303,17 @@ transition: 0.3s ease;
 } 
 /* Contenedor general */ 
 .code-block { 
-border-radius: 18px; 
-overflow: hidden; 
-border: 1px solid #9fd3c7;
+border-radius: 16px;
+overflow: hidden;
 } 
+.code-block pre {
+margin: 0;
+padding: 30px;
+overflow-x: auto;
+background: #0d1117;
+border: 1px solid #1dbf73; /* ahora el borde está solo en el recuadro */
+border-radius: 12px;
+}
 /* Código */ 
 .code-block pre { 
 margin: 0; 

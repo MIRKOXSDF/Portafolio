@@ -120,12 +120,12 @@
 </div>
 <div class="project-content-Meele">
 
-      <div class="project-section">
+     <div class="project-section">
+        <h2>Ataque Meele</h2>
          <p>
-              Se implementaron dos tipos de ataque: ataque meele utilizando un trinche, y ataque a distancia mediante disparo de balas. Ambos comparten una 
-              base lógica similar en el código, diferenciándose principalmente en el comportamiento del proyectil. 
-              En el caso del ataque melee, se instancia un proyectil con un tiempo de vida muy corto y un alcance limitado, lo que permite simular un impacto cuerpo a cuerpo. Por otro 
-              lado, el ataque a distancia genera un proyectil convencional que al detectar con el enemigo le genera daño.
+             Se implementó un ataque cuerpo a cuerpo utilizando un trinche. Este sistema 
+             instancia un proyectil con un tiempo de vida corto y un alcance limitado, lo 
+             que permite simular el impacto cercano contra los enemigos.
          </p>
        
       </div>
@@ -209,7 +209,18 @@
 
       </code></pre>
       </details>
+<div class="project-content-Meele">
 
+     <div class="project-section">
+        <h2>Ataque Disparo</h2>
+         <p>
+            Se desarrolló un sistema de disparo que genera proyectiles. Al colisionar con un 
+            enemigo, el proyectil detecta el impacto y aplica daño. Este ataque permite al 
+            jugador interactuar con enemigos a mayor distancia.
+         </p>
+       
+      </div>
+</div>
       <details class="code-block">
       <summary>Codigo Ataque Disparo</summary>
       <pre><code class="language-csharp">

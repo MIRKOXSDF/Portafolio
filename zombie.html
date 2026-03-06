@@ -82,16 +82,18 @@
     </div>
 
      <div class="project-section ">
-        <h2>Mi responsabilidad</h2>
+       <h2>Mi responsabilidad</h2>
         <ul>
 
-            <li>Implementacion Movimiento y ataques del jugador .</li>   
-            <li>Manejo de colliders para hit detection <code>OnTrigger2D</code></li>
-            <li>Programación del movimiento de enemigos con patrulla y cambio de dirección temporizado.</li>
-            <li>Implementacion UI interactiva y transiciones de escena.</li>
-            <li>Realizacion de Testing</li> 
-      
-        </ul>  
+           <li>Implementación del movimiento y ataques del jugador (<code>Input</code>,<code>Rigidbody2D.velocity</code> ,<code>Instantiate</code>).</li>   
+           <li>Manejo de colliders para hit detection (<code>OnTriggerEnter2D</code>).</li>
+           <li>Programación del disparo del enemigo "ZombieLady" (<code>Instantiate</code>, <code>Vector2.Distance</code>).</li>
+           <li>Programación del movimiento de enemigos con patrulla y cambio de dirección temporizado (<code>Rigidbody2D.velocity</code>).</li>
+           <li>Implementación de UI interactiva y transiciones de escena (<code>SceneManager</code>).</li>
+           <li>Implementacion musica y sonidos(<code>AudioSource</code>, <code>AudioSource.playOneShot</code>v)</li>
+           <li>Realización de testing y ajustes de gameplay.</li> 
+
+         </ul>
     </div>
 
 </section>
@@ -118,7 +120,7 @@
         <h2>Ataque Disparo</h2>
          <p>
             Se desarrolló un sistema de disparo que genera proyectiles. Al colisionar con un 
-            enemigo, el proyectil detecta el impacto y aplica daño. Este ataque permite al 
+            enemigo, el proyectil detecta el impacto y le aplica daño. Este ataque permite al 
             jugador defenderse a mayor distancia.
          </p>
        

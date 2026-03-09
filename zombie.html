@@ -81,20 +81,61 @@
         </p>
     </div>
 
-     <div class="project-section ">
-       <h2>Mi responsabilidad</h2>
-        <ul>
+<div class="project-section">
+ <h2>Mi responsabilidad</h2>
+  <ul>
+    <li>
+      <details class="code-block">
+         
+       <summary>Player movement</summary>
+        <code> Movimiento del jugador mediante inputs de teclado usando Rigidbody2D.</code>
+     </details>
+   </li>
 
-           <li>Implementación del movimiento y ataques del jugador <code>Input /</code> <code>Rigidbody2D.velocity /</code> <code>Instantiate .</code></li>   
-           <li>Gestionar el sistema de colisiones y daño <code>OnTriggerEnter2D .</code></li>
-           <li>Programación del disparo del enemigo "ZombieLady" <code>Instantiate /</code> <code>Vector2.Distance .</code></li>
-           <li>Programación del movimiento de enemigos con patrulla y cambio de dirección temporizado <code>Rigidbody2D.velocity .</code></li>
-           <li>Implementación de UI interactiva y transiciones de escena <code>SceneManager .</code></li>
-           <li>Implementacion musica y sonidos <code>AudioSource .</code>/li>
-           <li>Realización de testing y ajustes de gameplay.</li> 
+    <li>
+      <details class="code-block">
+        <summary>Player attack system</summary>
+        <code> Ataque melee y disparo utilizando inputs de teclado e Instantiate para crear proyectiles.</code> 
+      </details>
+    </li>
 
-         </ul>
-    </div>
+    <li>
+      <details class="code-block">
+         <summary>Player item system</summary>
+          <code> Sistema de ítems como escudo y paralizador.</code> 
+      </details>
+    </li>
+
+    <li>
+      <details class="code-block">
+          <summary>Enemy AI movement</summary>
+           <code> Enemigos que persiguen al jugador usando lógica de pathfinding.</code> 
+      </details>
+    </li>
+
+     <li>
+      <details class="code-block">
+          <summary>Enemy2 shooting system</summary>
+           <code> Uso de Vector2.Distance para detectar la distancia con el jugador y disparar proyectiles utilizando Instantiate.</code> 
+      </details>
+    </li>
+
+     <li>
+      <details class="code-block">
+          <summary>Enemy3 explotion system</summary>
+           <code>Uso de Vector2.Distance para detectar proximidad con el jugador, colisionar Ontrigger2D y generar una explosión que reduce su vida.</code> 
+      </details>
+    </li>
+
+    <li>
+      <details class="code-block">
+          <summary>Spawn Enemy system</summary>
+           <code> Uso de Vector2.Distance para detectar la distancia con el jugador y poder spawnear con Instantiate , en cierto tiempo.</code> 
+      </details>
+    </li>
+ </ul>
+</div>
+
 
 </section>
 <!-- PLAYER COMBAT -->

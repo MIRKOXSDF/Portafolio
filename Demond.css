@@ -325,7 +325,7 @@ background: #0e0e0e;
 font-family: "Courier New", monospace; 
 font-size: 15px; 
 line-height: 1.7; 
-white-space: pre; 
+white-space: normal; 
 display: block; 
 }
 

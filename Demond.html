@@ -93,14 +93,15 @@
     <li>
       <details class="code-block">
         <summary>Player attack system</summary>
-        <code> Ataque melee y disparo utilizando inputs de teclado e Instantiate para crear proyectiles.</code> 
+        <code> Ataque a distancia con shurikens utilizando inputs de teclado e Instantiate para generar proyectiles con Rigidbody2D.
+        </code> 
       </details>
     </li>
 
     <li>
       <details class="code-block">
          <summary>Player item system</summary>
-          <code> Sistema de ítems como escudo y paralizador.</code> 
+          <code>Sistema de ítems como escudo y paralizador activados mediante colisiones con OnTrigger2D y activado con inputs de teclado</code> 
       </details>
     </li>
 
@@ -114,26 +115,27 @@
      <li>
       <details class="code-block">
           <summary>Enemy2 shooting system</summary>
-           <code> Uso de Vector2.Distance para detectar la distancia con el jugador y disparar proyectiles utilizando Instantiate.</code> 
+           <code> Ataque a distancia del enemigo detectando al jugador con Vector2.Distance y disparando proyectiles con Instantiate.</code> 
       </details>
     </li>
 
      <li>
       <details class="code-block">
           <summary>Enemy3 explotion system</summary>
-           <code>Uso de Vector2.Distance para detectar proximidad con el jugador, colisionar Ontrigger2D y generar una explosión que reduce su vida.</code> 
+           <code>El Enemigo detecta la proximidad con Vector2.Distance con el jugador y genera daño mediante colisión con OnTrigger2D.
+          </code> 
       </details>
     </li>
 
     <li>
       <details class="code-block">
           <summary>Spawn Enemy system</summary>
-           <code> Uso de Vector2.Distance para detectar la distancia con el jugador y poder spawnear con Instantiate , en cierto tiempo.</code> 
+           <code> Generación de enemigos utilizando Instantiate cuando el jugador se encuentra dentro de cierta distancia con Vector2.Distance.</code> 
       </details>
     </li>
    
 
- </ul>
+</ul>
 
 </div>
 

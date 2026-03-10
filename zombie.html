@@ -82,58 +82,65 @@
     </div>
 
 <div class="project-section">
- <h2>Mi responsabilidad</h2>
-  <ul>
-    <li>
-      <details class="code-block">
-         
-       <summary>Player movement</summary>
-        <code> Movimiento del jugador mediante inputs de teclado usando Rigidbody2D.</code>
-     </details>
-   </li>
+<h2>Mi responsabilidad</h2>
+<ul>
 
-    <li>
-      <details class="code-block">
-        <summary>Player attack system</summary>
-        <code> Ataque melee y disparo utilizando inputs de teclado e Instantiate para crear proyectiles.</code> 
-      </details>
-    </li>
+<li>
+<details class="code-block">
+<summary>Player movement</summary>
+<code>Implementación del sistema de movimiento del jugador utilizando inputs de teclado y 
+    físicas mediante Rigidbody2D.</code>
+</details>
+</li>
 
-    <li>
-      <details class="code-block">
-         <summary>Player item system</summary>
-          <code> Sistema de ítems como escudo y paralizador.</code> 
-      </details>
-    </li>
+<li>
+<details class="code-block">
+<summary>Player attack system</summary>
+<code>Sistema de ataque a distancia con shurikens activado mediante inputs de teclado, generando 
+    proyectiles con Instantiate y física usando Rigidbody2D.</code>
+</details>
+</li>
 
-    <li>
-      <details class="code-block">
-          <summary>Enemy AI movement</summary>
-           <code> Enemigos que persiguen al jugador usando lógica de pathfinding.</code> 
-      </details>
-    </li>
+<li>
+<details class="code-block">
+<summary>Player item system</summary>
+<code>Desarrollo de un sistema de ítems que permite al jugador recoger habilidades como escudo y 
+     paralizador mediante colisiones con OnTrigger2D y activarlas con inputs de teclado.</code>
+</details>
+</li>
 
-     <li>
-      <details class="code-block">
-          <summary>Enemy2 shooting system</summary>
-           <code> Uso de Vector2.Distance para detectar la distancia con el jugador y disparar proyectiles utilizando Instantiate.</code> 
-      </details>
-    </li>
+<li>
+<details class="code-block">
+<summary>Enemy AI movement</summary>
+<code>Programación del movimiento de enemigos que persiguen al jugador utilizando lógica de pathfinding.</code>
+</details>
+</li>
 
-     <li>
-      <details class="code-block">
-          <summary>Enemy3 explotion system</summary>
-           <code>Uso de Vector2.Distance para detectar proximidad con el jugador, colisionar Ontrigger2D y generar una explosión que reduce su vida.</code> 
-      </details>
-    </li>
+<li>
+<details class="code-block">
+<summary>Enemy2 shooting system</summary>
+<code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance y genera 
+    proyectiles utilizando Instantiate con Rigidbody2D para la fisica.</code>
+</details>
+</li>
 
-    <li>
-      <details class="code-block">
-          <summary>Spawn Enemy system</summary>
-           <code> Uso de Vector2.Distance para detectar la distancia con el jugador y poder spawnear con Instantiate , en cierto tiempo.</code> 
-      </details>
-    </li>
- </ul>
+<li>
+<details class="code-block">
+<summary>Enemy3 explosion system</summary>
+<code>Implementación de enemigo explosivo que detecta la proximidad del jugador mediante Vector2.Distance y 
+    genera una explosión al colisionar usando OnTrigger2D.</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>Spawn Enemy system</summary>
+<code>Sistema de generación de enemigos utilizando Instantiate cuando el jugador se encuentra dentro de una 
+    distancia determinada detectada con Vector2.Distance.</code>
+</details>
+</li>
+
+</ul>
 </div>
 
 

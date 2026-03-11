@@ -87,7 +87,7 @@
 <details class="code-block">
 <summary>Player movement</summary>
 <code>Implementación del sistema de movimiento del jugador utilizando inputs de teclado y 
-    físicas mediante Rigidbody2D.</code>
+     Rigidbody2D.velocity.</code>
 </details>
 </li>
 
@@ -95,15 +95,15 @@
 <details class="code-block">
 <summary>Player attack system</summary>
 <code>Sistema de ataque a distancia con shurikens activado mediante inputs de teclado, generando 
-    proyectiles con Instantiate y física usando Rigidbody2D.</code>
+    proyectiles con Instantiate y utilizando Rigidbody2D.velocity para su desplazamiento.</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>Items system</summary>
-<code>Desarrollo de un sistema de ítems que permite al jugador recoger habilidades como escudo y 
-     paralizador mediante colisiones con OnTrigger2D y activarlas con inputs de teclado.</code>
+<code>Sistema de ítems que permite al jugador recoger habilidades utilizando colision, como el escudo 
+    y paralización, y activarlas mediante inputs de teclado.</code>
 </details>
 </li>
 
@@ -118,7 +118,7 @@
 <details class="code-block">
 <summary>Enemy2 shooting system</summary>
 <code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance y genera 
-    proyectiles utilizando Instantiate con Rigidbody2D para la fisica.</code>
+    proyectiles utilizando Instantiate con Rigidbody2D.velocity para su desplazamiento.</code>
 </details>
 </li>
 
@@ -126,7 +126,7 @@
 <details class="code-block">
 <summary>Enemy3 explosion system</summary>
 <code>Implementación de enemigo explosivo que detecta la proximidad del jugador mediante Vector2.Distance y 
-    genera una explosión al colisionar usando OnTrigger2D.</code>
+    genera una explosión al colisionar con el jugador.</code>
 </details>
 </li>
 

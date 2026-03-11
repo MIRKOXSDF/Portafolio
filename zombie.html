@@ -88,48 +88,53 @@
 <li>
 <details class="code-block">
 <summary>Player movement</summary>
-<code>Implementación del sistema de movimiento del jugador utilizando inputs de teclado y 
-    físicas mediante Rigidbody2D.</code>
+<code>
+Movimiento del jugador con Rigidbody2D para la fisica e inputs para el control.
+
+</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>Player attack system</summary>
-<code>Sistema de combate con ataques melee y disparos, activados mediante inputs de teclado,
-   usando Instantiate para generar proyectiles y Rigidbody2D para su física.</code>
+Sistema de ataque del jugador que combina combate cuerpo a cuerpo y disparo de 
+  proyectiles, utilizando inputs de teclado para el control y Instantiate junto con
+  Rigidbody2D para la generación y movimiento de las balas.
+
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>Enemy movement</summary>
-<code>Movimiento de enemigos que patrullan cambiando de dirección después de cierto tiempo,
-   utilizando Rigidbody2D para el desplazamiento.</code>
+<code>Enemigos que patrullan de manera lateral cambiando de dirección después de cierto 
+    tiempo, utilizando Rigidbody2D para su desplazamiento.</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>EnemyLady shooting system</summary>
-<code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance y genera 
-    proyectiles utilizando Instantiate con Rigidbody2D para la fisica.</code>
+<code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance
+   y genera proyectiles usando Instantiate, aplicando Rigidbody2D.velocity para su desplazamiento.
+</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>Items system</summary>
-<code>Sistema de recolección de balas y monedas mediante OnTrigger2D; las balas recargan munición y las 
-    monedas permiten progresar.</code>
+<code>Sistema de recolección de ítems como munición y monedas mediante colision. 
+    Las balas recargan la munición del jugador y las monedas permiten progresar en el nivel.</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>UI system</summary>
-<code>Sistema de recolección de balas y monedas mediante OnTrigger2D; las balas recargan la munición del 
-    jugador y las monedas se utilizan para progresar en el juego.</code>
+<code>Implementación de la interfaz de usuario (UI) que muestra puntaje, tiempo, munición y monedas recolectadas, 
+    además de botones interactivos y transiciones entre escenas.</code>
 </details>
 </li>
 

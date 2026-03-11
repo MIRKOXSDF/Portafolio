@@ -301,6 +301,13 @@ font-weight: bold;
 font-size: 1rem; color: #9fd3c7; 
 transition: 0.3s ease; 
 } 
+.responsabilidad summary {
+    list-style: none;
+}
+
+.responsabilidad summary::-webkit-details-marker {
+    display: none;
+}
 /* Contenedor general */ 
 .code-block { 
 border-radius: 16px;

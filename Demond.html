@@ -79,31 +79,33 @@
     </div>
 
 
-<div class="project-section">
+<div class="project-section responsabilidad">
 <h2>Mi responsabilidad</h2>
 <ul>
 
 <li>
 <details class="code-block">
 <summary>Player movement</summary>
-<code>Implementación del sistema de movimiento del jugador utilizando inputs de teclado y 
-     Rigidbody2D.velocity.</code>
+<code>Sistema de movimiento del jugador utilizando inputs de teclado y Rigidbody2D
+    para controlar su desplazamiento.</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>Player attack system</summary>
-<code>Sistema de ataque a distancia con shurikens activado mediante inputs de teclado, generando 
-    proyectiles con Instantiate y utilizando Rigidbody2D.velocity para su desplazamiento.</code>
+<code>Sistema de ataque del jugador con shurikens activado mediante inputs de teclado, 
+    generando proyectiles con Instantiate y utilizando Rigidbody2D.velocity para su fisica.</code>
+
 </details>
 </li>
 
 <li>
 <details class="code-block">
 <summary>Items system</summary>
-<code>Sistema de ítems que permite al jugador recoger habilidades utilizando colision, como el escudo 
-    y paralización, y activarlas mediante inputs de teclado.</code>
+<code>Sistema que permite al jugador recoger ítems como escudo y paralización mediante colisiones
+    con OnTriggerEnter2D y activarlos utilizando inputs de teclado.
+</code>
 </details>
 </li>
 
@@ -118,13 +120,13 @@
 <details class="code-block">
 <summary>Enemy2 shooting system</summary>
 <code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance y genera 
-    proyectiles utilizando Instantiate con Rigidbody2D.velocity para su desplazamiento.</code>
+    proyectiles utilizando Instantiate con Rigidbody2D para su desplazamiento.</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
-<summary>Enemy3 explosion system</summary>
+<summary>Enemy3 Bomb system</summary>
 <code>Implementación de enemigo explosivo que detecta la proximidad del jugador mediante Vector2.Distance y 
     genera una explosión al colisionar con el jugador.</code>
 </details>
@@ -132,9 +134,11 @@
 
 <li>
 <details class="code-block">
-<summary>Spawn Enemy system</summary>
-<code>Sistema de generación de enemigos utilizando Instantiate cuando el jugador se encuentra dentro de una 
-    distancia determinada detectada con Vector2.Distance.</code>
+<summary>Portal Enemy system</summary>
+<code>
+Portal spawnea enemigos usando Instantiate cuando el jugador entra en un rango de detección mediante 
+    Vector2.Distance.
+</code>
 </details>
 </li>
 
@@ -146,13 +150,22 @@
 </details>
 </li>
 
+<li>
+<details class="code-block">
+<summary>Animation system</summary>
+<code>
+Control de animaciones del jugador y enemigos mediante Animator, activadas según su accionar.
+</code>
+</details>
+</li>
+
 </ul>
 </div>
 
 </section>
 <!-- PLAYER COMBAT -->
 <div class="project-sections">
-    <h2>Implementacion de Items</h2>
+    <h2>Items system</h2>
 
     <div class="gif-gallery two">
         <div class="gif-card">

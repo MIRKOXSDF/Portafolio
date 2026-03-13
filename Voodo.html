@@ -2,58 +2,379 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Zombie in the Village</title>
+    <title>Voodo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="Voodo.css">
+    <link rel="stylesheet" href="zombie.css">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
 </head>
 <body>
 
+<div class="lightning-container">
+    <span class="lightning"></span>
+    <span class="lightning"></span>
+    <span class="lightning"></span>
+    <span class="lightning"></span>
+
+
+</div>
 <header class="header">
-    <a href="index.html" class="resume">← Back</a>
+    
+    <div class="header-left">
+        <h1>Mirko Lima</h1>
+        <span>Gameplay Programmer / 3D Artist</span>
+    </div>
+
+  
+
 </header>
 
 <section class="project-hero">
-    <h1>Voodo</h1>
-    <p>
-        Action shooter game where I worked as Gameplay Programmer.
-        Focused on enemy AI, wave systems and gameplay mechanics.
-    </p>
+    <a href="index.html" class="back-btn">← Back</a>
 
-    <img src="Imagenes/VoodoGif.gif" alt="Voodo">
+    <h1>Zombie in the Village</h1>
+   
+
+    <img src="Imagenes/voodo.gif" alt="Zombie in the Village gameplay">
 </section>
 
 <section class="project-content">
 
+  
+
+    <div class="project-section ">
+        <h2>Informacion del Proyecto</h2>
+        <ul>
+
+            <li><i class="fa-solid fa-user"></i> Rol: Programador</li>
+            <li><i class="fa-solid fa-users"></i> N° de Integrantes: 4</li>
+            <li><i class="fa-solid fa-clock"></i> Tiempo: 5 meses</li>
+            <li><i class="fa-solid fa-gear"></i> Motor: Unity</li>
+        
+            
+        </ul>
+
+       
+    </div>
+
+    <div class="project-section  tools-used">
+        <h2>Herramientas Usadas</h2>
+        <ul>
+            <li>Unity <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"></li>
+            <li>C# <img src="Imagenes/Csharp.png"></li>
+            <li>Aseprite <img src="Imagenes/Aseprite.png"></li>
+            <li>GitHub <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"></li>
+            
+
+        </ul>
+    </div>
+
     <div class="project-section">
-        <h2>About the Project</h2>
+        <h2>Acerca del Proyecto</h2>
         <p>
-            Zombie in the Village is a top-down shooter developed as a gameplay-focused project.
-            The goal was to create engaging enemy behaviors and scalable combat systems.
+           Fue el primer Videojuego de plataformas 2D desarrollado en Unity. El jugador controla a un aldeano que debe 
+           enfrentarse a zombies mientras avanza por distintos niveles, evitando obstáculos, recolectando monedas 
+           y buscando el portal para completar el nivel.
         </p>
     </div>
 
-    <div class="project-section">
-        <h2>My Role</h2>
-        <ul>
-            <li>Enemy AI behavior and states</li>
-            <li>Wave and spawn systems</li>
-            <li>Player combat mechanics</li>
-            <li>Score and progression systems</li>
-        </ul>
-    </div>
+<div class="project-section responsabilidad">
+<h2>Mi responsabilidad</h2>
+<ul>
 
-    <div class="project-section">
-        <h2>Tools & Technologies</h2>
-        <ul>
-            <li>Unity</li>
-            <li>C#</li>
-            <li>Gameplay Programming</li>
-        </ul>
-    </div>
+<li>
+<details class="code-block">
+<summary>Player movement</summary>
+<code>
+Movimiento del jugador con Rigidbody2D para la fisica e inputs para el control.
+
+</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>Player attack system</summary>
+<code> Ataque meele y disparo de proyectiles, utilizando inputs de teclado para 
+    el control y Instantiate junto con Rigidbody2D para la generación y movimiento 
+    de las balas.</code>
+
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>Enemy movement</summary>
+<code>Enemigos que patrullan de manera lateral cambiando de dirección después de cierto 
+    tiempo, utilizando Rigidbody2D para su desplazamiento.</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>EnemyLady shooting system</summary>
+<code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance
+   y genera proyectiles usando Instantiate, aplicando Rigidbody2D.velocity para su desplazamiento.
+</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>Items system</summary>
+<code>Sistema de recolección de ítems como munición y monedas mediante colisiones. 
+    Las balas recargan la munición del jugador y las monedas permiten progresar en el nivel.</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>UI system</summary>
+<code>Implementación de la interfaz de usuario (UI) que muestra puntaje, tiempo, munición y monedas recolectadas, 
+    además de botones interactivos y transiciones entre escenas.</code>
+</details>
+</li>
+
+</ul>
+</div>
+
 
 </section>
+<!-- PLAYER COMBAT -->
+<div class="project-sections">
+    <h2>Player attack system</h2>
 
+    <div class="gif-gallery two">
+        <div class="gif-card">
+            <img src="Imagenes/Player_Meele.gif" alt="Combat system 1">
+            <span class="gif-label">Ataque meele</span>
+        </div>
+        <div class="gif-card">
+            <img src="Imagenes/Player_Shoot.gif" alt="Combat system 2">
+            <span class="gif-label">Ataque Disparo</span>
+
+        </div>   
+    </div>  
+</div>
+
+<div class="project-content-Meele">
+
+     <div class="project-section">
+        <h2>Ataque Disparo</h2>
+         <p>
+            Se desarrolló un sistema de disparo que genera proyectiles. Al colisionar con un 
+            enemigo, el proyectil detecta el impacto y le aplica daño. Este ataque permite al 
+            jugador defenderse a mayor distancia.
+         </p>
+       
+      </div>
+</div>
+<div class="project-content-codigo">
+      <details class="code-block">
+      <summary>Codigo Ataque Disparo</summary>
+      <pre><code class="language-csharp">
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using UnityEngine.SceneManagement; 
+
+        public class Villager : MonoBehaviour
+        {
+            public int ammo;
+            public GameObject bulletPrefab;
+            public GameObject bulletPrefab2;
+            public BulletManager bulletManager;
+            public AudioSource audioSource;
+            public AudioClip soundShootPlayer;
+            public AudioClip AmmoClip;
+
+
+            void Update()
+            {
+                Shoot();
+            }
+            void Shoot()
+            {
+                //Apreta la tecla "X" para poder disparar
+                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
+                {
+                    GameObject obj = Instantiate(bulletPrefab);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Bullet>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Bullet>().direction = dir;   
+                    ammo--;
+                    bulletManager.SetBullet(ammo);
+                    audioSource.PlayOneShot(soundShootPlayer);
+                } 
+               
+            }
+            private void OnTriggerEnter2D(Collider2D collision)
+            {
+                //Recoges la municion de tus balas para poder disparar
+                if (collision.gameObject.CompareTag("Ammo"))
+                {
+                    ammo++;
+                    bulletManager.SetBullet(ammo);
+                    Destroy(collision.gameObject);
+                    audioSource.PlayOneShot(AmmoClip);
+                }
+
+            }
+
+        }
+
+
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+
+        public class Bullet : MonoBehaviour
+        {
+            public Rigidbody2D rb2d;
+            public Vector2 direction;
+            public int speed;
+            public float timer;
+            public float MaxTimer;
+
+            void Start()
+            {
+                rb2d = GetComponent<Rigidbody2D>();
+            }
+
+            void Update()
+            {
+                Move();
+            }
+
+            void Move()
+            {
+                //Movimiento y vida de tiempo de la bala
+                rb2d.velocity = direction * speed;
+                timer += Time.deltaTime;
+                if (timer >= MaxTimer)
+                {
+                    Destroy(gameObject);
+                    timer = 0;
+                }
+            }
+        }
+        </code></pre>
+     </details>
+</div>
+<div class="project-content-Meele">
+
+     <div class="project-section">
+      <h2>Ataque Melee</h2>
+        <p>
+          Se implementó un sistema de ataque cuerpo a cuerpo utilizando un trinche. 
+          Este sistema reutiliza la misma lógica de programación del ataque a distancia, 
+          pero el trinche se instancia durante un tiempo muy corto, lo que genera la 
+          sensación de un ataque directo contra los enemigos.
+        </p>
+      </div>
+</div>
+
+<div class="project-content-codigo">
+  <details class="code-block">
+      <summary>Codigo Ataque Meele</summary>
+      <pre><code class="language-csharp">
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using UnityEngine.SceneManagement;  
+
+        public class Villager : MonoBehaviour
+        {
+            public GameObject bulletPrefab2;
+            public AudioSource audioSource;
+            public AudioClip soundMeelePlayer;
+
+            void Update()
+            {
+                Shoot();
+            }
+            void Shoot()
+            {
+                //Apreta la tecla "Z" para poder atacar con tu trinche    
+                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+                {
+                    GameObject obj = Instantiate(bulletPrefab2);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Meele>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Meele>().direction = d;
+                    audioSource.PlayOneShot(soundMeelePlayer);
+                }
+            }
+        }
+
+    
+
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+
+        public class Meele: MonoBehaviour
+        {
+            public Rigidbody2D rb2d;
+            public Vector2 direction;
+            public int speed;
+            public float timer;
+            public float MaxTimer;
+            void Start()
+            {
+                rb2d = GetComponent<Rigidbody2D>();
+                //Incializar para que la scala de tu trinche no se modifique
+                if(direction.x <0)
+                {
+                    transform.localScale = new Vector2(-0.5875226f, 1);
+                }
+            }
+
+            void Update()
+            {
+                Move();
+            }
+
+            void Move()
+            {
+                //Movimiento y vida de tiempo de tu trinche
+                rb2d.velocity = direction * speed;
+                timer += Time.deltaTime;
+                if (timer >= MaxTimer)
+                {
+                    Destroy(gameObject);
+                    timer = 0;
+                }
+            }
+        }
+
+      
+
+      </code></pre>
+      </details>
+</div>
+
+
+<section class="project-links"> 
+    <h2>Ver Proyecto</h2> 
+    <div class="links-container"> 
+      <a href="https://github.com/MIRKOXSDF" target="_blank" class="link-card"> 
+        <i class="fa-brands fa-github"></i> <span>View on GitHub</span> </a> <a href="https://mirko06660ogmailcom.itch.io/zombie-village" target="_blank" class="link-card">
+        <i class="fa-brands fa-itch-io"></i> <span>Play on Itch.io</span> </a> 
+    </div>
+
+
+        
+
+
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
 </body>
 </html>
-

@@ -89,54 +89,80 @@
 
 <li>
 <details class="code-block">
-<summary>Player movement</summary>
+<summary>Player Jump</summary>
 <code>
-Movimiento del jugador con Rigidbody2D para la fisica e inputs para el control.
-
+Programación del sistema de salto del jugador, permitiendo la interacción con plataformas y 
+obstáculos dentro del escenario.
 </code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
-<summary>Player attack system</summary>
-<code> Ataque meele y disparo de proyectiles, utilizando inputs de teclado para 
-    el control y Instantiate junto con Rigidbody2D para la generación y movimiento 
-    de las balas.</code>
-
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Enemy movement</summary>
-<code>Enemigos que patrullan de manera lateral cambiando de dirección después de cierto 
-    tiempo, utilizando Rigidbody2D para su desplazamiento.</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>EnemyLady shooting system</summary>
-<code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance
-   y genera proyectiles usando Instantiate, aplicando Rigidbody2D.velocity para su desplazamiento.
+<summary>Player Tools</summary>
+<code>
+Desarrollo de la herramienta llave inglesa, utilizada por el jugador para interactuar con diferentes
+ elementos del entorno.
 </code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
-<summary>Items system</summary>
-<code>Sistema de recolección de ítems como munición y monedas mediante colisiones. 
-    Las balas recargan la munición del jugador y las monedas permiten progresar en el nivel.</code>
+<summary>Enemy Movement Patrol</summary>
+<code>
+Implementación del sistema de patrullaje de los enemigos, permitiendo que se desplacen automáticamente por 
+rutas establecidas.
+</code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
-<summary>UI system</summary>
-<code>Implementación de la interfaz de usuario (UI) que muestra puntaje, tiempo, munición y monedas recolectadas, 
-    además de botones interactivos y transiciones entre escenas.</code>
+<summary>Enemy Cat</summary>
+<code>
+Programación del comportamiento del enemigo tipo gato, incluyendo su movimiento y detección del jugador.
+</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>UI System</summary>
+<code>
+Desarrollo de la interfaz de usuario, incluyendo la pantalla de pausa y los iconos que muestran las herramientas 
+obtenidas por el jugador.
+</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>Animation System</summary>
+<code>
+Control de animaciones del jugador y enemigos mediante el sistema Animator, activadas según sus acciones dentro 
+del juego.
+</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>VFX System</summary>
+<code>
+Implementación de efectos visuales (VFX) para el cambio de herramientas y para mostrar el rango de detección de 
+los enemigos.
+</code>
+</details>
+</li>
+
+<li>
+<details class="code-block">
+<summary>Sound and Music</summary>
+<code>
+Integración de efectos de sonido como cortar cuerdas y abrir puertas, además de la música del gameplay y del 
+menú principal.
+</code>
 </details>
 </li>
 
@@ -147,16 +173,16 @@ Movimiento del jugador con Rigidbody2D para la fisica e inputs para el control.
 </section>
 <!-- PLAYER COMBAT -->
 <div class="project-sections">
-    <h2>Player attack system</h2>
+    <h2>Enemy Cat</h2>
 
     <div class="gif-gallery two">
         <div class="gif-card">
             <img src="Imagenes/Player_Meele.gif" alt="Combat system 1">
-            <span class="gif-label">Ataque meele</span>
+            <span class="gif-label">Rotacion del EnemyCat</span>
         </div>
         <div class="gif-card">
             <img src="Imagenes/Player_Shoot.gif" alt="Combat system 2">
-            <span class="gif-label">Ataque Disparo</span>
+            <span class="gif-label">Ataque del EnemyCat</span>
 
         </div>   
     </div>  
@@ -165,7 +191,17 @@ Movimiento del jugador con Rigidbody2D para la fisica e inputs para el control.
 <div class="project-content-Meele">
 
      <div class="project-section">
-        <h2>Ataque Disparo</h2>
+        <h2>Rotacion del EnemyCat</h2>
+         <p>
+            Se desarrolló un sistema de disparo que genera proyectiles. Al colisionar con un 
+            enemigo, el proyectil detecta el impacto y le aplica daño. Este ataque permite al 
+            jugador defenderse a mayor distancia.
+         </p>
+       
+      </div>
+
+      <div class="project-section">
+        <h2>Ataque del EnemyCat</h2>
          <p>
             Se desarrolló un sistema de disparo que genera proyectiles. Al colisionar con un 
             enemigo, el proyectil detecta el impacto y le aplica daño. Este ataque permite al 
@@ -178,189 +214,184 @@ Movimiento del jugador con Rigidbody2D para la fisica e inputs para el control.
       <details class="code-block">
       <summary>Codigo Ataque Disparo</summary>
       <pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement; 
+        
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
+using UnityEngine.AI;
 
-        public class Villager : MonoBehaviour
+public class CatEnemy : MonoBehaviour
+{
+    [Header("Movement")]
+    public NavMeshAgent navMeshAgent;
+    public GameObject playerPosition;
+    [Header("Cono de vision")]
+    [SerializeField] Transform eyes;
+    public bool canSeePlayer;
+    public float radius;
+    public LayerMask obstructionMask;
+    public float angle;
+    public bool rotating = true;
+    public float rotationTimer;
+    public float rotationMaxTimer;
+    public float rotationEnemy;
+    public CatEnemyAnimation catAnimator;
+    private Vector3 firstPos;
+    private Vector3 firstRotation;
+    float timer;
+    EnemyAudioManager enemyAudioManager;
+    [SerializeField] float timeOutOfView;
+    Vector3 lastPosPlayer;
+    [HideInInspector] public bool runAnimation;
+    [HideInInspector] public bool walkAnimation;
+
+
+    private void Start()
+    {
+        enemyAudioManager = GetComponent<EnemyAudioManager>();
+        firstPos = transform.position;
+        firstRotation = transform.rotation.eulerAngles;
+        DataPersistenceManager.instance.OnLoad += LoadEnemy;
+    }
+    private void Update()
+    {
+        if (canSeePlayer)
         {
-            public int ammo;
-            public GameObject bulletPrefab;
-            public GameObject bulletPrefab2;
-            public BulletManager bulletManager;
-            public AudioSource audioSource;
-            public AudioClip soundShootPlayer;
-            public AudioClip AmmoClip;
+            walkAnimation = false;
+            rotationTimer = 0f;
+            rotating = false;
+            navMeshAgent.speed = 20f;
+            //El enemigo sigue al jugador en su rango
+            Vector3 player = new Vector3(playerPosition.transform.position.x,playerPosition.transform.position.y + 1f,playerPosition.transform.position.z);
+            Vector3 posPlayer = player - eyes.position;
+            float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
 
+            if (Mathf.Abs(Vector3.Angle(transform.forward, posPlayer) - angle / 2) < 0.01f || 
+            Physics.Raycast(eyes.position + transform.forward * -1f, posPlayer, distanceToTarget, obstructionMask))
+            {
+                if(Vector3.Distance(lastPosPlayer,transform.position) <= 2)
+                {
+                    navMeshAgent.enabled = false;
+                    runAnimation = false;
+                    rotating = true;
+                    flipMove();
+                    timer += Time.deltaTime;
 
-            void Update()
-            {
-                Shoot();
-            }
-            void Shoot()
-            {
-                //Apreta la tecla "X" para poder disparar
-                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Bullet>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Bullet>().direction = dir;   
-                    ammo--;
-                    bulletManager.SetBullet(ammo);
-                    audioSource.PlayOneShot(soundShootPlayer);
-                } 
-               
-            }
-            private void OnTriggerEnter2D(Collider2D collision)
-            {
-                //Recoges la municion de tus balas para poder disparar
-                if (collision.gameObject.CompareTag("Ammo"))
-                {
-                    ammo++;
-                    bulletManager.SetBullet(ammo);
-                    Destroy(collision.gameObject);
-                    audioSource.PlayOneShot(AmmoClip);
+                    if(timer > timeOutOfView)
+                    {
+                        navMeshAgent.enabled = true;
+                        canSeePlayer = false;
+                        
+                    }
                 }
+                else
+                {
+                    navMeshAgent.enabled = true;
+                    navMeshAgent.SetDestination(lastPosPlayer);
+                }               
+            }
+            else
+            {
+                navMeshAgent.enabled = true;
+                runAnimation = true;
+                lastPosPlayer = playerPosition.transform.position;
+                navMeshAgent.SetDestination(playerPosition.transform.position);
+            }
+        }
+        else
+        {
+            
+            runAnimation = false;
+            FieldOfViewCheck();
+            navMeshAgent.enabled = true;
+            
+            
+            if(Vector3.Distance(transform.position,firstPos) > 1)
+            {
+                walkAnimation = true;
+                navMeshAgent.SetDestination(firstPos);
+            }
+            else
+            {
+                walkAnimation = false;
+                flipMove();
+            }
+            
+        }
+    }
 
+    void flipMove()
+    {
+        if (rotating)
+        {
+            //rota
+            transform.rotation *= Quaternion.Euler(0f, (transform.rotation.y + rotationEnemy) * Time.deltaTime, 0f);
+            rotationTimer += Time.deltaTime;
+
+            // Si el temporizador alcanza la duraci�n deseada, detener la rotaci�n
+            if (rotationTimer >= rotationMaxTimer)
+            {
+                rotationTimer = 0f;
+                rotating = false;
             }
 
         }
-
-
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Bullet : MonoBehaviour
+        else
         {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer;
+            //detener la rotacion
 
-            void Start()
-            {
-                rb2d = GetComponent<Rigidbody2D>();
-            }
+            rotationTimer += Time.deltaTime;
 
-            void Update()
+            // Si el temporizador alcanza 2 segundos, reiniciar la rotaci�n
+            if (rotationTimer >= rotationMaxTimer-1)
             {
-                Move();
-            }
+                rotating = true;
 
-            void Move()
-            {
-                //Movimiento y vida de tiempo de la bala
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
+
+                rotationTimer = 0f;
             }
         }
+    }
+
+    void FieldOfViewCheck()
+    {
+        
+        Vector3 player = new Vector3(playerPosition.transform.position.x,playerPosition.transform.position.y + 1f,playerPosition.transform.position.z);
+        Vector3 posPlayer = player - eyes.position;
+        float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
+        Debug.DrawRay(eyes.position,posPlayer);
+        if (Vector3.Angle(transform.forward, posPlayer) < angle / 2 && distanceToTarget < radius)
+        {
+            if (!Physics.Raycast(eyes.position, posPlayer, distanceToTarget, obstructionMask))
+            {
+                timer = 0;
+                canSeePlayer = true;
+                enemyAudioManager.DetecPlayer();
+            }
+        }
+    }
+
+    void LoadEnemy()
+    {
+        runAnimation = false;
+        catAnimator.anim.SetBool("spin", true);
+        if (canSeePlayer == true)
+            canSeePlayer = false;
+
+        transform.position = firstPos;
+        transform.rotation = Quaternion.Euler(firstRotation);
+
+        rotationTimer = 0f;
+        rotating = true;
+        navMeshAgent.enabled = false;
+        navMeshAgent.enabled = true;
+
+    }
+}
         </code></pre>
      </details>
 </div>
-<div class="project-content-Meele">
-
-     <div class="project-section">
-      <h2>Ataque Melee</h2>
-        <p>
-          Se implementó un sistema de ataque cuerpo a cuerpo utilizando un trinche. 
-          Este sistema reutiliza la misma lógica de programación del ataque a distancia, 
-          pero el trinche se instancia durante un tiempo muy corto, lo que genera la 
-          sensación de un ataque directo contra los enemigos.
-        </p>
-      </div>
-</div>
-
-<div class="project-content-codigo">
-  <details class="code-block">
-      <summary>Codigo Ataque Meele</summary>
-      <pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement;  
-
-        public class Villager : MonoBehaviour
-        {
-            public GameObject bulletPrefab2;
-            public AudioSource audioSource;
-            public AudioClip soundMeelePlayer;
-
-            void Update()
-            {
-                Shoot();
-            }
-            void Shoot()
-            {
-                //Apreta la tecla "Z" para poder atacar con tu trinche    
-                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab2);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Meele>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Meele>().direction = d;
-                    audioSource.PlayOneShot(soundMeelePlayer);
-                }
-            }
-        }
-
-    
-
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Meele: MonoBehaviour
-        {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer;
-            void Start()
-            {
-                rb2d = GetComponent<Rigidbody2D>();
-                //Incializar para que la scala de tu trinche no se modifique
-                if(direction.x <0)
-                {
-                    transform.localScale = new Vector2(-0.5875226f, 1);
-                }
-            }
-
-            void Update()
-            {
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y vida de tiempo de tu trinche
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
-            }
-        }
-
-      
-
-      </code></pre>
-      </details>
-</div>
-
 
 <section class="project-links"> 
     <h2>Ver Proyecto</h2> 

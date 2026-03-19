@@ -248,9 +248,10 @@
 
 /* Tamaños dinámicos */
 .gif-gallery.two .gif-card {
+    flex: 1;
     width: 530px;
 }
-    
+
 .gif-gallery.three .gif-card {
     width: 300px;
 }
@@ -262,7 +263,9 @@
 /* Imagen */
 .gif-card img {
     width: 100%;
-    display: block;
+    height: 300px;       /* 🔥 esto las iguala */
+    object-fit: cover;   /* 🔥 esto evita deformación */
+    border-radius: 10px;
 }
 .project-sections {
     text-align: center;

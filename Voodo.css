@@ -248,7 +248,6 @@
 
 /* Tamaños dinámicos */
 .gif-gallery.two .gif-card {
-    flex: 1;
     width: 530px;
 }
 
@@ -258,6 +257,10 @@
 
 .gif-gallery.single .gif-card.wide {
     width: 900px;
+}
+
+.gif-gallery.two .gif-card_img {
+    width: 532px;
 }
 
 /* Imagen */

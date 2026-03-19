@@ -259,16 +259,13 @@
     width: 900px;
 }
 
-.gif-gallery.two .gif-card_img {
-    width: 532px;
-}
+
 
 /* Imagen */
 .gif-card img {
     width: 100%;
-    height: 300px;       /* 🔥 esto las iguala */
-    object-fit: cover;   /* 🔥 esto evita deformación */
-    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
 }
 .project-sections {
     text-align: center;

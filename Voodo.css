@@ -250,7 +250,7 @@
 
 
 .gif-gallery.two .gif-card {
-    max-width: 530px;
+    width: 530px;
     
 }
 
@@ -266,9 +266,8 @@
 
 /* Imagen */
 .gif-card img {
-    width: 400%;
-    height: 300px;
-    object-fit: cover;
+    width: 100%;
+  
     display: block;
 }
 .project-sections {

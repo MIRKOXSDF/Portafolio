@@ -251,7 +251,8 @@
 
 .gif-gallery.two .gif-card {
     width: 530px;
-    
+    height: 360px; /* 🔥 clave */
+
 }
 
 .gif-gallery.three .gif-card {

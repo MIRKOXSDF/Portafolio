@@ -247,22 +247,15 @@
 
 
 /* Tamaños dinámicos */
-.gif-gallery.two {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    align-items: stretch; /* 🔥 CLAVE */
-}
+
 
 .gif-gallery.two .gif-card {
-    flex: 1;
     max-width: 530px;
-    display: flex;
-    flex-direction: column;
+    
 }
 
 .gif-gallery.three .gif-card {
-    width: 300px;
+    width: 350px;
 }
 
 .gif-gallery.single .gif-card.wide {

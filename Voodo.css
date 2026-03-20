@@ -249,26 +249,22 @@
 /* Tamaños dinámicos */
 
 
+/* Tamaños dinámicos */
 .gif-gallery.two .gif-card {
     width: 530px;
-    height: 360px; /* 🔥 clave */
-
 }
 
 .gif-gallery.three .gif-card {
-    width: 350px;
+    width: 300px;
 }
 
 .gif-gallery.single .gif-card.wide {
     width: 900px;
 }
 
-
-
 /* Imagen */
 .gif-card img {
     width: 100%;
-  
     display: block;
 }
 .project-sections {

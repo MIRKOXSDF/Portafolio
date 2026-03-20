@@ -253,6 +253,10 @@
     max-width: 530px;
     
 }
+.gif-gallery.two .gif-card_img1 {
+    max-width: 531px;
+    
+}
 
 .gif-gallery.three .gif-card {
     width: 350px;

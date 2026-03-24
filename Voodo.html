@@ -91,9 +91,9 @@
 <details class="code-block">
 <summary>Player Jump</summary>
 <code>
-Programación del sistema de salto del jugador, permitiendo la interacción con plataformas y 
-obstáculos dentro del escenario.
-</code>
+Implementación del sistema de salto del jugador mediante la detección del input de la tecla "Space" y 
+la aplicación de físicas con AddForce , logrando un impulso vertical
+ </code>
 </details>
 </li>
 
@@ -265,164 +265,163 @@ menú principal.
                     Vector3 player = new Vector3(
                     playerPosition.transform.position.x,
                     playerPosition.transform.position.y + 1f,
-                    playerPosition.transform.position.z
-                );
+                    playerPosition.transform.position.z );
+                    
+                    // Dirección desde los ojos del enemigo hacia el jugador
+                    Vector3 posPlayer = player - eyes.position;
 
-                // Dirección desde los ojos del enemigo hacia el jugador
-                Vector3 posPlayer = player - eyes.position;
+                    // Distancia al jugador
+                    float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
 
-                // Distancia al jugador
-                float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
-
-                // Verifica si está en el límite del ángulo o si hay un obstáculo (pared)
-                if (Mathf.Abs(Vector3.Angle(transform.forward, posPlayer) - angle / 2) < 0.01f ||
-                Physics.Raycast(eyes.position + transform.forward * -1f, posPlayer, distanceToTarget, obstructionMask))
-                {
-                    // CASO: el enemigo perdió al jugador o no lo ve claramente
-
-                    // Si ya llegó a la última posición donde vio al jugador
-                    if (Vector3.Distance(lastPosPlayer, transform.position) <= 2)
+                    // Verifica si está en el límite del ángulo o si hay un obstáculo (pared)
+                    if (Mathf.Abs(Vector3.Angle(transform.forward, posPlayer) - angle / 2) < 0.01f ||
+                    Physics.Raycast(eyes.position + transform.forward * -1f, posPlayer, distanceToTarget, obstructionMask))
                     {
-                        navMeshAgent.enabled = false;  // Detiene el movimiento
-                        runAnimation = false;          // Deja de correr
-                        rotating = true;               // Activa rotación 
-                        flipMove();                   // Gira como cámara buscando
-                        timer += Time.deltaTime;      // Empieza a contar tiempo sin ver al jugador
+                        // CASO: el enemigo perdió al jugador o no lo ve claramente
 
-                        // Si pasa mucho tiempo, se rinde
-                        if (timer > timeOutOfView)
+                        // Si ya llegó a la última posición donde vio al jugador
+                        if (Vector3.Distance(lastPosPlayer, transform.position) <= 2)
                         {
-                            navMeshAgent.enabled = true; // Reactiva movimiento
-                            canSeePlayer = false;        // Deja de ver al jugador (sale de persecución)
+                           navMeshAgent.enabled = false;  // Detiene el movimiento
+                           runAnimation = false;          // Deja de correr
+                           rotating = true;               // Activa rotación 
+                           flipMove();                   // Gira como cámara buscando
+                           timer += Time.deltaTime;      // Empieza a contar tiempo sin ver al jugador
+
+                           // Si pasa mucho tiempo, se rinde
+                           if (timer > timeOutOfView)
+                           {
+                               navMeshAgent.enabled = true; // Reactiva movimiento
+                               canSeePlayer = false;        // Deja de ver al jugador (sale de persecución)
+                           }
+                        }
+                        else
+                        {
+                            // Aún no llega a la última posición → va hacia ella
+                            navMeshAgent.enabled = true;
+                            navMeshAgent.SetDestination(lastPosPlayer);
                         }
                     }
                     else
                     {
-                        // Aún no llega a la última posición → va hacia ella
-                        navMeshAgent.enabled = true;
-                        navMeshAgent.SetDestination(lastPosPlayer);
-                    }
+                        // CASO: el enemigo ve claramente al jugador
+                        navMeshAgent.enabled = true;               // Activa movimiento
+                        runAnimation = true;                       // Activa animación de correr
+                        lastPosPlayer = playerPosition.transform.position; // Guarda última posición del jugador
+                        navMeshAgent.SetDestination(playerPosition.transform.position); // Persigue directamente
+                    }               
                 }
                 else
                 {
-                     // CASO: el enemigo ve claramente al jugador
-                     navMeshAgent.enabled = true;               // Activa movimiento
-                     runAnimation = true;                       // Activa animación de correr
-                     lastPosPlayer = playerPosition.transform.position; // Guarda última posición del jugador
-                     navMeshAgent.SetDestination(playerPosition.transform.position); // Persigue directamente
-                }
-            }
-            else
-            {
-                // El enemigo NO ve al jugador (modo normal)
-                runAnimation = false;     // No corre
-                FieldOfViewCheck();       // Intenta detectar al jugador
-                navMeshAgent.enabled = true; // Asegura que puede moverse
+                    // El enemigo NO ve al jugador (modo normal)
+                    runAnimation = false;     // No corre
+                    FieldOfViewCheck();       // Intenta detectar al jugador
+                    navMeshAgent.enabled = true; // Asegura que puede moverse
 
-                // Si está lejos de su posición inicial
-                if (Vector3.Distance(transform.position, firstPos) > 1)
-                {
-                    walkAnimation = true;                // Activa caminar
-                    navMeshAgent.SetDestination(firstPos); // Regresa a su posición inicial
-                }
-                else
-                {
-                    // Si ya llegó a su punto → vigila girando
-                    walkAnimation = false;  // Deja de caminar
-                    flipMove();          // Metodo de rotacion del EnemyCat
-                }
-            }  
-            void flipMove()
-            {
-               if (rotating)
-               {
-                   //rotacion del EnemyCat
-                   transform.rotation *= Quaternion.Euler(0f, (transform.rotation.y + rotationEnemy) * Time.deltaTime, 0f);
-                   rotationTimer += Time.deltaTime;
-
-                   // Si el temporizador alcanza la duracion deseada, detener la rotacion
-                   if (rotationTimer >= rotationMaxTimer)
-                   {
-                       rotationTimer = 0f;
-                       rotating = false;
-                   }
-               }
-               else
-               {
-                    //detener la rotacion
-                    rotationTimer += Time.deltaTime;
-
-                    // Si el temporizador alcanza 2 segundos, reiniciar la rotacion
-                    if (rotationTimer >= rotationMaxTimer-1)
+                    // Si está lejos de su posición inicial
+                    if (Vector3.Distance(transform.position, firstPos) > 1)
                     {
-                        rotating = true;
-                        rotationTimer = 0f;
+                        walkAnimation = true;                // Activa caminar
+                        navMeshAgent.SetDestination(firstPos); // Regresa a su posición inicial
                     }
-               }
-            }
-
-            void FieldOfViewCheck()
-            {
-                // Obtiene la posición del jugador (ligeramente más arriba para apuntar al cuerpo)
-                Vector3 player = new Vector3(
-                playerPosition.transform.position.x,
-                playerPosition.transform.position.y + 1f,
-                playerPosition.transform.position.z);
-
-                // Dirección desde los ojos del enemigo hacia el jugador
-                Vector3 posPlayer = player - eyes.position;
-
-                // Distancia entre enemigo y jugador
-                float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
-
-                // Dibuja un rayo en la escena (solo para debug en Unity)
-                Debug.DrawRay(eyes.position, posPlayer);
-
-                // Verifica si el jugador está dentro del ángulo de visión
-                // Y dentro del rango permitido
-                if (Vector3.Angle(transform.forward, posPlayer) < angle / 2 && distanceToTarget < radius)
+                    else
+                    {
+                        // Si ya llegó a su punto → vigila girando
+                        walkAnimation = false;  // Deja de caminar
+                        flipMove();          // Metodo de rotacion del EnemyCat
+                    }
+                }  
+                void flipMove()
                 {
-                   // Verifica que NO haya paredes u obstáculos entre el enemigo y el jugador
-                   if (!Physics.Raycast(eyes.position, posPlayer, distanceToTarget, obstructionMask))
+                   if (rotating)
                    {
-                        // Reinicia el contador de tiempo sin ver al jugador
-                        timer = 0;
+                       //rotacion del EnemyCat
+                       transform.rotation *= Quaternion.Euler(0f, (transform.rotation.y + rotationEnemy) * Time.deltaTime, 0f);
+                       rotationTimer += Time.deltaTime;
 
-                        // El enemigo detecta al jugador → activa persecución
-                        canSeePlayer = true;
-                        
-                        // Reproduce sonido de detección
-                        enemyAudioManager.DetecPlayer();
+                       // Si el temporizador alcanza la duracion deseada, detener la rotacion
+                       if (rotationTimer >= rotationMaxTimer)
+                       {
+                           rotationTimer = 0f;
+                           rotating = false;
+                       }
+                   }
+                   else
+                   {
+                        //detener la rotacion
+                        rotationTimer += Time.deltaTime;
+
+                        // Si el temporizador alcanza 2 segundos, reiniciar la rotacion
+                        if (rotationTimer >= rotationMaxTimer-1)
+                        {
+                            rotating = true;
+                            rotationTimer = 0f;
+                        }
                    }
                 }
-            }
-            void LoadEnemy()
-            {
-                // Desactiva la animación de correr
-                runAnimation = false;
+                void FieldOfViewCheck()
+                {
+                    // Obtiene la posición del jugador (ligeramente más arriba para apuntar al cuerpo)
+                    Vector3 player = new Vector3(
+                    playerPosition.transform.position.x,
+                    playerPosition.transform.position.y + 1f,
+                    playerPosition.transform.position.z);
 
-                // Activa animación de vigilancia (idle girando)
-                catAnimator.anim.SetBool("spin", true);
+                    // Dirección desde los ojos del enemigo hacia el jugador
+                    Vector3 posPlayer = player - eyes.position;
 
-                // Asegura que el enemigo NO esté persiguiendo al cargar
-                if (canSeePlayer == true)
-                     canSeePlayer = false;
+                    // Distancia entre enemigo y jugador
+                    float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
 
-                // Regresa a su posición inicial
-                transform.position = firstPos;
+                    // Dibuja un rayo en la escena (solo para debug en Unity)
+                    Debug.DrawRay(eyes.position, posPlayer);
 
-                // Restaura su rotación original
-                transform.rotation = Quaternion.Euler(firstRotation);
+                    // Verifica si el jugador está dentro del ángulo de visión
+                    // Y dentro del rango permitido
+                    if (Vector3.Angle(transform.forward, posPlayer) < angle / 2 && distanceToTarget < radius)
+                    {
+                        // Verifica que NO haya paredes u obstáculos entre el enemigo y el jugador
+                        if (!Physics.Raycast(eyes.position, posPlayer, distanceToTarget, obstructionMask))
+                        {
+                             // Reinicia el contador de tiempo sin ver al jugador
+                             timer = 0;
 
-                // Reinicia el temporizador de rotación
-                rotationTimer = 0f;
+                             // El enemigo detecta al jugador → activa persecución
+                             canSeePlayer = true;
 
-                // Activa nuevamente el modo vigilancia (girar)
-                rotating = true;
+                             // Reproduce sonido de detección
+                             enemyAudioManager.DetecPlayer();
+                        }
+                    }
+                }
+                void LoadEnemy()
+                {
+                    // Desactiva la animación de correr
+                    runAnimation = false;
 
-                // Reinicia el NavMeshAgent para evitar errores de movimiento
-                navMeshAgent.enabled = false;
-                navMeshAgent.enabled = true;
+                    // Activa animación de vigilancia (idle girando)
+                    catAnimator.anim.SetBool("spin", true);
+
+                    // Asegura que el enemigo NO esté persiguiendo al cargar
+                    if (canSeePlayer == true)
+                          canSeePlayer = false;
+
+                    // Regresa a su posición inicial
+                    transform.position = firstPos;
+
+                    // Restaura su rotación original
+                    transform.rotation = Quaternion.Euler(firstRotation);
+
+                    // Reinicia el temporizador de rotación
+                    rotationTimer = 0f;
+
+                    // Activa nuevamente el modo vigilancia (girar)
+                    rotating = true;
+
+                    // Reinicia el NavMeshAgent para evitar errores de movimiento
+                    navMeshAgent.enabled = false;
+                    navMeshAgent.enabled = true;
+                }
             }
         }
         </code></pre>

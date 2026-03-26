@@ -113,7 +113,8 @@ rotación suave de la palanca.
 <details class="code-block">
 <summary>Enemy Movement Patrol</summary>
 <code>
-Para el patrullaje de los enemigos vudus se implemento usando pathfiding.
+Sistema de patrullaje con NavMeshAgent, que permite a los enemigos moverse entre puntos y cambiar mediante booleanos 
+entre patrullaje y persecución al detectar al jugador.
 </code>
 </details>
 </li>
@@ -122,8 +123,9 @@ Para el patrullaje de los enemigos vudus se implemento usando pathfiding.
 <details class="code-block">
 <summary>EnemyCat system</summary>
 <code>
-Programación del comportamiento del enemigo tipo gato, incluyendo su movimiento y detección del jugador.
-</code>
+Desarrollo del EnemyCat con un sistema de vigilancia basado en rotación dentro de su zona mediante Quaternion y un estado
+de persecución utilizando NavMeshAgent, activado al detectar al jugador a través de un sistema de campo de visión.
+
 </details>
 </li>
 
@@ -131,8 +133,8 @@ Programación del comportamiento del enemigo tipo gato, incluyendo su movimiento
 <details class="code-block">
 <summary>UI System</summary>
 <code>
-Desarrollo de la interfaz de usuario, incluyendo la pantalla de pausa y los iconos que muestran las herramientas 
-obtenidas por el jugador.
+Desarrollo de la interfaz de usuario, incluyendo la visualización de las 3 herramientas obtenidas por el 
+jugador mediante iconos dinámicos y por otra parte el desarrollo de una escena pausa.
 </code>
 </details>
 </li>
@@ -141,18 +143,18 @@ obtenidas por el jugador.
 <details class="code-block">
 <summary>Animation System</summary>
 <code>
-Control de animaciones del jugador y enemigos mediante el sistema Animator, activadas según sus acciones dentro 
-del juego.
+Implementación del sistema de animaciones para el jugador y los enemigos utilizando Animator, activando transiciones en función 
+de sus acciones y estados dentro del juego.
 </code>
 </details>
 </li>
 
 <li>
 <details class="code-block">
-<summary>VFX System</summary>
+<summary>Kinematics</summary>
 <code>
-Implementación de efectos visuales (VFX) para el cambio de herramientas y para mostrar el rango de detección de 
-los enemigos.
+Implementación de una cinemática al final del juego que presenta el desenlace de la historia, mostrando el momento 
+en que el jugador recupera su cuerpo y cumple su objetivo principal.
 </code>
 </details>
 </li>
@@ -161,8 +163,8 @@ los enemigos.
 <details class="code-block">
 <summary>Sound and Music</summary>
 <code>
-Integración de efectos de sonido como cortar cuerdas y abrir puertas, además de la música del gameplay y del 
-menú principal.
+Integración de efectos de sonido para acciones del jugador, como cortar cuerdas (usando la herramienta tijera) y abrir puertas, 
+junto con la implementación de música ambiental para el gameplay y el menú principal.
 </code>
 </details>
 </li>

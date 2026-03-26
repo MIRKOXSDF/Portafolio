@@ -123,9 +123,10 @@ entre patrullaje y persecución al detectar al jugador.
 <details class="code-block">
 <summary>EnemyCat system</summary>
 <code>
-Desarrollo del EnemyCat con un sistema de vigilancia basado en rotación dentro de su zona mediante Quaternion y un estado
-de persecución utilizando NavMeshAgent, activado al detectar al jugador a través de un sistema de campo de visión.
-
+Implementación del EnemyCat con un sistema de vigilancia basado en rotación dentro de su zona mediante Quaternions. Al
+ detectar al jugador a través de un campo de visión, inicia la persecución utilizando NavMeshAgent, y en caso de perderlo, 
+ regresa a su zona para retomar su estado de vigilancia.
+</code>
 </details>
 </li>
 

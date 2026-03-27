@@ -328,145 +328,94 @@ line-height: 1.7;
 white-space: normal; 
 display: block; 
 }
-/* ---------------- RESPONSABILIDAD GRID PRO (FIX DEFINITIVO) ---------------- */
+/* ================= RESPONSABILIDAD FIX ================= */
 
+/* Hace que esta sección ignore el flex general */
 .responsabilidad-grid {
-  width: 100%;
+    width: 100%;
+    flex-basis: 100%;
 }
 
-/* GRID */
+/* GRID DE CARDS */
 .resp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
 }
 
 /* CARD */
 .resp-card {
-  background: #161616;
-  border: 1px solid rgba(159, 211, 199, 0.15);
-  border-radius: 12px;
-  padding: 18px;
-  transition: all 0.25s ease;
-  backdrop-filter: blur(6px);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background: #161616;
+    border: 1px solid rgba(159, 211, 199, 0.15);
+    border-radius: 14px;
+    padding: 18px;
+    transition: all 0.25s ease;
 }
 
 /* HOVER */
 .resp-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(159, 211, 199, 0.6);
-  box-shadow: 0 15px 35px rgba(159, 211, 199, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(159, 211, 199, 0.5);
+    box-shadow: 0 12px 30px rgba(159, 211, 199, 0.15);
 }
 
 /* HEADER */
 .resp-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 /* TITULO */
 .resp-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #9fd3c7;
-  line-height: 1.3;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #9fd3c7;
 }
 
 /* BADGE */
 .resp-badge {
-  font-size: 0.65rem;
-  font-weight: bold;
-  padding: 3px 10px;
-  border-radius: 999px;
-  white-space: nowrap;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-weight: bold;
 }
 
-/* BADGES COLORES */
+/* BADGE COLOR */
 .badge-gameplay {
-  background: rgba(159, 211, 199, 0.12);
-  color: #9fd3c7;
-  border: 1px solid rgba(159, 211, 199, 0.3);
-}
-
-.badge-ia {
-  background: rgba(130, 180, 255, 0.12);
-  color: #82b4ff;
-  border: 1px solid rgba(130, 180, 255, 0.3);
-}
-
-.badge-ui {
-  background: rgba(200, 160, 255, 0.12);
-  color: #c8a0ff;
-  border: 1px solid rgba(200, 160, 255, 0.3);
-}
-
-.badge-arte {
-  background: rgba(255, 180, 120, 0.12);
-  color: #ffb478;
-  border: 1px solid rgba(255, 180, 120, 0.3);
-}
-
-.badge-audio {
-  background: rgba(255, 140, 160, 0.12);
-  color: #ff8ca0;
-  border: 1px solid rgba(255, 140, 160, 0.3);
+    background: rgba(159, 211, 199, 0.12);
+    color: #9fd3c7;
+    border: 1px solid rgba(159, 211, 199, 0.3);
 }
 
 /* DESCRIPCIÓN */
 .resp-desc {
-  font-size: 0.85rem;
-  color: rgba(159, 211, 199, 0.65);
-  line-height: 1.5;
-  margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: rgba(159, 211, 199, 0.6);
+    line-height: 1.5;
+    margin-bottom: 12px;
 }
 
 /* TAGS */
 .resp-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 /* TAG */
 .resp-tag {
-  font-size: 0.7rem;
-  font-family: "Courier New", monospace;
-  background: rgba(159, 211, 199, 0.08);
-  color: rgba(159, 211, 199, 0.6);
-  border: 1px solid rgba(159, 211, 199, 0.2);
-  padding: 3px 7px;
-  border-radius: 6px;
+    font-size: 0.65rem;
+    font-family: monospace;
+    background: rgba(159, 211, 199, 0.07);
+    color: rgba(159, 211, 199, 0.6);
+    border: 1px solid rgba(159, 211, 199, 0.15);
+    padding: 3px 6px;
+    border-radius: 6px;
 }
-
-/* ---------------- FIX GENERAL DEL LAYOUT (IMPORTANTE) ---------------- */
-
-/* Esto arregla el problema principal */
-.project-section {
-  flex: 1 1 400px;
-  max-width: 100%;
-}
-
-/* Asegura que el contenedor no rompa el grid */
-.project-content {
-  max-width: 1100px;
-  margin: 0 auto 100px;
-  padding: 0 20px;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  gap: 40px;
-}
-
 
 
 

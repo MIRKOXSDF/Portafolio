@@ -328,6 +328,8 @@ line-height: 1.7;
 white-space: normal; 
 display: block; 
 }
+
+/*NUEVO CODIGO*/
 .responsabilidad-grid h2 {
   font-size: 1.4rem;
   margin-bottom: 24px;
@@ -407,7 +409,6 @@ display: block;
   padding: 2px 8px;
   border-radius: 6px;
 }
-
 
 
 

@@ -83,113 +83,121 @@
         </p>
     </div>
 
-<div class="project-section responsabilidad-grid">
-  <h2>Mi responsabilidad</h2>
- 
-  <div class="resp-grid">
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">Player Jump</span>
-        <span class="resp-badge badge-gameplay">Gameplay</span>
-      </div>
-      <p class="resp-desc">Sistema de salto que detecta el input "Space", aplica un impulso vertical preciso con AddForce y controla repeticiones mediante un cooldown.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">AddForce</span>
-        <span class="resp-tag">Input</span>
-        <span class="resp-tag">Cooldown</span>
-      </div>
-    </div>
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">Player Tools — Llave inglesa</span>
-        <span class="resp-badge badge-gameplay">Gameplay</span>
-      </div>
-      <p class="resp-desc">Herramienta que repara y activa mecanismos como palancas, usando booleanos para gestionar estados y Quaternions para rotación suave.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">Quaternion</span>
-        <span class="resp-tag">Boolean states</span>
-      </div>
-    </div>
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">Enemy Movement Patrol</span>
-        <span class="resp-badge badge-ia">IA</span>
-      </div>
-      <p class="resp-desc">Patrullaje entre puntos con NavMeshAgent, con transición automática entre patrullaje y persecución al detectar al jugador.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">NavMeshAgent</span>
-        <span class="resp-tag">State machine</span>
-      </div>
-    </div>
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">EnemyCat System</span>
-        <span class="resp-badge badge-ia">IA</span>
-      </div>
-      <p class="resp-desc">Vigilancia por rotación en zona, campo de visión para detectar al jugador e iniciar persecución, con retorno automático al perderlo.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">NavMeshAgent</span>
-        <span class="resp-tag">Field of view</span>
-        <span class="resp-tag">Quaternion</span>
-      </div>
-    </div>
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">UI System</span>
-        <span class="resp-badge badge-ui">UI</span>
-      </div>
-      <p class="resp-desc">Interfaz que muestra las 3 herramientas del jugador con iconos dinámicos, más una escena de pausa funcional.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">Canvas</span>
-        <span class="resp-tag">Dynamic icons</span>
-        <span class="resp-tag">Pause menu</span>
-      </div>
-    </div>
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">Animation System</span>
-        <span class="resp-badge badge-arte">Arte</span>
-      </div>
-      <p class="resp-desc">Sistema de animaciones para jugador y enemigos usando Animator, con transiciones activadas por acciones y estados del juego.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">Animator</span>
-        <span class="resp-tag">State transitions</span>
-      </div>
-    </div>
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">Kinematics</span>
-        <span class="resp-badge badge-arte">Arte</span>
-      </div>
-      <p class="resp-desc">Cinemática final que muestra el desenlace de la historia: el jugador recupera su cuerpo y cumple su objetivo.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">Timeline</span>
-        <span class="resp-tag">Cutscene</span>
-      </div>
-    </div>
- 
-    <div class="resp-card">
-      <div class="resp-header">
-        <span class="resp-title">Sound and Music</span>
-        <span class="resp-badge badge-audio">Audio</span>
-      </div>
-      <p class="resp-desc">Efectos de sonido para acciones del jugador (cortar cuerdas, abrir puertas) y música ambiental para gameplay y menú principal.</p>
-      <div class="resp-tags">
-        <span class="resp-tag">AudioSource</span>
-        <span class="resp-tag">Ambient music</span>
-      </div>
-    </div>
- 
-  </div>
-</div>
+/* ---------------- RESPONSABILIDAD GRID PRO ---------------- */
 
+.responsabilidad-grid h2 {
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+  color: #9fd3c7;
+}
+
+/* GRID */
+.resp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+/* CARD */
+.resp-card {
+  background: #161616;
+  border: 1px solid rgba(159, 211, 199, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* HOVER */
+.resp-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(159, 211, 199, 0.5);
+  box-shadow: 0 10px 25px rgba(159, 211, 199, 0.12);
+}
+
+/* HEADER */
+.resp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* TITULO */
+.resp-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #9fd3c7;
+  line-height: 1.3;
+}
+
+/* BADGE */
+.resp-badge {
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+/* COLORES BADGE */
+.badge-gameplay {
+  background: rgba(159, 211, 199, 0.12);
+  color: #9fd3c7;
+  border: 1px solid rgba(159, 211, 199, 0.3);
+}
+
+.badge-ia {
+  background: rgba(130, 180, 255, 0.12);
+  color: #82b4ff;
+  border: 1px solid rgba(130, 180, 255, 0.3);
+}
+
+.badge-ui {
+  background: rgba(200, 160, 255, 0.12);
+  color: #c8a0ff;
+  border: 1px solid rgba(200, 160, 255, 0.3);
+}
+
+.badge-arte {
+  background: rgba(255, 180, 120, 0.12);
+  color: #ffb478;
+  border: 1px solid rgba(255, 180, 120, 0.3);
+}
+
+.badge-audio {
+  background: rgba(255, 140, 160, 0.12);
+  color: #ff8ca0;
+  border: 1px solid rgba(255, 140, 160, 0.3);
+}
+
+/* DESCRIPCIÓN */
+.resp-desc {
+  font-size: 0.8rem;
+  color: rgba(159, 211, 199, 0.55);
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+/* TAGS */
+.resp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* TAG */
+.resp-tag {
+  font-size: 0.65rem;
+  font-family: "Courier New", monospace;
+  background: rgba(159, 211, 199, 0.07);
+  color: rgba(159, 211, 199, 0.5);
+  border: 1px solid rgba(159, 211, 199, 0.15);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
 
 </section>
 <!-- PLAYER COMBAT -->

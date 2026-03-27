@@ -329,87 +329,121 @@ white-space: normal;
 display: block; 
 }
 
-/*NUEVO CODIGO*/
+/* ---------------- RESPONSABILIDAD GRID PRO ---------------- */
+
 .responsabilidad-grid h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 24px;
   color: #9fd3c7;
 }
- 
+
+/* GRID */
 .resp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  gap: 12px;
 }
- 
+
+/* CARD */
 .resp-card {
-  background: #1a1a1a;
+  background: #161616;
   border: 1px solid rgba(159, 211, 199, 0.15);
-  border-radius: 14px;
-  padding: 20px;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
 }
- 
+
+/* HOVER */
 .resp-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(159, 211, 199, 0.45);
-  box-shadow: 0 8px 24px rgba(159, 211, 199, 0.08);
+  transform: translateY(-3px);
+  border-color: rgba(159, 211, 199, 0.5);
+  box-shadow: 0 10px 25px rgba(159, 211, 199, 0.12);
 }
- 
+
+/* HEADER */
 .resp-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
- 
+
+/* TITULO */
 .resp-title {
-  font-size: 0.95rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: #9fd3c7;
-  line-height: 1.4;
+  line-height: 1.3;
 }
- 
+
+/* BADGE */
 .resp-badge {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: bold;
-  padding: 3px 9px;
-  border-radius: 99px;
+  padding: 2px 8px;
+  border-radius: 999px;
   white-space: nowrap;
-  flex-shrink: 0;
-  letter-spacing: 0.5px;
+  opacity: 0.9;
 }
- 
-.badge-gameplay { background: rgba(159, 211, 199, 0.12); color: #9fd3c7; border: 1px solid rgba(159,211,199,0.3); }
-.badge-ia       { background: rgba(130, 180, 255, 0.12); color: #82b4ff; border: 1px solid rgba(130,180,255,0.3); }
-.badge-ui       { background: rgba(200, 160, 255, 0.12); color: #c8a0ff; border: 1px solid rgba(200,160,255,0.3); }
-.badge-arte     { background: rgba(255, 180, 120, 0.12); color: #ffb478; border: 1px solid rgba(255,180,120,0.3); }
-.badge-audio    { background: rgba(255, 140, 160, 0.12); color: #ff8ca0; border: 1px solid rgba(255,140,160,0.3); }
- 
+
+/* COLORES BADGE */
+.badge-gameplay {
+  background: rgba(159, 211, 199, 0.12);
+  color: #9fd3c7;
+  border: 1px solid rgba(159, 211, 199, 0.3);
+}
+
+.badge-ia {
+  background: rgba(130, 180, 255, 0.12);
+  color: #82b4ff;
+  border: 1px solid rgba(130, 180, 255, 0.3);
+}
+
+.badge-ui {
+  background: rgba(200, 160, 255, 0.12);
+  color: #c8a0ff;
+  border: 1px solid rgba(200, 160, 255, 0.3);
+}
+
+.badge-arte {
+  background: rgba(255, 180, 120, 0.12);
+  color: #ffb478;
+  border: 1px solid rgba(255, 180, 120, 0.3);
+}
+
+.badge-audio {
+  background: rgba(255, 140, 160, 0.12);
+  color: #ff8ca0;
+  border: 1px solid rgba(255, 140, 160, 0.3);
+}
+
+/* DESCRIPCIÓN */
 .resp-desc {
-  font-size: 0.88rem;
-  color: rgba(159, 211, 199, 0.65);
-  line-height: 1.6;
-  margin: 0 0 12px;
+  font-size: 0.8rem;
+  color: rgba(159, 211, 199, 0.55);
+  line-height: 1.5;
+  margin: 0 0 10px;
 }
- 
+
+/* TAGS */
 .resp-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
 }
- 
+
+/* TAG */
 .resp-tag {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-family: "Courier New", monospace;
   background: rgba(159, 211, 199, 0.07);
   color: rgba(159, 211, 199, 0.5);
   border: 1px solid rgba(159, 211, 199, 0.15);
-  padding: 2px 8px;
-  border-radius: 6px;
+  padding: 2px 6px;
+  border-radius: 5px;
 }
-
 
 
 

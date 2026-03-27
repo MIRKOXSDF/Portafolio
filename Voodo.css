@@ -328,20 +328,18 @@ line-height: 1.7;
 white-space: normal; 
 display: block; 
 }
+/* ---------------- RESPONSABILIDAD GRID PRO (FIX DEFINITIVO) ---------------- */
 
-/* ---------------- RESPONSABILIDAD GRID PRO ---------------- */
-
-.responsabilidad-grid h2 {
-  font-size: 1.3rem;
-  margin-bottom: 24px;
-  color: #9fd3c7;
+.responsabilidad-grid {
+  width: 100%;
 }
 
 /* GRID */
 .resp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
 }
 
 /* CARD */
@@ -349,16 +347,20 @@ display: block;
   background: #161616;
   border: 1px solid rgba(159, 211, 199, 0.15);
   border-radius: 12px;
-  padding: 16px;
+  padding: 18px;
   transition: all 0.25s ease;
   backdrop-filter: blur(6px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* HOVER */
 .resp-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(159, 211, 199, 0.5);
-  box-shadow: 0 10px 25px rgba(159, 211, 199, 0.12);
+  transform: translateY(-5px);
+  border-color: rgba(159, 211, 199, 0.6);
+  box-shadow: 0 15px 35px rgba(159, 211, 199, 0.15);
 }
 
 /* HEADER */
@@ -366,13 +368,13 @@ display: block;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 /* TITULO */
 .resp-title {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #9fd3c7;
   line-height: 1.3;
@@ -382,13 +384,12 @@ display: block;
 .resp-badge {
   font-size: 0.65rem;
   font-weight: bold;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 999px;
   white-space: nowrap;
-  opacity: 0.9;
 }
 
-/* COLORES BADGE */
+/* BADGES COLORES */
 .badge-gameplay {
   background: rgba(159, 211, 199, 0.12);
   color: #9fd3c7;
@@ -421,29 +422,51 @@ display: block;
 
 /* DESCRIPCIÓN */
 .resp-desc {
-  font-size: 0.8rem;
-  color: rgba(159, 211, 199, 0.55);
+  font-size: 0.85rem;
+  color: rgba(159, 211, 199, 0.65);
   line-height: 1.5;
-  margin: 0 0 10px;
+  margin-bottom: 12px;
 }
 
 /* TAGS */
 .resp-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
 }
 
 /* TAG */
 .resp-tag {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-family: "Courier New", monospace;
-  background: rgba(159, 211, 199, 0.07);
-  color: rgba(159, 211, 199, 0.5);
-  border: 1px solid rgba(159, 211, 199, 0.15);
-  padding: 2px 6px;
-  border-radius: 5px;
+  background: rgba(159, 211, 199, 0.08);
+  color: rgba(159, 211, 199, 0.6);
+  border: 1px solid rgba(159, 211, 199, 0.2);
+  padding: 3px 7px;
+  border-radius: 6px;
 }
+
+/* ---------------- FIX GENERAL DEL LAYOUT (IMPORTANTE) ---------------- */
+
+/* Esto arregla el problema principal */
+.project-section {
+  flex: 1 1 400px;
+  max-width: 100%;
+}
+
+/* Asegura que el contenedor no rompa el grid */
+.project-content {
+  max-width: 1100px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 40px;
+}
+
 
 
 

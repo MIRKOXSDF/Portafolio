@@ -300,13 +300,7 @@ font-weight: bold;
 font-size: 1rem; color: #9fd3c7; 
 transition: 0.3s ease; 
 } 
-.responsabilidad summary {
-    list-style: none;
-}
 
-.responsabilidad summary::-webkit-details-marker {
-    display: none;
-}
 /* Contenedor general */ 
 .code-block { 
 border-radius: 16px;
@@ -333,6 +327,85 @@ font-size: 15px;
 line-height: 1.7; 
 white-space: normal; 
 display: block; 
+}
+.responsabilidad-grid h2 {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  color: #9fd3c7;
+}
+ 
+.resp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+ 
+.resp-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(159, 211, 199, 0.15);
+  border-radius: 14px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+ 
+.resp-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(159, 211, 199, 0.45);
+  box-shadow: 0 8px 24px rgba(159, 211, 199, 0.08);
+}
+ 
+.resp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+ 
+.resp-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #9fd3c7;
+  line-height: 1.4;
+}
+ 
+.resp-badge {
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 9px;
+  border-radius: 99px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+ 
+.badge-gameplay { background: rgba(159, 211, 199, 0.12); color: #9fd3c7; border: 1px solid rgba(159,211,199,0.3); }
+.badge-ia       { background: rgba(130, 180, 255, 0.12); color: #82b4ff; border: 1px solid rgba(130,180,255,0.3); }
+.badge-ui       { background: rgba(200, 160, 255, 0.12); color: #c8a0ff; border: 1px solid rgba(200,160,255,0.3); }
+.badge-arte     { background: rgba(255, 180, 120, 0.12); color: #ffb478; border: 1px solid rgba(255,180,120,0.3); }
+.badge-audio    { background: rgba(255, 140, 160, 0.12); color: #ff8ca0; border: 1px solid rgba(255,140,160,0.3); }
+ 
+.resp-desc {
+  font-size: 0.88rem;
+  color: rgba(159, 211, 199, 0.65);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+ 
+.resp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+ 
+.resp-tag {
+  font-size: 0.72rem;
+  font-family: "Courier New", monospace;
+  background: rgba(159, 211, 199, 0.07);
+  color: rgba(159, 211, 199, 0.5);
+  border: 1px solid rgba(159, 211, 199, 0.15);
+  padding: 2px 8px;
+  border-radius: 6px;
 }
 
 

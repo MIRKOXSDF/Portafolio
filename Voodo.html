@@ -83,94 +83,111 @@
         </p>
     </div>
 
-<div class="project-section responsabilidad">
-<h2>Mi responsabilidad</h2>
-<ul>
-
-<li>
-<details class="code-block">
-<summary>Player Jump</summary>
-<code>
-Sistema de salto que detecta la entrada mediante el input "Space", fusionado con AddForce para aplicar 
-un impulso vertical preciso y, por último, un cooldown que controla el salto y evita repeticiones constantes.
- </code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Player Tools (LLave inglesa)</summary>
-<code>
-De las 3 herramientas disponibles, desarrollé la llave inglesa, la cual permite reparar y activar mecanismos como
-palancas, utilizando variables booleanas para gestionar estados (activar/desactivar) y Quaternions para la 
-rotación suave de la palanca.
-
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Enemy Movement Patrol</summary>
-<code>
-Sistema de patrullaje con NavMeshAgent, que permite a los enemigos moverse entre puntos y cambiar mediante booleanos 
-entre patrullaje y persecución al detectar al jugador.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>EnemyCat system</summary>
-<code>
-Implementación del EnemyCat con un sistema de vigilancia basado en rotación dentro de su zona mediante Quaternions. Al
- detectar al jugador a través de un campo de visión, inicia la persecución utilizando NavMeshAgent, y en caso de perderlo, 
- regresa a su zona para retomar su estado de vigilancia.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>UI System</summary>
-<code>
-Desarrollo de la interfaz de usuario, incluyendo la visualización de las 3 herramientas obtenidas por el 
-jugador mediante iconos dinámicos y por otra parte el desarrollo de una escena pausa.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Animation System</summary>
-<code>
-Implementación del sistema de animaciones para el jugador y los enemigos utilizando Animator, activando transiciones en función 
-de sus acciones y estados dentro del juego.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Kinematics</summary>
-<code>
-Implementación de una cinemática al final del juego que presenta el desenlace de la historia, mostrando el momento 
-en que el jugador recupera su cuerpo y cumple su objetivo principal.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Sound and Music</summary>
-<code>
-Integración de efectos de sonido para acciones del jugador, como cortar cuerdas (usando la herramienta tijera) y abrir puertas, 
-junto con la implementación de música ambiental para el gameplay y el menú principal.
-</code>
-</details>
-</li>
-
-</ul>
+<div class="project-section responsabilidad-grid">
+  <h2>Mi responsabilidad</h2>
+ 
+  <div class="resp-grid">
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">Player Jump</span>
+        <span class="resp-badge badge-gameplay">Gameplay</span>
+      </div>
+      <p class="resp-desc">Sistema de salto que detecta el input "Space", aplica un impulso vertical preciso con AddForce y controla repeticiones mediante un cooldown.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">AddForce</span>
+        <span class="resp-tag">Input</span>
+        <span class="resp-tag">Cooldown</span>
+      </div>
+    </div>
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">Player Tools — Llave inglesa</span>
+        <span class="resp-badge badge-gameplay">Gameplay</span>
+      </div>
+      <p class="resp-desc">Herramienta que repara y activa mecanismos como palancas, usando booleanos para gestionar estados y Quaternions para rotación suave.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">Quaternion</span>
+        <span class="resp-tag">Boolean states</span>
+      </div>
+    </div>
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">Enemy Movement Patrol</span>
+        <span class="resp-badge badge-ia">IA</span>
+      </div>
+      <p class="resp-desc">Patrullaje entre puntos con NavMeshAgent, con transición automática entre patrullaje y persecución al detectar al jugador.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">NavMeshAgent</span>
+        <span class="resp-tag">State machine</span>
+      </div>
+    </div>
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">EnemyCat System</span>
+        <span class="resp-badge badge-ia">IA</span>
+      </div>
+      <p class="resp-desc">Vigilancia por rotación en zona, campo de visión para detectar al jugador e iniciar persecución, con retorno automático al perderlo.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">NavMeshAgent</span>
+        <span class="resp-tag">Field of view</span>
+        <span class="resp-tag">Quaternion</span>
+      </div>
+    </div>
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">UI System</span>
+        <span class="resp-badge badge-ui">UI</span>
+      </div>
+      <p class="resp-desc">Interfaz que muestra las 3 herramientas del jugador con iconos dinámicos, más una escena de pausa funcional.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">Canvas</span>
+        <span class="resp-tag">Dynamic icons</span>
+        <span class="resp-tag">Pause menu</span>
+      </div>
+    </div>
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">Animation System</span>
+        <span class="resp-badge badge-arte">Arte</span>
+      </div>
+      <p class="resp-desc">Sistema de animaciones para jugador y enemigos usando Animator, con transiciones activadas por acciones y estados del juego.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">Animator</span>
+        <span class="resp-tag">State transitions</span>
+      </div>
+    </div>
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">Kinematics</span>
+        <span class="resp-badge badge-arte">Arte</span>
+      </div>
+      <p class="resp-desc">Cinemática final que muestra el desenlace de la historia: el jugador recupera su cuerpo y cumple su objetivo.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">Timeline</span>
+        <span class="resp-tag">Cutscene</span>
+      </div>
+    </div>
+ 
+    <div class="resp-card">
+      <div class="resp-header">
+        <span class="resp-title">Sound and Music</span>
+        <span class="resp-badge badge-audio">Audio</span>
+      </div>
+      <p class="resp-desc">Efectos de sonido para acciones del jugador (cortar cuerdas, abrir puertas) y música ambiental para gameplay y menú principal.</p>
+      <div class="resp-tags">
+        <span class="resp-tag">AudioSource</span>
+        <span class="resp-tag">Ambient music</span>
+      </div>
+    </div>
+ 
+  </div>
 </div>
 
 

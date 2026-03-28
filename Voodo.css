@@ -327,96 +327,146 @@ line-height: 1.7;
 white-space: normal; 
 display: block; 
 }
-/* PEGA ESTO al FINAL de tu zombie.css */
-
+/* CONTENEDOR GENERAL */
 .resp-section-wrapper {
-  max-width: 1100px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
+  padding: 40px 20px;
 }
 
-.responsabilidad-grid h2 {
-  font-size: 1.4rem;
-  margin-bottom: 24px;
-  color: #9fd3c7;
-  font-family: sans-serif;
+/* TÍTULO */
+.project-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
 }
 
+/* GRID */
 .resp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px;
+  gap: 20px;
 }
 
+/* CARD */
 .resp-card {
-  background: #161616;
-  border: 1px solid rgba(159, 211, 199, 0.15);
+  background: #1e1e2f;
   border-radius: 12px;
-  padding: 16px;
-  transition: all 0.25s ease;
+  padding: 20px;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* HOVER EFECTO */
 .resp-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(159, 211, 199, 0.5);
-  box-shadow: 0 10px 25px rgba(159, 211, 199, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
+/* HEADER */
 .resp-header {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
+/* TITULO */
 .resp-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #9fd3c7;
-  line-height: 1.3;
-  font-family: sans-serif;
-}
-
-.resp-badge {
-  font-size: 0.65rem;
   font-weight: bold;
-  padding: 3px 10px;
-  border-radius: 999px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  font-family: sans-serif;
+  font-size: 1.1rem;
 }
 
-.badge-gameplay { background: rgba(159,211,199,0.12); color: #9fd3c7; border: 1px solid rgba(159,211,199,0.35); }
-.badge-ia       { background: rgba(130,180,255,0.12); color: #82b4ff; border: 1px solid rgba(130,180,255,0.35); }
-.badge-ui       { background: rgba(200,160,255,0.12); color: #c8a0ff; border: 1px solid rgba(200,160,255,0.35); }
-.badge-arte     { background: rgba(255,180,120,0.12); color: #ffb478; border: 1px solid rgba(255,180,120,0.35); }
-.badge-audio    { background: rgba(255,140,160,0.12); color: #ff8ca0; border: 1px solid rgba(255,140,160,0.35); }
+/* BADGES */
+.resp-badge {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
 
+/* COLORES DE BADGES */
+.badge-gameplay {
+  background: #4caf50;
+}
+
+.badge-ia {
+  background: #2196f3;
+}
+
+.badge-ui {
+  background: #ff9800;
+}
+
+.badge-arte {
+  background: #9c27b0;
+}
+
+.badge-audio {
+  background: #f44336;
+}
+
+/* DESCRIPCIÓN */
 .resp-desc {
-  font-size: 0.85rem !important;
-  color: rgba(159, 211, 199, 0.6) !important;
-  line-height: 1.6 !important;
-  margin: 0 0 12px !important;
-  font-family: sans-serif !important;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  line-height: 1.4;
+  color: #ccc;
 }
 
+/* TAGS */
 .resp-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  margin-top: 10px;
 }
 
 .resp-tag {
-  font-size: 0.68rem;
-  font-family: "Courier New", monospace;
-  background: rgba(159, 211, 199, 0.07);
-  color: rgba(159, 211, 199, 0.55);
-  border: 1px solid rgba(159, 211, 199, 0.15);
-  padding: 2px 7px;
-  border-radius: 5px;
+  display: inline-block;
+  background: #2c2c3e;
+  padding: 4px 8px;
+  margin: 3px;
+  border-radius: 6px;
+  font-size: 0.75rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

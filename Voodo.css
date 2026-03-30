@@ -327,38 +327,62 @@ line-height: 1.7;
 white-space: normal; 
 display: block; 
 }
-/* CONTENEDOR GENERAL */
+/* ---------- RESPONSABILIDAD PRO ---------- */
+
+/* CONTENEDOR */
 .resp-section-wrapper {
-  padding: 40px 20px;
+  padding: 50px 20px;
+}
+
+/* SECCIÓN */
+.project-section.responsabilidad-grid {
+  background: #111;
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid rgba(159, 211, 199, 0.15);
 }
 
 /* TÍTULO */
-.project-section h2 {
+.project-section.responsabilidad-grid h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   font-size: 2rem;
+  color: #9fd3c7;
 }
 
 /* GRID */
 .resp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
 /* CARD */
 .resp-card {
-  background: #1e1e2f;
-  border-radius: 12px;
-  padding: 20px;
-  color: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border-radius: 16px;
+  padding: 22px;
+
+  border: 1px solid rgba(159, 211, 199, 0.15);
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.6),
+    inset 0 0 10px rgba(159, 211, 199, 0.05);
+
+  color: #e6f7f3;
+
+  transition: all 0.3s ease;
 }
 
-/* HOVER EFECTO */
+/* HOVER */
 .resp-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transform: translateY(-8px) scale(1.02);
+
+  border: 1px solid rgba(159, 211, 199, 0.4);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.7),
+    0 0 25px rgba(159, 211, 199, 0.15);
 }
 
 /* HEADER */
@@ -366,50 +390,39 @@ display: block;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* TITULO */
 .resp-title {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  color: #ffffff;
 }
 
 /* BADGES */
 .resp-badge {
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.7rem;
   font-weight: bold;
+  color: #cdeee7;
+  background: rgba(255,255,255,0.08);
 }
 
-/* COLORES DE BADGES */
-.badge-gameplay {
-  background: #4caf50;
-}
-
-.badge-ia {
-  background: #2196f3;
-}
-
-.badge-ui {
-  background: #ff9800;
-}
-
-.badge-arte {
-  background: #9c27b0;
-}
-
-.badge-audio {
-  background: #f44336;
-}
+/* COLORES BADGE */
+.badge-gameplay { background: rgba(76, 175, 80, 0.2); }
+.badge-ia { background: rgba(33, 150, 243, 0.2); }
+.badge-ui { background: rgba(255, 152, 0, 0.2); }
+.badge-arte { background: rgba(156, 39, 176, 0.2); }
+.badge-audio { background: rgba(244, 67, 54, 0.2); }
 
 /* DESCRIPCIÓN */
 .resp-desc {
-  font-size: 0.9rem;
-  margin: 10px 0;
-  line-height: 1.4;
-  color: #ccc;
+  font-size: 0.95rem;
+  margin: 12px 0;
+  line-height: 1.5;
+  color: #bfbfbf;
 }
 
 /* TAGS */
@@ -419,13 +432,13 @@ display: block;
 
 .resp-tag {
   display: inline-block;
-  background: #2c2c3e;
-  padding: 4px 8px;
-  margin: 3px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  background: rgba(255,255,255,0.06);
+  padding: 5px 10px;
+  margin: 4px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: #9fd3c7;
 }
-
 
 
 

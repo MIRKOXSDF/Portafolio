@@ -439,6 +439,27 @@ display: block;
   font-size: 0.7rem;
   color: #9fd3c7;
 }
+/* 🔥 FIX DEFINITIVO RESPONSABILIDAD */
+
+.responsabilidad-grid {
+  display: block !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.resp-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Forzar que cada card sea bloque */
+.resp-card {
+  display: block;
+  width: 100%;
+}
 
 
 

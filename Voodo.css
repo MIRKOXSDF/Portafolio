@@ -333,6 +333,29 @@ display: block;
     max-width: 1100px;
   margin: 0 auto 60px;
 }
+.resp-card {
+  background: #111;
+  border: 1px solid rgba(159, 211, 199, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.resp-card:hover {
+  transform: translateY(-6px);
+  border-color: #9fd3c7;
+  box-shadow: 0 10px 30px rgba(159,211,199,0.2);
+}
+
+.resp-card h3 {
+  color: #9fd3c7;
+  font-size: 1.1rem;
+}
+
+.resp-card p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
 
 
 

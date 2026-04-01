@@ -329,81 +329,18 @@ display: block;
 }
 
 
-.resp-section {
-    max-width: 1100px;
-  margin: 0 auto 60px;
-}
 .resp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 👈 2 columnas */
   gap: 20px;
 }
 .resp-card {
-  background: #111;
-  border: 1px solid rgba(159, 211, 199, 0.2);
-  border-radius: 16px;
+  background: #1e1e1e;
   padding: 20px;
-  transition: 0.3s ease;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
-.resp-card:hover {
-  transform: translateY(-6px);
-  border-color: #9fd3c7;
-  box-shadow: 0 10px 30px rgba(159,211,199,0.2);
-}
-
-.resp-card h3 {
-  color: #9fd3c7;
-  font-size: 1.1rem;
-}
-
-.resp-card p {
-  color: #cbd5e1;
-  font-size: 0.9rem;
-}
-/* HEADER CARD */
-.resp-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-/* BADGES */
-.badge {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: bold;
-}
-
-.badge.gameplay {
-  background: #2e2a4a;
-  color: #c4b5fd;
-}
-
-.badge.ia {
-  background: #1e3a34;
-  color: #86efac;
-}
-
-/* TAGS */
-.resp-tags {
-  margin-top: 12px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.resp-tags span {
-  background: #0b0f14;
-  border: 1px solid #1f2a38;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  color: #94a3b8;
-}
-
 
 
 

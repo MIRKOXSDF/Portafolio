@@ -333,6 +333,11 @@ display: block;
     max-width: 1100px;
   margin: 0 auto 60px;
 }
+.resp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
 .resp-card {
   background: #111;
   border: 1px solid rgba(159, 211, 199, 0.2);

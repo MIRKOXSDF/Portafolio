@@ -332,25 +332,10 @@ display: block;
 /* Fix para resp-grid dentro de project-section */
 .project-section .resp-grid {
   display: grid !important;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr) !important;
   gap: 20px;
   margin-top: 20px;
   width: 100%;
-}
-
-.project-section .resp-card {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.project-section .resp-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
 }
 
 

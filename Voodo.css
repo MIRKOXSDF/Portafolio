@@ -347,6 +347,51 @@ display: block;
   width: 100%; /* 👈 importante */
   box-sizing: border-box; /* 👈 importante */
 }
+.resp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.resp-header h3 {
+  font-size: 1.1rem;
+}
+
+/* BADGES */
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.badge.gameplay {
+  background: #2d2f55;
+  color: #b8c0ff;
+}
+
+.badge.ia {
+  background: #1f3d2b;
+  color: #7dffb3;
+}
+
+/* TAGS */
+.tags {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  font-size: 12px;
+  padding: 5px 10px;
+  background: #111;
+  border-radius: 999px;
+  border: 1px solid #333;
+  color: #aaa;
+}
 
 
 

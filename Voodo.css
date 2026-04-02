@@ -336,17 +336,14 @@ display: block;
   margin-top: 20px;
 }
 
-/* 🔥 CLAVE: evitar que las cards se expandan raro */
 .resp-card {
   background: #1e1e1e;
   padding: 20px;
   border-radius: 12px;
   color: white;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-
-  width: 100%; /* 👈 importante */
-  box-sizing: border-box; /* 👈 importante */
 }
+
 .resp-header {
   display: flex;
   justify-content: space-between;
@@ -354,11 +351,6 @@ display: block;
   margin-bottom: 10px;
 }
 
-.resp-header h3 {
-  font-size: 1.1rem;
-}
-
-/* BADGES */
 .badge {
   font-size: 12px;
   padding: 4px 10px;
@@ -376,7 +368,6 @@ display: block;
   color: #7dffb3;
 }
 
-/* TAGS */
 .tags {
   margin-top: 15px;
   display: flex;

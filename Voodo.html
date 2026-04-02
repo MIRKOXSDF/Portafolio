@@ -7,7 +7,7 @@
 
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="zombie.css">
+    <link rel="stylesheet" href="Voodo.css">
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
 
 </head>
@@ -84,21 +84,84 @@
         </p>
 </div>
 
-<section class="projects" id="projects">
-   <h2>Mi responsabilidad</h2>
-     <div class="projects-grid">
+<div class="project-section">
+  <h2>Mi responsabilidad</h2>
 
-      <!-- CARD 1 -->
-      <div class="project-card">
-        <div class="resp-header">
-          <h3>Player Jump</h3>      
-        </div>
-          <p>
-            Sistema de salto que detecta el input "Space", aplica impulso con AddForce
-            y controla repeticiones mediante cooldown.
-          </p>
-       </div>     
-</section>
+  <div class="resp-grid">
+
+    <!-- CARD 1 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>Player Jump</h3>
+        <span class="badge gameplay">Gameplay</span>
+      </div>
+
+      <p>
+        Sistema de salto que detecta el input "Space", aplica impulso con AddForce
+        y controla repeticiones mediante cooldown.
+      </p>
+
+      <div class="tags">
+        <span>AddForce</span>
+        <span>Input</span>
+        <span>Cooldown</span>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>Player Tools — Llave inglesa</h3>
+        <span class="badge gameplay">Gameplay</span>
+      </div>
+
+      <p>
+        Herramienta que repara y activa mecanismos como palancas,
+        usando booleanos y Quaternions.
+      </p>
+
+      <div class="tags">
+        <span>Quaternion</span>
+        <span>Boolean</span>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>Enemy Movement Patrol</h3>
+        <span class="badge ia">IA</span>
+      </div>
+
+      <p>
+        Patrullaje entre puntos con NavMeshAgent y cambio automático a persecución.
+      </p>
+
+      <div class="tags">
+        <span>NavMeshAgent</span>
+        <span>State Machine</span>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>EnemyCat System</h3>
+        <span class="badge ia">IA</span>
+      </div>
+
+      <p>
+        Sistema de visión, rotación y persecución con retorno automático.
+      </p>
+
+      <div class="tags">
+        <span>Field of View</span>
+        <span>Quaternion</span>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- PLAYER COMBAT -->
 <div class="project-sections">

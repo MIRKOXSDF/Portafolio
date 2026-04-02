@@ -329,13 +329,59 @@ display: block;
 }
 
 
-/* Fix para resp-grid dentro de project-section */
-.project-section .resp-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
+.resp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 20px;
-  width: 100%;
+}
+
+.resp-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.resp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.badge.gameplay {
+  background: #2d2f55;
+  color: #b8c0ff;
+}
+
+.badge.ia {
+  background: #1f3d2b;
+  color: #7dffb3;
+}
+
+.tags {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  font-size: 12px;
+  padding: 5px 10px;
+  background: #111;
+  border-radius: 999px;
+  border: 1px solid #333;
+  color: #aaa;
 }
 
 

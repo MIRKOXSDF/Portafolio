@@ -81,68 +81,119 @@
         </p>
     </div>
 
-<div class="project-section responsabilidad">
-<h2>Mi responsabilidad</h2>
-<ul>
-
-<li>
-<details class="code-block">
-<summary>Player movement</summary>
-<code>
-Movimiento del jugador con Rigidbody2D para la fisica e inputs para el control.
-
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Player attack system</summary>
-<code> Ataque meele y disparo de proyectiles, utilizando inputs de teclado para 
-    el control y Instantiate junto con Rigidbody2D para la generación y movimiento 
-    de las balas.</code>
-
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Enemy movement</summary>
-<code>Enemigos que patrullan de manera lateral cambiando de dirección después de cierto 
-    tiempo, utilizando Rigidbody2D para su desplazamiento.</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>EnemyLady shooting system</summary>
-<code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance
-   y genera proyectiles usando Instantiate, aplicando Rigidbody2D.velocity para su desplazamiento.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Items system</summary>
-<code>Sistema de recolección de ítems como munición y monedas mediante colisiones. 
-    Las balas recargan la munición del jugador y las monedas permiten progresar en el nivel.</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>UI system</summary>
-<code>Implementación de la interfaz de usuario (UI) que muestra puntaje, tiempo, munición y monedas recolectadas, 
-    además de botones interactivos y transiciones entre escenas.</code>
-</details>
-</li>
-
 </ul>
+
+</div><div class="project-sections">
+  <h2>Mi responsabilidad</h2>
+
+  <div class="resp-grid">
+
+    <!-- CARD 1 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>Player Movement</h3>
+        <span class="badge gameplay">Gameplay</span>
+      </div>
+
+      <p>
+        Movimiento del jugador que le permite desplazarse de manera lateral
+      </p>
+
+      <div class="tags">
+        <span>Inputs</span>
+        <span>Rigidbody2D</span>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>Player attack system</h3>
+        <span class="badge gameplay">Gameplay</span>
+      </div>
+
+      <p>
+      Implementacion del ataque de meele (trinche) y de disparo (balas) que ambas manejan el mismo
+      manejo de codigo
+
+      <div class="tags">
+        <span>Inputs</span>
+        <span>Rigidbody2D</span>
+        <span>Instantiate</span>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>Enemy Patrol</h3>
+        <span class="badge ia">IA</span>
+      </div>
+
+      <p>
+        Patrullaje de los enemigos de manera lateral en una misma zona
+      </p>
+
+      <div class="tags">
+        <span>Pathfiding</span>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>EnemyLady shooting system</h3>
+        <span class="badge ia">Gameplay</span>
+      </div>
+
+      <p>
+        Sistema de ataque de disparo que genera EnemyLady de manera lateral
+      </p>
+
+      <div class="tags">
+        <span>Rigidbody2D</span>
+        <span>Instantiate</span>
+      </div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>Items system</h3>
+        <span class="badge ia">UI</span>
+      </div>
+
+      <p>
+        Sistema de recolección de ítems como munición y monedas mediante 
+        Las balas recargan la munición del jugador y las monedas permiten progresar en el nivel.
+      </p>
+
+      <div class="tags">
+        <span>Collider2D</span>
+      </div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-header">
+        <h3>UI system</h3>
+        <span class="badge ia">UI</span>
+      </div>
+
+      <p>
+       Implementación de la interfaz de usuario (UI) que muestra puntaje, tiempo, munición y monedas recolectadas, 
+       además de botones interactivos y transiciones entre escenas.<
+      </p>
+
+      <div class="tags">
+        <span>Rigidbody2D</span>
+        <span>Instantiate</span>
+      </div>
+    </div>
+  </div>
 </div>
-
-
 </section>
+
+
+
 <!-- PLAYER COMBAT -->
 <div class="project-sections">
     <h2>Player attack system</h2>

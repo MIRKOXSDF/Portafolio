@@ -155,7 +155,8 @@
 }
 
 .project-section p,
-.resp-header h3,
+.resp-card h3,
+.resp-card p,
 .project-section li {
     font-size: 1rem;
     line-height: 1.8;

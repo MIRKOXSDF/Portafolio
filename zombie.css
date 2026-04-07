@@ -347,61 +347,81 @@ display: block;
 
 
 
+.resp-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.resp-section h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #a7f3d0;
+}
+
+/* GRID */
 .resp-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 20px;
 }
 
+/* CARD */
 .resp-card {
-  background: #1e1e1e;
-  padding: 20px;
+  background: rgba(20, 20, 20, 0.9);
   border-radius: 12px;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 20px;
+  text-align: left;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
+/* HOVER */
+.resp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* HEADER */
 .resp-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-.badge {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: bold;
+.resp-header h3 {
+  font-size: 18px;
 }
 
-.badge.gameplay {
-  background: #2d2f55;
-  color: #b8c0ff;
+/* ICONOS */
+.icon {
+  font-size: 22px;
+  color: #6ee7b7;
+  transition: 0.3s;
 }
 
-.badge.ia {
-  background: #1f3d2b;
-  color: #7dffb3;
+.resp-card:hover .icon {
+  transform: scale(1.2);
+  color: #22c55e;
 }
 
-.tags {
-  margin-top: 15px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+/* TEXTO */
+.resp-card p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 15px;
 }
 
+/* TAGS */
 .tags span {
-  font-size: 12px;
-  padding: 5px 10px;
+  display: inline-block;
   background: #111;
-  border-radius: 999px;
-  border: 1px solid #333;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-right: 5px;
   color: #aaa;
 }
-
 
 
 

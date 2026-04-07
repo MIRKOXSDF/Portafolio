@@ -272,6 +272,11 @@
     margin-bottom: 50px;
     transition: all 0.3s ease;
 }
+.project-sections:hover {
+    transform: translateY(-6px);
+
+}
+
 
 .project-sections h2 {
     text-align: center;

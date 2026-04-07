@@ -156,223 +156,39 @@
 </section>
 
 
+<section class="projects" id="projects">
+    <h2>Projects</h2>
 
+    <div class="projects-grid">
 
-<!-- PLAYER COMBAT -->
-<div class="project-sections">
-    <h2>Player attack system</h2>
-
-    <div class="gif-gallery two">
-        <div class="gif-card">
-            <img src="Imagenes/Player_Meele.gif" alt="Combat system 1">
-            <span class="gif-label">Ataque meele</span>
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+                <img src="Imagenes/Player_Meele.gif">
+                <div class="project-info">
+                    <h3>Ataque Meele</h3>
+                      <p> Se desarrolló un sistema de disparo que genera proyectiles. Al colisionar con un 
+                       enemigo, el proyectil detecta el impacto y le aplica daño. Este ataque permite al 
+                       jugador defenderse a mayor distancia.</p>
+                </div>
         </div>
-        <div class="gif-card">
-            <img src="Imagenes/Player_Shoot.gif" alt="Combat system 2">
-            <span class="gif-label">Ataque Disparo</span>
 
-        </div>   
-    </div>  
-</div>
-
-<div class="project-content-Meele">
-
-     <div class="project-section">
-        <h2>Ataque Disparo</h2>
-         <p>
-            Se desarrolló un sistema de disparo que genera proyectiles. Al colisionar con un 
-            enemigo, el proyectil detecta el impacto y le aplica daño. Este ataque permite al 
-            jugador defenderse a mayor distancia.
-         </p>
-       
-      </div>
-</div>
-<div class="project-content-codigo">
-      <details class="code-block">
-      <summary>Codigo Ataque Disparo</summary>
-      <pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement; 
-
-        public class Villager : MonoBehaviour
-        {
-            public int ammo;
-            public GameObject bulletPrefab;
-            public GameObject bulletPrefab2;
-            public BulletManager bulletManager;
-            public AudioSource audioSource;
-            public AudioClip soundShootPlayer;
-            public AudioClip AmmoClip;
+        <!-- PROJECT 2 -->
+         <div class="project-card">
+                <img src="Imagenes/Player_Shoot.gif">
+                <div class="project-info">
+                    <h3>Ataque Disparo</h3>
+                      <p>Se implementó un sistema de ataque cuerpo a cuerpo utilizando un trinche. 
+                       Este sistema reutiliza la misma lógica de programación del ataque a distancia, 
+                       pero el trinche se instancia durante un tiempo muy corto, lo que genera la 
+                      sensación de un ataque directo contra los enemigos.</p>
+                </div>
+        </div>
+    </div>
+</section>
 
 
-            void Update()
-            {
-                Shoot();
-            }
-            void Shoot()
-            {
-                //Apreta la tecla "X" para poder disparar
-                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Bullet>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Bullet>().direction = dir;   
-                    ammo--;
-                    bulletManager.SetBullet(ammo);
-                    audioSource.PlayOneShot(soundShootPlayer);
-                } 
-               
-            }
-            private void OnTriggerEnter2D(Collider2D collision)
-            {
-                //Recoges la municion de tus balas para poder disparar
-                if (collision.gameObject.CompareTag("Ammo"))
-                {
-                    ammo++;
-                    bulletManager.SetBullet(ammo);
-                    Destroy(collision.gameObject);
-                    audioSource.PlayOneShot(AmmoClip);
-                }
-
-            }
-
-        }
 
 
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Bullet : MonoBehaviour
-        {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer;
-
-            void Start()
-            {
-                rb2d = GetComponent<Rigidbody2D>();
-            }
-
-            void Update()
-            {
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y vida de tiempo de la bala
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
-            }
-        }
-        </code></pre>
-     </details>
-</div>
-<div class="project-content-Meele">
-
-     <div class="project-section">
-      <h2>Ataque Melee</h2>
-        <p>
-          Se implementó un sistema de ataque cuerpo a cuerpo utilizando un trinche. 
-          Este sistema reutiliza la misma lógica de programación del ataque a distancia, 
-          pero el trinche se instancia durante un tiempo muy corto, lo que genera la 
-          sensación de un ataque directo contra los enemigos.
-        </p>
-      </div>
-</div>
-
-<div class="project-content-codigo">
-  <details class="code-block">
-      <summary>Codigo Ataque Meele</summary>
-      <pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement;  
-
-        public class Villager : MonoBehaviour
-        {
-            public GameObject bulletPrefab2;
-            public AudioSource audioSource;
-            public AudioClip soundMeelePlayer;
-
-            void Update()
-            {
-                Shoot();
-            }
-            void Shoot()
-            {
-                //Apreta la tecla "Z" para poder atacar con tu trinche    
-                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab2);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Meele>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Meele>().direction = d;
-                    audioSource.PlayOneShot(soundMeelePlayer);
-                }
-            }
-        }
-
-    
-
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Meele: MonoBehaviour
-        {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer;
-            void Start()
-            {
-                rb2d = GetComponent<Rigidbody2D>();
-                //Incializar para que la scala de tu trinche no se modifique
-                if(direction.x <0)
-                {
-                    transform.localScale = new Vector2(-0.5875226f, 1);
-                }
-            }
-
-            void Update()
-            {
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y vida de tiempo de tu trinche
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
-            }
-        }
-
-      
-
-      </code></pre>
-      </details>
-</div>
 
 
 <section class="project-links"> 

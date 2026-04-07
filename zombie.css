@@ -270,11 +270,11 @@
     text-align: center;
     margin-top: 50px; 
     margin-bottom: 50px;
-    transition: all 0.3s ease;
+   
 }
-.project-sections:hover {
+.resp-card:hover {
     transform: translateY(-6px);
-
+    transition: all 0.3s ease;
 }
 
 

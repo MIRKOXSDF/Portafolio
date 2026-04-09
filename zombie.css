@@ -140,6 +140,29 @@
     padding: 25px;
     transition: all 0.3s ease;
 }
+.projects-grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card2 {
+    background: #181818;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
+.project-cards {
+    background: #181818;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
+.project-card2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(159,211,199,.2);
+    
+}
 
 /* Hover estilo Skills */
 .project-section:hover {

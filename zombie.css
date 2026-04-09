@@ -240,11 +240,7 @@ h1, h2, h3, h4
     color: #9fd3c7;
 }
 
-.project-info p {
-    margin-top: 10px;
-    font-size: .9rem;
-    color: #9fd3c7;
-}
+
 
 /* Hover estilo Skills */
 .project-section:hover {
@@ -510,6 +506,8 @@ display: block;
 }
 
 /* TEXTO */
+.project-section p
+.project-info p,
 .resp-card p {
   font-size: 14px;
   color: #ccc;

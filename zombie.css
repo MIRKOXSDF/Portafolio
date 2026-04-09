@@ -161,24 +161,23 @@
 .project-card2:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 35px rgba(159,211,199,.2);
-    border: 2px solid #9fd3c7; /* 👈 borde verde */
     
 }
-.project-info2 {
+.project-info {
     padding: 30px;
 }
 
-.project-info2 h3 {
+.project-info h3 {
     color: #9fd3c7;
     font-size: 1.1rem;
 }
 
-.project-info2 span {
+.project-info span {
     font-size: .85rem;
     color: #9fd3c7;
 }
 
-.project-info2 p {
+.project-info p {
     margin-top: 10px;
     font-size: .9rem;
     color: #9fd3c7;

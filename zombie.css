@@ -1,4 +1,18 @@
 /* ---------- PROJECT PAGE ---------- */
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'nokia';
+    src: url('Font/nokiafc22.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
 
     background: #0e0e0e;
@@ -8,6 +22,12 @@ body {
 
     
 }
+h1, h2, h3, h4
+.header-right a,
+.resume-btn {
+    font-family: 'nokia', monospace;
+}
+
 .project-hero {
     max-width: 2000px;
     margin: 40px auto 60px;

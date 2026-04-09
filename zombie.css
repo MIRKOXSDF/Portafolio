@@ -153,10 +153,10 @@
     margin-bottom: 20px;
     color: #9fd3c7;
 }
-.project-card {
+.project-card:focus,
+.project-card:focus-visible {
     outline: none;
 }
-
 .project-section p,
 .resp-card h3,
 .resp-card p,

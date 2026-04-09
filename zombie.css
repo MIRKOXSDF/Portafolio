@@ -394,6 +394,7 @@ h1, h2, h3, h4
 .project-content-codigo { 
     display: flex;
     justify-content: flex-start; /* 🔥 lo manda a la izquierda */
+    gap:40px;
 }
 
 
@@ -462,7 +463,7 @@ display: block;
 
 /* CARD */
 .resp-card {
-  background: rgba(20, 20, 20, 0.9);
+  background: rgb(20, 20, 20);
   border-radius: 12px;
   padding: 20px;
   text-align: left;

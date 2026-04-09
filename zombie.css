@@ -153,6 +153,9 @@
     margin-bottom: 20px;
     color: #9fd3c7;
 }
+.project-card {
+    outline: none;
+}
 
 .project-section p,
 .resp-card h3,

@@ -1,5 +1,13 @@
 /* ---------- PROJECT PAGE ---------- */
+body {
 
+    background: #0e0e0e;
+    color: #e6e6e6;
+    font-family: 'nokia', monospace;
+
+
+    
+}
 .project-hero {
     max-width: 2000px;
     margin: 40px auto 60px;

@@ -490,10 +490,11 @@ display: block;
   gap: 10px;
   margin-bottom: 10px;
 }
-.resp-header2 {
+
+.resp-headers {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* ← esto lo centra */
   gap: 10px;
   margin-bottom: 10px;
 }

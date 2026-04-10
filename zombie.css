@@ -393,8 +393,14 @@ h1, h2, h3, h4
 /* ---------------- CODIGO ESTILO PORTFOLIO ---------------- */ 
 .code-container {
     display: flex;
-    flex-direction: column; /* 🔥 vertical */
-    align-items: flex-start; /* izquierda */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.code-container .code-block {
+    width: 100%;
+    max-width: 700px; /* opcional para que no sea gigante */
 }
 
 

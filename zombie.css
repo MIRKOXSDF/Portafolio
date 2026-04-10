@@ -391,10 +391,10 @@ h1, h2, h3, h4
 }
 
 /* ---------------- CODIGO ESTILO PORTFOLIO ---------------- */ 
-.project-content-codigo { 
+.code-container {
     display: flex;
-    justify-content: flex-start; /* 🔥 lo manda a la izquierda */
-    gap:40px;
+    flex-direction: column; /* 🔥 vertical */
+    align-items: flex-start; /* izquierda */
 }
 
 

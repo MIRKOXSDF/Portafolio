@@ -491,11 +491,8 @@ display: block;
   margin-bottom: 10px;
 }
 
-.resp-headers {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* ← esto lo centra */
-  gap: 10px;
+.resp-title {
+
   margin-bottom: 10px;
 }
 
@@ -512,7 +509,7 @@ display: block;
 
 .resp-card:hover .icon {
   transform: scale(1.2);
-  color: #22c55e;
+  color:  #6ee7b7;
 }
 
 /* TEXTO */

@@ -457,7 +457,7 @@ display: block;
 .resp-section h2 {
   font-size: 28px;
   margin-bottom: 40px;
-  color: #22c55e;
+  color:  #9fd3c7;
 }
 
 /* GRID */
@@ -492,7 +492,7 @@ display: block;
 }
 
 .resp-title {
-
+  justify-content: center;
   margin-bottom: 10px;
 }
 

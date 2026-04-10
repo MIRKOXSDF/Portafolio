@@ -491,7 +491,9 @@ display: block;
   margin-bottom: 10px;
 }
 .resp-header2 {
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
 }

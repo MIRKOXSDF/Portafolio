@@ -332,7 +332,6 @@ h1, h2, h3, h4
 .link-card:hover {
     transform: translateY(-8px);
     border-color: #9fd3c7;
-    box-shadow: 0 15px 40px rgba(159,211,199,0.25);
 }
 /* ---------- GIF GALLERY ---------- */
 

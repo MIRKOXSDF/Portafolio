@@ -1,4 +1,32 @@
 /* ---------- PROJECT PAGE ---------- */
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'nokia';
+    src: url('Font/nokiafc22.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+
+    background: #0e0e0e;
+    color: #e6e6e6;
+    font-family: 'nokia', monospace;
+
+
+    
+}
+h1, h2, h3, h4
+.header-right a,
+.resume-btn {
+    font-family: 'nokia', monospace;
+}
 
 .project-hero {
     max-width: 2000px;
@@ -94,8 +122,33 @@
     font-size: 20px;
 
 }
+/* ---------- HEADER ---------- */
+.header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #0e0e0e;
+    justify-content: space-between;
+    align-items: center;
+    gap: 150px;                
 
+    padding: 30px 20px;
+}
+.header-left h1 {
+    font-size: 2rem;
+    color: #9fd3c7;
+}
 
+.header-left span {
+    font-size: 0.9rem;
+    color: #9fd3c7;
+}
+
+.header-right {
+    display: flex;
+    gap: 15px;
+}
 .back-btn:hover {
     transform: translateX(-5px);
 }
@@ -112,7 +165,7 @@
 
 .project-content {
     max-width: 1100px;
-    margin: 0 auto 100px;
+    margin: 0 auto 40px;
     padding: 0 20px;
 
     display: flex;
@@ -123,7 +176,7 @@
 }
 .project-content-Meele {
     max-width: 1100px;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
     padding: 0 20px;
 
     display: flex;
@@ -137,9 +190,54 @@
     background: #141414;
     border: 1px solid rgba(159, 211, 199, 0.2);
     border-radius: 18px;
-    padding: 40px;
+    padding: 25px;
     transition: all 0.3s ease;
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #9fd3c7;
+}
+.project-card {
+    background: #181818;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
+.project-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center 10%; 
+}
+.project-cards {
+    background: #181818;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
+.project-card:hover {
+    transform: translateY(-6px);
+    
+}
+.project-info {
+    padding: 30px;
+}
+
+.project-info h3 {
+    color: #9fd3c7;
+    font-size: 1.1rem;
+}
+
+
+
+
 
 /* Hover estilo Skills */
 .project-section:hover {
@@ -154,7 +252,8 @@
     color: #9fd3c7;
 }
 
-.project-section p,
+
+.resp-card h3,
 .project-section li {
     font-size: 1rem;
     line-height: 1.8;
@@ -192,7 +291,7 @@
 }
 
 .project-links {
-    margin: 120px auto;
+    margin: 40px auto;
     max-width: 1000px;
     text-align: center;
 }
@@ -233,7 +332,6 @@
 .link-card:hover {
     transform: translateY(-8px);
     border-color: #9fd3c7;
-    box-shadow: 0 15px 40px rgba(159,211,199,0.25);
 }
 /* ---------- GIF GALLERY ---------- */
 
@@ -266,8 +364,15 @@
 }
 .project-sections {
     text-align: center;
-    margin-bottom: 80px;
+    margin-top: 50px; 
+    margin-bottom: 50px;
+   
 }
+.resp-card:hover {
+    transform: translateY(-6px);
+    transition: all 0.3s ease;
+}
+
 
 .project-sections h2 {
     text-align: center;
@@ -285,13 +390,20 @@
 }
 
 /* ---------------- CODIGO ESTILO PORTFOLIO ---------------- */ 
-.project-content-codigo { 
-max-width: 1100px; 
-margin: 0 auto 10px; 
-margin-top: -50px; 
-gap: 40px; 
-flex-wrap: 40px; 
-} 
+.code-container {
+    display: flex;
+    margin-top: -20px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.code-container .code-block {
+    width: 100%;
+    max-width: 700px; /* opcional para que no sea gigante */
+}
+
 
 /* Header clickable */ 
 .code-block summary {
@@ -335,6 +447,92 @@ line-height: 1.7;
 white-space: normal; 
 display: block; 
 }
+
+
+
+.resp-section {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.resp-section h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color:  #9fd3c7;
+}
+
+/* GRID */
+.resp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.resp-card {
+  background: rgb(20, 20, 20);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* HOVER */
+.resp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* HEADER */
+.resp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.resp-title {
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.resp-header h3 {
+  font-size: 18px;
+}
+
+/* ICONOS */
+.icon {
+  font-size: 22px;
+  color: #6ee7b7;
+  transition: 0.3s;
+}
+
+.resp-card:hover .icon {
+  transform: scale(1.2);
+  color:  #6ee7b7;
+}
+
+/* TEXTO */
+.project-section p,
+.project-info p,
+.resp-card p {
+  font-size: 14px;
+  color: #969696;
+  margin-bottom: 15px;
+}
+
+/* TAGS */
+.tags span {
+  display: inline-block;
+  background: #111;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-right: 5px;
+  color: #aaa;
+}
+
 
 
 

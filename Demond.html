@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Zombie in the Village</title>
+    <title>Demond Destroyer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Demond.css">
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -41,7 +42,10 @@
 </section>
 
 <section class="project-content">
-       <div class="project-section ">
+
+  
+
+    <div class="project-section ">
         <h2>Informacion del Proyecto</h2>
         <ul>
 
@@ -75,126 +79,135 @@
            Eres un ninja atrapado en un castillo lleno de demonios. Tu objetivo es derrotarlos a todos y encontrar 
            la salida para escapar del castillo con vida.    
         </p>
-       
     </div>
 
-
-<div class="project-section responsabilidad">
-<h2>Mi responsabilidad</h2>
-<ul>
-
-<li>
-<details class="code-block">
-<summary>Player movement</summary>
-<code>Sistema de movimiento del jugador utilizando inputs de teclado y Rigidbody2D
-    para controlar su desplazamiento.</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Player attack system</summary>
-<code>Sistema de ataque del jugador con shurikens activado mediante inputs de teclado, 
-    generando proyectiles con Instantiate y utilizando Rigidbody2D.velocity para su fisica.</code>
-
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Items system</summary>
-<code>Sistema que permite al jugador recoger ítems como escudo y paralización mediante colisiones
-    con OnTriggerEnter2D y activarlos utilizando inputs de teclado.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Enemy AI movement</summary>
-<code>Programación del movimiento de enemigos que persiguen al jugador utilizando lógica de pathfinding.</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Enemy2 shooting system</summary>
-<code>Sistema de ataque a distancia del enemigo que detecta al jugador mediante Vector2.Distance y genera 
-    proyectiles utilizando Instantiate con Rigidbody2D para su desplazamiento.</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Enemy3 Bomb system</summary>
-<code>Implementación de enemigo explosivo que detecta la proximidad del jugador mediante Vector2.Distance y 
-    genera una explosión al colisionar con el jugador.</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Portal Enemy system</summary>
-<code>
-Portal spawnea enemigos usando Instantiate cuando el jugador entra en un rango de detección mediante 
-    Vector2.Distance.
-</code>
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>UI system</summary>
-<code>Implementación de UI que muestra barra de vida, tiempo, barra de escudo y mute, además de 
-    botones y transiciones entre escenas.</code> 
-</details>
-</li>
-
-<li>
-<details class="code-block">
-<summary>Animation system</summary>
-<code>
-Control de animaciones del jugador y enemigos mediante Animator, activadas según su accionar.
-</code>
-</details>
-</li>
-
 </ul>
-</div>
 
-</section>
-<!-- PLAYER COMBAT -->
-<div class="project-sections">
-    <h2>Items system</h2>
+<section class="resp-section">
+  <h2>Mi responsabilidad</h2>
 
-    <div class="gif-gallery two">
-        <div class="gif-card">
-            <img src="Imagenes/Escudo.gif" alt="Combat system 1">
-            <span class="gif-label">Escudo</span>
-        </div>
-        <div class="gif-card">
-            <img src="Imagenes/Paralizacion.gif" alt="Combat system 2">
-            <span class="gif-label">Paralizacion</span>
+  <div class="resp-grid">
 
-        </div>   
-    </div>  
-</div>
-<div class="project-content-Meele">
-
-      <div class="project-section">
-        <h2>Item Escudo</h2>
-         <p>
-             Se implementó un ítem de protección que otorga al jugador un escudo temporal.
-             Este escudo tiene un uso limitado, ya que se consume cada vez que el jugador lo utilize,  obligando a utilizarlo de manera estratégica durante el combate.
-         </p>
-       
+    <!-- CARD -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-running icon"></i>
+        <h3>Player Movement</h3>
       </div>
-</div>
-<div class="project-content-codigo">
-  <details class="code-block">
+      <p>Movimiento lateral y sistema de salto del jugador.</p>
+      <div class="tags">
+        <span>Inputs</span>
+        <span>Move</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-crosshairs icon"></i>
+        <h3>Player Attacks</h3>
+      </div>
+    <p>Sistema de combate con ataques cuerpo a cuerpo (trinche) y a distancia (balas).</p>
+      <div class="tags">
+        <span>Meele</span>
+        <span>Shoot</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-coins icon"></i>
+        <h3>Items System</h3>
+      </div>
+     <p>Recolección de recursos como munición para balas y monedas para la progresión del jugador.</p>
+      <div class="tags">
+        <span>Items</span>
+        <span>Resources</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-skull icon"></i>
+        <h3>Enemy Patrol</h3>
+      </div>
+      <p>Patrullaje lateral de enemigos dentro de un área definida.</p>
+
+      <div class="tags">
+        <span>Patrol</span>
+      </div>
+    </div>
+
+     <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-skull icon"></i>
+        <h3>Enemy Shooter</h3>
+      </div>
+       <p>Enemigos que disparan de manera lateral, al detectar al jugador.</p>
+      <div class="tags">
+        <span>Shoot</span>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-display icon"></i>
+        <h3>UI System</h3>
+      </div>
+    <p>Interfaz clara que muestra puntaje, tiempo, munición y progreso (monedas).</p>     
+     <div class="tags">
+        <span>UI</span>
+        <span>HUD</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="resp-section">
+    <h2>Item system</h2>
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+                <img src="Imagenes/Escudo.gif">
+                <div class="project-info">
+                    <div class="resp-title">
+                        <h3>Escudo</h3>
+                    </div>            
+                      <p> Se implementó un ítem de protección que otorga al jugador un escudo temporal.
+                        Este escudo tiene un uso limitado, ya que se consume cada vez que el jugador lo
+                         utilize,  obligando a utilizarlo de manera estratégica durante el combate.</p>
+                </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+         <div class="project-card">
+                <img src="Imagenes/Paralizacion.gif">
+                <div class="project-info">
+                   <div class="resp-title">
+                    <h3>Paralizacion</h3>
+                   </div>             
+                    <p> El segundo ítem se obtiene de manera aleatoria al derrotar a un enemigo. Al recogerlo, 
+                        el jugador adquiere la habilidad de paralizar a todos los enemigos durante un tiempo 
+                        limitado. Este ítem fue implementado como una herramienta de apoyo para equilibrar la 
+                        dificultad, especialmente en situaciones donde la cantidad de enemigos aumenta considerablemente.</p>
+                </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="project-content code-container">
+      <details class="code-block">
       <summary>Codigo Escudo</summary>
       <pre><code class="language-csharp">
-      using System;
+              using System;
       using UnityEngine;
       using UnityEngine.SceneManagement;
       using UnityEngine.UI;
@@ -302,30 +315,14 @@ Control de animaciones del jugador y enemigos mediante Animator, activadas segú
          }
       }
    
-      </code></pre>
-      </details>
-</div>
+     
+        </code></pre>
+     </details>
 
-<div class="project-content-Meele">
-
-  <div class="project-section">
-         <h2>Item Paralizador</h2>
-         <p>
-        El segundo ítem se obtiene de manera aleatoria al derrotar a un enemigo.
-        Al recogerlo, el jugador adquiere la habilidad de paralizar a todos los enemigos durante un tiempo limitado.
-        Este ítem fue implementado como una herramienta de apoyo para equilibrar la dificultad, especialmente en situaciones  
-        donde la cantidad de enemigos aumenta considerablemente.
-
-         </p>
-       
-  </div>
-</div>
-
-<div class="project-content-codigo">
-    <details class="code-block">
+     <details class="code-block">
       <summary>Codigo Paralizador</summary>
-      <pre><code class="language-csharp"> 
-    using System;
+      <pre><code class="language-csharp">
+        using System;
     using UnityEngine;
     using UnityEngine.SceneManagement;
     using UnityEngine.UI;
@@ -474,11 +471,14 @@ Control de animaciones del jugador y enemigos mediante Animator, activadas segú
            }        
         }
     }
-        
-     </code></pre>
-     </details>
 
+      </code></pre>
+      </details>
 </div>
+
+
+
+
 
 <section class="project-links"> 
     <h2>Ver Proyecto</h2> 
@@ -487,6 +487,12 @@ Control de animaciones del jugador y enemigos mediante Animator, activadas segú
         <i class="fa-brands fa-github"></i> <span>View on GitHub</span> </a> <a href="https://mirko06660ogmailcom.itch.io/demond-destroyer" target="_blank" class="link-card">
         <i class="fa-brands fa-itch-io"></i> <span>Play on Itch.io</span> </a> 
     </div>
+
+
+        
+
+
+
 </section>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>

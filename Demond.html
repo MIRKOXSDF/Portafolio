@@ -75,8 +75,8 @@
     <div class="project-section">
         <h2>Acerca del Proyecto</h2>
         <p>
-           Proyecto 2D Top Down desarrollado en Unity.
-           Eres un ninja atrapado en un castillo lleno de demonios. Tu objetivo es derrotarlos a todos y encontrar 
+           Proyecto 2D Top Down desarrollado en Unity, donde controlas
+           a un ninja atrapado en un castillo lleno de demonios. Tu objetivo es derrotarlos a todos y encontrar 
            la salida para escapar del castillo con vida.    
         </p>
     </div>
@@ -94,7 +94,7 @@
         <i class="fas fa-running icon"></i>
         <h3>Player Movement</h3>
       </div>
-      <p>Movimiento lateral y sistema de salto del jugador.</p>
+      <p>Movimiento en 8 direcciones.</p>
       <div class="tags">
         <span>Inputs</span>
         <span>Move</span>
@@ -107,7 +107,7 @@
         <i class="fas fa-crosshairs icon"></i>
         <h3>Player Attacks</h3>
       </div>
-    <p>Sistema de combate con ataques cuerpo a cuerpo (trinche) y a distancia (balas).</p>
+     <p>Sistema de ataque a distancia con lanzamiento de shurikens en 8 direcciones.</p>
       <div class="tags">
         <span>Meele</span>
         <span>Shoot</span>
@@ -120,7 +120,8 @@
         <i class="fas fa-coins icon"></i>
         <h3>Items System</h3>
       </div>
-     <p>Recolección de recursos como munición para balas y monedas para la progresión del jugador.</p>
+     <p>Sistema de recolección de ítems que incluye escudos defensivos y una habilidad de 
+        paralización que detiene a los enemigos temporalmente.</p>
       <div class="tags">
         <span>Items</span>
         <span>Resources</span>
@@ -131,9 +132,9 @@
     <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-skull icon"></i>
-        <h3>Enemy Patrol</h3>
+        <h3>Enemy Movement</h3>
       </div>
-      <p>Patrullaje lateral de enemigos dentro de un área definida.</p>
+      <p>Persecucion de los enemigos hacia el jugador al detectarlo (uso de Pathfiding)</p>
 
       <div class="tags">
         <span>Patrol</span>
@@ -143,9 +144,9 @@
      <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-skull icon"></i>
-        <h3>Enemy Shooter</h3>
+        <h3>Enemy Shooting</h3>
       </div>
-       <p>Enemigos que disparan de manera lateral, al detectar al jugador.</p>
+       <p>Enemigos voladores que disparan hacia el jugador al detectarlo.</p>
       <div class="tags">
         <span>Shoot</span>
       </div>
@@ -155,12 +156,59 @@
     <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-display icon"></i>
-        <h3>UI System</h3>
+        <h3>Enemy Bomb</h3>
       </div>
-    <p>Interfaz clara que muestra puntaje, tiempo, munición y progreso (monedas).</p>     
+    <p>Enemigos veloces que explotan al colisionar con el jugador.</p>     
      <div class="tags">
         <span>UI</span>
         <span>HUD</span>
+      </div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-display icon"></i>
+        <h3>Enemy Bomb</h3>
+      </div>
+    <p>Enemigos veloces que explotan al colisionar con el jugador.</p>     
+     <div class="tags">
+        <span>UI</span>
+        <span>HUD</span>
+      </div>
+    </div>
+
+      <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-display icon"></i>
+        <h3>Portal Enemy</h3>
+      </div>
+    <p>Portales que generan enemigos al detectar al jugador dentro de un rango determinado.</p>     
+     <div class="tags">
+        <span>Spawn</span>
+      </div>
+    </div>
+
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-display icon"></i>
+        <h3>UI system</h3>
+      </div>
+    <p>Interfaz que muestra la barra de vida y de escudo, el tiempo y controles como mute, junto a 
+        botones y transiciones de escena.</p> 
+     <div class="tags">
+        <span>UI</span>
+        <span>HUD</span>
+      </div>
+    </div>
+
+     <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-display icon"></i>
+        <h3>Animation system</h3>
+      </div>
+    <p>Animaciones de jugador y enemigos controladas por Animator según sus acciones.</p>
+     <div class="tags">
+        <span>Animator</span>
       </div>
     </div>
 

@@ -544,7 +544,23 @@ display: block;
   font-weight: 500;
   margin-bottom: 20px;
 }
+.open-code {
+    margin-top: 10px;
+    padding: 8px 14px;
 
+    background: transparent;
+    border: 1px solid #00ffc3;
+    color: #00ffc3;
+
+    cursor: pointer;
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.open-code:hover {
+    background: rgba(0,255,195,0.1);
+}
 
 
 

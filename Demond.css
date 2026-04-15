@@ -575,7 +575,7 @@ display: block;
   cursor: pointer;
 }
 .modal pre {
-  max-height: 400px;   /* limita altura */
+  max-height: 700px;   /* limita altura */
   overflow-y: auto;    /* 🔥 AQUÍ está el scroll */
 }
 

@@ -240,7 +240,7 @@
                       Tiene un uso limitado, por lo que debe activarse estratégicamente en momentos clave 
                       del combate.</p>
                     
-                       <a class="link-card"> 
+                       <a class="link-card" onclick="openModal('modalEscudo')"> 
                         <span>Ver Codigo</span> 
                       </a> 
                 </div>
@@ -266,6 +266,37 @@
         </div>
     </div>
 </section>
+
+<!-- MODAL ESCUDO -->
+<div id="modalEscudo" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalEscudo')">&times;</span>
+    <h3>Código - Escudo</h3>
+
+    <pre><code>
+public class Shield : MonoBehaviour
+{
+    public float duration = 5f;
+    private bool isActive = false;
+
+    public void ActivateShield()
+    {
+        if (!isActive)
+        {
+            isActive = true;
+            StartCoroutine(ShieldTimer());
+        }
+    }
+
+    IEnumerator ShieldTimer()
+    {
+        yield return new WaitForSeconds(duration);
+        isActive = false;
+    }
+}
+    </code></pre>
+  </div>
+</div>
 <!-- MODAL ESCUDO -->
 
 

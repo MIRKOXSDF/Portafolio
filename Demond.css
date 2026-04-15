@@ -561,13 +561,17 @@ display: block;
   background: #111;
   color: #0f0;
   margin: 5% auto;
-  padding: 20px;
+  padding: 10px;
   width: 70%;
   max-width: 800px;
   border-radius: 10px;
   overflow: auto;
 }
 
+pre code {
+  font-size: 12px;   /* 🔥 baja el tamaño */
+  line-height: 1.4;  /* opcional: compacta más */
+}
 .close {
   float: right;
   font-size: 28px;
@@ -576,10 +580,6 @@ display: block;
 
 pre {
   white-space: pre-wrap;
-}
-.code-block code,
-pre code {
-  font-size: 13px;  /* 🔽 reduce tamaño */
 }
 
 

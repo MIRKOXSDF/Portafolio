@@ -411,21 +411,7 @@ h1, h2, h3, h4
 }
 
 
-/* Header clickable */ 
-.code-block summary {
-padding: 18px 25px; 
-cursor: pointer; 
-font-weight: bold; 
-font-size: 1rem; color: #9fd3c7; 
-transition: 0.3s ease; 
-} 
-.responsabilidad summary {
-    list-style: none;
-}
 
-.responsabilidad summary::-webkit-details-marker {
-    display: none;
-}
 /* Contenedor general */ 
 .code-block { 
 border-radius: 16px;
@@ -576,8 +562,8 @@ display: block;
   color: #0f0;
   margin: 5% auto;
   padding: 20px;
-  width: 50%;
-  max-width: 600px;
+  width: 70%;
+  max-width: 800px;
   border-radius: 10px;
   overflow: auto;
 }

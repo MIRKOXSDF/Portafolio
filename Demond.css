@@ -576,8 +576,8 @@ display: block;
   color: #0f0;
   margin: 5% auto;
   padding: 20px;
-  width: 80%;
-  max-width: 800px;
+  width: 50%;
+  max-width: 600px;
   border-radius: 10px;
   overflow: auto;
 }

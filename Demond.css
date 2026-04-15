@@ -560,66 +560,36 @@ display: block;
   color: #0e0e0e;
 }
 
-/* MODAL FONDO */
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-
-  display: none;
-  justify-content: center;
-  align-items: center;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
 }
 
-/* CONTENIDO */
 .modal-content {
-  background: #0e0e0e;
-  padding: 25px;
-  border-radius: 12px;
+  background: #111;
+  color: #0f0;
+  margin: 5% auto;
+  padding: 20px;
   width: 80%;
   max-width: 800px;
-  border: 1px solid #00ffc3;
-  position: relative;
-
-  animation: scaleIn 0.25s ease;
+  border-radius: 10px;
+  overflow: auto;
 }
 
-/* TEXTO */
-.modal-content h3 {
-  color: #00ffc3;
-  margin-bottom: 15px;
-}
-
-/* CODIGO */
-.modal-content pre {
-  background: #0d1117;
-  padding: 20px;
-  border-radius: 8px;
-  overflow-x: auto;
-  color: #e6e6e6;
-}
-
-/* BOTON CERRAR */
 .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 26px;
+  float: right;
+  font-size: 28px;
   cursor: pointer;
-  color: #00ffc3;
 }
 
-/* ANIMACION */
-@keyframes scaleIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+pre {
+  white-space: pre-wrap;
 }
+
 

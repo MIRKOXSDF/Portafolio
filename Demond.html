@@ -240,9 +240,9 @@
                       Tiene un uso limitado, por lo que debe activarse estratégicamente en momentos clave 
                       del combate.</p>
                     
-                       <a class="link-card" onclick="openModal('modalEscudo')"> 
-                        <span>Ver Codigo</span> 
-                      </a> 
+                       <button class="link-card" data-modal="modalEscudo">
+                       Ver Código
+                       </button>
                 </div>
             
         </div>
@@ -257,10 +257,11 @@
                     <p> El Item es obtenido aleatoriamente al derrotar enemigos.
                      Permite paralizar a todos los enemigos durante un periodo de tiempo, facilitando el 
                      control de situaciones con alta dificultad.</p>
+                      <button class="link-card" data-modal="modalParalizacion">
+                       Ver Código
+                      </button>
 
-                    <a class="link-card"> 
-                        <span>Ver Codigo</span> 
-                      </a> 
+                    
                 </div>
              
         </div>
@@ -270,34 +271,80 @@
 <!-- MODAL ESCUDO -->
 <div id="modalEscudo" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('modalEscudo')">&times;</span>
-    <h3>Código - Escudo</h3>
+    
+    <span class="close">&times;</span>
 
     <pre><code>
-public class Shield : MonoBehaviour
-{
-    public float duration = 5f;
-    private bool isActive = false;
+using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-    public void ActivateShield()
+public class Ninja : MonoBehaviour
+{
+    public float bottle;
+    public float velocityPlayer;
+    public GameObject shieldActive;
+    public bool shield;
+    public SliderShieldUI shieldBar;
+    public AudioSource audioSource;
+    public float lifePlayer;
+    public SliderPlayerLife sliderPlayerLife;
+    public bool isDeadPlayer;
+    public Animator animator;
+
+    void Update()
     {
-        if (!isActive)
-        {
-            isActive = true;
-            StartCoroutine(ShieldTimer());
-        }
+        Shield();
     }
 
-    IEnumerator ShieldTimer()
+    void Shield()
     {
-        yield return new WaitForSeconds(duration);
-        isActive = false;
+        if (Input.GetKey(KeyCode.Space) && bottle > 0 )
+        {         
+            shieldActive.SetActive(true);                              
+            shield = true;
+            bottle -= 50 * Time.deltaTime / 13f;
+            shieldBar.UpdateSliderShield(bottle);        
+        }
+        else if(Input.GetKeyUp(KeyCode.Space))
+        {
+            shieldActive.SetActive(false);
+            shield = false;
+        }
     }
 }
     </code></pre>
+
   </div>
 </div>
-<!-- MODAL ESCUDO -->
+
+<script>
+const buttons = document.querySelectorAll('.link-card');
+const modals = document.querySelectorAll('.modal');
+const closes = document.querySelectorAll('.close');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-modal');
+    document.getElementById(id).style.display = 'block';
+  });
+});
+
+closes.forEach(close => {
+  close.addEventListener('click', () => {
+    close.parentElement.parentElement.style.display = 'none';
+  });
+});
+
+window.addEventListener('click', (e) => {
+  modals.forEach(modal => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+</script>
 
 
 <div class="project-content code-container">

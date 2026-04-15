@@ -274,83 +274,7 @@
     
     <span class="close">&times;</span>
 
-    <pre><code>
-using System;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-
-public class Ninja : MonoBehaviour
-{
-    public float bottle;
-    public float velocityPlayer;
-    public GameObject shieldActive;
-    public bool shield;
-    public SliderShieldUI shieldBar;
-    public AudioSource audioSource;
-    public float lifePlayer;
-    public SliderPlayerLife sliderPlayerLife;
-    public bool isDeadPlayer;
-    public Animator animator;
-
-    void Update()
-    {
-        Shield();
-    }
-
-    void Shield()
-    {
-        if (Input.GetKey(KeyCode.Space) && bottle > 0 )
-        {         
-            shieldActive.SetActive(true);                              
-            shield = true;
-            bottle -= 50 * Time.deltaTime / 13f;
-            shieldBar.UpdateSliderShield(bottle);        
-        }
-        else if(Input.GetKeyUp(KeyCode.Space))
-        {
-            shieldActive.SetActive(false);
-            shield = false;
-        }
-    }
-}
-    </code></pre>
-
-  </div>
-</div>
-
-<script>
-const buttons = document.querySelectorAll('.link-card');
-const modals = document.querySelectorAll('.modal');
-const closes = document.querySelectorAll('.close');
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.getAttribute('data-modal');
-    document.getElementById(id).style.display = 'block';
-  });
-});
-
-closes.forEach(close => {
-  close.addEventListener('click', () => {
-    close.parentElement.parentElement.style.display = 'none';
-  });
-});
-
-window.addEventListener('click', (e) => {
-  modals.forEach(modal => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-});
-</script>
-
-
-<div class="project-content code-container">
-      <details class="code-block">
-      <summary>Codigo Escudo</summary>
-      <pre><code class="language-csharp">
+    <pre><code class="language-csharp">
     using System;
     using UnityEngine;
     using UnityEngine.SceneManagement;
@@ -458,14 +382,18 @@ window.addEventListener('click', (e) => {
             }
          }
     }
-   
-     
-        </code></pre>
-     </details>
+    </code></pre>
 
-     <details class="code-block">
-      <summary>Codigo Paralizador</summary>
-      <pre><code class="language-csharp">
+  </div>
+</div>
+
+<!-- MODAL ESCUDO -->
+<div id="modalParalizacion" class="modal">
+  <div class="modal-content">
+    
+    <span class="close">&times;</span>
+
+    <pre><code class="language-csharp">
     using System;
     using UnityEngine;
     using UnityEngine.SceneManagement;
@@ -616,20 +544,39 @@ window.addEventListener('click', (e) => {
         }
     }
 
-      </code></pre>
-      </details>
+  
+    </code></pre>
+
+  </div>
 </div>
 
 
+<script>
+const buttons = document.querySelectorAll('.link-card');
+const modals = document.querySelectorAll('.modal');
+const closes = document.querySelectorAll('.close');
 
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-modal');
+    document.getElementById(id).style.display = 'block';
+  });
+});
 
+closes.forEach(close => {
+  close.addEventListener('click', () => {
+    close.parentElement.parentElement.style.display = 'none';
+  });
+});
 
-
-
-
-        
-
-
+window.addEventListener('click', (e) => {
+  modals.forEach(modal => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>

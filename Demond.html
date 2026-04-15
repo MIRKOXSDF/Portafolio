@@ -266,6 +266,32 @@
         </div>
     </div>
 </section>
+<!-- MODAL ESCUDO -->
+<div id="modalEscudo" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalEscudo')">&times;</span>
+    <h3>Código - Escudo</h3>
+
+    <pre><code>
+// Código del escudo
+public class Shield : MonoBehaviour
+{
+    public float duration = 5f;
+
+    public void ActivateShield()
+    {
+        StartCoroutine(ShieldTimer());
+    }
+
+    IEnumerator ShieldTimer()
+    {
+        yield return new WaitForSeconds(duration);
+    }
+}
+    </code></pre>
+
+  </div>
+</div>
 
 
 <div class="project-content code-container">

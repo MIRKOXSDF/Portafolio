@@ -303,7 +303,7 @@ h1, h2, h3, h4
 
 .links-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
@@ -318,7 +318,7 @@ h1, h2, h3, h4
   padding: 12px 20px;
   min-width: 180px;
 
-  border-radius: 6px; /* 🔥 menos redondeado (rectángulo) */
+  border-radius: 4px; /* 🔥 menos redondeado (rectángulo) */
   border: 1px solid #00ffc3;
 
   background: rgba(0, 255, 195, 0.05);

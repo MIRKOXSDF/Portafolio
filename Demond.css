@@ -568,7 +568,7 @@ display: block;
   overflow: auto;
 }
 
-pre code {
+.pre code {
   font-size: 12px;   /* 🔥 baja el tamaño */
   line-height: 1.4;  /* opcional: compacta más */
 }
@@ -578,8 +578,6 @@ pre code {
   cursor: pointer;
 }
 
-pre {
-  white-space: pre-wrap;
-}
+
 
 

@@ -568,14 +568,14 @@ display: block;
   overflow: auto;
 }
 
-.pre code {
-  font-size: 5px;   /* 🔥 baja el tamaño */
-  line-height: 1.4;  /* opcional: compacta más */
-}
 .close {
   float: right;
   font-size: 28px;
   cursor: pointer;
+}
+.modal pre {
+  max-height: 400px;   /* limita altura */
+  overflow-y: auto;    /* 🔥 AQUÍ está el scroll */
 }
 
 

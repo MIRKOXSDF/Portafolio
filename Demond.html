@@ -240,9 +240,9 @@
                       Tiene un uso limitado, por lo que debe activarse estratégicamente en momentos clave 
                       del combate.</p>
                     
-                      <button class="open-code" onclick="openModal('modalEscudo')">
-                      Ver código
-                      </button>
+                       <a class="link-card"> 
+                        <span>Ver Codigo</span> 
+                      </a> 
                 </div>
             
         </div>
@@ -258,40 +258,15 @@
                      Permite paralizar a todos los enemigos durante un periodo de tiempo, facilitando el 
                      control de situaciones con alta dificultad.</p>
 
-                     <button class="open-code" onclick="openModal('modalParalizacion')">
-                     Ver código
-                     </button>
+                    <a class="link-card"> 
+                        <span>Ver Codigo</span> 
+                      </a> 
                 </div>
              
         </div>
     </div>
 </section>
 <!-- MODAL ESCUDO -->
-<div id="modalEscudo" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modalEscudo')">&times;</span>
-    <h3>Código - Escudo</h3>
-
-    <pre><code>
-// Código del escudo
-public class Shield : MonoBehaviour
-{
-    public float duration = 5f;
-
-    public void ActivateShield()
-    {
-        StartCoroutine(ShieldTimer());
-    }
-
-    IEnumerator ShieldTimer()
-    {
-        yield return new WaitForSeconds(duration);
-    }
-}
-    </code></pre>
-
-  </div>
-</div>
 
 
 <div class="project-content code-container">

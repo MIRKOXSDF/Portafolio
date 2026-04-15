@@ -532,6 +532,11 @@ display: block;
   margin-right: 5px;
   color: #aaa;
 }
+.resp-intro {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
 
 
 

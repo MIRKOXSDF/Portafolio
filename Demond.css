@@ -515,6 +515,7 @@ display: block;
 
 /* TEXTO */
 .project-section p,
+.resp-intro,
 .project-info p,
 .resp-card p {
   font-size: 14px;
@@ -533,7 +534,7 @@ display: block;
   color: #aaa;
 }
 .resp-intro {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   margin-bottom: 20px;
 }

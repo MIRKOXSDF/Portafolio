@@ -577,5 +577,9 @@ display: block;
 pre {
   white-space: pre-wrap;
 }
+.code-block code,
+pre code {
+  font-size: 13px;  /* 🔽 reduce tamaño */
+}
 
 

@@ -319,7 +319,7 @@ h1, h2, h3, h4
   padding: 12px 20px;
   min-width: 180px;
 
-  border-radius: 4px; /* 🔥 menos redondeado (rectángulo) */
+  border-radius: 2px; /* 🔥 menos redondeado (rectángulo) */
   border: 1px solid #00ffc3;
 
   background: rgba(0, 255, 195, 0.05);
@@ -575,7 +575,7 @@ display: block;
   cursor: pointer;
 }
 .modal pre {
-  max-height: 700px;   /* limita altura */
+  max-height: 800px;   /* limita altura */
   overflow-y: auto;    /* 🔥 AQUÍ está el scroll */
 }
 

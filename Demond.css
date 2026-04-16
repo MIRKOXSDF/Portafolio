@@ -292,7 +292,7 @@ h1, h2, h3, h4
 }
 
 .project-links {
-    margin: 40px auto;
+    margin: 5px auto 40px auto;
     max-width: 1000px;
     text-align: center;
 }
@@ -316,10 +316,10 @@ h1, h2, h3, h4
   justify-content: center;
   gap: 10px;
 
-  padding: 7px 7px;
+  padding: 12px 20px;
   min-width: 180px;
 
-  border-radius: 2px; /* 🔥 menos redondeado (rectángulo) */
+  border-radius: 12px; /* 🔥 menos redondeado (rectángulo) */
   border: 1px solid #00ffc3;
 
   background: rgba(0, 255, 195, 0.05);

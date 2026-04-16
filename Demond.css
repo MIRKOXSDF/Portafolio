@@ -408,6 +408,8 @@ h1, h2, h3, h4
 
 .code-container .code-block {
     width: 100%;
+    margin-top: 40px;
+
     max-width: 700px; /* opcional para que no sea gigante */
 }
 

@@ -100,15 +100,8 @@
  
  
 <section class="resp-section">
-  <h2>Mi responsabilidad</h2>
-  <div class="resp-card">
-    <div class="resp-header">
-      <p>
-       En este proyecto me encargué principalmente del desarrollo de las mecánicas de gameplay,
-       enfocadas en la interacción del jugador, combate y control de enemigos e Interfaz.
-      </p>
-    </div>
-  </div>
+  <h2>GamePlay</h2>
+
  
   <div class="resp-grid">
 
@@ -116,47 +109,39 @@
     <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-running icon"></i>
-        <h3>Player Movement</h3>
+        <h3>Player Controller</h3>
       </div>
       <p>Movimiento en 8 direcciones.</p>
-      <div class="tags">
-        <span>Inputs</span>
-        <span>Move</span>
-      </div>
+      <p>Sistema de ataque con shurikens.</p>
     </div>
 
     <!-- CARD -->
     <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-crosshairs icon"></i>
-        <h3>Player Attacks</h3>
+        <h3>Items System</h3>
       </div>
-     <p>Sistema de ataque a distancia con lanzamiento de shurikens en 8 direcciones.</p>
-      <div class="tags">
-        <span>Meele</span>
-        <span>Shoot</span>
-      </div>
+      <p>Botella de Escudo: protección temporal con uso limitado.</p>
+      <p>Botella de Paralización: detiene enemigos por tiempo limitado.</p>
     </div>
 
     <!-- CARD -->
     <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-coins icon"></i>
-        <h3>Items System</h3>
+        <h3>Enemies</h3>
       </div>
-     <p>Sistema de recolección de ítems que incluye escudos defensivos y una habilidad de 
-        paralización que detiene a los enemigos temporalmente.</p>
-      <div class="tags">
-        <span>Items</span>
-        <span>Resources</span>
-      </div>
+      <p>Todos los Enemigos con IA de persecución (Pathfinding).</p>
+      <p>Enemy Fly: Enemigos voladores que disparan al jugador.</p>
+      <p>Enemigos Bomb: Enemigos veloces que explotan al contacto.</p>
+      <p>Spawn Portal: Portales que generan enemigos dinámicamente.</p>   
     </div>
 
     <!-- CARD -->
     <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-skull icon"></i>
-        <h3>Enemy Movement</h3>
+        <h3>UI</h3>
       </div>
       <p>Persecucion de los enemigos hacia el jugador al detectarlo (uso de Pathfiding)</p>
 
@@ -165,64 +150,7 @@
       </div>
     </div>
 
-     <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-skull icon"></i>
-        <h3>Enemy Shooting</h3>
-      </div>
-       <p>Enemigos voladores que disparan hacia el jugador al detectarlo.</p>
-      <div class="tags">
-        <span>Shoot</span>
-      </div>
-    </div>
-
-
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-skull icon"></i>
-        <h3>Enemy Bomb</h3>
-      </div>
-    <p>Enemigos veloces que explotan al colisionar con el jugador.</p>     
-     <div class="tags">
-        <span>UI</span>
-        <span>HUD</span>
-      </div>
-    </div>
-
-      <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-skull icon"></i>
-        <h3>Portal Enemy</h3>
-      </div>
-    <p>Portales que generan enemigos al detectar al jugador dentro de un rango determinado.</p>     
-     <div class="tags">
-        <span>Spawn</span>
-      </div>
-    </div>
-
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-display icon"></i>
-        <h3>UI system</h3>
-      </div>
-    <p>Interfaz que muestra la barra de vida y de escudo, el tiempo y controles como mute, junto a 
-        botones y transiciones de escena.</p> 
-     <div class="tags">
-        <span>UI</span>
-        <span>HUD</span>
-      </div>
-    </div>
-
-     <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-display icon"></i>
-        <h3>Animation system</h3>
-      </div>
-    <p>Animaciones de jugador y enemigos controladas por Animator según sus acciones.</p>
-     <div class="tags">
-        <span>Animator</span>
-      </div>
-    </div>
+   
 
   </div>
 </section>

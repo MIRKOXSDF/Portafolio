@@ -262,6 +262,7 @@ h1, h2, h3, h4
 
 
 .resp-card h3,
+.resp-card li,
 .project-section li {
     font-size: 1rem;
     line-height: 1.8;

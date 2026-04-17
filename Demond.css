@@ -314,14 +314,13 @@ h1, h2, h3, h4
   align-items: center;
   justify-content: center;
   gap: 10px;
-
+  background: #111;
   padding: 10px 10px;
   min-width: 180px;
 
   border-radius: 12px; /* 🔥 menos redondeado (rectángulo) */
   border:  1px solid #1f1f1f;
 
-  background: rgba(0, 255, 195, 0.05);
   color: #cffff5;
 
   font-weight: 500;

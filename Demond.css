@@ -229,6 +229,8 @@ h1, h2, h3, h4
 }
 .project-info {
     padding: 30px;
+    align-items: center;   /* 🔥 centra horizontalmente */
+    text-align: center;  
 }
 
 .project-info h3 {
@@ -315,7 +317,7 @@ h1, h2, h3, h4
   justify-content: center;
   gap: 10px;
   background: #111;
-  padding: 10px 10px;
+  padding: 13px 13px;
   min-width: 180px;
 
   border-radius: 12px; /* 🔥 menos redondeado (rectángulo) */

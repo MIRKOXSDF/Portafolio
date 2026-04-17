@@ -309,6 +309,7 @@ h1, h2, h3, h4
     flex-wrap: wrap;
 }
 
+
 .link-card {
     display: flex;
     flex-direction: column;

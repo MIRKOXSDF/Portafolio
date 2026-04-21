@@ -469,7 +469,8 @@ display: block;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* 🔥 centra todo */
+  flex-direction: column;
+  justify-content: flex-start;
   gap: 30px;
 }
 

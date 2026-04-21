@@ -468,8 +468,9 @@ display: block;
 .resp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  align-items: start;
+  gap: 20px;
+  align-items: stretch;      /* 🔥 clave */
+  grid-auto-flow: dense;  
 }
 
 /* CARD */
@@ -480,6 +481,7 @@ display: block;
   text-align: left;
   transition: 0.3s;
   border: 1px solid rgba(159, 211, 199, 0.2);
+  height: 100%;
 
 }
 

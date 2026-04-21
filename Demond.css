@@ -469,7 +469,7 @@ display: block;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* 🔥 centra todo */
+  justify-content: center; /* 🔥 centra todo */
   gap: 30px;
 }
 
@@ -481,9 +481,7 @@ display: block;
   text-align: left;
   transition: 0.3s;
   border: 1px solid rgba(159, 211, 199, 0.2);
-  width: 100px;
-
-
+  width: 300px;
 
 
 }

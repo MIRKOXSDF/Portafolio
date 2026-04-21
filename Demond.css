@@ -469,15 +469,15 @@ display: block;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* 🔥 centra todo */
-  gap: 20px;
+  justify-content: center; /* 🔥 centra todo */
+  gap: 6px;
 }
 
 /* CARD */
 .resp-card {
   background: rgb(20, 20, 20);
   border-radius: 12px;
-  padding: 30px 30px; 
+  padding: 16px 18px; 
   text-align: left;
   transition: 0.3s;
   border: 1px solid rgba(159, 211, 199, 0.2);

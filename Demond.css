@@ -469,8 +469,7 @@ display: block;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  align-items: stretch;      /* 🔥 clave */
-  grid-auto-flow: dense;  
+  justify-items: center;
 }
 
 /* CARD */

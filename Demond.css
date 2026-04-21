@@ -470,7 +470,7 @@ display: block;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* 🔥 centra todo */
-  gap: 6px;
+  gap: 30px;
 }
 
 /* CARD */

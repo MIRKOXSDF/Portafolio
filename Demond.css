@@ -466,11 +466,10 @@ display: block;
 
 /* GRID */
 .resp-grid {
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* 🔥 centra todo */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
+  align-items: start; /* 🔥 ESTA LÍNEA ARREGLA TODO */
 }
 
 /* CARD */
@@ -481,8 +480,6 @@ display: block;
   text-align: left;
   transition: 0.3s;
   border: 1px solid rgba(159, 211, 199, 0.2);
-  width: 300px;
-
 
 }
 

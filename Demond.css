@@ -466,10 +466,12 @@ display: block;
 
 /* GRID */
 .resp-grid {
-  display: grid;
+
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  flex-wrap: wrap;
+  justify-content: center; /* 🔥 centra todo */
   gap: 20px;
-  justify-items: center;
 }
 
 /* CARD */

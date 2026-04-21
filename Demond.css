@@ -469,7 +469,7 @@ display: block;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* 🔥 centra todo */
+  justify-content: space-between; /* 🔥 centra todo */
   gap: 20px;
 }
 

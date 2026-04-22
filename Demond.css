@@ -485,7 +485,7 @@ display: block;
 
 
   display: inline-block; /* Hace que se comporte como bloque dentro de la columna */
-  width: 200%;           /* Ocupa todo el ancho de su columna */
+  width: 100%;           /* Ocupa todo el ancho de su columna */
   margin-bottom: 25px;   /* Espacio vertical constante entre tarjetas */
   break-inside: avoid;
 

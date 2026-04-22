@@ -469,7 +469,7 @@ display: block;
   display: block;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  align-items: flex-start /* 🔥 ESTA LÍNEA ARREGLA TODO */
+  align-items: flex-start; /* 🔥 ESTA LÍNEA ARREGLA TODO */
   column-count: 3;
   column-gap: 30px;
 }

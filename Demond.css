@@ -464,9 +464,9 @@ display: block;
   color:  #9fd3c7;
 }
 .resp-grid {
-  column-count: 3;
-  column-gap: 20px;
-  gap:50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /*
 }
 
 /* CARD */

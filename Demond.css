@@ -466,7 +466,7 @@ display: block;
 
 /* GRID */
 .resp-grid {
-  display: grid;
+  display: block;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   align-items: start; /* 🔥 ESTA LÍNEA ARREGLA TODO */
@@ -482,6 +482,12 @@ display: block;
   text-align: left;
   transition: 0.3s;
   border: 1px solid rgba(159, 211, 199, 0.2);
+
+
+  display: inline-block; /* Hace que se comporte como bloque dentro de la columna */
+  width: 100%;           /* Ocupa todo el ancho de su columna */
+  margin-bottom: 25px;   /* Espacio vertical constante entre tarjetas */
+  break-inside: avoid;
 
 }
 

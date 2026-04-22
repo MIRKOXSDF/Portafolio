@@ -466,9 +466,8 @@ display: block;
 .resp-grid {
   column-count: 3;
   column-gap: 20px;
+  gap:10px;
 }
-
-
 
 /* CARD */
 .resp-card {

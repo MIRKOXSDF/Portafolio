@@ -463,15 +463,12 @@ display: block;
   margin-bottom: 40px;
   color:  #9fd3c7;
 }
-
-/* GRID */
 .resp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  align-items: flex-start; /* 🔥 ESTA LÍNEA ARREGLA TODO */
-
+  column-count: 3;
+  column-gap: 20px;
 }
+
+
 
 /* CARD */
 .resp-card {

@@ -536,8 +536,9 @@ else if (Input.GetKeyUp(KeyCode.Space))
 }
      </code></pre>
      </div>
-      <ul><li><p>El escudo se activa mediante input del jugador y consume energía de forma progresiva mientras está en uso.
-       Cuando está activo, bloquea el daño recibido y se desactiva automáticamente al soltar la tecla o agotar el recurso. </p></li></ul>
+      <ul><li><p>El escudo se activa mediante el input del jugador y consume energía de la barra de forma 
+          progresiva mientras está activo. Cuando está en uso, bloquea el daño recibido por enemigos y se 
+          desactiva automáticamente al soltar la tecla o al agotar la energía. </p></li></ul>
     <div class="code-block">
     <pre><code class="language-csharp">
 if (shield) return;
@@ -548,7 +549,7 @@ lifePlayer -= damage;
      </div>
 
 
-        <ul><li><p>El sistema verifica si el escudo está activo antes de aplicar daño.
+        <ul><li><p>El sistema verifica si el escudo está activo antes de recibir daño.
         Si el escudo está activo, el daño es completamente ignorado. </p></li></ul>
        
   
@@ -577,8 +578,9 @@ else
      </code></pre>
      </div>
 
-      <ul><li><p>El sistema utiliza un estado global (timerStop) activado por el jugador para detener temporalmente a los enemigos.
-        Cuando está activo, se deshabilita su movimiento y comportamiento; al finalizar, se reanudan automáticamente. </p></li></ul>
+      <ul><li><p>El sistema utiliza un estado global (timerStop) activado por el jugador para pausar temporalmente a los enemigos. Mientras
+          este estado está activo, se deshabilita su capacidad de movimiento (path.canMove = false), deteniendo su comportamiento. Una vez que 
+          el temporizador finaliza, el estado se desactiva y los enemigos retoman su lógica normal de movimiento. </p></li></ul>
 
 
 <div class="code-block">

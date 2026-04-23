@@ -358,8 +358,14 @@
         public AudioSource audioSource;
         public Animator animator;
         public AIPath path;
+        [SerializeField] private float timerPower;
+        [SerializeField] private float DelayTimer;
+        [SerializeField] private float MaxtimerPower=5;
 
-
+        void Start()
+        {
+           timerPower = MaxtimerPower;
+        }
         void Update()
         {
             //Activas para utilizar el item paralizador , apretando la tecla "H"
@@ -370,6 +376,17 @@
                InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
             }         
         }
+        public void TimerBar()
+        {
+            timerPower -= Time.deltaTime*DelayTimer;
+            timerStop.fillAmount = timerPower / MaxtimerPower;
+            if (timerPower <= 0)
+            {
+               timerPower = 0;
+               timerStop.enabled = false;
+               CancelInvoke(nameof(TimerBar));
+            }
+        }     
         private void OnTriggerEnter2D(Collider2D collision)
         {
             //Recoges el item paralizador

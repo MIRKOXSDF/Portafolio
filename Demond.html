@@ -519,8 +519,8 @@ else if (Input.GetKeyUp(KeyCode.Space))
 }
      </code></pre>
      </div>
-     <p>El escudo se activa mediante input del jugador y consume energía de forma progresiva mientras está en uso.
-       Cuando está activo, bloquea el daño recibido y se desactiva automáticamente al soltar la tecla o agotar el recurso. </p>
+      <li><p>El escudo se activa mediante input del jugador y consume energía de forma progresiva mientras está en uso.
+       Cuando está activo, bloquea el daño recibido y se desactiva automáticamente al soltar la tecla o agotar el recurso. </p></li>
     <div class="code-block">
     <pre><code class="language-csharp">
 if (shield) return;
@@ -531,8 +531,8 @@ lifePlayer -= damage;
      </div>
 
 
-       <p>El sistema verifica si el escudo está activo antes de aplicar daño.
-        Si el escudo está activo, el daño es completamente ignorado. </p>
+        <li><p>El sistema verifica si el escudo está activo antes de aplicar daño.
+        Si el escudo está activo, el daño es completamente ignorado. </p></li>
        
   
        
@@ -560,8 +560,8 @@ else
      </code></pre>
      </div>
 
-      <p>El sistema utiliza un estado global (timerStop) activado por el jugador para detener temporalmente a los enemigos.
-        Cuando está activo, se deshabilita su movimiento y comportamiento; al finalizar, se reanudan automáticamente. </p>
+      <li><p>El sistema utiliza un estado global (timerStop) activado por el jugador para detener temporalmente a los enemigos.
+        Cuando está activo, se deshabilita su movimiento y comportamiento; al finalizar, se reanudan automáticamente. </p></li>
 
 
 <div class="code-block">
@@ -575,8 +575,8 @@ if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
      </code></pre>
      </div>
 
-       <p>La activación se realiza mediante input del jugador. Al usar el ítem, se inicia un temporizador visual y se activa 
-        el estado que afecta a todos los enemigos. </p>
+        <li><p>La activación se realiza mediante input del jugador. Al usar el ítem, se inicia un temporizador visual y se activa 
+        el estado que afecta a todos los enemigos. </p></li>
        
   
        

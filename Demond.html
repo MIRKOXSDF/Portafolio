@@ -505,7 +505,7 @@
   
   <h2>Botella de Escudo</h2>
     <div class="code-block">
-    <pre><code>
+    <pre><code class="language-csharp">
 if (Input.GetKey(KeyCode.Space) && bottle > 0)
 {
     shieldActive.SetActive(true);
@@ -522,7 +522,7 @@ else if (Input.GetKeyUp(KeyCode.Space))
      <p>El escudo se activa mediante input del jugador y consume energía de forma progresiva mientras está en uso.
        Cuando está activo, bloquea el daño recibido y se desactiva automáticamente al soltar la tecla o agotar el recurso. </p>
     <div class="code-block">
-    <pre><code>
+    <pre><code class="language-csharp">
 if (shield) return;
 
 lifePlayer -= damage;

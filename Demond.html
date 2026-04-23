@@ -102,7 +102,12 @@
   <h2>Mechanics GamePlay</h2>
   <div class="project-content">
     <div class="project-section">
-      <p>Desarrollé toda la lógica del gameplay en Unity, incluyendo sistema de enemigos, combate, gestión de ítems, animaciones e interfaz de usuario.</p>
+      <p>En este proyecto fui responsable de toda la programación del gameplay: el sistema de enemigos, los ítems, las animaciones y 
+        la interfaz. Éramos un equipo de tres, así que yo me enfoqué principalmente en la programación, mientras que los otros dos se 
+        encargaron del arte, que era su especialidad. Aun así, todos aportamos ideas y participamos en el diseño del juego, y también 
+        tuve un pequeño aporte en el diseño de niveles.
+      </p>
+
     </div>
   </div>
 
@@ -584,7 +589,7 @@ if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
      </code></pre>
      </div>
 
-        <ul><li><p>Al presionar lel input correspondiente <code>"if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)"</code>, 
+        <ul><li><p>Al presionar el input correspondiente <code>"if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)"</code>, 
           el jugador activa la botella de paralización. Esto inicia un temporizador visual en tiempo real
           <code>"InvokeRepeating(nameof(TimerBar), 0f, 0.02f)";</code> y activa el efecto que detiene a los enemigos 
           (<code>"timerStop.enabled = true;"</code>). </p></li></ul>
@@ -608,7 +613,7 @@ else
      </div>
 
       <ul><li><p>    El sistema comprueba si el efecto de paralización está activo <code>"timerStop.enabled"</code>. 
-      Mientras este estado se mantiene, los enemigos no pueden moverse <code>"path.canMove = false;"</code>, 
+      Mientras este efecto este activo, los enemigos no pueden moverse <code>"path.canMove = false;"</code>, 
       deteniendo su comportamiento. Cuando el efecto termina, recuperan su movimiento normal 
       <code>"Move();"</code>. </p></li></ul>
 
@@ -633,6 +638,7 @@ else
       <ul> 
            
             <li><p>Organización eficiente de escenarios utilizando tiles.</p></li> 
+            <li><p>Organización en las carpetas de Unity</p></li> 
             <li><p>Manejo del comportamiento de enemigos (persecucion, Ataques).</p> </li> 
             <li><p>Integración de animaciones y UI.</p> </li> 
             <li><p>Testeo y ajuste de niveles para mejorar la jugabilidad.</p> </li> 

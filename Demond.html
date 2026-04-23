@@ -584,9 +584,10 @@ if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
      </code></pre>
      </div>
 
-        <ul> <li><p>La activación se realiza mediante input del jugador <code>" if (Input.GetKeyDown(KeyCode.H) && activeParalyzer "</code>. 
-          Al usar el ítem, se inicia un temporizador visual <code>" InvokeRepeating(nameof(TimerBar), 0f, 0.02f); "</code> y se activa el 
-          estado que afecta a todos los enemigos <code>" timerStop.enabled = true; ".</code> </p></li></ul>
+        <ul><li><p>Al presionar lel input correspondiente <code>"if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)"</code>, 
+          el jugador activa la botella de paralización. Esto inicia un temporizador visual en tiempo real
+          <code>"InvokeRepeating(nameof(TimerBar), 0f, 0.02f)";</code> y activa el efecto que detiene a los enemigos 
+          (<code>"timerStop.enabled = true;"</code>). </p></li></ul>
        
   
   
@@ -606,9 +607,10 @@ else
      </code></pre>
      </div>
 
-      <ul><li><p>El sistema utiliza un estado global (timerStop) activado por el jugador para pausar temporalmente a los enemigos. Mientras
-          este estado está activo, se deshabilita su capacidad de movimiento <code>" path.canMove = false "</code>, deteniendo su comportamiento. Una vez que 
-          el temporizador finaliza, el estado se desactiva y los enemigos retoman su lógica normal de movimiento <code>" Move(); "</code>. </p></li></ul>
+      <ul><li><p>    El sistema comprueba si el efecto de paralización está activo <code>"timerStop.enabled"</code>. 
+      Mientras este estado se mantiene, los enemigos no pueden moverse <code>"path.canMove = false;"</code>, 
+      deteniendo su comportamiento. Cuando el efecto termina, recuperan su movimiento normal 
+      <code>"Move();"</code>. </p></li></ul>
 
 
 

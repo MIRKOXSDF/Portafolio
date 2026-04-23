@@ -540,9 +540,9 @@ else if (Input.GetKeyUp(KeyCode.Space))
 
      </code></pre>
      </div>
-      <ul><li><p>El sistema del escudo se activa cuando el jugador mantiene presionada la tecla y tiene energía disponible " bottle > 0 ".
-      Mientras esto ocurre, el escudo permanece activo, consume energía de forma progresiva " bottle -= 50 * Time.deltaTime / 13f; " y actualiza 
-      su barra en tiempo real " shieldBar.GetComponent().UpdateSliderShield(bottle); ". Al soltar la tecla, el escudo se desactiva automáticamente. </p></li></ul>
+      <ul><li><p>El sistema del escudo se activa cuando el jugador mantiene presionada la tecla y tiene energía disponible <code>" bottle > 0 "</code>.
+      Mientras esto ocurre, el escudo permanece activo, consume energía de forma progresiva <code>" bottle -= 50 * Time.deltaTime / 13f;</code>. " y actualiza 
+      su barra en tiempo real  <code>" shieldBar.GetComponent().UpdateSliderShield(bottle); " </code>code>. Al soltar la tecla, el escudo se desactiva automáticamente. </p></li></ul>
 
 
     <div class="code-block">
@@ -556,8 +556,8 @@ else if (Input.GetKeyUp(KeyCode.Space))
      </code></pre>
      </div>
 
-        <ul><li><p>El sistema comprueba si el escudo está activo antes de aplicar daño. Al detectar una bala enemiga  " Enemybullet ", primero evalúa " if (shield) return; ", lo que 
-            evita completamente la reducción de vida. Si el escudo no está activo, el jugador recibe daño " lifePlayer -= 5 ".</p></li></ul>
+        <ul><li><p>El sistema comprueba si el escudo está activo antes de aplicar daño. Al detectar una bala enemiga   <code>" Enemybullet " </code>code>, primero evalúa  <code>" if (shield) return; " </code>code>, lo que 
+            evita completamente la reducción de vida. Si el escudo no está activo, el jugador recibe daño  <code>" lifePlayer -= 5 " </code>code>.</p></li></ul>
        
   
        

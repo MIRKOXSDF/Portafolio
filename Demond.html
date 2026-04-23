@@ -544,10 +544,36 @@ lifePlayer -= damage;
 <div class="project-section">
   
   <h2>Botella de Paralizacion</h2>
+  <div class="code-block">
+    <pre><code class="language-csharp">
+bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+if (isStopped)
+{
+    path.canMove = false;
+}
+else
+{
+    Move();
+}
+
+     </code></pre>
+     </div>
+
       <p>El sistema utiliza un estado global (timerStop) activado por el jugador para detener temporalmente a los enemigos.
         Cuando está activo, se deshabilita su movimiento y comportamiento; al finalizar, se reanudan automáticamente. </p>
 
 
+<div class="code-block">
+    <pre><code class="language-csharp">
+if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
+{
+    timerStop.enabled = true;
+    InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+}
+
+     </code></pre>
+     </div>
 
        <p>La activación se realiza mediante input del jugador. Al usar el ítem, se inicia un temporizador visual y se activa 
         el estado que afecta a todos los enemigos. </p>

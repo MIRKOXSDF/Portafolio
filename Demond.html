@@ -541,8 +541,8 @@ else if (Input.GetKeyUp(KeyCode.Space))
      </code></pre>
      </div>
       <ul><li><p>El sistema del escudo comprueba si el jugador mantiene presionada el input y si tiene energía disponible 
-      (<code>bottle > 0</code>). Mientras esto ocurre, el escudo se activa, consume energía poco a poco ( <code>bottle -= 50 * Time.deltaTime / 13f;</code>)
-      y su barra se va actualizando (<code>shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle);</code>). 
+      (<code>bottle > 0</code>). Mientras esto ocurre, el escudo se activa, consume energía poco a poco  <code>( bottle -= 50 * Time.deltaTime / 13f; )</code>
+      y su barra se va actualizando <code>( shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle) );</code>. 
       Al soltar la tecla, el escudo se desactiva automáticamente. </p></li></ul>
 
 
@@ -560,13 +560,30 @@ else if (Input.GetKeyUp(KeyCode.Space))
         <ul><li><p>  El sistema verifica si el escudo está activo antes de aplicar daño. 
         Si el escudo está activo, el daño se ignora completamente. 
         En el código se observa que, al detectar una bala enemiga, primero se evalúa 
-       <code>if (shield) return;</code>, evitando que se reduzca la vida del jugador.</p></li></ul>
+       <code>( if (shield) return; )</code>, evitando que se reduzca la vida del jugador.</p></li></ul>
        
   
        
     </div>
 </section>
 
+<div class="code-block">
+    <pre><code class="language-csharp">
+if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
+{
+    timerStop.enabled = true;
+    InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+}
+
+     </code></pre>
+     </div>
+
+        <ul> <li><p>La activación se realiza mediante input del jugador. Al usar el ítem, se inicia un temporizador visual y se activa 
+        el estado que afecta a todos los enemigos. </p></li></ul>
+       
+  
+       
+    </div>
 
 <section class="project-content">
 <div class="project-section">
@@ -593,23 +610,7 @@ else
           el temporizador finaliza, el estado se desactiva y los enemigos retoman su lógica normal de movimiento. </p></li></ul>
 
 
-<div class="code-block">
-    <pre><code class="language-csharp">
-if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
-{
-    timerStop.enabled = true;
-    InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
-}
 
-     </code></pre>
-     </div>
-
-        <ul> <li><p>La activación se realiza mediante input del jugador. Al usar el ítem, se inicia un temporizador visual y se activa 
-        el estado que afecta a todos los enemigos. </p></li></ul>
-       
-  
-       
-    </div>
 </section>
 
 <section class="project-content">

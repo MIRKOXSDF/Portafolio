@@ -540,9 +540,11 @@ else if (Input.GetKeyUp(KeyCode.Space))
 
      </code></pre>
      </div>
-      <ul><li><p>El sistema del escudo se activa cuando el jugador mantiene presionada la tecla y tiene energía disponible <code>" bottle > 0 "</code>.
-      Mientras esto ocurre, el escudo permanece activo, consume energía de forma progresiva <code>" bottle -= 50 * Time.deltaTime / 13f;</code>. " y actualiza 
-      su barra en tiempo real  <code>" shieldBar.GetComponent().UpdateSliderShield(bottle); "</code>. Al soltar la tecla, el escudo se desactiva automáticamente. </p></li></ul>
+      <ul><li><p>El escudo se activa al mantener presionada la tecla, siempre que haya energía disponible 
+        <code>"bottle > 0"</code>. Mientras está en uso, permanece activo, reduce la energía de forma continua 
+        <code>"bottle -= 50 * Time.deltaTime / 13f;"</code> y actualiza su barra en tiempo real 
+        <code>"shieldBar.GetComponent().UpdateSliderShield(bottle);"</code>. Al dejar de presionar la tecla, 
+        el escudo se desactiva automáticamente.</p></li></ul>
 
 
     <div class="code-block">

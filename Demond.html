@@ -600,6 +600,7 @@ bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
 
 if (isStopped)
 {
+    animator?.SetFloat("runEnemyBas", 0);
     path.canMove = false;
 }
 else

@@ -589,22 +589,22 @@ if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
      </code></pre>
      <p>
       Al presionar el input asignado, el jugador activa la botella de paralización 
-      siempre que la habilidad esté disponible (<code>activeParalyzer</code>).
+      siempre que la habilidad esté disponible <code>"activeParalyzer"</code>.
      </p>
 
 <p>Al activarse:</p>
 
 <ul>
   <li>
-    Se habilita el sistema de detención mediante 
-    <code>timerStop.enabled = true;</code>, lo que activa el efecto de paralización 
-    y el UI asociado al temporizador.
+    <p>Se habilita el sistema de detención mediante 
+    <code>"timerStop.enabled = true;"</code>, lo que activa el efecto de paralización 
+    y el UI asociado al temporizador.</p>
   </li>
 
   <li>
-    Se inicia un temporizador en tiempo real utilizando 
-    <code>InvokeRepeating(nameof(TimerBar), 0f, 0.02f)</code>, 
-    permitiendo actualizar visualmente la duración del efecto.
+    <p>Se inicia un temporizador en tiempo real utilizando 
+    <code>"InvokeRepeating(nameof(TimerBar), 0f, 0.02f);"</code>, 
+    permitiendo actualizar visualmente la duración del efecto..</p>
   </li>
 </ul>
  

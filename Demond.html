@@ -620,21 +620,22 @@ else
     <pre><code class="language-csharp">
 public void TimerBar()
 {
-            timerPower -= Time.deltaTime*DelayTimer;
-            timerStop.fillAmount = timerPower / MaxtimerPower;
-            if (timerPower <= 0)
-            {
-               timerPower = 0;
-               timerStop.enabled = false;
-               CancelInvoke(nameof(TimerBar));
-            }
+    timerPower -= Time.deltaTime*DelayTimer;
+    timerStop.fillAmount = timerPower / MaxtimerPower;
+    if (timerPower <= 0)
+    {
+        timerPower = 0;
+        timerStop.enabled = false;
+        CancelInvoke(nameof(TimerBar));
+    }
  }     
 
      </code></pre>
      </div>
 
-      <ul><li><p>En esta parte se muestra el temporizador , caundo este finalize <code>" if (timerPower <= 0)"</code> se cancela <code>" timerStop.enabled = false;"</code>
-      y los enemigos vuelven a su normalidad.</p></li></ul>
+      <ul><li><p>En esta parte se gestiona el temporizador de la paralizacion. 
+      Cuando este finaliza <code>"if (timerPower <= 0)"</code>, se desactiva el efecto 
+      <code>"timerStop.enabled = false"</code> y los enemigos recuperan su comportamiento normal.</p></li></ul>
 
     
 

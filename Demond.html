@@ -585,28 +585,14 @@ if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
     timerStop.enabled = true;
     InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
 }
-
+ 
      </code></pre>
         </div>
-     <p>
-      Al presionar el input asignado, el jugador activa la botella de paralización siempre que la habilidad esté disponible <code>"activeParalyzer"</code>.
-     </p>
-
-<p>Al activarse:</p>
-
-<ul>
-  <li>
-    <p>Se habilita el sistema de detención mediante 
-    <code>"timerStop.enabled = true;"</code>, lo que activa el efecto de paralización 
-    y el UI asociado al temporizador.</p>
-  </li>
-
-  <li>
-    <p>Se inicia un temporizador en tiempo real utilizando 
-    <code>"InvokeRepeating(nameof(TimerBar), 0f, 0.02f);"</code>, 
-    permitiendo actualizar visualmente la duración del efecto..</p>
-  </li>
-</ul>
+     <ul><li><p>El jugador activa la botella de paralización al presionar el input asignado, siempre que la habilidad esté 
+         disponible <code>"activeParalyzer"</code>. Al activarse, se muestra el temporizador con
+          <code>"timerStop.enabled = true;"</code>. Además, la barra del temporizador inicia a actualizarse en tiempo real 
+          mediante <code>"InvokeRepeating(nameof(TimerBar), 0f, 0.02f);"</code>..</p></li></ul>
+   
  
   <div class="code-block">
     <pre><code class="language-csharp">
@@ -624,10 +610,33 @@ else
      </code></pre>
      </div>
 
-      <ul><li><p>    El sistema comprueba si el efecto de paralización está activo <code>"timerStop.enabled"</code>. 
-      Mientras este efecto este activo, los enemigos no pueden moverse <code>"path.canMove = false;"</code>, 
-      deteniendo su comportamiento. Cuando el efecto termina, recuperan su movimiento normal 
+      <ul><li><p> El sistema comprueba si la barra del temporizador está activo <code>"timerStop.enabled"</code>. 
+      Mientras este activo, los enemigos no podran moverse <code>"path.canMove = false;"</code>, 
+      deteniendo todas sus acciones. Cuando la barra del temporizador finaliza su tiempo, recuperan su movimiento normal 
       <code>"Move();"</code>. </p></li></ul>
+
+    
+  <div class="code-block">
+    <pre><code class="language-csharp">
+public void TimerBar()
+{
+            timerPower -= Time.deltaTime*DelayTimer;
+            timerStop.fillAmount = timerPower / MaxtimerPower;
+            if (timerPower <= 0)
+            {
+               timerPower = 0;
+               timerStop.enabled = false;
+               CancelInvoke(nameof(TimerBar));
+            }
+ }     
+
+     </code></pre>
+     </div>
+
+      <ul><li><p>En esta parte se muestra el temporizador , caundo este finalize <code>" if (timerPower <= 0)"</code> se cancela <code>" timerStop.enabled = false;"</code>
+      y los enemigos vuelven a su normalidad.</p></li></ul>
+
+    
 
 
 

@@ -548,7 +548,7 @@ else if (Input.GetKeyUp(KeyCode.Space))
       <ul><li><p>El jugador mantiene presionada el input para usar el escudo, siempre 
         que tenga energía disponible <code>"bottle > 0"</code>. Mientras utiliza el escudo, la energía 
         se va reduciendo de manera continua <code>"bottle -= 50 * Time.deltaTime / 13f;"</code> y 
-        la barra se actualiza en tiempo real <code>"shieldBar.GetComponent().UpdateSliderShield(bottle)";</code>. 
+        la barra se actualiza en tiempo real <code>"shieldBar.GetComponent().UpdateSliderShield(bottle);"</code>. 
         Al dejar de presionar la tecla, el escudo se desactiva automáticamente <code>"else if(Input.GetKeyUp(KeyCode.Space))"</code>.</p></li></ul>
 
 
@@ -563,8 +563,8 @@ else if (Input.GetKeyUp(KeyCode.Space))
      </code></pre>
      </div>
 
-        <ul><li><p>El sistema comprueba si el escudo está activo antes que reciba daño. Al detectar una bala enemiga   <code>" Enemybullet " </code>, primero evalúa  <code>" if (shield) return; " </code>, lo que 
-            evita completamente la reducción de vida. Si el escudo no está activo, el jugador recibe daño  <code>" lifePlayer -= 5 " </code>.</p></li></ul>
+        <ul><li><p>El sistema comprueba si el escudo está activo antes que reciba daño. Al detectar una bala enemiga   <code>"Enemybullet" </code>, primero evalúa  <code>"if (shield) return;" </code>, lo que 
+            evita completamente la reducción de vida. Si el escudo no está activo, el jugador recibe daño  <code>"lifePlayer -= 5" </code>.</p></li></ul>
        
   
        
@@ -638,7 +638,7 @@ else
       <ul> 
            
             <li><p>Organización eficiente de escenarios utilizando tiles.</p></li> 
-            <li><p>Organización en las carpetas de Unity</p></li> 
+            <li><p>Estructuración y manejo de carpetas dentro de Unity.</p></li> 
             <li><p>Manejo del comportamiento de enemigos (persecucion, Ataques).</p> </li> 
             <li><p>Integración de animaciones y UI.</p> </li> 
             <li><p>Testeo y ajuste de niveles para mejorar la jugabilidad.</p> </li> 

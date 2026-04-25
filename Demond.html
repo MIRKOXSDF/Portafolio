@@ -77,7 +77,7 @@
         <p>
            Proyecto 2D Top Down desarrollado en Unity, donde controlas
            a un ninja atrapado en un castillo lleno de demonios. Tu objetivo es derrotarlos a todos y encontrar 
-           la salida para escapar del castillo con vida.    
+           la salida para escapar del castillo en un tiempo determinado.    
         </p>
     </div>
 
@@ -102,12 +102,12 @@
   <h2>Mechanics GamePlay</h2>
   <div class="project-content">
     <div class="project-section">
-      <p>En este proyecto fui responsable de toda la programación del gameplay: el sistema de enemigos, los ítems, las animaciones y 
-        la interfaz. Éramos un equipo de tres, así que yo me enfoqué principalmente en la programación, mientras que los otros dos se 
-        encargaron del arte, que era su especialidad. Aun así, todos aportamos ideas y participamos en el diseño del juego, y también 
-        tuve un pequeño aporte en el diseño de niveles.
-      </p>
-
+      <p>En este proyecto fui responsable de la programación completa del gameplay en Unity, incluyendo el Player Controller, 
+       la lógica de enemigos, el sistema de ítems, animaciones y la interfaz de usuario. 
+       Trabajé en un equipo de tres personas, donde me enfoqué principalmente en el desarrollo técnico, mientras que los otros 
+       integrantes se encargaron del apartado artístico. A pesar de esta división de roles, colaboramos activamente en el diseño 
+        del juego, aportando ideas y tomando decisiones en conjunto. Además, participé en el diseño de niveles, contribuyendo a la 
+          distribución de espacios y a la experiencia de juego. </p>
     </div>
   </div>
 
@@ -143,7 +143,7 @@
         <i class="fas fa-skull icon"></i>
         <h3>Enemies</h3>
      </div>
-      <li><p>Todos los Enemigos con IA de persecución (Pathfinding).</p></li>
+      <li><p>Persecución de enemigos mediante Pathfinding.</p></li>
       <li><p>Enemy Fly: Enemigos voladores que disparan al jugador.</p></li>
       <li><p>Enemy Bomb: Enemigos veloces que explotan al contacto.</p></li>
       <li><p>Spawn Portal: Portales que generan enemigos dinámicamente.</p></li>   
@@ -157,21 +157,11 @@
       </div>
      
        <li><p>Barra de vida y escudo.</p></li>
-       <li><p>Temporizador de supervivencia.</p></li>
+       <li><p>Tiempo de supervivencia.</p></li>
        <li><p>Controles adicionales (mute, etc.).</p></li>
        <li><p>Transiciones entre escenas.</p></li>
     </div>
 
-      <!-- CARD -->
-    <div class="resp-card  ">
-      <div class="resp-header">
-        <i class="fas fa-display icon"></i>
-        <h3>Animator</h3>
-      </div>
-      <li><p>Cambios según estado (idle, ataque, movimiento).</p></li>
-    </div>
-
-   
 
   </div>
 </section>
@@ -192,7 +182,7 @@
                         <h3>Botella de Escudo</h3>
                     </div>            
                       <p> Ítem defensivo que otorga protección temporal al jugador.
-                      Tiene uso limitado, por lo que debe activarse estratégicamente en combate.</p>
+                      Tiene uso limitado de consumo, por lo que debe activarse estratégicamente.</p>
                     
                        <button class="link-card" data-modal="modalEscudo">
                        Ver Código
@@ -523,6 +513,113 @@
   </div>
 </div>
 
+}
+else if (Input.GetKeyUp(KeyCode.Space))
+{
+    shieldActive.SetActive(false);
+    shield = false;
+}
+
+
+     </code></pre>
+     </div>
+      <ul><li><p>    El jugador activa el escudo al mantener presionada la tecla asignada, siempre que disponga de energía 
+     <code>" bottle > 0"</code>. Mientras el escudo está activo, la energía se consume de forma continua 
+    <code>"bottle -= 50 * Time.deltaTime / 13f;"</code> y la barra se actualiza en tiempo real 
+    <code>"shieldBar.GetComponent().UpdateSliderShield(bottle);"</code>. 
+    Al soltar la tecla <code>"else if (Input.GetKeyUp(KeyCode.Space))"</code>, el escudo se desactiva automáticamente.</p></li></ul>
+
+
+    <div class="code-block">
+    <pre><code class="language-csharp">
+ if (collision.gameObject.CompareTag("Enemybullet"))
+ {
+     if (shield) return;
+
+     lifePlayer -= 5;
+
+     </code></pre>
+     </div>
+
+        <ul><li><p>El sistema comprueba si el escudo está activo antes que reciba daño. Al detectar una bala enemiga   <code>"Enemybullet" </code>, primero evalúa  <code>"if (shield) return;" </code>, lo que 
+            evita completamente la reducción de vida. Si el escudo no está activo, el jugador recibe daño  <code>"lifePlayer -= 5" </code>.</p></li></ul>
+       
+  
+       
+    </div>
+</section>
+
+
+
+<section class="project-content">
+  
+<div class="project-section">
+  
+  <h2>Botella de Paralizacion</h2>
+  <div class="code-block">
+    <pre><code class="language-csharp">
+if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
+{
+    timerStop.enabled = true;
+    InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+}
+ 
+     </code></pre>
+        </div>
+     <ul><li><p>El jugador activa la botella de paralización al presionar el input asignado, siempre que la habilidad esté 
+         disponible <code>"activeParalyzer"</code>. Al activarse, se muestra el temporizador con<code>"timerStop.enabled = true;"</code> e inicia
+         a funcionar <code>InvokeRepeating(nameof(TimerBar), 0f, 0.02f);</code>code>.</p></li></ul>
+   
+ 
+  <div class="code-block">
+    <pre><code class="language-csharp">
+bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+if (isStopped)
+{
+    animator?.SetFloat("runEnemyBas", 0);
+    path.canMove = false;
+}
+else
+{
+    Move();
+}
+
+     </code></pre>
+     </div>
+
+      <ul><li><p> El sistema comprueba si la barra del temporizador está activo <code>"timerStop.enabled"</code>. 
+      Mientras este activo, los enemigos no podran moverse <code>"path.canMove = false;"</code>, 
+      deteniendo todas sus acciones. Cuando la barra del temporizador finaliza su tiempo, recuperan su movimiento normal 
+      <code>"Move();"</code>. </p></li></ul>
+
+    
+  <div class="code-block">
+    <pre><code class="language-csharp">
+public void TimerBar()
+{
+    timerPower -= Time.deltaTime*DelayTimer;
+    timerStop.fillAmount = timerPower / MaxtimerPower;
+    if (timerPower <= 0)
+    {
+        timerPower = 0;
+        timerStop.enabled = false;
+        CancelInvoke(nameof(TimerBar));
+    }
+ }     
+
+     </code></pre>
+     </div>
+
+      <ul><li><p>En esta parte se gestiona el temporizador de la paralizacion. 
+      Cuando este finaliza <code>"if (timerPower <= 0)"</code>, se desactiva el efecto 
+      <code>"timerStop.enabled = false"</code> y los enemigos recuperan su comportamiento normal.</p></li></ul>
+
+    
+
+
+
+</section>
 
 <section class="project-content">
 <div class="project-section">

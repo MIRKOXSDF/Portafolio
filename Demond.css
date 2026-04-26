@@ -590,7 +590,7 @@ display: block;
 }
 
 #escudo, #paralizacion {
-  scroll-margin-top: 150px; /* ajusta este valor */
+  scroll-margin-top: 0px; /* ajusta este valor */
 }
 
 

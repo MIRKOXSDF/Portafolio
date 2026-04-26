@@ -590,8 +590,7 @@ display: block;
 }
 
 .header-right a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(159,211,199,.3);
+    transform: translateY(-6px);
 }
 
 

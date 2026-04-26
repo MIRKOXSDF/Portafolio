@@ -215,14 +215,127 @@
 </section>
 
 
+<section class="project-content">
+<div class="project-section">
+<div class="code-block">
+<pre><code class="language-csharp">
+    using System;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.UI;
 
-<!-- MODAL ESCUDO -->
-<div id="modalParalizacion" class="modal">
-  <div class="modal-content">
-    
-    <span class="close">&times;</span>
+    public class Ninja : MonoBehaviour
+    {
+         public float bottle;
+         public float velocityPlayer;
+         public GameObject shieldActive;
+         public bool shield;
+         public SliderShieldUI shieldBar;
+         public AudioSource audioSource;
+         public float lifePlayer;
+         public SliderPlayerLife sliderPlayerLife;
+         public bool isDeadPlayer;
+         public Animator animator;
 
-    <pre><code class="language-csharp">
+         void Update()
+         {
+            Shield();
+         }
+        
+         void Shield()
+         {
+           //Activas el escudo con espacio apretando la tecla "ESPACIO"
+           if (Input.GetKey(KeyCode.Space) && bottle > 0 )
+           {         
+              shieldActive.SetActive(true);                              
+              shield = true;
+              bottle -= 50 * Time.deltaTime / 13f;
+              shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle);        
+           }
+           else if(Input.GetKeyUp(KeyCode.Space))
+           {
+              shieldActive.SetActive(false);
+              shield = false;
+           }
+         }
+         private void OnTriggerEnter2D(Collider2D collision)
+         {
+           //Recoges el item escudo
+           if (collision.CompareTag("item"))
+           {        
+              bottle += 50;
+
+              audioSource.PlayOneShot(soundShieldItem);
+
+              shieldBar?.UpdateSliderShield(bottle);
+
+              Destroy(collision.gameObject);
+           }
+           if (collision.gameObject.CompareTag("Enemybullet"))
+           {
+              //Cuando eres atacado por los disparos de enemigo 2 , tu escudo los detiene o no
+              if (shield) return;
+
+              lifePlayer -= 5;
+              sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
+              if (lifePlayer <= 0)
+              {
+                 isDeadPlayer = true;
+                 animator?.SetBool("muerteplayer", isDeadPlayer);
+                 velocityPlayer = 0;
+                 Invoke("Dead", 2);
+              }
+         }    
+         void Dead()
+         {  //El jugador desaparece "PERDISTES"
+            SceneManager.LoadScene("Perdistes");
+            Destroy(gameObject);
+         }
+         private void OnTriggerStay2D(Collider2D collision)
+         {
+            //Cuando eres atacado por los enemigos 1,2,3 , tu escudo los detiene o no
+            if (shield) return;
+
+            float damagePerSecond = 0f;
+
+            switch (collision.tag)
+            {
+              case "enemy":
+                damagePerSecond = 4f;
+                break;
+
+              case "enemy2":
+                damagePerSecond = 5f;
+                break;
+
+              case "enemy3":
+                damagePerSecond = 7f; 
+                break;
+            }
+            if (damagePerSecond > 0)
+            {
+               lifePlayer -= Time.deltaTime * damagePerSecond;
+               sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
+
+               if (lifePlayer <= 0)
+               {
+                 animator?.SetBool("muerteplayer", isDeadPlayer);
+                 velocityPlayer = 0; 
+                 Invoke("Dead", 2); 
+               }
+            }
+         }
+    }
+</code></pre>
+  </div>
+</div>
+</section>
+
+
+<section class="project-content">
+<div class="project-section">
+<div class="code-block">
+<pre><code class="language-csharp">
     using System;
     using UnityEngine;
     using UnityEngine.SceneManagement;
@@ -390,125 +503,10 @@
         }
     }
 
-  
-    </code></pre>
-
-  </div>
-</div>
-
-<section class="project-content">
-<div class="project-section">
-<div class="code-block">
-<pre><code class="language-csharp">
-    using System;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using UnityEngine.UI;
-
-    public class Ninja : MonoBehaviour
-    {
-         public float bottle;
-         public float velocityPlayer;
-         public GameObject shieldActive;
-         public bool shield;
-         public SliderShieldUI shieldBar;
-         public AudioSource audioSource;
-         public float lifePlayer;
-         public SliderPlayerLife sliderPlayerLife;
-         public bool isDeadPlayer;
-         public Animator animator;
-
-         void Update()
-         {
-            Shield();
-         }
-        
-         void Shield()
-         {
-           //Activas el escudo con espacio apretando la tecla "ESPACIO"
-           if (Input.GetKey(KeyCode.Space) && bottle > 0 )
-           {         
-              shieldActive.SetActive(true);                              
-              shield = true;
-              bottle -= 50 * Time.deltaTime / 13f;
-              shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle);        
-           }
-           else if(Input.GetKeyUp(KeyCode.Space))
-           {
-              shieldActive.SetActive(false);
-              shield = false;
-           }
-         }
-         private void OnTriggerEnter2D(Collider2D collision)
-         {
-           //Recoges el item escudo
-           if (collision.CompareTag("item"))
-           {        
-              bottle += 50;
-
-              audioSource.PlayOneShot(soundShieldItem);
-
-              shieldBar?.UpdateSliderShield(bottle);
-
-              Destroy(collision.gameObject);
-           }
-           if (collision.gameObject.CompareTag("Enemybullet"))
-           {
-              //Cuando eres atacado por los disparos de enemigo 2 , tu escudo los detiene o no
-              if (shield) return;
-
-              lifePlayer -= 5;
-              sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
-              if (lifePlayer <= 0)
-              {
-                 isDeadPlayer = true;
-                 animator?.SetBool("muerteplayer", isDeadPlayer);
-                 velocityPlayer = 0;
-                 Invoke("Dead", 2);
-              }
-         }    
-         void Dead()
-         {  //El jugador desaparece "PERDISTES"
-            SceneManager.LoadScene("Perdistes");
-            Destroy(gameObject);
-         }
-         private void OnTriggerStay2D(Collider2D collision)
-         {
-            //Cuando eres atacado por los enemigos 1,2,3 , tu escudo los detiene o no
-            if (shield) return;
-
-            float damagePerSecond = 0f;
-
-            switch (collision.tag)
-            {
-              case "enemy":
-                damagePerSecond = 4f;
-                break;
-
-              case "enemy2":
-                damagePerSecond = 5f;
-                break;
-
-              case "enemy3":
-                damagePerSecond = 7f; 
-                break;
-            }
-            if (damagePerSecond > 0)
-            {
-               lifePlayer -= Time.deltaTime * damagePerSecond;
-               sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
-
-               if (lifePlayer <= 0)
-               {
-                 animator?.SetBool("muerteplayer", isDeadPlayer);
-                 velocityPlayer = 0; 
-                 Invoke("Dead", 2); 
-               }
-            }
-         }
-    }
 </code></pre>
   </div>
+</div>
+</section>
 
 
 <section class="project-content">

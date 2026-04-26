@@ -590,7 +590,7 @@ display: block;
 }
 
 .header-right a:hover {
-    transform: translateY(-6px);
+    transform: translateY(-10px);
 }
 
 

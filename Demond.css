@@ -596,8 +596,8 @@ display: block;
   overflow-y: auto;    /* 🔥 AQUÍ está el scroll */
 }
 
-#escudo h3, #paralizacion h3 {
-  scroll-margin-top: 100px;
+#escudo , #paralizacion  {
+  scroll-margin-top: 200px;
 }
 
 

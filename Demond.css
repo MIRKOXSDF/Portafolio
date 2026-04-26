@@ -589,9 +589,8 @@ display: block;
   overflow-y: auto;    /* 🔥 AQUÍ está el scroll */
 }
 
-.header-right a:hover {
-    transform: translateY(-10px);
+#escudo, #paralizacion {
+  scroll-margin-top: 150px; /* ajusta este valor */
 }
-
 
 

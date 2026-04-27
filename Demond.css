@@ -19,7 +19,14 @@ body {
     font-family: 'nokia', monospace;
     color: #e6e6e6;
 
-    background: url("Imagenes/Demond.gif");
+       background:
+        radial-gradient(
+            circle at center,
+            rgba(0,0,0,0.3) 0%,
+            rgba(0,0,0,0.7) 60%,
+            rgba(0,0,0,0.95) 100%
+        ),
+        url("Imagenes/Demond.gif");
 
     background-size: cover;
     background-position: center;
@@ -130,7 +137,18 @@ h1, h2, h3, h4
 
 }
 /* ---------- HEADER ---------- */
+.header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #0e0e0e;
+    justify-content: space-between;
+    align-items: center;
+    gap: 150px;                
 
+    padding: 30px 20px;
+}
 .main-wrapper {
     max-width: 1200px;
     margin: 60px auto;

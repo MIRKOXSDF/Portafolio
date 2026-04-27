@@ -13,27 +13,16 @@ html {
     font-weight: normal;
     font-style: normal;
 }
-.project-hero {
-    position: relative;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    overflow: hidden;
-
-    background: url("Imagenes/Enemy1_Run.gif") center/cover no-repeat;
+.body {
+    background: url("Imagenes/Demond.gif") center/cover no-repeat fixed;
 }
-.project-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+.project-hero {
+    max-width: 2000px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+    text-align: center;
+    color: #9fd3c7;
 
-    background: rgba(0,0,0,0.35); /* 👈 CLAVE */
-    z-index: 0;
 }
 
 

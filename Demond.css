@@ -16,6 +16,7 @@ html {
 body {
 
     background: url("Imagenes/Demond.gif");
+    background-size: cover;
     color: #e6e6e6;
     font-family: 'nokia', monospace;
 

@@ -13,15 +13,17 @@ html {
     font-weight: normal;
     font-style: normal;
 }
+
 body {
+    margin: 0;
 
-    background: url("Imagenes/Demond.gif");
-    background-size: cover;
-    color: #e6e6e6;
+    background-image: url("Imagenes/Demond.gif");
     font-family: 'nokia', monospace;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* 🔥 ESTO ES LA CLAVE */
 
-
-    
+    height: 100vh;
 }
 .project-hero {
     max-width: 2000px;

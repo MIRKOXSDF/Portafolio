@@ -16,14 +16,11 @@ html {
 
 body {
     margin: 0;
-
-    background-image: url("Imagenes/Foto.jpeg");
     font-family: 'nokia', monospace;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; /* 🔥 ESTO ES LA CLAVE */
+    color: #e6e6e6;
 
-    height: 100vh;
+    background: url("Imagenes/dungeon.jpg") center/cover no-repeat;
+    background-attachment: fixed; /* 🔥 CLAVE */
 }
 .project-hero {
     max-width: 2000px;

@@ -50,7 +50,7 @@ body::before {
   background: rgba(0,0,0,0.7);
   z-index: -1;
 }
-h1, h2, h3, h4
+h1, h2, h3, h4,
 .header-right a,
 .link-card,
 .resume-btn {

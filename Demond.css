@@ -19,7 +19,7 @@ body {
     font-family: 'nokia', monospace;
     color: #e6e6e6;
 
-    background: url("Imagenes/dungeon.jpg") center/cover no-repeat;
+    background: url("Imagenes/Demond.gif") center/cover no-repeat;
     background-attachment: fixed; /* 🔥 CLAVE */
 }
 .project-hero {

@@ -17,30 +17,51 @@ html {
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  color: white;
+  background: #000;
+  overflow-x: hidden;
+    font-family: 'nokia', monospace;
 
-  background: linear-gradient(
-    -45deg,
-    #000000,
-    #0a0a0a,
-    #001f1f,
-    #000000
-  );
-
-  background-size: 400% 400%;
-  animation: fondoAnimado 15s ease infinite;
 }
 
-@keyframes fondoAnimado {
+/* capa animada */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+
+  background: radial-gradient(circle at center,
+    rgba(0,255,200,0.15),
+    transparent 40%);
+
+  animation: energia 8s linear infinite;
+  z-index: -2;
+}
+
+/* segunda capa para profundidad */
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 70%,
+    rgba(0,150,255,0.1),
+    transparent 50%);
+  z-index: -1;
+}
+
+/* animación */
+@keyframes energia {
   0% {
-    background-position: 0% 50%;
+    transform: rotate(0deg) scale(1);
   }
   50% {
-    background-position: 100% 50%;
+    transform: rotate(180deg) scale(1.2);
   }
   100% {
-    background-position: 0% 50%;
+    transform: rotate(360deg) scale(1);
   }
 }
 body::before {
@@ -50,7 +71,7 @@ body::before {
   background: rgba(0,0,0,0.7);
   z-index: -1;
 }
-h1, h2, h3, h4,
+h1, h2, h3, h4
 .header-right a,
 .link-card,
 .resume-btn {

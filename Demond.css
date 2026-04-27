@@ -15,12 +15,33 @@ html {
 }
 
 body {
-  background: url('Imagenes/dungeon-bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-    font-family: 'nokia', monospace;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: white;
 
+  background: linear-gradient(
+    -45deg,
+    #000000,
+    #0a0a0a,
+    #001f1f,
+    #000000
+  );
+
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+}
+
+@keyframes fondoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 body::before {
   content: "";

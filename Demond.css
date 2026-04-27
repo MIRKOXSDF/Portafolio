@@ -19,22 +19,18 @@ body {
     font-family: 'nokia', monospace;
     color: #e6e6e6;
 
-    background: url("Imagenes/Demond.gif") center/cover no-repeat;
-    background-attachment: fixed; /* 🔥 CLAVE */
-}
-/* OSCURO SUAVE (CLAVE) */
-.bg-overlay {
-    position: fixed;
-    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,0,0,0.3) 0%,
+            rgba(0,0,0,0.7) 60%,
+            rgba(0,0,0,0.95) 100%
+        ),
+        url("Imagenes/Demond.gif");
 
-    background: radial-gradient(
-        circle at center,
-        rgba(0,0,0,0.2) 0%,
-        rgba(0,0,0,0.6) 60%,
-        rgba(0,0,0,0.9) 100%
-    );
-
-    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .project-hero {
     max-width: 2000px;

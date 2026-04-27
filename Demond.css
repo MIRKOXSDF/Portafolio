@@ -19,14 +19,7 @@ body {
     font-family: 'nokia', monospace;
     color: #e6e6e6;
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(0,0,0,0.3) 0%,
-            rgba(0,0,0,0.7) 60%,
-            rgba(0,0,0,0.95) 100%
-        ),
-        url("Imagenes/Demond.gif");
+    background: url("Imagenes/Demond.gif");
 
     background-size: cover;
     background-position: center;

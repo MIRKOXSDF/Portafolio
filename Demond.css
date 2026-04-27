@@ -25,26 +25,15 @@ html {
     text-align: center;
     overflow: hidden;
 
-    /* 🔥 FONDO PRINCIPAL */
-    background: url("Imagenes/dungeon.jpg") center/cover no-repeat;
+    background: url("Imagenes/Enemy1_Run.gif") center/cover no-repeat;
 }
 .project-hero::before {
     content: "";
     position: absolute;
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.75);
-}
-.project-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.9)
-    );
+    background: rgba(0,0,0,0.35); /* 👈 CLAVE */
+    z-index: 0;
 }
 
 
@@ -55,14 +44,7 @@ h1, h2, h3, h4
     font-family: 'nokia', monospace;
 }
 
-.project-hero {
-    max-width: 2000px;
-    margin: 40px auto 60px;
-    padding: 0 20px;
-    text-align: center;
-    color: #9fd3c7;
 
-}
 .lightning-container {
     position: fixed;
     inset: 0;

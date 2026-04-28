@@ -485,13 +485,8 @@ display: block;
 
 /* CARD */
 .resp-card {
-  background: rgb(20, 20, 20);
-  border-radius: 12px;
-  padding: 30px 30px; 
   text-align: left;
-  transition: 0.3s;
-  border: 1px solid rgba(159, 211, 199, 0.2);
-  margin-bottom: 10px; 
+
 
 
 }

@@ -136,7 +136,7 @@ h1, h2, h3, h4
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: #0e0e0e42;
+    background-color: #0e0e0e7e;
     justify-content: space-between;
     align-items: center;
     gap: 150px;                
@@ -148,9 +148,8 @@ h1, h2, h3, h4
     margin: 60px auto;
     padding: 40px;
 
-    background-color: #0e0e0e42;
+    background-color: #0e0e0e7e;
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 
     border-radius: 20px;
 }

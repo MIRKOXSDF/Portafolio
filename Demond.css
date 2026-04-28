@@ -23,7 +23,6 @@ body {
         radial-gradient(
             circle at center,
             rgba(0,0,0,0.3) 0%,
-            rgba(0,0,0,0.7) 60%,
         ),
         url("Imagenes/Demond.gif");
 

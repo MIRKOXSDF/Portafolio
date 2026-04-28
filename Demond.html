@@ -118,52 +118,34 @@
  
   <div class="resp-grid">
 
-    <!-- CARD -->
-    <div class="resp-card ">
-      <div class="resp-header">
-        <i class="fas fa-running icon"></i>
-        <h3>Player Controller</h3>
-        
-      </div>
-       <li><p>Movimiento en 8 direcciones.</p></li>
-       <li><p>Sistema de ataque con shurikens.</p></li>
-      
-    </div>
 
     <!-- CARD -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-coins icon"></i>
-        <h3>Items System</h3>
-      </div>
-       <li><p>Botella de Escudo: protección temporal con uso limitado.</p></li>
-       <li><p>Botella de Paralización: detiene enemigos por tiempo limitado.</p></li>
-    </div>
+<div class="resp-card">
+  <div class="resp-header">
+    <i class="fas fa-skull icon"></i>
+    <h3>Gameplay Systems</h3>
+  </div>
 
-    <!-- CARD -->
-    <div class="resp-card ">
-      <div class="resp-header">
-        <i class="fas fa-skull icon"></i>
-        <h3>Enemies</h3>
-     </div>
-      <li><p>Persecución de enemigos mediante Pathfinding.</p></li>
-      <li><p>Enemy Fly: Enemigos voladores que disparan al jugador.</p></li>
-      <li><p>Enemy Bomb: Enemigos veloces que explotan al contacto.</p></li>
-      <li><p>Spawn Portal: Portales que generan enemigos dinámicamente.</p></li>   
-    </div>
+  <ul>
+    <li><p>Desarrollo del control del jugador con movimiento en 8 direcciones y ataque con shurikens.</p></li>
 
-    <!-- CARD -->
-    <div class="resp-card ">
-      <div class="resp-header">
-        <i class="fas fa-display icon"></i>
-        <h3>UI</h3>
-      </div>
-     
-       <li><p>Barra de vida y escudo.</p></li>
-       <li><p>Tiempo de supervivencia.</p></li>
-       <li><p>Controles adicionales (mute, etc.).</p></li>
-       <li><p>Transiciones entre escenas.</p></li>
-    </div>
+    <li><p>Creación de ítems como escudo y paralización.</p></li>
+
+    <li><p>Programación de enemigos con diferentes comportamientos como:</p></li>
+
+        <ul>
+         <li>Persecución del jugador mediante Pathfinding al ser detectado dentro de su campo de visión.</li>
+
+         <li>Enemigo volador: dispara a larga distancia y persigue al jugador de forma lenta.</li>
+
+         <li>Enemigo bomba: persigue al jugador y al colisionar se autodestruye causando daño.</li>
+        </ul>
+
+    
+    <li>Implementación de la interfaz de usuario: barra de vida, escudo, estado de paralización, temporizador y control de audio (mute).</li>
+  </ul>
+</div>
+
 
 
   </div>

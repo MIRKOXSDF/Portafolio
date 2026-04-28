@@ -479,7 +479,7 @@ display: block;
 }
 .resp-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
@@ -491,7 +491,7 @@ display: block;
   text-align: left;
   transition: 0.3s;
   border: 1px solid rgba(159, 211, 199, 0.2);
-  margin-bottom: 20px; 
+  margin-bottom: 10px; 
 
 
 }

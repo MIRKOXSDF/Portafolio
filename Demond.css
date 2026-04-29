@@ -610,9 +610,8 @@ display: block;
     list-style-type: "– ";
 }
 .hero-video {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 12px;
+    width: 60%;       /* 🔥 cámbialo aquí */
+    max-width: 600px; /* límite máximo */
     display: block;
     margin: 0 auto;
 }

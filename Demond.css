@@ -610,8 +610,8 @@ display: block;
     list-style-type: "– ";
 }
 .hero-video {
-    width: 90%;
-    max-width: 900px;
+    width: 100%;       /* ocupa todo el contenedor */
+    max-width: 1200px; /* 🔥 aumenta esto */
     border-radius: 12px;
     display: block;
     margin: 20px auto;

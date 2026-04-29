@@ -603,4 +603,9 @@ display: block;
 #escudo , #paralizacion  {
   scroll-margin-top: 200px;
 }
-
+.sub-item {
+    margin-left: 20px;
+    opacity: 0.8;
+    font-size: 0.95em;
+    list-style-type: "– ";
+}

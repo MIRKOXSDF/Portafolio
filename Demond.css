@@ -609,3 +609,10 @@ display: block;
     font-size: 0.95em;
     list-style-type: "– ";
 }
+.hero-video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}

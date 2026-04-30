@@ -210,6 +210,9 @@ h1, h2, h3, h4
     padding: 25px;
     transition: all 0.3s ease;
 }
+.project-section p {
+ margin-bottom: 40px
+};
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

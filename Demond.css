@@ -471,12 +471,13 @@ display: block;
 .resp-section {
   text-align: center;
   padding: 50px 20px; /* más aire general */
-  margin-bottom: 40px;
 }
 
 .resp-section h2 {
   font-size: 28px;
   color:  #9fd3c7;
+  margin-bottom: 40px;
+
 }
 /* GRID */
 .resp-grid {

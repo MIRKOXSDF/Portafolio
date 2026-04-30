@@ -470,7 +470,7 @@ display: block;
 
 .resp-section {
   text-align: center;
-  padding: 30px 20px;
+  padding: 50px 20px; /* más aire general */
   margin-bottom: 40px;
 }
 

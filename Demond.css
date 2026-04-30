@@ -342,10 +342,10 @@ h1, h2, h3, h4
   min-width: 180px;
 
   border-radius: 12px; /* 🔥 menos redondeado (rectángulo) */
-  border: 1px solid #00ffc3;
+  border: 1px solid #c3e6dd;
 
-  background: rgba(0, 255, 195, 0.05);
-  color: #62e7cd;
+  background: rgba(97, 245, 210, 0.05);
+  color: #00ffc3;
 
   font-weight: 500;
   text-decoration: none;

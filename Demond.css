@@ -497,6 +497,9 @@ display: block;
   text-align: left;
   transition: 0.3s;
 }
+.resp-card ul {
+    padding-left: 25px;
+}
 /* HOVER */
 .resp-card:hover {
   transform: translateY(-5px);

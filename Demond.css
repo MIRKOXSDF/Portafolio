@@ -360,7 +360,7 @@ h1, h2, h3, h4
 
 .link-card:hover {
     transform: translateY(-8px);
-    border-color: #9fd3c7;
+    border-color: #a5d1c7;
 }
 /* ---------- GIF GALLERY ---------- */
 
@@ -479,7 +479,7 @@ display: block;
 }
 .resp-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 

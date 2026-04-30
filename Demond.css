@@ -625,3 +625,8 @@ display: block;
     display: block;
     margin: 20px auto;
 }
+.arrow {
+    font-size: 1.3em; /* 🔥 agranda la flecha */
+    margin: 0 5px;     /* espacio a los lados */
+    color: #9fd3c7;    /* opcional: mismo color que tu tema */
+}

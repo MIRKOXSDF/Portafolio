@@ -454,6 +454,7 @@ display: block;
 .resp-section {
   text-align: center;
   padding: 30px 20px;
+ margin-bottom: 40px;
 }
 
 .resp-section h2 {

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,15 +31,19 @@
   
 
 </header>
-
+<section class="main-wrapper"> <!-- 🔥 AQUI EMPIEZA -->
 <section class="project-hero">
     <a href="index.html" class="back-btn">← Back</a>
+</section>
+<section class="project-hero">
 
     <h1>Zombie in the Village</h1>
-   
-
-    <img src="Imagenes/Zombie.gif" alt="Zombie in the Village gameplay">
 </section>
+
+<video class="hero-video" controls>
+  <source src="Imagenes/VideoDemond.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
 
 <section class="project-content">
 
@@ -50,9 +55,10 @@
 
             <li><i class="fa-solid fa-user"></i> Rol: Programador</li>
             <li><i class="fa-solid fa-users"></i> N° de Integrantes: 4</li>
-            <li><i class="fa-solid fa-clock"></i> Tiempo: 5 meses</li>
+            <li><i class="fa-solid fa-clock"></i> Tiempo: 4 meses</li>
             <li><i class="fa-solid fa-gear"></i> Motor: Unity</li>
-        
+            <li><i class="fa-solid fa-gear"></i> Niveles: 3/<li>
+
             
         </ul>
 
@@ -76,323 +82,492 @@
         <p>
            Fue el primer Videojuego de plataformas 2D desarrollado en Unity. El jugador controla a un aldeano que debe 
            enfrentarse a zombies mientras avanza por distintos niveles, evitando obstáculos, recolectando monedas 
-           y buscando el portal para completar el nivel.
+           y buscando el portal para completar el nivel.  
         </p>
     </div>
 
-</ul>
+<section class="project-links "> 
+  <div class="links-container"> 
 
-<section class="resp-section">
-  <h2>Mi responsabilidad</h2>
+    <a href="https://mirko06660ogmailcom.itch.io/zombie-village" target="_blank" class="link-card"> 
+      <i class="fa-brands fa-itch-io"></i> 
+      <span>Play on Itch.io</span> 
+    </a> 
 
-  <div class="resp-grid">
-
-    <!-- CARD -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-running icon"></i>
-        <h3>Player Movement</h3>
-      </div>
-      <p>Movimiento lateral y sistema de salto del jugador.</p>
-      <div class="tags">
-        <span>Inputs</span>
-        <span>Move</span>
-      </div>
-    </div>
-
-    <!-- CARD -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-crosshairs icon"></i>
-        <h3>Player Attacks</h3>
-      </div>
-    <p>Sistema de combate con ataques cuerpo a cuerpo (trinche) y a distancia (balas).</p>
-      <div class="tags">
-        <span>Meele</span>
-        <span>Shoot</span>
-      </div>
-    </div>
-
-    <!-- CARD -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-coins icon"></i>
-        <h3>Items System</h3>
-      </div>
-     <p>Recolección de recursos como munición para balas y monedas para la progresión del jugador.</p>
-      <div class="tags">
-        <span>Items</span>
-        <span>Resources</span>
-      </div>
-    </div>
-
-    <!-- CARD -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-skull icon"></i>
-        <h3>Enemy Patrol</h3>
-      </div>
-      <p>Patrullaje lateral de enemigos dentro de un área definida.</p>
-
-      <div class="tags">
-        <span>Patrol</span>
-      </div>
-    </div>
-
-     <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-skull icon"></i>
-        <h3>Enemy Shooter</h3>
-      </div>
-       <p>Enemigos que disparan de manera lateral, al detectar al jugador.</p>
-      <div class="tags">
-        <span>Shoot</span>
-      </div>
-    </div>
-
-    <!-- CARD -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <i class="fas fa-display icon"></i>
-        <h3>UI System</h3>
-      </div>
-    <p>Interfaz clara que muestra puntaje, tiempo, munición y progreso (monedas).</p>     
-     <div class="tags">
-        <span>UI</span>
-        <span>HUD</span>
-      </div>
-    </div>
+    <a href="https://github.com/MIRKOXSDF" target="_blank" target="_blank" class="link-card"> 
+      <i class="fa-brands fa-github"></i> 
+      <span>View on GitHub</span> 
+    </a> 
 
   </div>
 </section>
+ 
+ 
+<section class="resp-section">
+       <h2>Lo que realicé</h2>
+      <div class="project-section">
+   
+      <p>En este proyecto fui responsable de la programación completa del gameplay en Unity, incluyendo el Player, 
+       la lógica de enemigos, el sistema de ítems, UI y animaciones. 
+       Trabajé en un equipo de tres personas, donde me enfoqué principalmente en la programacion, mientras que los otros 
+       integrantes se encargaron del apartado artístico. A pesar de esta división de roles, colaboramos activamente en el diseño 
+        del juego, aportando ideas y tomando decisiones en conjunto. Además, participé en el diseño de niveles, contribuyendo a la 
+          distribución de espacios y a la experiencia de juego. </p>
+  </div>
+
+
+ <div class="resp-grid">
+
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-running icon"></i>
+        <h3>Sistema de Player</h3>
+      </div>
+        <ul>
+             <li><p>Desarrollo del Player Controller con movimiento en 8 direcciones.</p></li> 
+             <li><p>Implementación de sistema de disparo direccional (shuriken)</p></li> 
+        </ul> 
+    </div>
+
+
+
+
+   <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-skull icon"></i>
+        <h3>Sistema de Enemigos </h3>
+      </div>
+          <ul>
+             <li><p>Programacion de un rango de deteccion para los enemigos.</p></li> 
+             <li><p>Implementación de persecución mediante Pathfinding.</p></li> 
+             <li><p>Comportamientos diferenciados por tipo de enemigo.</p></li> 
+             <li class="sub-item"><p>Enemigo volador<span class="arrow">→</span>ataque a distancia.</p></li> 
+             <li class="sub-item"><p>Enemigo bomba<span class="arrow">→</span>Al colisionar explota.</p></li> 
+          </ul>
+   
+   </div>
+
+
+
+   <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-coins icon"></i>
+        <h3>Sistema de items</h3>
+      </div>
+         <ul>
+             <li><p>Desarrollo del Item Escudo<span class="arrow">→</span>protección contra daño.</p></li> 
+             <li><p>Desarrollo del Item de Paralización<span class="arrow">→</span>detiene acciones enemigas.</p></li> 
+         </ul>
+    </div>
+ </div>
+
+
+
+</section>
+
+  
 
 
 <section class="resp-section">
-    <h2>Player Attacks</h2>
+    <h2>Sistema de items</h2>
 
     <div class="projects-grid">
 
         <!-- PROJECT 1 -->
         <div class="project-card">
-                <img src="Imagenes/Player_Shoot.gif">
+                <img src="Imagenes/Escudo.gif">
                 <div class="project-info">
                     <div class="resp-title">
-                        <h3>Ataque Disparo</h3>
+                        <h3>Escudo</h3>
                     </div>            
-                      <p> Se desarrolló un sistema de disparo que genera proyectiles. 
-                       Al colisionar con un enemigo, el proyectil detecta el impacto 
-                       y aplica daño, permitiendo atacar a distancia.</p>
+                      <p> Al recoger el Ítem, otorga protección temporal al jugador.
+                      Tiene uso limitado de consumo, por lo que debe activarse estratégicamente.</p>
+                    
+                       <div class="header-right" > 
+                       <a class="link-card" href="#escudo"> 
+                         <span>Ver Codigo</span> 
+                       </a> 
+                     </div>
                 </div>
+            
         </div>
 
         <!-- PROJECT 2 -->
          <div class="project-card">
-                <img src="Imagenes/Player_Meele.gif">
+                <img src="Imagenes/Paralizacion.gif">
                 <div class="project-info">
                    <div class="resp-title">
-                    <h3>Ataque Meele</h3>
+                    <h3>Paralización</h3>
                    </div>             
-                    <p>Se desarrolló un sistema de ataque meele basado en la 
-                        lógica del disparo. En vez de generar proyectiles, se instancia un 
-                        trinche por un corto tiempo, creando la sensación de un golpe directo 
-                        a los enemigos cercanos.</p>
+                    <p>Ítem que se obtiene al derrotar enemigos aleatorios.
+                    Permite paralizar a todos los enemigos por un tiempo, facilitando situaciones difíciles.</p>
+                     <div class="header-right"> 
+                       <a class="link-card"  href="#paralizacion"> 
+                         <span>Ver Codigo</span> 
+                       </a> 
+                     </div>
+
+                
+                    
                 </div>
+             
         </div>
     </div>
 </section>
 
-<div class="project-content code-container">
-      <details class="code-block">
-      <summary>Codigo Ataque Disparo</summary>
-      <pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement; 
 
-        public class Villager : MonoBehaviour
-        {
-            public int ammo;
-            public GameObject bulletPrefab;
-            public GameObject bulletPrefab2;
-            public BulletManager bulletManager;
-            public AudioSource audioSource;
-            public AudioClip soundShootPlayer;
-            public AudioClip AmmoClip;
-
-
-            void Update()
-            {
-                Shoot();
-            }
-            void Shoot()
-            {
-                //Apreta la tecla "X" para poder disparar
-                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Bullet>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Bullet>().direction = dir;   
-                    ammo--;
-                    bulletManager.SetBullet(ammo);
-                    audioSource.PlayOneShot(soundShootPlayer);
-                } 
-               
-            }
-            private void OnTriggerEnter2D(Collider2D collision)
-            {
-                //Recoges la municion de tus balas para poder disparar
-                if (collision.gameObject.CompareTag("Ammo"))
-                {
-                    ammo++;
-                    bulletManager.SetBullet(ammo);
-                    Destroy(collision.gameObject);
-                    audioSource.PlayOneShot(AmmoClip);
-                }
-
-            }
-
-        }
-
-
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Bullet : MonoBehaviour
-        {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer;
-
-            void Start()
-            {
-                rb2d = GetComponent<Rigidbody2D>();
-            }
-
-            void Update()
-            {
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y vida de tiempo de la bala
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
-            }
-        }
-        </code></pre>
-     </details>
-
-     <details class="code-block">
-      <summary>Codigo Ataque Meele</summary>
-      <pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement;  
-
-        public class Villager : MonoBehaviour
-        {
-            public GameObject bulletPrefab2;
-            public AudioSource audioSource;
-            public AudioClip soundMeelePlayer;
-
-            void Update()
-            {
-                Shoot();
-            }
-            void Shoot()
-            {
-                //Apreta la tecla "Z" para poder atacar con tu trinche    
-                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab2);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Meele>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Meele>().direction = d;
-                    audioSource.PlayOneShot(soundMeelePlayer);
-                }
-            }
-        }
-
-    
-
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Meele: MonoBehaviour
-        {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer;
-            void Start()
-            {
-                rb2d = GetComponent<Rigidbody2D>();
-                //Incializar para que la scala de tu trinche no se modifique
-                if(direction.x <0)
-                {
-                    transform.localScale = new Vector2(-0.5875226f, 1);
-                }
-            }
-
-            void Update()
-            {
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y vida de tiempo de tu trinche
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
-            }
-        }
-
-      
-
-      </code></pre>
-      </details>
+<section class="project-content" >
+<div class="project-section">
+<div class="code-block">
+<div class="resp-title" id="escudo">
+<h3 >Codificacion - Botella de Escudo</h3>
 </div>
 
+<pre><code class="language-csharp">
+    using System;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.UI;
 
+    public class Ninja : MonoBehaviour
+    {
+         public float bottle;
+         public float velocityPlayer;
+         public GameObject shieldActive;
+         public bool shield;
+         public SliderShieldUI shieldBar;
+         public AudioSource audioSource;
+         public float lifePlayer;
+         public SliderPlayerLife sliderPlayerLife;
+         public bool isDeadPlayer;
+         public Animator animator;
 
-
-
-<section class="project-links"> 
-    <h2>Ver Proyecto</h2> 
-    <div class="links-container"> 
-      <a href="https://github.com/MIRKOXSDF" target="_blank" class="link-card"> 
-        <i class="fa-brands fa-github"></i> <span>View on GitHub</span> </a> <a href="https://mirko06660ogmailcom.itch.io/zombie-village" target="_blank" class="link-card">
-        <i class="fa-brands fa-itch-io"></i> <span>Play on Itch.io</span> </a> 
-    </div>
-
-
+         void Update()
+         {
+            Shield();
+         }
         
+         void Shield()
+         {
+           //Activas el escudo con espacio apretando la tecla "ESPACIO"
+           if (Input.GetKey(KeyCode.Space) && bottle > 0 )
+           {         
+              shieldActive.SetActive(true);                              
+              shield = true;
+              bottle -= 50 * Time.deltaTime / 13f;
+              shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle);        
+           }
+           else if(Input.GetKeyUp(KeyCode.Space))
+           {
+              shieldActive.SetActive(false);
+              shield = false;
+           }
+         }
+         private void OnTriggerEnter2D(Collider2D collision)
+         {
+           //Recoges el item escudo
+           if (collision.CompareTag("item"))
+           {        
+              bottle += 50;
 
+              audioSource.PlayOneShot(soundShieldItem);
 
+              shieldBar?.UpdateSliderShield(bottle);
 
+              Destroy(collision.gameObject);
+           }
+           if (collision.gameObject.CompareTag("Enemybullet"))
+           {
+              //Cuando eres atacado por los disparos de enemigo 2 , tu escudo los detiene o no
+              if (shield) return;
+
+              lifePlayer -= 5;
+              sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
+              if (lifePlayer <= 0)
+              {
+                 isDeadPlayer = true;
+                 animator?.SetBool("muerteplayer", isDeadPlayer);
+                 velocityPlayer = 0;
+                 Invoke("Dead", 2);
+              }
+         }    
+         void Dead()
+         {  //El jugador desaparece "PERDISTES"
+            SceneManager.LoadScene("Perdistes");
+            Destroy(gameObject);
+         }
+         private void OnTriggerStay2D(Collider2D collision)
+         {
+            //Cuando eres atacado por los enemigos 1,2,3 , tu escudo los detiene o no
+            if (shield) return;
+
+            float damagePerSecond = 0f;
+
+            switch (collision.tag)
+            {
+              case "enemy":
+                damagePerSecond = 4f;
+                break;
+
+              case "enemy2":
+                damagePerSecond = 5f;
+                break;
+
+              case "enemy3":
+                damagePerSecond = 7f; 
+                break;
+            }
+            if (damagePerSecond > 0)
+            {
+               lifePlayer -= Time.deltaTime * damagePerSecond;
+               sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
+
+               if (lifePlayer <= 0)
+               {
+                 animator?.SetBool("muerteplayer", isDeadPlayer);
+                 velocityPlayer = 0; 
+                 Invoke("Dead", 2); 
+               }
+            }
+         }
+    }
+</code></pre>
+
+  </div>
+</div>
 </section>
+
+
+<section class="project-content" >
+<div class="project-section">
+<div class="code-block">
+<div class="resp-title"  id="paralizacion" >
+<h3>Codificacion - Botella de Paralizacion</h3>
+</div>
+
+<pre><code class="language-csharp">
+    using System;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.UI;
+
+    public class Ninja : MonoBehaviour
+    {
+        private bool activeParalyzer;
+        private GameObject textMessageItem;
+        public Image timerStop;
+        public AudioSource audioSource;
+        public Animator animator;
+        public AIPath path;
+        [SerializeField] private float timerPower;
+        [SerializeField] private float DelayTimer;
+        [SerializeField] private float MaxtimerPower=5;
+
+        void Start()
+        {
+           timerPower = MaxtimerPower;
+        }
+        void Update()
+        {
+            //Activas para utilizar el item paralizador , apretando la tecla "H"
+            if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
+            {
+               textMessageItem.SetActive(false);
+               timerStop.enabled = true;
+               InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+            }         
+        }
+        public void TimerBar()
+        {
+            timerPower -= Time.deltaTime*DelayTimer;
+            timerStop.fillAmount = timerPower / MaxtimerPower;
+            if (timerPower <= 0)
+            {
+               timerPower = 0;
+               timerStop.enabled = false;
+               CancelInvoke(nameof(TimerBar));
+            }
+        }     
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            //Recoges el item paralizador
+            if (collision.gameObject.CompareTag("item2")&&!activeParalyzer)
+            {
+               audioSource.PlayOneShot(soundShieldItem);
+               textMessageItem.SetActive(true);
+               activeParalyzer = true;
+               Destroy(collision.gameObject);
+            }
+        }   
+    } 
+
+
+
+</code></pre>
+
+
+<div class="code-block">
+<pre><code class="language-csharp">
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using Pathfinding;
+    using System.IO;
+    using Unity.VisualScripting;
+    using UnityEngine.UI;
+
+    public class Enemy1 : MonoBehaviour
+    {
+        void Update()
+        {
+            //Detienes las acciones del enemigo1 cuando activas el item paralizador
+            bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+            if (isStopped)
+            {
+                animator?.SetFloat("runEnemyBas", 0);
+                if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
+            }
+            else
+            {
+                Move(); //Movimiento del enemigo
+            }
+        }     
+    }
+</code></pre>
+
+<div class="code-block">
+<pre><code class="language-csharp">
+    using Pathfinding;
+    using System.Collections;
+    using System.Collections.Generic;
+    using Unity.VisualScripting;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.UI;
+
+    public class Enemy2 : MonoBehaviour
+    {
+           void Update()
+           {
+                //Detienes las acciones del enemigo2 cuando activas el item paralizador
+                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+                if (isStopped)
+                {
+                   //Cuando se activa el item del paralizador
+                   StopShootEnemy();//Detiene el disparo del enemigo
+                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
+                   animator?.SetFloat("runEnemyBas", 0);
+                }
+                else
+                {
+                   //Cuando no esta activa el item del paralizador
+                   Move(); //Movimiento del enemigo
+                   StartShootEnemy(); //Disparo del enemigo
+                }
+           }
+           
+    }   
+</code></pre>
+
+<div class="code-block">
+<pre><code class="language-csharp">
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using Pathfinding;
+    using UnityEngine.UI;
+
+    public class Enemy3 : MonoBehaviour
+    {
+           void Update()
+           {
+                //Detienes las acciones del enemigo3 cuando activas el item paralizador
+                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
+
+                if (isStopped)
+                {
+                   animator?.SetFloat("runEnemy", 0);
+                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
+                }
+                else
+                {
+                   Move(); //Movimiento del enemigo          
+                }
+           }     
+    }
+</code></pre>
+
+<div class="code-block">
+<pre><code class="language-csharp">
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.UI;
+
+    public class EnemySpawn : MonoBehaviour
+    {
+           void Update()
+           {
+                //Detienes las acciones del enemigo spawn cuando activas el item paralizador
+                if(player.gameObject.GetComponent<Ninja>().timerStop.enabled==true)
+                {  
+                   animator.SetBool("idle", true);
+                }
+                else
+                {
+                   Spawn();//Spawn enemigos
+                   animator.SetBool("idle", false);
+                }
+           }        
+        }
+    }
+</code></pre>
+
+  </div>
+</div>
+</section>
+
+
+<section class="project-content">
+<div class="project-section">
+      <h2>Lo que aprendi</h2>
+      <p>
+      A través de este proyecto grupal, fortalecí mi organización tanto personal como en equipo. 
+      Además, mejoré mi comunicación durante el desarrollo y mi capacidad para resolver problemas 
+      en Unity. También aprendí a estructurar un poco mejor mi código, haciéndolo más simple, funcional  
+      y entendible.<br>
+
+      <br>Durante el desarrollo, adquirí experiencia tecnicas en :
+
+       </p>
+       
+      
+      <ul> 
+           
+            <li><p>Organización eficiente de escenarios utilizando tiles.</p></li> 
+            <li><p>Estructuración y manejo de carpetas dentro de Unity.</p></li> 
+            <li><p>Manejo del comportamiento de enemigos (persecucion, Ataques).</p> </li> 
+            <li><p>Integración de animaciones y UI.</p> </li> 
+            <li><p>Testeo y ajuste de niveles para mejorar la jugabilidad.</p> </li> 
+         
+      </ul>
+       
+    </div>
+</section>
+
+
+
+
+
+
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+</section> 
 </body>
 </html>
+

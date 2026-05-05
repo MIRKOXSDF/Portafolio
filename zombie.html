@@ -158,8 +158,8 @@
         <h3>Sistema de items</h3>
       </div>
          <ul>
-             <li><p>Item de municion (bayas)<span class="arrow">→</span>Sirven para recargar y disparar.</p></li> 
-             <li><p>Item de monedas<span class="arrow">→</span>Sirven para progresar en los niveles .</p></li> 
+             <li><p>Item de municion(bayas) <span class="arrow">→</span>Sirven para recargar y disparar.</p></li> 
+             <li><p>Item de monedas <span class="arrow">→</span>Sirven para progresar en los niveles.</p></li> 
          </ul>
     </div>
  </div>
@@ -188,7 +188,7 @@
                       jugador defenderse a mayor distancia.</p>
                     
                        <div class="header-right" > 
-                       <a class="link-card" href="#escudo"> 
+                       <a class="link-card" href="#disparo"> 
                          <span>Ver Codigo</span> 
                        </a> 
                      </div>
@@ -208,7 +208,7 @@
                          tiempo breve, generando la sensación de un golpe directo contra los enemigos.</p>
                  
                      <div class="header-right"> 
-                       <a class="link-card"  href="#paralizacion"> 
+                       <a class="link-card"  href="#meele"> 
                          <span>Ver Codigo</span> 
                        </a> 
                      </div>
@@ -225,118 +225,98 @@
 <section class="project-content" >
 <div class="project-section">
 <div class="code-block">
-<div class="resp-title" id="escudo">
-<h3 >Codificacion - Botella de Escudo</h3>
+<div class="resp-title" id="disparo">
+<h3 >Codificacion - Ataque Disparo</h3>
+
 </div>
 
 <pre><code class="language-csharp">
-    using System;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using UnityEngine.UI;
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using UnityEngine.SceneManagement; 
 
-    public class Ninja : MonoBehaviour
-    {
-         public float bottle;
-         public float velocityPlayer;
-         public GameObject shieldActive;
-         public bool shield;
-         public SliderShieldUI shieldBar;
-         public AudioSource audioSource;
-         public float lifePlayer;
-         public SliderPlayerLife sliderPlayerLife;
-         public bool isDeadPlayer;
-         public Animator animator;
+        public class Villager : MonoBehaviour
+        {
+            public int ammo;
+            public GameObject bulletPrefab;
+            public GameObject bulletPrefab2;
+            public BulletManager bulletManager;
+            public AudioSource audioSource;
+            public AudioClip soundShootPlayer;
+            public AudioClip AmmoClip;
 
-         void Update()
-         {
-            Shield();
-         }
-        
-         void Shield()
-         {
-           //Activas el escudo con espacio apretando la tecla "ESPACIO"
-           if (Input.GetKey(KeyCode.Space) && bottle > 0 )
-           {         
-              shieldActive.SetActive(true);                              
-              shield = true;
-              bottle -= 50 * Time.deltaTime / 13f;
-              shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle);        
-           }
-           else if(Input.GetKeyUp(KeyCode.Space))
-           {
-              shieldActive.SetActive(false);
-              shield = false;
-           }
-         }
-         private void OnTriggerEnter2D(Collider2D collision)
-         {
-           //Recoges el item escudo
-           if (collision.CompareTag("item"))
-           {        
-              bottle += 50;
 
-              audioSource.PlayOneShot(soundShieldItem);
-
-              shieldBar?.UpdateSliderShield(bottle);
-
-              Destroy(collision.gameObject);
-           }
-           if (collision.gameObject.CompareTag("Enemybullet"))
-           {
-              //Cuando eres atacado por los disparos de enemigo 2 , tu escudo los detiene o no
-              if (shield) return;
-
-              lifePlayer -= 5;
-              sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
-              if (lifePlayer <= 0)
-              {
-                 isDeadPlayer = true;
-                 animator?.SetBool("muerteplayer", isDeadPlayer);
-                 velocityPlayer = 0;
-                 Invoke("Dead", 2);
-              }
-         }    
-         void Dead()
-         {  //El jugador desaparece "PERDISTES"
-            SceneManager.LoadScene("Perdistes");
-            Destroy(gameObject);
-         }
-         private void OnTriggerStay2D(Collider2D collision)
-         {
-            //Cuando eres atacado por los enemigos 1,2,3 , tu escudo los detiene o no
-            if (shield) return;
-
-            float damagePerSecond = 0f;
-
-            switch (collision.tag)
+            void Update()
             {
-              case "enemy":
-                damagePerSecond = 4f;
-                break;
-
-              case "enemy2":
-                damagePerSecond = 5f;
-                break;
-
-              case "enemy3":
-                damagePerSecond = 7f; 
-                break;
+                Shoot();
             }
-            if (damagePerSecond > 0)
+            void Shoot()
             {
-               lifePlayer -= Time.deltaTime * damagePerSecond;
-               sliderPlayerLife.GetComponent<SliderPlayerLife>().UpdateLifeSlider(lifePlayer);
-
-               if (lifePlayer <= 0)
-               {
-                 animator?.SetBool("muerteplayer", isDeadPlayer);
-                 velocityPlayer = 0; 
-                 Invoke("Dead", 2); 
-               }
+                //Apreta la tecla "X" para poder disparar
+                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
+                {
+                    GameObject obj = Instantiate(bulletPrefab);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Bullet>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Bullet>().direction = dir;   
+                    ammo--;
+                    bulletManager.SetBullet(ammo);
+                    audioSource.PlayOneShot(soundShootPlayer);
+                } 
+               
             }
-         }
-    }
+            private void OnTriggerEnter2D(Collider2D collision)
+            {
+                //Recoges la municion de tus balas para poder disparar
+                if (collision.gameObject.CompareTag("Ammo"))
+                {
+                    ammo++;
+                    bulletManager.SetBullet(ammo);
+                    Destroy(collision.gameObject);
+                    audioSource.PlayOneShot(AmmoClip);
+                }
+
+            }
+
+        }
+
+
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+
+        public class Bullet : MonoBehaviour
+        {
+            public Rigidbody2D rb2d;
+            public Vector2 direction;
+            public int speed;
+            public float timer;
+            public float MaxTimer;
+
+            void Start()
+            {
+                rb2d = GetComponent<Rigidbody2D>();
+            }
+
+            void Update()
+            {
+                Move();
+            }
+
+            void Move()
+            {
+                //Movimiento y vida de tiempo de la bala
+                rb2d.velocity = direction * speed;
+                timer += Time.deltaTime;
+                if (timer >= MaxTimer)
+                {
+                    Destroy(gameObject);
+                    timer = 0;
+                }
+            }
+        }
 </code></pre>
 
   </div>
@@ -347,65 +327,82 @@
 <section class="project-content" >
 <div class="project-section">
 <div class="code-block">
-<div class="resp-title"  id="paralizacion" >
+<div class="resp-title"  id="meele" >
 <h3>Codificacion - Botella de Paralizacion</h3>
 </div>
 
 <pre><code class="language-csharp">
-    using System;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using UnityEngine.UI;
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using UnityEngine.SceneManagement;  
 
-    public class Ninja : MonoBehaviour
-    {
-        private bool activeParalyzer;
-        private GameObject textMessageItem;
-        public Image timerStop;
-        public AudioSource audioSource;
-        public Animator animator;
-        public AIPath path;
-        [SerializeField] private float timerPower;
-        [SerializeField] private float DelayTimer;
-        [SerializeField] private float MaxtimerPower=5;
+        public class Villager : MonoBehaviour
+        {
+            public GameObject bulletPrefab2;
+            public AudioSource audioSource;
+            public AudioClip soundMeelePlayer;
 
-        void Start()
-        {
-           timerPower = MaxtimerPower;
-        }
-        void Update()
-        {
-            //Activas para utilizar el item paralizador , apretando la tecla "H"
-            if (Input.GetKeyDown(KeyCode.H) && activeParalyzer)
+            void Update()
             {
-               textMessageItem.SetActive(false);
-               timerStop.enabled = true;
-               InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
-            }         
-        }
-        public void TimerBar()
-        {
-            timerPower -= Time.deltaTime*DelayTimer;
-            timerStop.fillAmount = timerPower / MaxtimerPower;
-            if (timerPower <= 0)
-            {
-               timerPower = 0;
-               timerStop.enabled = false;
-               CancelInvoke(nameof(TimerBar));
+                Shoot();
             }
-        }     
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            //Recoges el item paralizador
-            if (collision.gameObject.CompareTag("item2")&&!activeParalyzer)
+            void Shoot()
             {
-               audioSource.PlayOneShot(soundShieldItem);
-               textMessageItem.SetActive(true);
-               activeParalyzer = true;
-               Destroy(collision.gameObject);
+                //Apreta la tecla "Z" para poder atacar con tu trinche    
+                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+                {
+                    GameObject obj = Instantiate(bulletPrefab2);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Meele>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Meele>().direction = d;
+                    audioSource.PlayOneShot(soundMeelePlayer);
+                }
             }
-        }   
-    } 
+        }
+
+    
+
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+
+        public class Meele: MonoBehaviour
+        {
+            public Rigidbody2D rb2d;
+            public Vector2 direction;
+            public int speed;
+            public float timer;
+            public float MaxTimer;
+            void Start()
+            {
+                rb2d = GetComponent<Rigidbody2D>();
+                //Incializar para que la scala de tu trinche no se modifique
+                if(direction.x <0)
+                {
+                    transform.localScale = new Vector2(-0.5875226f, 1);
+                }
+            }
+
+            void Update()
+            {
+                Move();
+            }
+
+            void Move()
+            {
+                //Movimiento y vida de tiempo de tu trinche
+                rb2d.velocity = direction * speed;
+                timer += Time.deltaTime;
+                if (timer >= MaxTimer)
+                {
+                    Destroy(gameObject);
+                    timer = 0;
+                }
+            }
+        }
+
 
 
 

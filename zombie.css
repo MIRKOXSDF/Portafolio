@@ -291,15 +291,6 @@ h1, h2, h3, h4
 
 
 
-.tools-used li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #9fd3c7;
-
-   
-
-}
 
 .tools-used img {
     width: 26px;

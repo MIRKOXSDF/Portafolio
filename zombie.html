@@ -108,12 +108,17 @@
        <h2>Lo que realicé</h2>
       <div class="project-section">
    
-      <p>En este proyecto fui responsable de la programación completa del gameplay en Unity, incluyendo el Player, 
-       la lógica de enemigos, el sistema de ítems, UI y animaciones. 
-       Trabajé en un equipo de tres personas, donde me enfoqué principalmente en la programacion, mientras que los otros 
-       integrantes se encargaron del apartado artístico. A pesar de esta división de roles, colaboramos activamente en el diseño 
-        del juego, aportando ideas y tomando decisiones en conjunto. Además, participé en el diseño de niveles, contribuyendo a la 
-          distribución de espacios y a la experiencia de juego. </p>
+      <p>En este proyecto asumí el desarrollo del gameplay en Unity, encargándome de implementar 
+      el control del jugador, el comportamiento de los enemigos, el sistema de ítems, la interfaz 
+      de usuario, las animaciones y la construcción de escenarios mediante tiles.
+
+      Formé parte de un equipo de cuatro integrantes, donde desempeñé el rol principal de programador, 
+      mientras que los demás miembros se enfocaron en el área artística. Aun así, todos participamos 
+     activamente en el diseño del juego, colaborando en la toma de decisiones y aportando ideas.
+
+     Trabajé en conjunto con el área de arte para integrar correctamente las mecánicas con los recursos visuales. 
+     Además, participé en el diseño y testeo de niveles, enfocándome en mejorar la distribución del entorno 
+     y lograr una experiencia de juego más fluida y atractiva.</p>
   </div>
 
 
@@ -126,7 +131,7 @@
       </div>
         <ul>
              <li><p>Desarrollo movimiento lateral del player</p></li> 
-             <li><p>Implementación de dos ataques:/p></li> 
+             <li><p>Implementación de dos ataques :</p></li> 
                <li class="sub-item"><p>Ataque Disparo<span class="arrow">→</span>disparas bayas</p></li> 
              <li class="sub-item"><p>Ataque Meele<span class="arrow">→</span>golpeas con tu trinche</p></li> 
         </ul> 
@@ -283,6 +288,9 @@
         }
 
 
+</code></pre>
+<pre><code class="language-csharp">
+       
         using System.Collections;
         using System.Collections.Generic;
         using UnityEngine;
@@ -317,6 +325,7 @@
                 }
             }
         }
+
 </code></pre>
 
   </div>
@@ -362,9 +371,11 @@
             }
         }
 
-    
+</code></pre>
 
-        using System.Collections;
+<div class="code-block">
+<pre><code class="language-csharp">
+  using System.Collections;
         using System.Collections.Generic;
         using UnityEngine;
 
@@ -402,131 +413,6 @@
                 }
             }
         }
-
-
-
-
-</code></pre>
-
-
-<div class="code-block">
-<pre><code class="language-csharp">
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using Pathfinding;
-    using System.IO;
-    using Unity.VisualScripting;
-    using UnityEngine.UI;
-
-    public class Enemy1 : MonoBehaviour
-    {
-        void Update()
-        {
-            //Detienes las acciones del enemigo1 cuando activas el item paralizador
-            bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-            if (isStopped)
-            {
-                animator?.SetFloat("runEnemyBas", 0);
-                if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
-            }
-            else
-            {
-                Move(); //Movimiento del enemigo
-            }
-        }     
-    }
-</code></pre>
-
-<div class="code-block">
-<pre><code class="language-csharp">
-    using Pathfinding;
-    using System.Collections;
-    using System.Collections.Generic;
-    using Unity.VisualScripting;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using UnityEngine.UI;
-
-    public class Enemy2 : MonoBehaviour
-    {
-           void Update()
-           {
-                //Detienes las acciones del enemigo2 cuando activas el item paralizador
-                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-
-                if (isStopped)
-                {
-                   //Cuando se activa el item del paralizador
-                   StopShootEnemy();//Detiene el disparo del enemigo
-                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
-                   animator?.SetFloat("runEnemyBas", 0);
-                }
-                else
-                {
-                   //Cuando no esta activa el item del paralizador
-                   Move(); //Movimiento del enemigo
-                   StartShootEnemy(); //Disparo del enemigo
-                }
-           }
-           
-    }   
-</code></pre>
-
-<div class="code-block">
-<pre><code class="language-csharp">
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using Pathfinding;
-    using UnityEngine.UI;
-
-    public class Enemy3 : MonoBehaviour
-    {
-           void Update()
-           {
-                //Detienes las acciones del enemigo3 cuando activas el item paralizador
-                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-
-                if (isStopped)
-                {
-                   animator?.SetFloat("runEnemy", 0);
-                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
-                }
-                else
-                {
-                   Move(); //Movimiento del enemigo          
-                }
-           }     
-    }
-</code></pre>
-
-<div class="code-block">
-<pre><code class="language-csharp">
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.UI;
-
-    public class EnemySpawn : MonoBehaviour
-    {
-           void Update()
-           {
-                //Detienes las acciones del enemigo spawn cuando activas el item paralizador
-                if(player.gameObject.GetComponent<Ninja>().timerStop.enabled==true)
-                {  
-                   animator.SetBool("idle", true);
-                }
-                else
-                {
-                   Spawn();//Spawn enemigos
-                   animator.SetBool("idle", false);
-                }
-           }        
-        }
-    }
 </code></pre>
 
   </div>

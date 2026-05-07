@@ -19,7 +19,7 @@ body {
     font-family: 'nokia', monospace;
     color: #e6e6e6;
 
-       background:url("Imagenes/Demond.gif");
+       background:url("Imagenes/Zombie.gif");
 
     background-size: cover;
     background-position: center;
@@ -289,20 +289,8 @@ h1, h2, h3, h4
     padding-left: 20px;
 }
 
-.project-section li {
-    margin-bottom: 10px;
-}
 
 
-.tools-used li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #9fd3c7;
-
-   
-
-}
 
 .tools-used img {
     width: 26px;
@@ -626,7 +614,7 @@ display: block;
     margin: 20px auto;
 }
 .arrow {
-    font-size: 2em; /* 🔥 agranda la flecha */
+    font-size: 1.5em; /* 🔥 agranda la flecha */
     margin: 0 5px;     /* espacio a los lados */
     color: #9fd3c7;    /* opcional: mismo color que tu tema */
 }

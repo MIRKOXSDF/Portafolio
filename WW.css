@@ -618,3 +618,10 @@ display: block;
     margin: 0 5px;     /* espacio a los lados */
     color: #9fd3c7;    /* opcional: mismo color que tu tema */
 }
+.project-Image{
+  margin-bottom: 10px;
+  width: 300px;    
+  height: 200px;  
+
+}
+

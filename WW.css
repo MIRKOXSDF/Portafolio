@@ -629,3 +629,13 @@ display: block;
   display: block;
   border-radius: 10px;
 }
+.video-box iframe{
+    width: 600px;
+    height: 350px;
+}
+
+.project-Image img{
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+}

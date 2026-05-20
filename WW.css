@@ -619,8 +619,8 @@ display: block;
     color: #9fd3c7;    /* opcional: mismo color que tu tema */
 }
 .project-Image{
-  width: 700px;
-  height: 400px;
+  width: 900px;
+  height: 700px;
   margin: 20px auto;
   display: block;
 }

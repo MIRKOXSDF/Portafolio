@@ -629,6 +629,14 @@ display: block;
   display: block;
   border-radius: 10px;
 }
+.project-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
 .video-box iframe{
     width: 600px;
     height: 350px;

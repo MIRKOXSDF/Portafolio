@@ -108,12 +108,11 @@
        <h2>Lo que realicé</h2>
       <div class="project-section">
    
-      <p>En este proyecto me encargué principalmente del desarrollo del gameplay en Unity. Implementé el control del 
-        jugador, el comportamiento de los enemigos, el sistema de ítems, la interfaz de usuario y las animaciones.
-        También participé en la construcción de escenarios mediante tiles y en la integración de mecánicas principales del juego.
-        El proyecto fue desarrollado en un equipo de cuatro integrantes, donde asumí el rol principal de programador, mientras los
-        demás miembros se enfocaron en el apartado artístico. Aun así, todos colaboramos activamente en el diseño y desarrollo general 
-        del videojuego.</p>
+      <p>En este proyecto participé principalmente en el desarrollo del gameplay utilizando Unity. Me encargué de implementar el control del jugador, 
+        los sistemas de enemigos, los ítems interactivos, la interfaz de usuario y las animaciones principales del juego. Además, colaboré en la 
+        construcción de escenarios mediante tiles y en la integración de distintas mecánicas para mejorar la experiencia jugable. El proyecto fue 
+        desarrollado por un equipo de cuatro integrantes, donde asumí el rol principal de programador, mientras los demás miembros se enfocaron 
+        principalmente en el apartado artístico. Aun así, todo el equipo participó activamente en el diseño y desarrollo general del videojuego.</p>
   </div>
 
 
@@ -140,10 +139,10 @@
         <h3>Sistema de Enemigos </h3>
       </div>
           <ul>
-             <li><p>Implementación del movimiento lateral de enemigos</p></li> 
-             <li><p>Comportamientos diferenciados por tipo de enemigo</p></li> 
+             <li><p>Implementación de patrullaje de enemigos</p></li> 
+             <li><p>Comportamientos diferenciados por tipo de enemigo :</p></li> 
              <li class="sub-item"><p>Zombie Lady<span class="arrow">→</span> Enemigo que dispara proyectiles (balas de sangre).</p></li> 
-             <li class="sub-item"><p>Zombie Grandulon<span class="arrow">→</span> Patrullaje mas rapido</p></li> 
+             <li class="sub-item"><p>Zombie Grandulon<span class="arrow">→</span> Mayor velocidad de patrullaje.</p></li> 
           </ul>
    
    </div>
@@ -199,7 +198,7 @@
 
         <!-- PROJECT 2 -->
          <div class="project-card">
-                <img src="Imagenes/Player_Meele.gif">
+                <img src="Imagenes/tela.gif">
                 <div class="project-info">
                    <div class="resp-title">
                         <h3>Ataque Meele</h3>
@@ -252,6 +251,7 @@
             {
                 Shoot();
             }
+            
             void Shoot()
             {
                 //Apreta la tecla "X" para poder disparar
@@ -268,6 +268,7 @@
                 } 
                
             }
+
             private void OnTriggerEnter2D(Collider2D collision)
             {
                 //Recoges la municion de tus balas para poder disparar
@@ -352,6 +353,7 @@
             {
                 Shoot();
             }
+
             void Shoot()
             {
                 //Apreta la tecla "Z" para poder atacar con tu trinche    
@@ -371,7 +373,7 @@
 
 <div class="code-block">
 <pre><code class="language-csharp">
-  using System.Collections;
+        using System.Collections;
         using System.Collections.Generic;
         using UnityEngine;
 

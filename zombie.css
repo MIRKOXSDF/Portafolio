@@ -7,20 +7,14 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
-@font-face {
-    font-family: 'nokia';
-    src: url('Font/nokiafc22.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 body {
     margin: 0;
-    font-family: 'nokia', monospace;
+    font-family: 'Poppins', sans-serif;
     color: #e6e6e6;
 
-       background:url("Imagenes/Zombie.gif");
-
+    background: url("Imagenes/Zombie.gif");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -297,7 +297,7 @@ h1, h2, h3, h4
 }
 
 .project-links {
-    margin: 5px auto 40px auto;
+    margin: 5px auto 10px auto;
     max-width: 1000px;
     text-align: center;
 }
@@ -452,7 +452,7 @@ display: block;
 
 .resp-section {
   text-align: center;
-  padding: 50px 20px; /* más aire general */
+  padding: 20px 20px; /* más aire general */
 }
 
 .resp-section h2 {

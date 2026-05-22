@@ -16,7 +16,7 @@ html {
 
 body {
     margin: 0;
-    font-family: 'nokia', monospace;
+    font-family: Arial, sans-serif;
     color: #e6e6e6;
 
        background:url("Imagenes/Whiskered.gif");
@@ -39,7 +39,7 @@ h1, h2, h3, h4
 .header-right a,
 .link-card,
 .resume-btn {
-    font-family: 'nokia', monospace;
+    font-family: 'Arial', monospace;
 }
 
 

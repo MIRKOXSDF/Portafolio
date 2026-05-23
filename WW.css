@@ -210,6 +210,14 @@ h1, h2, h3, h4
     padding: 25px;
     transition: all 0.3s ease;
 }
+.project-Text {
+    background: #141414;
+    border: 1px solid rgba(159, 211, 199, 0.2);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
 
 .projects-grid {
     display: grid;

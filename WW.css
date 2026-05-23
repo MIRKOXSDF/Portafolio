@@ -223,11 +223,17 @@ h1, h2, h3, h4
     color: #9fd3c7;
 }
 
-.project-card img {
+.project-card {
     width: 100%;
     height: 260px;
+}
+
+.project-card img,
+.project-card iframe {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center 10%; 
+    display: block;
 }
 .project-cards {
     background: #181818;

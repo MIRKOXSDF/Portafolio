@@ -658,13 +658,12 @@ display: block;
 .video-section{
     display: flex;
     justify-content: center;
-    margin: 40px 0;
+    margin: 10px 0;
 }
 
 .video-section iframe{
     width: 900px;
     height: 500px;
-    border-radius: 10px;
 }
 .project-Image{
     width: 1000px;

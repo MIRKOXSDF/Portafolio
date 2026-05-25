@@ -601,8 +601,11 @@ display: block;
     list-style-type: "– ";
 }
 .hero-video {
-    width: 100%;       /* ocupa todo el contenedor */
-    max-width: 900px; /* 🔥 aumenta esto */
+    width: 100%;
+    max-width: 900px;
+    height: 500px; /* altura fija */
+    object-fit: cover; /* recorta el video */
+    
     border-radius: 12px;
     display: block;
     margin: 20px auto;

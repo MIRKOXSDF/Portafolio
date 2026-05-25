@@ -645,20 +645,22 @@ display: block;
 }
 
 /* IMAGEN */
-.reference-image img{
-    width: 550px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
-
-/* VIDEOS */
-
 .video-section{
     display: flex;
     justify-content: center;
     margin: 10px 0;
+}
+
+.reference-video{
+    width: 900px;
+    max-width: 100%;
+    height: 500px;
+
+    border: none;
+    border-radius: 10px;
+    object-fit: contain;
+
+    background: black;
 }
 
 .video-section iframe{

@@ -603,9 +603,11 @@ display: block;
 .hero-video {
     width: 100%;
     max-width: 900px;
-    height: 500px; /* altura fija */
-    object-fit: cover; /* recorta el video */
-    
+    max-height: 500px;
+
+    object-fit: contain;
+    background: #000;
+
     border-radius: 12px;
     display: block;
     margin: 20px auto;

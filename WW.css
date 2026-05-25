@@ -210,6 +210,14 @@ h1, h2, h3, h4
     padding: 25px;
     transition: all 0.3s ease;
 }
+.project-Text {
+    background: #141414;
+    border: 1px solid rgba(159, 211, 199, 0.2);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
 
 .projects-grid {
     display: grid;
@@ -222,17 +230,20 @@ h1, h2, h3, h4
     margin-bottom: 40px;
     color: #9fd3c7;
 }
+
 .project-card {
-    background: #181818;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform .3s, box-shadow .3s;
-}
-.project-card img {
     width: 100%;
     height: 260px;
+    border-radius: 10px;
+
+}
+
+.project-card img,
+.project-card iframe {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center 10%; 
+    display: block;
 }
 .project-cards {
     background: #181818;
@@ -303,7 +314,7 @@ h1, h2, h3, h4
 }
 
 .project-links {
-    margin: 5px auto 10px auto;
+    margin: 5px auto 40px auto;
     max-width: 1000px;
     text-align: center;
 }
@@ -458,7 +469,7 @@ display: block;
 
 .resp-section {
   text-align: center;
-  padding: 20px 20px; /* más aire general */
+  padding: 50px 20px; /* más aire general */
 }
 
 .resp-section h2 {
@@ -525,6 +536,7 @@ display: block;
 
 /* TEXTO */
 .project-section p,
+.project-Text p,
 .resp-intro,
 .project-info p,
 .resp-card p {
@@ -607,8 +619,9 @@ display: block;
     list-style-type: "– ";
 }
 .hero-video {
-    width: 100%;       /* ocupa todo el contenedor */
-    max-width: 900px; /* 🔥 aumenta esto */
+    width: 100%;
+    max-width: 900px;
+    height: 500px; /* importante para el tamaño */
     border-radius: 12px;
     display: block;
     margin: 20px auto;

@@ -669,3 +669,14 @@ display: block;
     height: 500px;
     border-radius: 10px;
 }
+.project-Image{
+    width: 1000px;
+    margin: 30px auto;
+}
+
+.project-Image img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}

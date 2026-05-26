@@ -688,7 +688,11 @@ display: block;
     padding: auto 12px;
 
     background: #24292e;
-     color: #9fd3c7; 
+    color: #00ffc3;
+
+    border: 1px solid #00ffbf;
+
+    color: #9fd3c7; 
     text-decoration: none;
 
     border-radius: 8px;

@@ -702,7 +702,8 @@ display: block;
 }
 
 .github-inline i {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    color:  #00ffbf;
 }
 
 .github-inline:hover{

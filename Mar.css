@@ -15,7 +15,7 @@ body {
 
        background:url("Imagenes/cnm.gif");
 
-    background-size: cover;
+    background-size: 80% auto;
     background-position: center;
     background-attachment: fixed;
 }

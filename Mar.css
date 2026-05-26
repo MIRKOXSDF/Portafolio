@@ -15,7 +15,7 @@ body {
 
        background:url("Imagenes/cnm.gif");
 
-    background-size: cover;
+    background-size: 80% auto;
     background-position: center;
     background-attachment: fixed;
 }
@@ -695,18 +695,18 @@ display: block;
     border: 1px solid #00ffbf;
     border-radius: 10px;
 
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
 
     transition: 0.3s ease;
 }
 
 .github-inline i {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color:  #00ffbf;
 }
 
 .github-inline:hover{
-    background: #3b434b;
-    transform: translateY(-2px);
+    transform: translateY(-8px);
+    border-color: #a5d1c7;
 }

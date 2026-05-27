@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Voodoo</title>
+    <title>Voodo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Voodo.css">
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
 
@@ -31,15 +30,19 @@
   
 
 </header>
-
+<section class="main-wrapper"> <!-- 🔥 AQUI EMPIEZA -->
 <section class="project-hero">
     <a href="index.html" class="back-btn">← Back</a>
-
-    <h1>Voodoo</h1>
-   
-
-    <img src="Imagenes/voodo.gif" alt="Voodoo in the Village gameplay">
 </section>
+<section class="project-hero">
+
+    <h1>Voodo</h1>
+</section>
+
+<video class="hero-video" controls>
+  <source src="Imagenes/ZombieVi.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
 
 <section class="project-content">
 
@@ -49,393 +52,479 @@
         <h2>Informacion del Proyecto</h2>
         <ul>
 
-            <li><i class="fa-solid fa-user"></i> Rol: Programador</li>
-            <li><i class="fa-solid fa-users"></i> N° de Integrantes: 5</li>
-            <li><i class="fa-solid fa-clock"></i> Tiempo: 7 meses</li>
-            <li><i class="fa-solid fa-gear"></i> Motor: Unity</li>
-        
+            <li><i class="fa-solid fa-user"></i> Rol<span class="arrow">→</span> Programador</li>
+            <li><i class="fa-solid fa-users"></i> N° de Integrantes<span class="arrow">→</span> 5</li>
+            <li><i class="fa-solid fa-clock"></i> Tiempo<span class="arrow">→</span> 7 meses</li>
+            <li><i class="fa-solid fa-gear"></i> Motor<span class="arrow">→</span> Unity</li>
+            <li><i class="fa-solid fa-layer-group"></i> Niveles<span class="arrow">→</span> 2</li>
+
             
         </ul>
 
        
     </div>
 
+    <div class="project-section tools-used ">
+        <h2>Herramientas Usadas</h2>
+        <ul>
+            <li>Unity <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"></li>
+            <li>C# <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg"></li>
+            <li>Aseprite <img src="Imagenes/Aseprite.png"></li>
+            <li>GitHub <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"></li>
+            
 
-<div class="project-section tools-used">
-       <h2>Herramientas Usadas</h2>
-     <ul>
-        <li>Unity <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"></li>
-        <li>C# <img src="Imagenes/Csharp.png"></li>
-        <li>GitHub <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"></li>
-        <li>Maya <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maya/maya-original.svg"></li>
-        <li>Adobe Substance Painter <img src="Imagenes/Substance_Painter-removebg-preview.png"></li>
-        <li>Photoshop <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"></li>
-    </ul>
-</div>
+        </ul>
+    </div>
 
-<div class="project-section">
+    <div class="project-section">
         <h2>Acerca del Proyecto</h2>
         <p>
-           Fue el primer Videojuego 3D desarrollado en Unity , Voodoo es un plataformer 3D con elementos 
-           de puzzle ambientado en un entorno oscuro y misterioso. El protagonista despierta atrapado en el cuerpo de 
-           un muñeco vudú y debe explorar la casa de un brujo ocultista. A lo largo del recorrido, el jugador deberá 
-           superar distintos desafíos y resolver puzzles mientras evita a otros muñecos que intentan impedir su escape. 
-           El objetivo es encontrar la forma de recuperar su verdadero cuerpo y salir con vida de este inquietante lugar.
+       Este fue mi primer videojuego desarrollado en Unity. Es un plataformas 2D de acción y aventura 
+       en el que eres un aldeano que lucha contra hordas de zombies. Para avanzar entre 
+       los niveles, el jugador debe recolectar monedas repartidas por el escenario. El objetivo final es 
+       derrotar al jefe responsable del brote para salvar la aldea.
         </p>
+
+        <p>
+        El videojuego cuenta con 3 niveles y 1 Boss Fight, cada uno con una ambientación 
+        y diseño de escenario distinto, buscando transmitir diferentes sensaciones visuales 
+        y variaciones en la exploración a lo largo de la aventura. A medida que el jugador 
+        avanza, la dificultad aumenta progresivamente con mayores desafíos. Además, el jugador cuenta con una sola vida durante toda la partida, 
+        por lo que debe aprovechar cuidadosamente sus recursos y movimientos para sobrevivir.
+</p>
+    </div>
+
+<section class="project-links "> 
+  <div class="links-container"> 
+
+    <a href="https://mirko06660ogmailcom.itch.io/zombie-village" target="_blank" class="link-card"> 
+      <i class="fa-brands fa-itch-io"></i> 
+      <span>Play on Itch.io</span> 
+    </a> 
+
+    <a href="https://github.com/MIRKOXSDF" target="_blank" target="_blank" class="link-card"> 
+      <i class="fa-brands fa-github"></i> 
+      <span>View on GitHub</span> 
+    </a> 
+
+  </div>
+</section>
+ 
+ 
+<section class="resp-section">
+       <h2>Lo que realicé</h2>
+      <div class="project-section">
+   
+     <p>En este proyecto participé principalmente como programador de gameplay en Unity. 
+Me encargué de implementar el sistema del jugador, la lógica de enemigos, 
+los ítems interactivos, la interfaz de usuario y las animaciones principales. 
+Además, colaboré en la construcción de escenarios mediante tiles.
+
+El proyecto fue desarrollado por un equipo de cuatro integrantes, donde asumí 
+el rol principal de programación, mientras los demás miembros se enfocaron 
+principalmente en el apartado artístico. Aun así, todo el equipo participó 
+activamente en el diseño general, la parte conceptual y la propuesta de ideas 
+para el desarrollo del videojuego.
+</p>
+  </div>
+
+
+ <div class="resp-grid">
+
+    <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-running icon"></i>
+        <h3>Sistema de Player</h3>
+      </div>
+        <ul>
+             <li><p>Implementé el sistema de control del jugador, incluyendo movimiento horizontal , salto y dos tipos de ataque :</p></li> 
+               <li class="sub-item"><p>Ataque a distancia<span class="arrow">→</span> Disparar proyectiles (bayas).</p></li> 
+             <li class="sub-item"><p>Ataque Meele<span class="arrow">→</span> Defenderte cuarpo a cuerpo (trinche).</p></li> 
+        </ul> 
+    </div>
+
+
+
+
+   <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-skull icon"></i>
+        <h3>Sistema de Enemigos </h3>
+      </div>
+          <ul>
+             <li><p>Implementación de patrullaje de enemigos.</p></li> 
+             <li><p>Comportamientos diferenciados por tipo de enemigo :</p></li> 
+             <li class="sub-item"><p>Zombie Lady<span class="arrow">→</span> Enemigo que dispara proyectiles (balas de sangre).</p></li> 
+             <li class="sub-item"><p>Zombie Grandulon<span class="arrow">→</span> Mayor velocidad de patrullaje.</p></li> 
+          </ul>
+   
+   </div>
+
+
+
+   <div class="resp-card">
+      <div class="resp-header">
+        <i class="fas fa-coins icon"></i>
+        <h3>Sistema de items</h3>
+      </div>
+         <ul>
+            <li><p>Implementé un sistema de recolección de ítems con distintas funciones :</p></li> 
+            <li class="sub-item"><p>Municion <span class="arrow">→</span> Sirven para disparar.</p></li> 
+            <li class="sub-item"><p>Monedas <span class="arrow">→</span> Necesarias para avanzar entre niveles.</p></li> 
+
+
+         </ul>
+    </div>
+ </div>
+
+
+
+</section>
+
+  
+
+
+<section class="resp-section">
+    <h2>Sistema de Player - Ataques</h2>
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+                <img src="Imagenes/burro.gif">
+                <div class="project-info">
+                    <div class="resp-title">
+                          <h3>Ataque a distancia</h3>
+                   </div>             
+                    <p> Ataque que genera proyectiles. Al colisionar con un 
+                      enemigo, el proyectil le aplica daño. Este ataque permite al 
+                      jugador defenderse a mayor distancia.</p>
+                    
+                       <div class="header-right" > 
+                       <a class="link-card" href="#disparo"> 
+                         <span>Ver Codigo</span> 
+                       </a> 
+                     </div>
+                </div>
+            
+        </div>
+
+        <!-- PROJECT 2 -->
+         <div class="project-card">
+                <img src="Imagenes/y.gif">
+                <div class="project-info">
+                   <div class="resp-title">
+                        <h3>Ataque Meele</h3>
+                    </div>            
+                      <p>Se implementó un sistema de combate con trinche que reutiliza
+                         la lógica de codigo del ataque a distancia. El arma se instancia durante un 
+                         tiempo breve, generando la sensación de un golpe directo contra los enemigos cuerpo a cuerpo.</p>
+
+                       
+                 
+                     <div class="header-right"> 
+                       <a class="link-card"  href="#meele"> 
+                         <span>Ver Codigo</span> 
+                       </a> 
+                     </div>
+
+                
+                    
+                </div>
+             
+        </div>
+    </div>
+</section>
+
+
+<section class="project-content" >
+<div class="project-section">
+<div class="code-block">
+<div class="resp-title" id="disparo">
+<h3 >Codificacion - Ataque a distancia</h3>
+
 </div>
 
-<div class="project-sections">
-  <h2>Mi responsabilidad</h2>
+<pre><code class="language-csharp">
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using UnityEngine.SceneManagement; 
 
-  <div class="resp-grid">
+        public class Villager : MonoBehaviour
+        {
+            public int ammo;
+            public GameObject bulletPrefab;
+            public GameObject bulletPrefab2;
+            public float direction;
+            public BulletManager bulletManager;
+            public AudioSource audioSource;
+            public AudioClip soundShootPlayer;
+            public AudioClip AmmoClip;
 
-    <!-- CARD 1 -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <h3>Player Jump</h3>
-        <span class="badge gameplay">Gameplay</span>
-      </div>
 
-      <p>
-        Sistema de salto que detecta el input "Space", aplica impulso con AddForce
-        y controla repeticiones mediante cooldown.
-      </p>
+            void Update()
+            {
+                Shoot();
+                Move();
+            }
 
-      <div class="tags">
-        <span>AddForce</span>
-        <span>Input</span>
-        <span>Cooldown</span>
-      </div>
-    </div>
+            void Move()
+            {
+                //Movimiento y direccion
+                float horizontal = Input.GetAxis("Horizontal");
+                if (horizontal > 0)
+                {
+                   direction = 1;
+                }
+                else if (horizontal < 0)
+                {
+                   direction = -1;
+                }
 
-    <!-- CARD 2 -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <h3>Player Tools — Llave inglesa</h3>
-        <span class="badge gameplay">Gameplay</span>
-      </div>
+                Vector3 scale = transform.localScale;
+                if (direction < 0)
+                {
+                   scale.x = -2;
+                }
+                else
+                {
+                   scale.x = 2;
+                }
+                transform.localScale = scale;
 
-      <p>
-        Herramienta que repara y activa mecanismos como palancas,
-        usando booleanos y Quaternions.
-      </p>
+                rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
+                animator.SetFloat("speed", rb2d.velocity.x);
 
-      <div class="tags">
-        <span>Quaternion</span>
-        <span>Boolean</span>
-      </div>
-    </div>
+            }
 
-    <!-- CARD 3 -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <h3>Enemy Movement Patrol</h3>
-        <span class="badge ia">IA</span>
-      </div>
+            void Shoot()
+            {
+                //Ataque a distancia
+                //Apreta la tecla "X" para poder disparar
+                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
+                {
+                    GameObject obj = Instantiate(bulletPrefab);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Bullet>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Bullet>().direction = dir;   
+                    ammo--;
+                    bulletManager.SetBullet(ammo);
+                    audioSource.PlayOneShot(soundShootPlayer);
+                } 
+               
+            }
 
-      <p>
-        Patrullaje entre puntos con NavMeshAgent y cambio automático a persecución.
-      </p>
+            private void OnTriggerEnter2D(Collider2D collision)
+            {
+                //Recoges la municion de tus balas para poder disparar
+                if (collision.gameObject.CompareTag("Ammo"))
+                {
+                    ammo++;
+                    bulletManager.SetBullet(ammo);
+                    Destroy(collision.gameObject);
+                    audioSource.PlayOneShot(AmmoClip);
+                }
 
-      <div class="tags">
-        <span>NavMeshAgent</span>
-        <span>State Machine</span>
-      </div>
-    </div>
+            }
 
-    <!-- CARD 4 -->
-    <div class="resp-card">
-      <div class="resp-header">
-        <h3>EnemyCat System</h3>
-        <span class="badge ia">IA</span>
-      </div>
+        }
 
-      <p>
-        Sistema de visión, rotación y persecución con retorno automático.
-      </p>
 
-      <div class="tags">
-        <span>Field of View</span>
-        <span>Quaternion</span>
-      </div>
-    </div>
+</code></pre>
+<pre><code class="language-csharp">
+       
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+
+        public class Bullet : MonoBehaviour
+        {
+            public Rigidbody2D rb2d;
+            public Vector2 direction;
+            public int speed;
+            public float timer;
+            public float MaxTimer=1f;
+
+            void Start()
+            {
+                rb2d = GetComponent&lt;Rigidbody2D&gt;();
+            }
+
+            void Update()
+            {
+                Move();
+            }
+
+            void Move()
+            {
+                //Movimiento y vida de tiempo de la bala
+                rb2d.velocity = direction * speed;
+                timer += Time.deltaTime;
+                if (timer >= MaxTimer)
+                {
+                    Destroy(gameObject);
+                    timer = 0;
+                }
+            }
+        }
+
+</code></pre>
+
   </div>
 </div>
 </section>
 
 
-<!-- PLAYER COMBAT -->
-<div class="project-sections">
-    <h2>EnemyCat system</h2>
-
-    <div class="gif-gallery two">
-        <div class="gif-card">
-            <img src="Imagenes/lololo.gif" alt="Combat system 1">
-            <span class="gif-label">Vigilancia de EnemyCat</span>
-        </div>
-        <div class="gif-card">
-            <img src="Imagenes/PlayerDetect.gif" alt="Combat system 2">
-            <span class="gif-label">Persecucion de EnemyCat</span>
-
-        </div>   
-    </div>  
+<section class="project-content" >
+<div class="project-section">
+<div class="code-block">
+<div class="resp-title"  id="meele" >
+<h3>Codificacion - Ataque Meele</h3>
 </div>
 
-<div class="project-content-Meele">
-
-     <div class="project-section">
-        <h2>Vigilancia de EnemyCat</h2>
-         <p>
-          Cuando el EnemyCat se encuentra en estado de vigilancia, rota sobre su eje para monitorear su 
-          entorno, manteniéndose alerta hasta detectar cualquier amenaza dentro de su área de vision.
-         </p>
-       
-      </div>
-
-      <div class="project-section">
-        <h2>Persecucion de EnemyCat</h2>
-         <p>
-           Desarrollo de un sistema de persecución en el que el EnemyCat, al detectar al jugador, cambia dinámicamente 
-           de estado y comienza a seguirlo activamente. Este comportamiento incluye lógica de transición de estados 
-           y seguimiento del objetivo en tiempo real.</p>    
-      </div>
-</div>
-<div class="project-content-codigo">
-      <details class="code-block">
-      <summary>Codigo Ataque Disparo</summary>
-      <pre><code class="language-csharp">
+<pre><code class="language-csharp">
         using System.Collections;
         using System.Collections.Generic;
-        using System.Threading;
         using UnityEngine;
-        using UnityEngine.AI;
+        using UnityEngine.SceneManagement;  
 
-        public class CatEnemy : MonoBehaviour
+        public class Villager : MonoBehaviour
         {
-            [Header("Movement")]
-            public NavMeshAgent navMeshAgent;
-            public GameObject playerPosition;
-            [Header("Cono de vision")]
-            [SerializeField] Transform eyes;
-            public bool canSeePlayer;
-            public float radius;
-            public LayerMask obstructionMask;
-            public float angle;
-            public bool rotating = true;
-            public float rotationTimer;
-            public float rotationMaxTimer;
-            public float rotationEnemy;
-            public CatEnemyAnimation catAnimator;
-            private Vector3 firstPos;
-            private Vector3 firstRotation;
-            float timer;
-            EnemyAudioManager enemyAudioManager;
-            [SerializeField] float timeOutOfView;
-             Vector3 lastPosPlayer;
-            [HideInInspector] public bool runAnimation;
-            [HideInInspector] public bool walkAnimation;
+            public GameObject bulletPrefab2;
+            public AudioSource audioSource;
+            public float direction;
+            public AudioClip soundMeelePlayer;
 
-
-            private void Start()
+            void Update()
             {
-               enemyAudioManager = GetComponent<EnemyAudioManager>();
-               firstPos = transform.position;
-               firstRotation = transform.rotation.eulerAngles;
-               //Se resetea el EnemyCat
-               DataPersistenceManager.instance.OnLoad += LoadEnemy;
+                Shoot();
+                Move();
             }
-            private void Update()
+
+            void Move()
             {
-                if (canSeePlayer)
+                //Movimiento y direccion
+                float horizontal = Input.GetAxis("Horizontal");
+                if (horizontal > 0)
                 {
-                    // El enemigo está en modo persecución (ya vio al jugador)
-                    walkAnimation = false;        // Deja de caminar
-                    rotationTimer = 0f;           // Resetea el temporizador de rotación
-                    rotating = false;             // Deja de girar (modo vigilancia OFF)
-                    navMeshAgent.speed = 20f;     // Aumenta velocidad para perseguir
+                   direction = 1;
+                }
+                else if (horizontal < 0)
+                {
+                   direction = -1;
+                }
 
-                    // Ajusta la posición del jugador (sube un poco en Y para mirar mejor)
-                    Vector3 player = new Vector3(
-                    playerPosition.transform.position.x,
-                    playerPosition.transform.position.y + 1f,
-                    playerPosition.transform.position.z );
-                    
-                    // Dirección desde los ojos del enemigo hacia el jugador
-                    Vector3 posPlayer = player - eyes.position;
-
-                    // Distancia al jugador
-                    float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
-
-                    // Verifica si está en el límite del ángulo o si hay un obstáculo (pared)
-                    if (Mathf.Abs(Vector3.Angle(transform.forward, posPlayer) - angle / 2) < 0.01f ||
-                    Physics.Raycast(eyes.position + transform.forward * -1f, posPlayer, distanceToTarget, obstructionMask))
-                    {
-                        // CASO: el enemigo perdió al jugador o no lo ve claramente
-
-                        // Si ya llegó a la última posición donde vio al jugador
-                        if (Vector3.Distance(lastPosPlayer, transform.position) <= 2)
-                        {
-                           navMeshAgent.enabled = false;  // Detiene el movimiento
-                           runAnimation = false;          // Deja de correr
-                           rotating = true;               // Activa rotación 
-                           flipMove();                   // Gira como cámara buscando
-                           timer += Time.deltaTime;      // Empieza a contar tiempo sin ver al jugador
-
-                           // Si pasa mucho tiempo, se rinde
-                           if (timer > timeOutOfView)
-                           {
-                               navMeshAgent.enabled = true; // Reactiva movimiento
-                               canSeePlayer = false;        // Deja de ver al jugador (sale de persecución)
-                           }
-                        }
-                        else
-                        {
-                            // Aún no llega a la última posición → va hacia ella
-                            navMeshAgent.enabled = true;
-                            navMeshAgent.SetDestination(lastPosPlayer);
-                        }
-                    }
-                    else
-                    {
-                        // CASO: el enemigo ve claramente al jugador
-                        navMeshAgent.enabled = true;               // Activa movimiento
-                        runAnimation = true;                       // Activa animación de correr
-                        lastPosPlayer = playerPosition.transform.position; // Guarda última posición del jugador
-                        navMeshAgent.SetDestination(playerPosition.transform.position); // Persigue directamente
-                    }               
+                Vector3 scale = transform.localScale;
+                if (direction < 0)
+                {
+                   scale.x = -2;
                 }
                 else
                 {
-                    // El enemigo NO ve al jugador (modo normal)
-                    runAnimation = false;     // No corre
-                    FieldOfViewCheck();       // Intenta detectar al jugador
-                    navMeshAgent.enabled = true; // Asegura que puede moverse
-
-                    // Si está lejos de su posición inicial
-                    if (Vector3.Distance(transform.position, firstPos) > 1)
-                    {
-                        walkAnimation = true;                // Activa caminar
-                        navMeshAgent.SetDestination(firstPos); // Regresa a su posición inicial
-                    }
-                    else
-                    {
-                        // Si ya llegó a su punto → vigila girando
-                        walkAnimation = false;  // Deja de caminar
-                        flipMove();          // Metodo de rotacion del EnemyCat
-                    }
-                }  
-                void flipMove()
-                {
-                   if (rotating)
-                   {
-                       //rotacion del EnemyCat
-                       transform.rotation *= Quaternion.Euler(0f, (transform.rotation.y + rotationEnemy) * Time.deltaTime, 0f);
-                       rotationTimer += Time.deltaTime;
-
-                       // Si el temporizador alcanza la duracion deseada, detener la rotacion
-                       if (rotationTimer >= rotationMaxTimer)
-                       {
-                           rotationTimer = 0f;
-                           rotating = false;
-                       }
-                   }
-                   else
-                   {
-                        //detener la rotacion
-                        rotationTimer += Time.deltaTime;
-
-                        // Si el temporizador alcanza 2 segundos, reiniciar la rotacion
-                        if (rotationTimer >= rotationMaxTimer-1)
-                        {
-                            rotating = true;
-                            rotationTimer = 0f;
-                        }
-                   }
+                   scale.x = 2;
                 }
-                void FieldOfViewCheck()
+                transform.localScale = scale;
+
+                rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
+                animator.SetFloat("speed", rb2d.velocity.x);
+
+            }
+
+            void Shoot()
+            {
+                //Ataque a Meele
+                //Apreta la tecla "Z" para poder atacar con tu trinche    
+                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
                 {
-                    // Obtiene la posición del jugador (ligeramente más arriba para apuntar al cuerpo)
-                    Vector3 player = new Vector3(
-                    playerPosition.transform.position.x,
-                    playerPosition.transform.position.y + 1f,
-                    playerPosition.transform.position.z);
-
-                    // Dirección desde los ojos del enemigo hacia el jugador
-                    Vector3 posPlayer = player - eyes.position;
-
-                    // Distancia entre enemigo y jugador
-                    float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
-
-                    // Dibuja un rayo en la escena (solo para debug en Unity)
-                    Debug.DrawRay(eyes.position, posPlayer);
-
-                    // Verifica si el jugador está dentro del ángulo de visión
-                    // Y dentro del rango permitido
-                    if (Vector3.Angle(transform.forward, posPlayer) < angle / 2 && distanceToTarget < radius)
-                    {
-                        // Verifica que NO haya paredes u obstáculos entre el enemigo y el jugador
-                        if (!Physics.Raycast(eyes.position, posPlayer, distanceToTarget, obstructionMask))
-                        {
-                             // Reinicia el contador de tiempo sin ver al jugador
-                             timer = 0;
-
-                             // El enemigo detecta al jugador → activa persecución
-                             canSeePlayer = true;
-
-                             // Reproduce sonido de detección
-                             enemyAudioManager.DetecPlayer();
-                        }
-                    }
-                }
-                void LoadEnemy()
-                {
-                    // Desactiva la animación de correr
-                    runAnimation = false;
-
-                    // Activa animación de vigilancia (idle girando)
-                    catAnimator.anim.SetBool("spin", true);
-
-                    // Asegura que el enemigo NO esté persiguiendo al cargar
-                    if (canSeePlayer == true)
-                          canSeePlayer = false;
-
-                    // Regresa a su posición inicial
-                    transform.position = firstPos;
-
-                    // Restaura su rotación original
-                    transform.rotation = Quaternion.Euler(firstRotation);
-
-                    // Reinicia el temporizador de rotación
-                    rotationTimer = 0f;
-
-                    // Activa nuevamente el modo vigilancia (girar)
-                    rotating = true;
-
-                    // Reinicia el NavMeshAgent para evitar errores de movimiento
-                    navMeshAgent.enabled = false;
-                    navMeshAgent.enabled = true;
+                    GameObject obj = Instantiate(bulletPrefab2);
+                    obj.transform.position = transform.position;
+                    Vector2 dir = obj.GetComponent<Meele>().direction;
+                    dir.x = direction;
+                    obj.GetComponent<Meele>().direction = d;
+                    audioSource.PlayOneShot(soundMeelePlayer);
                 }
             }
         }
-        </code></pre>
-     </details>
+
+</code></pre>
+
+<div class="code-block">
+<pre><code class="language-csharp">
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+
+        public class Meele: MonoBehaviour
+        {
+            public Rigidbody2D rb2d;
+            public Vector2 direction;
+            public int speed;
+            public float timer;
+            public float MaxTimer=0.1f;
+            void Start()
+            {
+                 rb2d = GetComponent&lt;Rigidbody2D&gt;();
+                //Incializar para que la scala de tu trinche no se modifique
+                if(direction.x <0)
+                {
+                    transform.localScale = new Vector2(-0.5875226f, 1);
+                }
+            }
+
+            void Update()
+            {
+                Move();
+            }
+
+            void Move()
+            {
+                //Movimiento y vida de tiempo de tu trinche
+                rb2d.velocity = direction * speed;
+                timer += Time.deltaTime;
+                if (timer >= MaxTimer)
+                {
+                    Destroy(gameObject);
+                    timer = 0;
+                }
+            }
+        }
+</code></pre>
+
+  </div>
 </div>
-
-<section class="project-links"> 
-    <h2>Ver Proyecto</h2> 
-    <div class="links-container"> 
-      <a href="https://github.com/Said-Albujar/5to-Ciclo" target="_blank" class="link-card"> 
-        <i class="fa-brands fa-github"></i> <span>View on GitHub</span> </a> <a href="https://mirko06660ogmailcom.itch.io/voodoo" target="_blank" class="link-card">
-        <i class="fa-brands fa-itch-io"></i> <span>Play on Itch.io</span> </a> 
-    </div>
-
-
-        
-
-
-
 </section>
+
+
+<section class="project-content">
+<div class="project-section">
+      <h2>Lo que aprendi</h2>
+      <p>
+      Este proyecto representó mi primera experiencia desarrollando un videojuego en Unity, 
+      por lo que aprendí muchos conceptos relacionados con la programación y el uso del motor de Unity. 
+     Al inicio pensé que sería una tarea complicada, ya que trabajábamos en un equipo de 4 integrantes 
+     donde cada uno tenía un rol más definido. En mi caso, al comienzo no tenía una especialidad marcada, 
+     pero debido a la falta de programadores en el grupo asumí la responsabilidad de encargarme de la programación.
+     <br><br>
+     Con el paso del desarrollo, fui adaptándome cada vez más a ese rol y descubrí que la programación 
+     era un área que realmente me interesaba. A medida que avanzaba el proyecto, comprendí mejor  
+     como resolver problemas y aplicar lógica de programación dentro de Unity. Gracias a esta experiencia, 
+     mejoré mis habilidades técnicas y gané más confianza trabajando en proyectos de desarrollo de videojuegos.
+    </p>
+   
+    </div>
+</section>
+
+
+
+
+
+
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+</section> 
 </body>
 </html>

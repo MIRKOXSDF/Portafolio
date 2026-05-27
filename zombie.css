@@ -290,11 +290,14 @@ h1, h2, h3, h4
     width: 26px;
     height: 26px;
     object-fit: contain;
+    display: flex;
+    align-items: center;
     image-rendering: pixelated;
     filter: brightness(0) saturate(100%) invert(78%) sepia(14%) saturate(540%) hue-rotate(115deg);
 
 
 }
+
 
 .project-links {
     margin: 5px auto 40px auto;

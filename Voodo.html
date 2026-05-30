@@ -205,255 +205,223 @@
 </div>
 
 <pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement; 
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
+using UnityEngine.AI;
 
-        public class Villager : MonoBehaviour
+public class CatEnemy : MonoBehaviour
+{
+    [Header("Movement")]
+    public NavMeshAgent navMeshAgent;
+    public GameObject playerPosition;
+    [Header("Cono de vision")]
+    [SerializeField] Transform eyes;
+    public bool canSeePlayer;
+    public float radius;
+    public LayerMask obstructionMask;
+    public float angle;
+    public bool rotating = true;
+    public float rotationTimer;
+    public float rotationMaxTimer;
+    public float rotationEnemy;
+    public CatEnemyAnimation catAnimator;
+    private Vector3 firstPos;
+    private Vector3 firstRotation;
+    float timer;
+    EnemyAudioManager enemyAudioManager;
+    [SerializeField] float timeOutOfView;
+    Vector3 lastPosPlayer;
+    [HideInInspector] public bool runAnimation;
+    [HideInInspector] public bool walkAnimation;
+
+
+    private void Start()
+    {
+        enemyAudioManager = GetComponent<EnemyAudioManager>();
+        firstPos = transform.position;
+        firstRotation = transform.rotation.eulerAngles;
+        //Se resetea el EnemyCat
+        DataPersistenceManager.instance.OnLoad += LoadEnemy;
+    }
+    private void Update()
+    {
+        if (canSeePlayer)
         {
-            public int ammo;
-            public GameObject bulletPrefab;
-            public GameObject bulletPrefab2;
-            public float direction;
-            public BulletManager bulletManager;
-            public AudioSource audioSource;
-            public AudioClip soundShootPlayer;
-            public AudioClip AmmoClip;
+            // El enemigo está en modo persecución (ya vio al jugador)
 
+            walkAnimation = false;       
+            rotationTimer = 0f;           
+            rotating = false;           
+            navMeshAgent.speed = 20f;    
 
-            void Update()
+            // Ajusta la posición del jugador (sube un poco en Y para mirar mejor)
+            Vector3 player = new Vector3(
+                playerPosition.transform.position.x,
+                playerPosition.transform.position.y + 1f,
+                playerPosition.transform.position.z
+            );
+
+            Vector3 posPlayer = player - eyes.position;
+
+            float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
+
+            // Verifica si está en el límite del ángulo o si hay un obstáculo (pared)
+            if (Mathf.Abs(Vector3.Angle(transform.forward, posPlayer) - angle / 2) < 0.01f ||
+                Physics.Raycast(eyes.position + transform.forward * -1f, posPlayer, distanceToTarget, obstructionMask))
             {
-                Shoot();
-                Move();
-            }
+                // CASO: el enemigo perdió al jugador o no lo ve claramente
 
-            void Move()
-            {
-                //Movimiento y direccion
-                float horizontal = Input.GetAxis("Horizontal");
-                if (horizontal > 0)
+                // Si ya llegó a la última posición donde vio al jugador
+                if (Vector3.Distance(lastPosPlayer, transform.position) <= 2)
                 {
-                   direction = 1;
-                }
-                else if (horizontal < 0)
-                {
-                   direction = -1;
-                }
+                    navMeshAgent.enabled = false;
+                    runAnimation = false;          
+                    rotating = true;              
+                    flipMove();                  
+                    timer += Time.deltaTime;     
 
-                Vector3 scale = transform.localScale;
-                if (direction < 0)
-                {
-                   scale.x = -2;
+                   
+                    if (timer > timeOutOfView)
+                    {
+                        navMeshAgent.enabled = true; 
+                        canSeePlayer = false;      
+                    }
                 }
                 else
                 {
-                   scale.x = 2;
+                    navMeshAgent.enabled = true;
+                    navMeshAgent.SetDestination(lastPosPlayer);
                 }
-                transform.localScale = scale;
-
-                rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
-                animator.SetFloat("speed", rb2d.velocity.x);
-
             }
-
-            void Shoot()
+            else
             {
-                //Ataque a distancia
-                //Apreta la tecla "X" para poder disparar
-                if (Input.GetKeyDown(KeyCode.X) && ammo >= 1 && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Bullet>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Bullet>().direction = dir;   
-                    ammo--;
-                    bulletManager.SetBullet(ammo);
-                    audioSource.PlayOneShot(soundShootPlayer);
-                } 
-               
+                //El enemigo ve claramente al jugador
+
+                navMeshAgent.enabled = true;              
+                runAnimation = true;                      
+                lastPosPlayer = playerPosition.transform.position; 
+                navMeshAgent.SetDestination(playerPosition.transform.position);
             }
-
-            private void OnTriggerEnter2D(Collider2D collision)
-            {
-                //Recoges la municion de tus balas para poder disparar
-                if (collision.gameObject.CompareTag("Ammo"))
-                {
-                    ammo++;
-                    bulletManager.SetBullet(ammo);
-                    Destroy(collision.gameObject);
-                    audioSource.PlayOneShot(AmmoClip);
-                }
-
-            }
-
         }
+        else
+        {
+            // El enemigo NO ve al jugador (modo normal)
+            runAnimation = false;   
+            FieldOfViewCheck();    
+            navMeshAgent.enabled = true; 
+
+            // Si está lejos de su posición inicial
+            if (Vector3.Distance(transform.position, firstPos) > 1)
+            {
+                walkAnimation = true;              
+                navMeshAgent.SetDestination(firstPos);
+            }
+            else
+            {
+                // Si ya llegó a su punto → vigila girando
+                walkAnimation = false; 
+                flipMove();       
+            }
+        }
+    }
+
+    void flipMove()
+    {
+        if (rotating)
+        {
+            //rotacion del EnemyCat
+            transform.rotation *= Quaternion.Euler(0f, (transform.rotation.y + rotationEnemy) * Time.deltaTime, 0f);
+            rotationTimer += Time.deltaTime;
+
+            // Si el temporizador alcanza la duracion deseada, detener la rotacion
+            if (rotationTimer >= rotationMaxTimer)
+            {
+                rotationTimer = 0f;
+                rotating = false;
+            }
+        }
+        else
+        {
+            rotationTimer += Time.deltaTime;
+
+            // Si el temporizador alcanza 2 segundos, reiniciar la rotacion
+            if (rotationTimer >= rotationMaxTimer-1)
+            {
+                rotating = true;
+                rotationTimer = 0f;
+            }
+        }
+    }
+
+    void FieldOfViewCheck()
+    {
+         Vector3 player = new Vector3(
+            playerPosition.transform.position.x,
+            playerPosition.transform.position.y + 1f,
+            playerPosition.transform.position.z
+        );
+
+        // Dirección desde los ojos del enemigo hacia el jugador
+        Vector3 posPlayer = player - eyes.position;
+
+        // Distancia entre enemigo y jugador
+        float distanceToTarget = Vector3.Distance(eyes.position, playerPosition.transform.position);
+
+        // Dibuja un rayo en la escena (solo para debug en Unity)
+        Debug.DrawRay(eyes.position, posPlayer);
+
+        // Verifica si el jugador está dentro del ángulo de visión
+        // Y dentro del rango permitido
+        if (Vector3.Angle(transform.forward, posPlayer) < angle / 2 && distanceToTarget < radius)
+        {
+            // Verifica que NO haya paredes u obstáculos entre el enemigo y el jugador
+            if (!Physics.Raycast(eyes.position, posPlayer, distanceToTarget, obstructionMask))
+            {
+                timer = 0;
+
+                canSeePlayer = true;
+
+                enemyAudioManager.DetecPlayer();
+            }
+        }
+    }
+
+    void LoadEnemy()
+    {
+        runAnimation = false;
+
+        catAnimator.anim.SetBool("spin", true);
+
+        if (canSeePlayer == true)
+            canSeePlayer = false;
+
+        transform.position = firstPos;
+
+        transform.rotation = Quaternion.Euler(firstRotation);
+
+        rotationTimer = 0f;
+
+        rotating = true;
+
+        navMeshAgent.enabled = false;
+        navMeshAgent.enabled = true;
+    }
+}
+
 
 
 </code></pre>
 <pre><code class="language-csharp">
        
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Bullet : MonoBehaviour
-        {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer=1f;
-
-            void Start()
-            {
-                rb2d = GetComponent&lt;Rigidbody2D&gt;();
-            }
-
-            void Update()
-            {
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y vida de tiempo de la bala
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
-            }
-        }
-
+      
 </code></pre>
 
   </div>
 </div>
 </section>
 
-
-<section class="project-content" >
-<div class="project-section">
-<div class="code-block">
-<div class="resp-title"  id="meele" >
-<h3>Codificacion - Ataque Meele</h3>
-</div>
-
-<pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-        using UnityEngine.SceneManagement;  
-
-        public class Villager : MonoBehaviour
-        {
-            public GameObject bulletPrefab2;
-            public AudioSource audioSource;
-            public float direction;
-            public AudioClip soundMeelePlayer;
-
-            void Update()
-            {
-                Shoot();
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y direccion
-                float horizontal = Input.GetAxis("Horizontal");
-                if (horizontal > 0)
-                {
-                   direction = 1;
-                }
-                else if (horizontal < 0)
-                {
-                   direction = -1;
-                }
-
-                Vector3 scale = transform.localScale;
-                if (direction < 0)
-                {
-                   scale.x = -2;
-                }
-                else
-                {
-                   scale.x = 2;
-                }
-                transform.localScale = scale;
-
-                rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
-                animator.SetFloat("speed", rb2d.velocity.x);
-
-            }
-
-            void Shoot()
-            {
-                //Ataque a Meele
-                //Apreta la tecla "Z" para poder atacar con tu trinche    
-                if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
-                {
-                    GameObject obj = Instantiate(bulletPrefab2);
-                    obj.transform.position = transform.position;
-                    Vector2 dir = obj.GetComponent<Meele>().direction;
-                    dir.x = direction;
-                    obj.GetComponent<Meele>().direction = d;
-                    audioSource.PlayOneShot(soundMeelePlayer);
-                }
-            }
-        }
-
-</code></pre>
-
-<div class="code-block">
-<pre><code class="language-csharp">
-        using System.Collections;
-        using System.Collections.Generic;
-        using UnityEngine;
-
-        public class Meele: MonoBehaviour
-        {
-            public Rigidbody2D rb2d;
-            public Vector2 direction;
-            public int speed;
-            public float timer;
-            public float MaxTimer=0.1f;
-            void Start()
-            {
-                 rb2d = GetComponent&lt;Rigidbody2D&gt;();
-                //Incializar para que la scala de tu trinche no se modifique
-                if(direction.x <0)
-                {
-                    transform.localScale = new Vector2(-0.5875226f, 1);
-                }
-            }
-
-            void Update()
-            {
-                Move();
-            }
-
-            void Move()
-            {
-                //Movimiento y vida de tiempo de tu trinche
-                rb2d.velocity = direction * speed;
-                timer += Time.deltaTime;
-                if (timer >= MaxTimer)
-                {
-                    Destroy(gameObject);
-                    timer = 0;
-                }
-            }
-        }
-</code></pre>
-
-  </div>
-</div>
-</section>
 
 
 <section class="project-content">

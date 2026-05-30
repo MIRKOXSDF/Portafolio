@@ -601,11 +601,25 @@ display: block;
     list-style-type: "– ";
 }
 .hero-video {
-    width: 100%;       /* ocupa todo el contenedor */
-    max-width: 900px; /* 🔥 aumenta esto */
+    width: 100%;
+    max-width: 900px;
+    height: 500px; /* importante para el tamaño */
     border-radius: 12px;
     display: block;
     margin: 20px auto;
+}
+/* VIDEOS */
+
+.video-section{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.video-section iframe{
+    width: 900px;
+    height: 500px;
+    border-radius: 10px;
 }
 .arrow {
     font-size: 1.5em; /* 🔥 agranda la flecha */

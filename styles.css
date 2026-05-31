@@ -445,7 +445,7 @@ h1, h2, h3, h4
   border-radius: 12px; /* 🔥 menos redondeado (rectángulo) */
   border: 1px solid #00ffbf;
 
-background: #181818;
+  background: #141414;
   color: #00ffc3;
 
   font-weight: 500;
@@ -454,7 +454,7 @@ background: #181818;
   transition: all 0.3s ease;
 }
 
-.link-card img {
+.link-card i {
     font-size: 2.8rem;
     margin-bottom: 15px;
 }

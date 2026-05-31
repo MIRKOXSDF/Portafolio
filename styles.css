@@ -29,12 +29,12 @@ h1, h2, h3, h4
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: #0e0e0e;
+    background-color: hwb(0 0% 100% / 0.69);
     justify-content: space-between;
     align-items: center;
     gap: 150px;                 /* espacio entre nombre y botones */
 
-    padding: 30px 20px;
+    padding: 12px 20px;
 }
 .project-info ul {
     list-style: none;

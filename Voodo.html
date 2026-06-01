@@ -291,48 +291,7 @@
 <h3 >Codificacion - Persecución al jugador</h3>
 </div>
 <pre><code class="language-csharp">
-    
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using UnityEngine;
-using UnityEngine.AI;
-
-public class CatEnemy : MonoBehaviour
-{
-    [Header("Movement")]
-    public NavMeshAgent navMeshAgent;
-    public GameObject playerPosition;
-    [Header("Cono de vision")]
-    [SerializeField] Transform eyes;
-    public bool canSeePlayer;
-    public float radius;
-    public LayerMask obstructionMask;
-    public float angle;
-    public bool rotating = true;
-    public float rotationTimer;
-    public float rotationMaxTimer;
-    public float rotationEnemy;
-    public CatEnemyAnimation catAnimator;
-    private Vector3 firstPos;
-    private Vector3 firstRotation;
-    float timer;
-    EnemyAudioManager enemyAudioManager;
-    [SerializeField] float timeOutOfView;
-    Vector3 lastPosPlayer;
-    [HideInInspector] public bool runAnimation;
-    [HideInInspector] public bool walkAnimation;
-
-
-    private void Start()
-    {
-        enemyAudioManager = GetComponent<EnemyAudioManager>();
-        firstPos = transform.position;
-        firstRotation = transform.rotation.eulerAngles;
-        //Se resetea el EnemyCat
-        DataPersistenceManager.instance.OnLoad += LoadEnemy;
-    }
-    private void Update()
+     private void Update()
     {
         if (canSeePlayer)
         {
@@ -344,6 +303,7 @@ public class CatEnemy : MonoBehaviour
             navMeshAgent.speed = 20f;    
 
             // Ajusta la posición del jugador (sube un poco en Y para mirar mejor)
+            
             Vector3 player = new Vector3(
                 playerPosition.transform.position.x,
                 playerPosition.transform.position.y + 1f,
@@ -413,6 +373,7 @@ public class CatEnemy : MonoBehaviour
             }
         }
     }
+    
 
 </code></pre>
 </div>

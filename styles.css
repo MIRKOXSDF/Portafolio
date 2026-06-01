@@ -425,12 +425,11 @@ h1, h2, h3, h4
     margin: 5px auto 40px auto;
     max-width: 1000px;
     text-align: center;
-    justify-content: center;   /* 🔥 ESTO LOS CENTRA */
 
 }
 .links-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;   /* 🔥 ESTO LOS CENTRA */
     align-items:flex-start;
     gap: 50px;
     flex-wrap: wrap;

@@ -155,7 +155,7 @@
                     <div class="resp-title">
                           <h3>Vigilancia</h3>
                    </div>             
-                    <p> En esta fase el enemigdo gato , empieza a rotar en su misma posicion
+                    <p> En esta fase el enemigo, empieza a rotar en su misma posicion
                          vigilando todo a su alrededor.
                     </p>
                     
@@ -201,7 +201,9 @@
 <div class="code-block">
 <div class="resp-title" id="vigilancia">
 <h3 >Codificacion - Vigilancia</h3>
-
+<p>El enemigo no permanece completamente quieto ni gira sin parar. En lugar de eso, gira 
+    durante un tiempo, se detiene unos segundos y luego vuelve a girar. Este ciclo se 
+    repite para dar la sensación de que está vigilando activamente el entorno.  </p>
 </div>
 
 <pre><code class="language-csharp">
@@ -226,7 +228,7 @@
         {
             rotationTimer += Time.deltaTime;
 
-            // Si el temporizador alcanza 2 segundos, reiniciar la rotacion
+            // Si el temporizador alcanza 2 segundos, reinicia la rotacion
             if (rotationTimer >= rotationMaxTimer-1)
             {
                 rotating = true;
@@ -246,7 +248,10 @@
 <div class="code-block">
 <div class="resp-title" id="persecucion">
 <h3 >Codificacion - Detección</h3>
-
+   <p>El sistema de detección utiliza un cono de visión basado en ángulo y distancia. 
+    Además, se realiza una comprobación mediante Raycast para asegurar que no existan 
+    obstáculos entre el enemigo y el jugador antes de activar la persecución.  </p>
+                    
 </div>
 
 <pre><code class="language-csharp">

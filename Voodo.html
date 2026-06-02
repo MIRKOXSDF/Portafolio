@@ -175,8 +175,8 @@
                    <div class="resp-title">
                         <h3>Detección</h3>
                     </div>            
-                      <p>Al detectar al jugador mediante su campo de visión, el cambia de 
-                        fase y comienza a perseguirlo usando NavMeshAgent.
+                      <p>Al detectar al jugador dentro de su campo de visión, el enemigo cambia 
+                        de estado y comienza a perseguirlo utilizando NavMeshAgent.
                       </p>
 
                        
@@ -280,7 +280,7 @@
               obstructionMask))
             {
                 timer = 0;
-                
+
                 //Detecta al jugador
                 canSeePlayer = true;
 

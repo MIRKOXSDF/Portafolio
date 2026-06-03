@@ -288,35 +288,65 @@ para el desarrollo del videojuego.
 <section class="project-content" >
 <div class="project-section">
 <div class="code-block">
-<div class="resp-title"  id="meele" >
-<h3>Codificacion - Ataque Meele</h3>
+<div class="resp-title" id="persecucion">
+<h3 >Codificacion - Detección</h3>
+   <p>El sistema de detección utiliza un cono de visión basado en ángulo y distancia. 
+    Además, se realiza una comprobación mediante Raycast para asegurar que no existan 
+    obstáculos entre el enemigo y el jugador antes de activar la persecución.  </p>
+                    
 </div>
 
 <pre><code class="language-csharp">
-    void Shoot()
+    
+    void FieldOfViewCheck()
     {
-        //Ataque a Meele
-        //Apreta la tecla "Z" para poder atacar con tu trinche    
-        if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale > 0)
+         Vector3 player = new Vector3(
+            playerPosition.transform.position.x,
+            playerPosition.transform.position.y + 1f,
+            playerPosition.transform.position.z
+        );
+
+        // Dirección desde los ojos del enemigo hacia el jugador
+        Vector3 posPlayer = player - eyes.position;
+
+        // Distancia entre enemigo y jugador
+        float distanceToTarget = Vector3.Distance(eyes.position, 
+        playerPosition.transform.position);
+
+        // Dibuja un rayo en la escena (solo para debug en Unity)
+        Debug.DrawRay(eyes.position, posPlayer);
+
+        // Verifica si el jugador está dentro del ángulo de visión
+        // Y dentro del rango permitido
+        // Angle=80
+        if (Vector3.Angle(transform.forward, posPlayer) < angle / 2
+         && distanceToTarget < radius)
         {
-            GameObject obj = Instantiate(bulletPrefab2);
-            obj.transform.position = transform.position;
-            Vector2 dir = obj.GetComponent<Meele>().direction;
-            dir.x = direction;
-            obj.GetComponent<Meele>().direction = d;
-            audioSource.PlayOneShot(soundMeelePlayer);
+            // Verifica que NO haya obstáculos entre el enemigo y el jugador
+            if (!Physics.Raycast(eyes.position, posPlayer, distanceToTarget,
+              obstructionMask))
+            {
+                timer = 0;
+
+                //Detecta al jugador
+                canSeePlayer = true;
+
+                enemyAudioManager.DetecPlayer();
+            }
         }
     }
 
 </code></pre>
-</div>
 
 </div>
+</div>
+
+
+
+
 
 </section>
-
-<section class="project-section">
-<div class="project-links "> 
+<section class="project-links "> 
   <div class="links-container"> 
 
     <a href="https://github.com/Said-Albujar/5to-Ciclo/blob/main/Assets/Scripts/Enemy/CatEnemy.cs" target="_blank" class="link-card"> 
@@ -325,8 +355,9 @@ para el desarrollo del videojuego.
     </a> 
 
   </div>
-</div>
-</section>    
+</section>
+
+
 
 
 <section class="project-content">

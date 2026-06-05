@@ -221,7 +221,7 @@ h1, h2, h3, h4
 }
 
 .project-card {
-    background: #181818;
+    background: #272727;
     border-radius: 16px;
     overflow: hidden;
     transition: transform .3s, box-shadow .3s;

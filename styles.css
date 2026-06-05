@@ -227,7 +227,7 @@ h1, h2, h3, h4
     transition: transform .3s, box-shadow .3s;
 }
 .project-cards {
-    background: #181818;
+    background: #272727;
     border-radius: 16px;
     overflow: hidden;
     transition: transform .3s, box-shadow .3s;
@@ -297,7 +297,7 @@ h1, h2, h3, h4
 }
 
 .skill-card {
-    background: #303030;
+    background: #272727;
     border-radius: 16px;
     padding: 30px 15px;
     display: flex;
@@ -425,6 +425,10 @@ h1, h2, h3, h4
     max-width: 1000px;
     text-align: center;
 
+}
+.project-links h2 {
+    color: #9fd3c7;
+    margin-bottom: 50px;
 }
 .project-link {
     text-decoration: none;

@@ -215,7 +215,7 @@ h1, h2, h3, h4
     border: 1px solid rgba(159, 211, 199, 0.2);
     border-radius: 18px;
     padding: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     transition: all 0.3s ease;
 }
 
@@ -477,7 +477,7 @@ display: block;
 .resp-section h2 {
   font-size: 28px;
   color:  #9fd3c7;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
 }
 /* GRID */
@@ -678,6 +678,7 @@ display: block;
 .video-section{
     display: flex;
     justify-content: center;
+    margin: 40px 0;
 }
 
 .video-section iframe{

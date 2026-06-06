@@ -316,8 +316,10 @@ h1, h2, h3, h4
 
 }
 
+
 .project-links {
-    margin: 2px auto 10px auto;
+    margin-top: 5px;
+    margin-bottom: 20px;
     max-width: 1000px;
     text-align: center;
 }
@@ -329,8 +331,8 @@ h1, h2, h3, h4
 
 .links-container {
     display: flex;
-    justify-content: flex-start;
-    align-items:flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
     flex-wrap: wrap;
 }
@@ -478,7 +480,7 @@ display: block;
 .resp-section h2 {
   font-size: 28px;
   color:  #9fd3c7;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 
 }
 /* GRID */

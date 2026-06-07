@@ -645,6 +645,13 @@ display: block;
   margin-bottom: 15px;
 }
 /* VIDEOS */
+/* VIDEO */
+.video-box iframe{
+    width: 550px;
+    height: 320px;
+    border-radius: 10px;
+    display: block;
+}
 
 .video-section{
     display: flex;

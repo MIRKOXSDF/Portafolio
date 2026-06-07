@@ -633,6 +633,17 @@ display: block;
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
+/* TEXTO */
+.project-section p,
+.project-Text p,
+.resp-intro,
+.project-info p,
+.resp-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #969696;
+  margin-bottom: 15px;
+}
 /* VIDEOS */
 
 .video-section{

@@ -637,3 +637,18 @@ display: block;
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
+/* VIDEOS */
+
+.video-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+
+}
+
+.video-section iframe{
+    width: 900px;
+    height: 500px;
+    border-radius: 10px;
+}

@@ -7,20 +7,14 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
-@font-face {
-    font-family: 'nokia';
-    src: url('Font/nokiafc22.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #e6e6e6;
+    color: #ffffff;
 
-       background:url("Imagenes/Whiskered.gif");
-
+    background: url("Imagenes/Whiskered.gif");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -136,7 +130,7 @@ h1, h2, h3, h4
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: hsla(0, 0%, 0%, 0.69);
+    background-color: #000000b0;
     justify-content: space-between;
     align-items: center;
     gap: 150px;                
@@ -183,7 +177,7 @@ h1, h2, h3, h4
 .project-content {
     max-width: 1100px;
     margin: 0 auto 20px;
-    padding: 0 20px;
+    padding: 0px 20px;
 
     display: flex;
     flex-wrap: wrap;
@@ -193,7 +187,7 @@ h1, h2, h3, h4
 }
 .project-content-Meele {
     max-width: 1100px;
-    margin: 0 auto 40px;
+    margin: 90px auto 40px;
     padding: 0 20px;
 
     display: flex;
@@ -210,20 +204,11 @@ h1, h2, h3, h4
     padding: 25px;
     transition: all 0.3s ease;
 }
-.project-Text {
-    background: #141414;
-    border: 1px solid rgba(159, 211, 199, 0.2);
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-  
 }
 
 .projects h2 {
@@ -231,20 +216,17 @@ h1, h2, h3, h4
     margin-bottom: 40px;
     color: #9fd3c7;
 }
-
 .project-card {
+    background: #181818;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
+.project-card img {
     width: 100%;
     height: 260px;
-    border-radius: 10px;
-
-}
-
-.project-card img,
-.project-card iframe {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center 10%; 
 }
 .project-cards {
     background: #181818;
@@ -319,7 +301,7 @@ h1, h2, h3, h4
 
 .project-links {
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     max-width: 1000px;
     text-align: center;
 }
@@ -366,330 +348,4 @@ h1, h2, h3, h4
 .link-card:hover {
     transform: translateY(-8px);
     border-color: #a5d1c7;
-}
-/* ---------- GIF GALLERY ---------- */
-
-.gif-gallery {
-    display: flex;
-    gap: 25px;
-    margin-top: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-
-/* Tamaños dinámicos */
-.gif-gallery.two .gif-card {
-    width: 530px;
-}
-
-.gif-gallery.three .gif-card {
-    width: 300px;
-}
-
-.gif-gallery.single .gif-card.wide {
-    width: 900px;
-}
-
-/* Imagen */
-.gif-card img {
-    width: 100%;
-    display: block;
-}
-.project-sections {
-    text-align: center;
-    margin-top: 50px; 
-    margin-bottom: 50px;
-   
-}
-.resp-card:hover {
-    transform: translateY(-6px);
-    transition: all 0.3s ease;
-}
-
-
-.project-sections h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #9fd3c7;
-
-}
-.gif-label {
-    display: block;
-    margin-top: 12px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #9fd3c7;
-    letter-spacing: 1px;
-}
-
-/* ---------------- CODIGO ESTILO PORTFOLIO ---------------- */ 
-.code-container {
-    display: flex;
-    margin-top: -20px;
-
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.code-container .code-block {
-    width: 100%;
-    margin-top: 40px;
-
-    max-width: 700px; /* opcional para que no sea gigante */
-}
-
-
-
-/* Contenedor general */ 
-.code-block { 
-border-radius: 16px;
-overflow: hidden;
-} 
-.code-block pre {
-margin: 0;
-padding: 30px;
-overflow-x: auto;
-background: #0d1117;
-border: 1px solid #9fd3c7; /* ahora el borde está solo en el recuadro */
-border-radius: 12px;
-}
-/* Código */ 
-.code-block pre { 
-margin: 0; 
-padding: 30px; 
-overflow-x: auto; 
-background: #0e0e0e; 
-}
-.code-block code { 
-font-family: "Courier New", monospace; 
-font-size: 15px; 
-line-height: 1.7; 
-white-space: normal; 
-display: block; 
-}
-
-
-
-.resp-section {
-  text-align: center;
-  padding: 50px 20px; /* más aire general */
-}
-
-.resp-section h2 {
-  font-size: 28px;
-  color:  #9fd3c7;
-  margin-bottom: 40px;
-
-}
-/* GRID */
-.resp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 30px; /* 👈 empuja las cards hacia abajo */
-
-}
-
-/* CARD */
-.resp-card {
-  background: rgb(20, 20, 20);
-  border: 1px solid rgba(159, 211, 199, 0.2);
- border-radius: 18px;
-  padding: 20px;
-  text-align: left;
-  transition: 0.3s;
-}
-.resp-card ul {
-    padding-left: 25px;
-}
-/* HOVER */
-.resp-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgb(0, 0, 0);
-}
-
-/* HEADER */
-.resp-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.resp-title {
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.resp-header h3 {
-  font-size: 18px;
-}
-
-/* ICONOS */
-.icon {
-  font-size: 22px;
-  color: #6ee7b7;
-  transition: 0.3s;
-}
-
-.resp-card:hover .icon {
-  transform: scale(1.2);
-  color:  #6ee7b7;
-}
-
-/* TEXTO */
-.project-section p,
-.project-Text p,
-.resp-intro,
-.project-info p,
-.resp-card p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #969696;
-  margin-bottom: 15px;
-}
-
-/* TAGS */
-.tags span {
-  display: inline-block;
-  background: #111;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-size: 12px;
-  margin-right: 5px;
-  color: #aaa;
-}
-.resp-intro {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-/* BOTON */
-.open-code {
-  background: transparent;
-  border: 1px solid #9fd3c7;
-  color: #9fd3c7;
-  padding: 8px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.open-code:hover {
-  background: #9fd3c7;
-  color: #0e0e0e;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-  background: #111;
-  color: #0f0;
-  margin: 5% auto;
-  padding: 10px;
-  width: 70%;
-  max-width: 800px;
-  border-radius: 10px;
-  overflow: auto;
-}
-
-.close {
-  float: right;
-  font-size: 28px;
-  cursor: pointer;
-}
-.modal pre {
-  max-height: 800px;   /* limita altura */
-  overflow-y: auto;    /* 🔥 AQUÍ está el scroll */
-}
-
-#escudo , #paralizacion  {
-  scroll-margin-top: 200px;
-}
-.sub-item {
-    margin-left: 20px;
-    opacity: 0.8;
-    font-size: 0.95em;
-    list-style-type: "– ";
-}
-.arrow {
-    font-size: 1.5em; /* 🔥 agranda la flecha */
-    margin: 0 5px;     /* espacio a los lados */
-    color: #9fd3c7;    /* opcional: mismo color que tu tema */
-}
-.project-Image{
-    width: 1000px;
-    margin-top: 30px ;
-    margin-bottom: 40px ;
-
-}
-
-.project-Image img{
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-
-
-.hero-video {
-    width: 100%;
-    max-width: 900px;
-    height: 500px; /* importante para el tamaño */
-    border-radius: 12px;
-    display: block;
-    margin: 20px auto;
-}
-/* CONTENEDOR VIDEO + IMAGEN */
-.links-container{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    margin: 50px auto;
-    max-width: 1300px;
-}
-
-/* VIDEO */
-.video-box iframe{
-    width: 550px;
-    height: 320px;
-    border-radius: 10px;
-    display: block;
-}
-
-/* IMAGEN */
-.reference-image img{
-    width: 550px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
-
-/* VIDEOS */
-
-.video-section{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 70px;
-
-}
-
-.video-section iframe{
-    width: 900px;
-    height: 500px;
-    border-radius: 10px;
 }

@@ -629,3 +629,11 @@ display: block;
     display: block;
     border-radius: 10px;
 }
+.project-Text {
+    background: #141414;
+    border: 1px solid rgba(159, 211, 199, 0.2);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}

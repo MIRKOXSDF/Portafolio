@@ -653,14 +653,7 @@ display: block;
     border-radius: 10px;
     display: block;
 }
-/* IMAGEN */
-.reference-image img{
-    width: 550px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
+
 
 .video-section{
     display: flex;

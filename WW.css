@@ -664,7 +664,7 @@ display: block;
 }
 
 .video-section iframe{
-    width: 900px;
+    width: 1200px;
     height: 500px;
     border-radius: 10px;
 }
@@ -681,8 +681,8 @@ display: block;
 
 .slider img {
     width: 100%;
-    max-width: 900px;
-    height: 400px;
+    max-width: 1200px;
+    height: 600px;
     object-fit: cover;
 
     border-radius: 10px;

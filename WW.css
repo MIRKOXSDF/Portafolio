@@ -614,7 +614,7 @@ display: block;
     color: #9fd3c7;    /* opcional: mismo color que tu tema */
 }
 .project-Image{
-    width: 1000px;
+    width: 900px;
     margin-bottom: 10px;
 
 }
@@ -675,13 +675,13 @@ display: block;
     justify-content: center;
     gap: 15px;
 
-    max-width: 1200px;
+    max-width: 900px;
     margin: 30px auto;
 }
 
 .slider img {
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     height: 600px;
     object-fit: cover;
 

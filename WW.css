@@ -689,7 +689,7 @@ display: block;
 }
 
 .flecha {
-    background: rgba(0,0,0,0.7);
+  background: transparent;
     color: white;
     border: none;
 

@@ -197,7 +197,46 @@
 
 </section>
 
+<div class="slider">
+
+    <button class="flecha izquierda" onclick="cambiarImagen(-1)">
+        &#10094;
+    </button>
+
+    <img id="slider-img" src="Imagenes/img1.jpg" alt="Imagen del proyecto">
+
+    <button class="flecha derecha" onclick="cambiarImagen(1)">
+        &#10095;
+    </button>
+
+</div>
+
+<script>
+const imagenes = [
+    "Imagenes/img1.jpg",
+    "Imagenes/img2.jpg",
+    "Imagenes/img3.jpg",
+    "Imagenes/img4.jpg"
+];
+
+let indice = 0;
+
+function cambiarImagen(direccion) {
+
+    indice += direccion;
+
+    if (indice < 0) {
+        indice = imagenes.length - 1;
+    }
+
+    if (indice >= imagenes.length) {
+        indice = 0;
+    }
+
+    document.getElementById("slider-img").src = imagenes[indice];
+}
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>

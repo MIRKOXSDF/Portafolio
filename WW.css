@@ -668,3 +668,43 @@ display: block;
     height: 500px;
     border-radius: 10px;
 }
+/*IMAGENES*/
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.slider img {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    object-fit: cover;
+
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.flecha {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.flecha:hover {
+    background: rgba(255,255,255,0.2);
+}

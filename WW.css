@@ -646,15 +646,7 @@ display: block;
   margin-bottom: 15px;
 }
 /* VIDEOS */
-/* CONTENEDOR VIDEO + IMAGEN */
-.links-container{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    margin: 50px auto;
-    max-width: 1300px;
-}
+
 .video-box iframe{
     width: 550px;
     height: 320px;

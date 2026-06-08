@@ -681,8 +681,8 @@ display: block;
 
 .slider img {
     width: 100%;
-    max-width: 700px;
-    height: 900px;
+    max-width: 900px;
+    height: 400px;
     object-fit: cover;
 
     border-radius: 10px;

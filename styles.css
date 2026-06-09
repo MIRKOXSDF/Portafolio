@@ -474,11 +474,11 @@ h1, h2, h3, h4
 .features {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 10px;
 
-    margin-top: auto;
+    margin-top: 18px;
 }
 
 .features div {
@@ -488,21 +488,20 @@ h1, h2, h3, h4
 
     border-radius: 10px;
 
-    padding: 10px;
+    padding: 10px 8px;
 
     text-align: center;
 
-    font-size: 0.82rem;
+    font-size: 0.78rem;
 
     color: #9fd3c7;
-
-    min-height: 48px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
+    min-height: 42px;
+}
 /* quitar márgenes raros de los p */
 
 .features p {

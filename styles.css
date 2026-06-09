@@ -472,18 +472,39 @@ h1, h2, h3, h4
     border-color: #a5d1c7;
 }
 .features {
-    display: flex;
-    justify-content: center;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 10px;
-    margin-top: 10px;
+
+    margin-top: auto;
 }
 
 .features div {
-    background: rgba(255,255,255,0.1);
-    padding: 8px 12px;
-    border-radius: 8px;
-}
-.features p{
-    color: #969696;
+    background: rgba(255,255,255,0.08);
 
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    font-size: 0.82rem;
+
+    color: #9fd3c7;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* quitar márgenes raros de los p */
+
+.features p {
+    margin: 0;
 }

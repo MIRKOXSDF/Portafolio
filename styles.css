@@ -471,3 +471,15 @@ h1, h2, h3, h4
     transform: translateY(-8px);
     border-color: #a5d1c7;
 }
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.features div {
+    background: rgba(255,255,255,0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+}

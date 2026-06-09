@@ -57,7 +57,7 @@
         <ul>
 
             <li><i class="fa-solid fa-user"></i> Rol<span class="arrow">→</span> Modelador 3D</li>
-            <li><i class="fa-solid fa-users"></i> N° de Integrantes<span class="arrow">→</span> 9</li>
+            <li><i class="fa-solid fa-users"></i> N° de Integrantes<span class="arrow">→</span> 15</li>
             <li><i class="fa-solid fa-clock"></i> Tiempo<span class="arrow">→</span> 1 año</li>
             <li><i class="fa-solid fa-gear"></i> Motor<span class="arrow">→</span> Unity</li>
             <li><i class="fa-solid fa-layer-group"></i> Niveles<span class="arrow">→</span> 4</li>
@@ -113,13 +113,14 @@
 <div class="project-section">
     <h2>Lo que realicé</h2>
      <p>
-         Aunque mi especialidad principal es la programación de videojuegos, en este proyecto participé principalmente en el
-          desarrollo de modelos 3D de entorno (props) utilizados para construir la ambientación del juego. Para ello, empleé 
-          Autodesk Maya en la creación y modelado de los distintos assets.</p>
+         Aunque mi especialidad principal es la programación de videojuegos, me incorporé a este proyecto durante una etapa intermedia de su desarrollo para brindar apoyo en el área de arte 3D
+         encargándome del modelado y mapeado UV de diversos props utilizados para la construcción y ambientación de los escenarios.
+         Para ello, empleé Autodesk Maya en la creación de los distintos assets. La etapa de texturizado y pintura de materiales fue 
+         realizada posteriormente por un artista especializado utilizando herramientas específicas para dicha tarea.</p>
           
         <p>
-         En esta sección se muestra el desarrollo de vegetación, hongos, piedras y assets que ambientan el mundo del juego.
-        (Todos los elementos fueron modelados con técnicas Low-poly).
+        En esta sección se muestra el desarrollo de vegetación, hongos, piedras y diversos assets utilizados para ambientar el mundo del juego. 
+        Todos los elementos fueron modelados utilizando técnicas Low-poly y tomando como base imágenes de referencia para mantener una estética visual
 
         </p>
 </div>
@@ -141,36 +142,14 @@
         <img src="Imagenes/Imagen5.jpeg">
   </div>
 
-  <div class="project-Image">
-        <img src="Imagenes/Imagen6.jpeg">
-  </div>
 
-<div class="project-Text">
-        <p>
-            La pistola futurista forma parte de los assets del proyecto.
-            A la derecha se muestra el wireframe del modelo y a la derecha
-            la referencia utilizada para el diseño. 
-        </p>
-</div> 
 
-<div class="projects-grid">
-
-    <div class="project-card">
-        <img src="Imagenes/Imagen7.jpeg">        
-    </div>
-
-    <div class="project-card">
-        <iframe src="https://www.youtube.com/embed/S90h61BL3ko?si=aKGOXr4gBHCOvbXc" allowfullscreen></iframe>
-   
-    </div>
-
-</div>
 
 
 <div class="project-Text">
         <p>
           Los siguientes videos presentan parte del proceso de creación de los modelos 3D mostrados anteriormente.
-           En ellos se puede observar el los modelados por completo
+           En ellos se puede observar los modelados por completo.
         </p>
 </div>
   
@@ -195,7 +174,12 @@
         <iframe src="https://www.youtube.com/embed/1olPYeLS96k" allowfullscreen></iframe>
     </div>
 
-</section>
+<div class="project-Text">
+        <p>
+         En las siguientes imágenes se pueden observar los modelos 3D ya integrados en el juego y 
+            utilizados para ambientar los diferentes escenarios.
+        </p>
+</div>
 
 <div class="slider">
 
@@ -203,7 +187,7 @@
         &#10094;
     </button>
 
-    <img id="slider-img" src="Imagenes/img1.jpg" alt="Imagen del proyecto">
+    <img id="slider-img" src="Imagenes/Referencia0.jpeg" alt="Imagen del proyecto">
 
     <button class="flecha derecha" onclick="cambiarImagen(1)">
         &#10095;
@@ -213,10 +197,20 @@
 
 <script>
 const imagenes = [
-    "Imagenes/Imagen1.jpeg",
-    "Imagenes/Imagen2.jpeg",
-    "Imagenes/Imagen3.jpeg",
-    "Imagenes/Imagen4.jpeg"
+    "Imagenes/Referencia0.jpeg",
+    "Imagenes/Referencia1.jpeg",
+    "Imagenes/Referencia2.jpeg",
+    "Imagenes/Referencia3.jpeg",
+    "Imagenes/Referencia4.jpeg",
+    "Imagenes/Referencia5.jpeg",
+    "Imagenes/Referencia6.jpeg",
+    "Imagenes/Referencia7.jpeg",
+    "Imagenes/Referencia8.jpeg",
+    "Imagenes/Referencia9.jpeg",
+    "Imagenes/Referencia10.jpeg",  
+    "Imagenes/Referencia11.jpeg", 
+    "Imagenes/Referencia12.jpeg", 
+    "Imagenes/Referencia13.jpeg" 
 ];
 
 let indice = 0;
@@ -236,7 +230,7 @@ function cambiarImagen(direccion) {
     document.getElementById("slider-img").src = imagenes[indice];
 }
 </script>
-
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>

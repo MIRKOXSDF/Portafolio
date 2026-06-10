@@ -425,12 +425,14 @@ h1, h2, h3, h4
     margin-bottom: 50px;
 }
 .project-links {
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin: 5px auto 20px auto; /* 🔥 centra el bloque */
     max-width: 1000px;
-    text-align: center;
-    align-items: center;   /* 🔥 centra todo horizontalmente */
 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 centra TODO */
+
+    text-align: center;
 }
 .links-container {
     display: flex;

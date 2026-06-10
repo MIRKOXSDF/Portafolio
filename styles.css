@@ -429,6 +429,8 @@ h1, h2, h3, h4
     margin-bottom: 20px;
     max-width: 1000px;
     text-align: center;
+    align-items: center;   /* 🔥 centra todo horizontalmente */
+
 }
 .links-container {
     display: flex;

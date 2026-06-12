@@ -12,15 +12,9 @@
 
 </head>
 <body>
-
-<div class="lightning-container">
-    <span class="lightning"></span>
-    <span class="lightning"></span>
-    <span class="lightning"></span>
-    <span class="lightning"></span>
+<div class="transition-screen"></div>
 
 
-</div>
 <header class="header">
     
     <div class="header-left">
@@ -261,7 +255,28 @@ function cambiarImagen(direccion) {
     document.getElementById("slider-img").src = imagenes[indice];
 }
 </script>
+<script>
+const links = document.querySelectorAll(".back-btn");
+const transition = document.querySelector(".transition-screen");
 
+links.forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const destino = this.href;
+
+        transition.classList.add("active");
+
+        setTimeout(() => {
+            window.location.href = destino;
+        }, 600);
+
+    });
+
+});
+</script>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>

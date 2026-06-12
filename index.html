@@ -10,7 +10,7 @@
 
 </head>
 <body>
-
+<div class="transition-screen">
 <div class="lightning-container">
     <span class="lightning"></span>
     <span class="lightning"></span>
@@ -200,7 +200,29 @@
 
 
     <a href="assets/Tomas_Wallin_CV.pdf" target="_blank" class="resume-btn"> Resume </a>
-</section>
+<script>
+const links = document.querySelectorAll(".project-link");
+const transition = document.querySelector(".transition-screen");
 
+links.forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const destino = this.href;
+
+        transition.classList.add("active");
+
+        setTimeout(() => {
+            window.location.href = destino;
+        }, 600);
+
+    });
+
+});
+</script>
+</section>
+</div>
 </body>
 </html>

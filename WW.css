@@ -689,7 +689,7 @@ display: block;
     object-fit: cover;
 
     border-radius: 10px;
-    border: 2px solid white;
+    border: none;
 }
 
 .flecha {

@@ -11,6 +11,7 @@
 
 </head>
 <body>
+<div class="transition-screen"></div>
 
 <div class="lightning-container">
     <span class="lightning"></span>
@@ -170,14 +171,28 @@
   </div>
 </section>
 
-    <!-- IMAGENES -->
+ <script>
+const links = document.querySelectorAll(".back-btn");
+const transition = document.querySelector(".transition-screen");
 
-  
+links.forEach(link => {
 
-   
+    link.addEventListener("click", function(e){
 
+        e.preventDefault();
 
+        const destino = this.href;
 
+        transition.classList.add("active");
+
+        setTimeout(() => {
+            window.location.href = destino;
+        }, 600);
+
+    });
+
+});
+</script>
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>

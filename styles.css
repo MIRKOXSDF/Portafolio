@@ -202,11 +202,15 @@ h1, h2, h3, h4
 .project-info h3 {
     color: #9fd3c7;
     font-size: 1.1rem;
+    text-decoration: none;
+
 }
 
 .project-info span {
     font-size: .85rem;
     color: #9fd3c7;
+    text-decoration: none;
+
 }
 
 .project-info p {

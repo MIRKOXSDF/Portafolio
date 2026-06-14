@@ -70,10 +70,13 @@ h1, h2, h3, h4,
     display: flex;
     gap: 15px;
 }
-#Skills,
 #projects,
 #Contact {
     scroll-margin-top: 350px;
+}
+#Skills{
+        scroll-margin-top: 500px;
+
 }
 .header-right a {
     display: inline-block;

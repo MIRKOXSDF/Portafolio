@@ -221,10 +221,9 @@ h1, h2, h3, h4
 }
 
 .substance-logo {
-    width: 40px !important;
-    height: 40px !important;
+    width: 35px !important;
+    height: 35px !important;
 
-    filter: none !important;
     filter: brightness(0) saturate(100%) invert(78%) sepia(14%) saturate(540%) hue-rotate(115deg);
 
 }

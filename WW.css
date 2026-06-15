@@ -214,16 +214,17 @@ h1, h2, h3, h4
     width: 26px;
     height: 26px;
     object-fit: contain;
-    display: flex;
-    align-items: center;
-    image-rendering: pixelated;
+    vertical-align: middle;
+    margin-left: 8px;
+
     filter: brightness(0) saturate(100%) invert(78%) sepia(14%) saturate(540%) hue-rotate(115deg);
-
-
 }
+
 .substance-logo {
-    width: 40px;
-    height: 40px;
+    width: 40px !important;
+    height: 40px !important;
+
+    filter: none !important;
 }
 
 

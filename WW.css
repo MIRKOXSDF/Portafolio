@@ -211,14 +211,13 @@ h1, h2, h3, h4
 
 
 .tools-used img {
-    width: 26px;
+   width: 26px;
     height: 26px;
-    object-fit: contain;
-    align-items: center;
-     image-rendering: pixelated;
-    margin-left: 8px;
-
-    filter: brightness(0) saturate(100%) invert(78%) sepia(14%) saturate(540%) hue-rotate(115deg);
+     object-fit: contain;
+      display: flex; 
+      align-items: center; 
+      image-rendering: pixelated; 
+      filter: brightness(0) saturate(100%) invert(78%) sepia(14%) saturate(540%) hue-rotate(115deg);
 }
 
 .substance-logo {
@@ -226,6 +225,8 @@ h1, h2, h3, h4
     height: 40px !important;
 
     filter: none !important;
+    filter: brightness(0) saturate(100%) invert(78%) sepia(14%) saturate(540%) hue-rotate(115deg);
+
 }
 
 

@@ -551,6 +551,17 @@ display: block;
     display: flex;
     justify-content: center;
 }
+.reference-video{
+    width: 900px;
+    max-width: 100%;
+    height: 500px;
+
+    border: none;
+    border-radius: 10px;
+    object-fit: contain;
+
+    background: black;
+}
 .video-box iframe{
     width: 550px;
     height: 320px;
@@ -608,7 +619,7 @@ display: block;
     margin-top: 8px;
     font-size: 0.95rem;
     font-style: italic;
-    color: #d0d0d0;
+     color: #969696;
     text-align: left;
 }
 

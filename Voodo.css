@@ -550,24 +550,17 @@ display: block;
 .video-section{
     display: flex;
     justify-content: center;
-    margin: 40px 0;
-}
-.reference-video{
-    width: 900px;
-    max-width: 100%;
-    height: 500px;
-
-    border: none;
-    border-radius: 10px;
-    object-fit: contain;
-
-    background: black;
 }
 
 .video-section iframe{
     width: 900px;
     height: 500px;
+
+    border: none;
+    outline: none;
+
     border-radius: 10px;
+    overflow: hidden;
 }
 .arrow {
     font-size: 1.5em; /* 🔥 agranda la flecha */
@@ -605,6 +598,13 @@ display: block;
     height: auto;
     display: block;
     border-radius: 10px;
+}
+.caption {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #d0d0d0;
+    text-align: left;
 }
 
 

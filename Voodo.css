@@ -551,7 +551,12 @@ display: block;
     display: flex;
     justify-content: center;
 }
-
+.video-box iframe{
+    width: 550px;
+    height: 320px;
+    border-radius: 10px;
+    display: block;
+}
 .video-section iframe{
     width: 900px;
     height: 500px;

@@ -194,6 +194,21 @@
 
     <a href="assets/Tomas_Wallin_CV.pdf" target="_blank" class="resume-btn"> Resume </a>
 <script>
+ const transition = document.querySelector(".transition-screen");
+
+// Al entrar a la página
+window.addEventListener("load", () => {
+
+    // La página comienza cubierta
+    transition.classList.add("active");
+
+    // Un instante después, la pantalla sale hacia la derecha
+    setTimeout(() => {
+        transition.classList.add("exit");
+    }, 100);
+
+});
+    
 const links = document.querySelectorAll(".project-link");
 const transition = document.querySelector(".transition-screen");
 

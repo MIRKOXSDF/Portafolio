@@ -204,32 +204,13 @@ window.addEventListener("load", () => {
     setTimeout(() => {
 
         transition.classList.remove("active");
-        transition.classList.add("exit-left");
+        transition.classList.add("exit");
 
 
     }, 100);
 
 });
 
-// Al hacer click en un proyecto
-document.querySelectorAll(".project-link").forEach(link => {
-
-    link.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        transition.classList.remove("exit");
-        transition.classList.add("active");
-
-        setTimeout(() => {
-
-            window.location.href = this.href;
-
-        },600);
-
-    });
-
-});
 </script>
 </section>
 </body>

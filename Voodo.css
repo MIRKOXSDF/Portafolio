@@ -551,6 +551,10 @@ display: block;
     display: flex;
     justify-content: center;
 }
+.video-container{
+    width: 900px;
+    max-width: 100%;
+}
 .reference-video{
     width: 900px;
     max-width: 100%;

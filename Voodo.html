@@ -372,6 +372,17 @@ const transition = document.querySelector(".transition-screen");
 
 const links = document.querySelectorAll(".back-btn");
 
+window.addEventListener("load", () => {
+
+    transition.classList.add("active");
+
+    setTimeout(() => {
+        transition.classList.remove("active");
+        transition.classList.add("exit");
+    }, 100);
+
+});
+
 links.forEach(link => {
 
     link.addEventListener("click", function(e){
@@ -389,26 +400,7 @@ links.forEach(link => {
     });
 
 });
-projectLinks.forEach(link => {
 
-    link.addEventListener("click", function(e) {
-
-        e.preventDefault();
-
-        const destination = this.href;
-
-        // Reiniciar clases
-        transition.classList.remove("exit");
-        transition.classList.add("active");
-
-        // Esperar a que termine la animación
-        setTimeout(() => {
-            window.location.href = destination;
-        }, 600);
-
-    });
-
-});
 </script>
 
 

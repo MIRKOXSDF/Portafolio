@@ -193,24 +193,44 @@
 
 
     <a href="assets/Tomas_Wallin_CV.pdf" target="_blank" class="resume-btn"> Resume </a>
+    
 <script>
 const transition = document.querySelector(".transition-screen");
+const projectLinks = document.querySelectorAll(".project-link");
 
-// Al cargar la página
+// Animación al cargar la página
 window.addEventListener("load", () => {
 
     transition.classList.add("active");
 
     setTimeout(() => {
-
         transition.classList.remove("active");
         transition.classList.add("exit");
-
-
     }, 100);
 
 });
 
+// Animación al cambiar de proyecto
+projectLinks.forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const destination = this.href;
+
+        // Reiniciar clases
+        transition.classList.remove("exit");
+        transition.classList.add("active");
+
+        // Esperar a que termine la animación
+        setTimeout(() => {
+            window.location.href = destination;
+        }, 600);
+
+    });
+
+});
 </script>
 
 </section>

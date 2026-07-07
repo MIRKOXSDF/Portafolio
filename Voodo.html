@@ -389,6 +389,26 @@ links.forEach(link => {
     });
 
 });
+projectLinks.forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const destination = this.href;
+
+        // Reiniciar clases
+        transition.classList.remove("exit");
+        transition.classList.add("active");
+
+        // Esperar a que termine la animación
+        setTimeout(() => {
+            window.location.href = destination;
+        }, 600);
+
+    });
+
+});
 </script>
 
 

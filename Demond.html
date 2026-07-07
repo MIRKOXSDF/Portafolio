@@ -551,8 +551,23 @@
     </div>
 </section>
 <script>
-const links = document.querySelectorAll(".back-btn");
 const transition = document.querySelector(".transition-screen");
+
+// Al cargar la página
+window.addEventListener("load", () => {
+
+    transition.classList.add("active");
+
+    setTimeout(() => {
+
+        transition.classList.remove("active");
+        transition.classList.add("exit");
+
+    }, 100);
+
+});
+
+const links = document.querySelectorAll(".back-btn");
 
 links.forEach(link => {
 
@@ -562,6 +577,7 @@ links.forEach(link => {
 
         const destino = this.href;
 
+        transition.classList.remove("exit");
         transition.classList.add("active");
 
         setTimeout(() => {

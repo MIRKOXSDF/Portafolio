@@ -605,7 +605,14 @@ display: block;
 
 /* ACTIVA LA TRANSICIÓN */
 .transition-screen.active{
-    left: 0;
+    left:0;
+}
+
+.transition-screen.exit{
+    left:100%;
+}
+.transition-screen.exit-left{
+    left: -100%;
 }
 .project-Image{
     width: 900px;

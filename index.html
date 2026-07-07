@@ -214,7 +214,7 @@ window.addEventListener("load", () => {
 </script>
 <script>
 const links = document.querySelectorAll(".project-info");
-const transition = document.querySelector(".transition-screen");
+const transitions = document.querySelector(".transition-screen");
 
 links.forEach(link => {
 
@@ -224,7 +224,7 @@ links.forEach(link => {
 
         const destino = this.href;
 
-        transition.classList.add("active");
+        transitions.classList.add("active");
 
         setTimeout(() => {
             window.location.href = destino;

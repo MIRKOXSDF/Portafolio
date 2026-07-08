@@ -665,7 +665,7 @@ body.fade-out {
 
     z-index:9999;
 
-    transition:left .6s ease;
+    transition:left .3s ease;
 }
 
 /* ACTIVA LA TRANSICIÓN */

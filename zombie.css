@@ -545,6 +545,7 @@ display: block;
     color: #9fd3c7;    /* opcional: mismo color que tu tema */
 }
 /* PANTALLA DE TRANSICIÓN */
+/* PANTALLA DE TRANSICIÓN */
 .transition-screen{
     position: fixed;
     inset: 0;

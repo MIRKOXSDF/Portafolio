@@ -552,42 +552,41 @@
 </section>
 <script>
 const transition = document.querySelector(".transition-screen");
+const projectLinks = document.querySelectorAll(".back-btn");
 
-// Al cargar la página
+// Animación al cargar la página
 window.addEventListener("load", () => {
 
     transition.classList.add("active");
 
     setTimeout(() => {
-
         transition.classList.remove("active");
         transition.classList.add("exit");
-
-    }, 100);
+    }, 600);
 
 });
 
-const links = document.querySelectorAll(".back-btn");
+// Animación al cambiar de proyecto
+projectLinks.forEach(link => {
 
-links.forEach(link => {
-
-    link.addEventListener("click", function(e){
+    link.addEventListener("click", function(e) {
 
         e.preventDefault();
 
-        const destino = this.href;
+        const destination = this.href;
 
+        // Reiniciar clases
         transition.classList.remove("exit");
         transition.classList.add("active");
 
+        // Esperar a que termine la animación
         setTimeout(() => {
-            window.location.href = destino;
+            window.location.href = destination;
         }, 600);
 
     });
 
 });
-</script>
 
 </script>
 

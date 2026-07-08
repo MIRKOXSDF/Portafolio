@@ -171,22 +171,39 @@
   </div>
 </section>
 
- <script>
-const links = document.querySelectorAll(".back-btn");
+<script>
+
 const transition = document.querySelector(".transition-screen");
+const projectLinks = document.querySelectorAll(".back-btn");
 
-links.forEach(link => {
+// Animación al cargar la página
+window.addEventListener("load", () => {
 
-    link.addEventListener("click", function(e){
+    transition.classList.add("active");
+
+    setTimeout(() => {
+        transition.classList.remove("active");
+        transition.classList.add("exit");
+    }, 600);
+
+});
+
+// Animación al cambiar de proyecto
+projectLinks.forEach(link => {
+
+    link.addEventListener("click", function(e) {
 
         e.preventDefault();
 
-        const destino = this.href;
+        const destination = this.href;
 
+        // Reiniciar clases
+        transition.classList.remove("exit");
         transition.classList.add("active");
 
+        // Esperar a que termine la animación
         setTimeout(() => {
-            window.location.href = destino;
+            window.location.href = destination;
         }, 600);
 
     });

@@ -249,7 +249,7 @@
   }
 </code></pre>
 
-  </div>
+</div>
 </div>
 </section>
 
@@ -263,6 +263,16 @@
 
 <pre><code class="language-csharp">
    //Activa el Paralizador
+     if (sliderPlayerLife.powerCurrent >= 200 && countParalizer > 0 && !activeParalyzer)
+   {
+       textMessageItem.SetActive(true);
+       activeParalyzer = true;
+   }
+   else if (countParalizer <= 0)
+   {
+       blade.gameObject.SetActive(true);
+   }
+
    if (Input.GetKeyDown(KeyCode.H)&&activeParalyzer&&textMessageItem.activeSelf)
    {
        sliderPlayerLife.powerCurrent = 0;
@@ -274,81 +284,11 @@
 
    }
 
-   if (sliderPlayerLife.powerCurrent >= 200 && countParalizer > 0 && !activeParalyzer)
-   {
-       textMessageItem.SetActive(true);
-       activeParalyzer = true;
-   }
-   else if (countParalizer <= 0)
-   {
-       blade.gameObject.SetActive(true);
-   }
+ 
 
 </code></pre>
 
-
-<div class="code-block">
-<pre><code class="language-csharp">
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using Pathfinding;
-    using System.IO;
-    using Unity.VisualScripting;
-    using UnityEngine.UI;
-
-    public class Enemy1 : MonoBehaviour
-    {
-        void Update()
-        {
-            //Detienes las acciones del enemigo1 cuando activas el item paralizador
-            bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-            if (isStopped)
-            {
-                animator?.SetFloat("runEnemyBas", 0);
-                if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
-            }
-            else
-            {
-                Move(); //Movimiento del enemigo
-            }
-        }     
-    }
-</code></pre>
-
-
-
-<div class="code-block">
-<pre><code class="language-csharp">
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using Pathfinding;
-    using UnityEngine.UI;
-
-    public class Enemy3 : MonoBehaviour
-    {
-           void Update()
-           {
-                //Detienes las acciones del enemigo3 cuando activas el item paralizador
-                bool isStopped = player.GetComponent<Ninja>().timerStop.enabled;
-
-                if (isStopped)
-                {
-                   animator?.SetFloat("runEnemy", 0);
-                   if (path != null) path.canMove = false; //Detiene el movimiento del enemigo
-                }
-                else
-                {
-                   Move(); //Movimiento del enemigo          
-                }
-           }     
-    }
-</code></pre>
-
-
+</div>
 </div>
 </section>
 

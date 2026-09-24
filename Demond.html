@@ -284,7 +284,7 @@
 
    }
 
-       public void TimerBar()
+    public void TimerBar()
     {
 
         timerPower -= Time.deltaTime*DelayTimer;
@@ -304,13 +304,11 @@
 </code></pre>
 
 <pre><code class="language-csharp">
-       public  void UpdatePowerSlider()
+    public  void UpdatePowerSlider()
     {
         powerCurrent = Mathf.Min(powerCurrent, powerMax);
         sliderPowerUI.fillAmount = powerCurrent / powerMax;     
     }
- 
-
 </code></pre>
 
 </div>

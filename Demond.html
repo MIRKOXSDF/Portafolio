@@ -263,7 +263,7 @@
 
 <pre><code class="language-csharp">
    //Activa el Paralizador
-     if (sliderPlayerLife.powerCurrent >= 200 && countParalizer > 0 && !activeParalyzer)
+   if (sliderPlayerLife.powerCurrent >= 200 && countParalizer > 0 && !activeParalyzer)
    {
        textMessageItem.SetActive(true);
        activeParalyzer = true;
@@ -284,6 +284,31 @@
 
    }
 
+       public void TimerBar()
+    {
+
+        timerPower -= Time.deltaTime*DelayTimer;
+        timerStop.fillAmount = timerPower / MaxtimerPower;
+        if (timerPower <= 0)
+        {
+            activeParalyzer = false;
+            timerPower = 0;
+            paralyzation.gameObject.SetActive(false);
+            CancelInvoke(nameof(TimerBar));
+        }
+
+    }
+
+ 
+
+</code></pre>
+
+<pre><code class="language-csharp">
+       public  void UpdatePowerSlider()
+    {
+        powerCurrent = Mathf.Min(powerCurrent, powerMax);
+        sliderPowerUI.fillAmount = powerCurrent / powerMax;     
+    }
  
 
 </code></pre>

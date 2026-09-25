@@ -230,6 +230,7 @@
 <pre><code class="language-csharp">
   void Shield()
   {
+      //Active el escudo
       if (pause != null && pause.paused) return;
 
       if (Input.GetKey(KeyCode.Space) && bottle > 0)
@@ -271,6 +272,7 @@
        blade.gameObject.SetActive(true);
    }
 
+   // Activa la habilidad
    if (Input.GetKeyDown(KeyCode.H)&&activeParalyzer&&textMessageItem.activeSelf)
    {
        sliderPlayerLife.powerCurrent = 0;
@@ -282,20 +284,20 @@
 
    }
 
-    public void TimerBar()
-    {
+   // Control del tiempo de paralización
+   public void TimerBar()
+   {
 
-        timerPower -= Time.deltaTime*DelayTimer;
-        timerStop.fillAmount = timerPower / MaxtimerPower;
-        if (timerPower <= 0)
-        {
-            activeParalyzer = false;
-            timerPower = 0;
-            paralyzation.gameObject.SetActive(false);
-            CancelInvoke(nameof(TimerBar));
-        }
-
-    }
+      timerPower -= Time.deltaTime*DelayTimer;
+      timerStop.fillAmount = timerPower / MaxtimerPower;
+      if (timerPower <= 0)
+      {
+         activeParalyzer = false;
+         timerPower = 0;
+         paralyzation.gameObject.SetActive(false);
+         CancelInvoke(nameof(TimerBar));
+      }
+   }
 
  
 

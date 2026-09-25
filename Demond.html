@@ -184,8 +184,8 @@
                     <div class="resp-title">
                         <h3>Escudo</h3>
                     </div>            
-                      <p> Al recoger el Ítem, otorga protección al jugador.
-                      Tiene uso limitado de consumo, por lo que debe activarse estratégicamente</p>
+                      <p> Al recoger el ítem, otorga protección al jugador. Tiene un uso limitado, 
+                        por lo que debe activarse estratégicamente para resistir ataques.</p>
                     
                        <div class="header-right" > 
                        <a class="link-card" href="#escudo"> 
@@ -203,10 +203,8 @@
                    <div class="resp-title">
                     <h3>Paralización</h3>
                    </div>             
-                    <p>Al derrotar enemigos, el jugador acumula energía que se refleja en una barra 
-                        de habilidad. Una vez que la barra se completa, puede activar el poder de paralización 
-                        para detener temporalmente a todos los enemigos, permitiéndole aprovechar la oportunidad 
-                        para avanzar, atacar o superar situaciones de mayor dificultad.</p>
+                    <p>Al derrotar enemigos, el jugador acumula energía en una barra de habilidad (esta debajo de la barra de vida). Al completarla,
+                         puede activar la paralización para detener temporalmente a todos los enemigos.</p>
                      <div class="header-right"> 
                        <a class="link-card"  href="#paralizacion"> 
                          <span>Ver Codigo</span> 
@@ -303,13 +301,7 @@
 
 </code></pre>
 
-<pre><code class="language-csharp">
-    public  void UpdatePowerSlider()
-    {
-        powerCurrent = Mathf.Min(powerCurrent, powerMax);
-        sliderPowerUI.fillAmount = powerCurrent / powerMax;     
-    }
-</code></pre>
+
 
 </div>
 </div>

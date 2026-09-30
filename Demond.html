@@ -157,12 +157,13 @@
    <div class="resp-card">
       <div class="resp-header">
         <i class="fas fa-coins icon"></i>
-        <h3>Sistema de items/habilidades</h3>
+        <h3>Sistema de ItemS/habilidad</h3>
       </div>
          <ul>
               <li><p>Implementé un sistema de recolección de ítems con distintas funciones :</p></li> 
-             <li><p>Item Escudo<span class="arrow">→</span> Protección contra daño.</p></li> 
-             <li><p>Paralización<span class="arrow">→</span> Detiene acciones enemigas.</p></li> 
+              <li class="sub-item"><p>Item Escudo<span class="arrow">→</span>  Protección contra daño.</p></li> 
+             <li class="sub-item"><p>Habilidad Paralización<span class="arrow">→</span> Detiene acciones enemigas.</p></li>
+             
          </ul>
     </div>
  </div>
@@ -175,7 +176,7 @@
 
 
 <section class="resp-section">
-    <h2>Sistema de items</h2>
+    <h2>Sistema de Item/Habilidad</h2>
 
     <div class="projects-grid">
 
@@ -233,9 +234,9 @@
 <pre><code class="language-csharp">
   void Shield()
   {
-      //Active el escudo
       if (pause != null && pause.paused) return;
 
+      //Active el escudo
       if (Input.GetKey(KeyCode.Space) && bottle > 0)
       {         
           shieldActive.SetActive(true);                              
@@ -264,7 +265,7 @@
 </div>
 
 <pre><code class="language-csharp">
-   //Activa el Paralizador
+   // Comprueba si la habilidad está disponible
    if (sliderPlayerLife.powerCurrent >= 200 && countParalizer > 0 && !activeParalyzer)
    {
        textMessageItem.SetActive(true);
@@ -275,7 +276,7 @@
        blade.gameObject.SetActive(true);
    }
 
-   // Activa la habilidad
+   // Activa la habilidad y consume una carga
    if (Input.GetKeyDown(KeyCode.H)&&activeParalyzer&&textMessageItem.activeSelf)
    {
        sliderPlayerLife.powerCurrent = 0;

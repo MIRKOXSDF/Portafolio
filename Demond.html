@@ -300,7 +300,7 @@
        while (timerParalyzation > 0)
        {
            timerParalyzation -= Time.deltaTime * DelayTimer;
-           timerStop.fillAmount = timerParalyzation / maxTimerParalyzation;
+           paralyzationBarFilled.fillAmount = timerParalyzation / maxTimerParalyzation;
 
            yield return null; 
        }

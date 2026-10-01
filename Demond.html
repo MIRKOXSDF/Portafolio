@@ -268,26 +268,27 @@
    // Comprueba si la habilidad está disponible
    if (sliderPlayerLife.powerCurrent >= 200 && countParalizer > 0 && !activeParalyzer)
    {
-       textMessageItem.SetActive(true);
-       activeParalyzer = true;
+      textMessageParalyzation.SetActive(true);
+      activeParalyzer = true;
    }
    else if (countParalizer <= 0)
    {
-       blade.gameObject.SetActive(true);
+      blade.gameObject.SetActive(true);
    }
 
    // Activa la habilidad y consume una carga
-   if (Input.GetKeyDown(KeyCode.H)&&activeParalyzer&&textMessageItem.activeSelf)
+   if (Input.GetKeyDown(KeyCode.H)&&activeParalyzer&&textMessageParalyzation.activeSelf)
    {
        sliderPlayerLife.powerCurrent = 0;
        sliderPlayerLife.UpdatePowerSlider();
        countParalizer--;
-       textMessageItem.SetActive(false);
-       paralyzation.gameObject.SetActive(true);
-       InvokeRepeating(nameof(TimerBar), 0f, 0.02f);
+       textMessageParalyzation.SetActive(false);
+       paralyzationBar.gameObject.SetActive(true);
+       timerParalyzation = maxTimerParalyzation;
+
        if (paralysisCoroutine != null)
        {
-           StopCoroutine(paralysisCoroutine);
+          StopCoroutine(paralysisCoroutine);
        }
        paralysisCoroutine = StartCoroutine(ParalysisTimerRoutine());
 
@@ -296,20 +297,18 @@
    // Control del tiempo de paralización
    private IEnumerator ParalysisTimerRoutine()
    {
-      float elapsedTime = 0f;
+       while (timerParalyzation > 0)
+       {
+           timerParalyzation -= Time.deltaTime * DelayTimer;
+           timerStop.fillAmount = timerParalyzation / maxTimerParalyzation;
 
-      while (timerPower > 0)
-      {
-          elapsedTime += Time.deltaTime;
-          timerPower -= Time.deltaTime * DelayTimer;
-          timerStop.fillAmount = timerPower / MaxtimerPower;
+           yield return null; 
+       }
 
-          yield return null; 
-      }
-      paralyzation.gameObject.SetActive(false);
-      timerPower = 0;
-      activeParalyzer = false; 
-      paralysisCoroutine = null;
+       paralyzationBar.gameObject.SetActive(false);
+       timerParalyzation = 0;
+       activeParalyzer = false; 
+       paralysisCoroutine = null;
    }
 
  

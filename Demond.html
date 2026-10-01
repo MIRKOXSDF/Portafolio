@@ -236,12 +236,12 @@
   {
       if (pause != null && pause.paused) return;
 
-      //Active el escudo
+      //Activa el escudo
       if (Input.GetKey(KeyCode.Space) && bottle > 0)
       {         
           shieldActive.SetActive(true);                              
           shield = true;
-          bottle -= 50 * Time.deltaTime / 13f;
+          bottle -= AmountShield * Time.deltaTime / durationShield;
           shieldBar.GetComponent<SliderShieldUI>().UpdateSliderShield(bottle);        
       }
       else if(Input.GetKeyUp(KeyCode.Space))

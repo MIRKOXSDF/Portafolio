@@ -145,7 +145,7 @@ h1, h2, h3, h4,
 }
 
 .project-card {
-    background: #272727;
+    background: #181818;
     border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
@@ -162,7 +162,7 @@ h1, h2, h3, h4,
 }
 
 .project-cards {
-    background: #272727;
+    background: #181818;
     border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
@@ -179,7 +179,7 @@ h1, h2, h3, h4,
 }
 .project-card:hover {
     transform: translateY(-6px);
-    border: 2px solid #9fd3c7; /* 👈 borde verde */
+    border: 1px solid #9fd3c7; /* 👈 borde verde */
     
 }
 .project-card img {
